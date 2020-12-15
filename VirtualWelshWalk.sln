@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Virtual Welsh Walk", "Virtual Welsh Walk\Virtual Welsh Walk.csproj", "{12D6ACB7-83B6-4A46-AF0C-D17E25EF1201}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualWelshWalk", "VirtualWelshWalk\VirtualWelshWalk.csproj", "{BC5067B8-5F4B-4C07-B5FF-BA8EC442CB9E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{12D6ACB7-83B6-4A46-AF0C-D17E25EF1201}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{12D6ACB7-83B6-4A46-AF0C-D17E25EF1201}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{12D6ACB7-83B6-4A46-AF0C-D17E25EF1201}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{12D6ACB7-83B6-4A46-AF0C-D17E25EF1201}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC5067B8-5F4B-4C07-B5FF-BA8EC442CB9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC5067B8-5F4B-4C07-B5FF-BA8EC442CB9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC5067B8-5F4B-4C07-B5FF-BA8EC442CB9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC5067B8-5F4B-4C07-B5FF-BA8EC442CB9E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {DE4D82FE-97BD-4839-9A2D-4597341DA383}
+		SolutionGuid = {9C1ED143-91BB-456B-BD91-7DB45BAE881A}
 	EndGlobalSection
 EndGlobal
