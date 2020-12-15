@@ -23,6 +23,10 @@ namespace VirtualWelshWalk.DataAccess.Models
         [MaxLength(50)]
         public string LastName { get; set; }
 
+        [Required]
+        [MaxLength(50)]
+        public string UserName { get; set; }
+
         public List<VirtualWalk> VirtualWalk { get; set; }
     }
 }

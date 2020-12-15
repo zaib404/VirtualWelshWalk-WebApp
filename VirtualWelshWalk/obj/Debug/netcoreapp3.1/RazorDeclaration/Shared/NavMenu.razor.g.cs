@@ -13,64 +13,71 @@ namespace VirtualWelshWalk.Shared
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "D:\Zaib\Documents\delete\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
+#line 1 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "D:\Zaib\Documents\delete\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
+#line 2 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "D:\Zaib\Documents\delete\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
+#line 3 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "D:\Zaib\Documents\delete\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
+#line 4 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "D:\Zaib\Documents\delete\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
+#line 5 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "D:\Zaib\Documents\delete\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
+#line 6 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "D:\Zaib\Documents\delete\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
+#line 7 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "D:\Zaib\Documents\delete\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
+#line 8 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
 using VirtualWelshWalk;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "D:\Zaib\Documents\delete\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
+#line 9 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
 using VirtualWelshWalk.Shared;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 10 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
+[Authorize]
 
 #line default
 #line hidden
@@ -83,7 +90,7 @@ using VirtualWelshWalk.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 28 "D:\Zaib\Documents\delete\VirtualWelshWalk\VirtualWelshWalk\Shared\NavMenu.razor"
+#line 31 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 
