@@ -1,0 +1,28 @@
+﻿@page "/DailyStepsForm"
+@using DataAccess.Data;
+@inject DailyStepsService StepService
+
+<h1>Welcome! Input your steps for today. How far did you work?</h1>
+
+<h3>DailySteps</h3>
+
+@if (dailyStepsDB == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+
+}
+
+
+
+@code
+{
+    DailyStepsDB dailyStepsDB;
+
+    //protected override Task OnInitializedAsync()
+    //{
+    //    //dailyStepsDB = await StepService;
+    //}
+}

@@ -13,77 +13,84 @@ namespace VirtualWelshWalk.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "D:\Zaib\Documents\delete\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
+#line 1 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "D:\Zaib\Documents\delete\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
+#line 2 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "D:\Zaib\Documents\delete\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
+#line 3 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "D:\Zaib\Documents\delete\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
+#line 4 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "D:\Zaib\Documents\delete\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
+#line 5 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "D:\Zaib\Documents\delete\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
+#line 6 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "D:\Zaib\Documents\delete\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
+#line 7 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "D:\Zaib\Documents\delete\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
+#line 8 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
 using VirtualWelshWalk;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "D:\Zaib\Documents\delete\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
+#line 9 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
 using VirtualWelshWalk.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "D:\Zaib\Documents\delete\VirtualWelshWalk\VirtualWelshWalk\Pages\FetchData.razor"
-using VirtualWelshWalk.Data;
+#line 2 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\DailySteps.razor"
+using DataAccess.Data;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/fetchdata")]
-    public partial class FetchData : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 10 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
+[Authorize]
+
+#line default
+#line hidden
+#nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/DailyStepsForm")]
+    public partial class DailySteps : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -91,19 +98,19 @@ using VirtualWelshWalk.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 39 "D:\Zaib\Documents\delete\VirtualWelshWalk\VirtualWelshWalk\Pages\FetchData.razor"
-       
-    private WeatherForecast[] forecasts;
+#line 21 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\DailySteps.razor"
+ 
+    DailyStepsDB dailyStepsDB;
 
-    protected override async Task OnInitializedAsync()
-    {
-        forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
-    }
+    //protected override Task OnInitializedAsync()
+    //{
+    //    //dailyStepsDB = await StepService;
+    //}
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private WeatherForecastService ForecastService { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private DailyStepsService StepService { get; set; }
     }
 }
 #pragma warning restore 1591

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Zaib\\Documents\\delete\\VirtualWelshWalk\\VirtualWelshWalk\\VirtualWelshWalk.csproj": {}
+    "D:\\Zaib\\Documents\\Areca Design\\VirtualWelshWalk\\VirtualWelshWalk\\VirtualWelshWalk.csproj": {}
   },
   "projects": {
-    "D:\\Zaib\\Documents\\delete\\VirtualWelshWalk\\VirtualWelshWalk\\VirtualWelshWalk.csproj": {
+    "D:\\Zaib\\Documents\\Areca Design\\VirtualWelshWalk\\VirtualWelshWalk\\VirtualWelshWalk.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Zaib\\Documents\\delete\\VirtualWelshWalk\\VirtualWelshWalk\\VirtualWelshWalk.csproj",
+        "projectUniqueName": "D:\\Zaib\\Documents\\Areca Design\\VirtualWelshWalk\\VirtualWelshWalk\\VirtualWelshWalk.csproj",
         "projectName": "VirtualWelshWalk",
-        "projectPath": "D:\\Zaib\\Documents\\delete\\VirtualWelshWalk\\VirtualWelshWalk\\VirtualWelshWalk.csproj",
+        "projectPath": "D:\\Zaib\\Documents\\Areca Design\\VirtualWelshWalk\\VirtualWelshWalk\\VirtualWelshWalk.csproj",
         "packagesPath": "C:\\Users\\Zaib\\.nuget\\packages\\",
-        "outputPath": "D:\\Zaib\\Documents\\delete\\VirtualWelshWalk\\VirtualWelshWalk\\obj\\",
+        "outputPath": "D:\\Zaib\\Documents\\Areca Design\\VirtualWelshWalk\\VirtualWelshWalk\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
