@@ -23,7 +23,6 @@ namespace VirtualWelshWalk.DataAccess.CRUD
             var result = await dbContext.PeoplesTBL.AddAsync(people);
             await dbContext.SaveChangesAsync();
             return result.Entity;
-            
         }
 
         public async void DeletePeople(int peopleID)
@@ -37,14 +36,26 @@ namespace VirtualWelshWalk.DataAccess.CRUD
             }
         }
 
-        //public async Task<IEnumerable<People>> GetPeople()
-        //{
-        //    return await dbContext.PeoplesTBL.ToListAsync();
-        //}
+        public async void DeletePeople(string peopleUserName)
+        {
+            var result = await dbContext.PeoplesTBL.FirstOrDefaultAsync(p => p.UserName == peopleUserName);
+
+            if (result != null)
+            {
+                dbContext.PeoplesTBL.Remove(result);
+                await dbContext.SaveChangesAsync();
+            }
+        }
 
         public async Task<People> GetPeople(int peopleID)
         {
             var result = await dbContext.PeoplesTBL.FirstOrDefaultAsync(p => p.PeopleId == peopleID);
+            return result;
+        }
+
+        public async Task<People> GetPeople(string peopleUserName)
+        {
+            var result = await dbContext.PeoplesTBL.FirstOrDefaultAsync(p => p.UserName == peopleUserName);
             return result;
         }
 

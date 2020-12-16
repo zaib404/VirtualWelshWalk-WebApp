@@ -1,12 +1,18 @@
 ﻿@page "/InputDailySteps"
-@using DataAccess.Data;
-@inject IPeopleRepository peopleRepos;
 
-<h1>Welcome! Input your steps for today. How far did you work?</h1>
+@using DataAccess.Data
+@using VirtualWelshWalk.DataAccess.Services;
+@using VirtualWelshWalk.DataAccess.Models;
+
+@inject IVirtualWalkService WalkService
+
+<h1>Welcome! Input your steps for today. How far did you work? @WalkName, @people.UserName</h1>
+
+
 
 <h3>DailySteps</h3>
 
-@if (dailyStepsDB == null)
+@if (virtualSteps == null)
 {
     <p><em>Loading...</em></p>
 }
@@ -17,10 +23,16 @@ else
 
 @code
 {
-    DailyStepsDB dailyStepsDB;
+    VirtualTotalSteps virtualSteps = new VirtualTotalSteps();
 
-    //protected override Task OnInitializedAsync()
-    //{
-    //    //dailyStepsDB = await StepService;
-    //}
+    public People people { get; set; } = new People();
+    public VirtualWalk virtualWalk { get; set; } = new VirtualWalk();
+
+    string WalkName = "Welsh Coastal Walk";
+
+    protected override async Task OnInitializedAsync()
+    {
+        people = await WalkService.GetPerson();
+        virtualWalk = await WalkService.GetPersonVirtualWalk(WalkName, people);
+    }
 }

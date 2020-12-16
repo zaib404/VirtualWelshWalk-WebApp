@@ -12,11 +12,15 @@ namespace VirtualWelshWalk.DataAccess.CRUD
 
         Task<People> GetPeople(int peopleID);
 
+        Task<People> GetPeople(string peopleUserName);
+
         Task<People> AddPeople(People people);
 
         Task<People> UpdatePeople(People people);
 
         void DeletePeople(int peopleID);
+
+        void DeletePeople(string peopleUserName);
 
     }
 }

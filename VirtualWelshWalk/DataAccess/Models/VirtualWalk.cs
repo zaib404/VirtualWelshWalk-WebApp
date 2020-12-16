@@ -15,6 +15,6 @@ namespace VirtualWelshWalk.DataAccess.Models
 
         public int PeopleId { get; set; }
 
-        public People People { get; set; }
+        //public People People { get; set; }
     }
 }

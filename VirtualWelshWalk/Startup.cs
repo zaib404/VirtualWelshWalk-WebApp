@@ -11,6 +11,7 @@ using VirtualWelshWalk.Areas.Identity;
 using VirtualWelshWalk.DataAccess.CRUD;
 using VirtualWelshWalk.DataAccess.Data;
 using VirtualWelshWalk.DataAccess.Models;
+using VirtualWelshWalk.DataAccess.Services;
 
 namespace VirtualWelshWalk
 {
@@ -48,6 +49,7 @@ namespace VirtualWelshWalk
 
             services.AddScoped<IPeopleRepository, PeopleRepository>();
             services.AddScoped<IVirtualWalkRepository, VirtualWalkRepository>();
+            services.AddScoped<IVirtualWalkService, VirtualWalkService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
