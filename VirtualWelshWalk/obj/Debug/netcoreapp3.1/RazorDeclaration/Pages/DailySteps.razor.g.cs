@@ -76,8 +76,22 @@ using VirtualWelshWalk.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\DailySteps.razor"
+#line 3 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\DailySteps.razor"
 using DataAccess.Data;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\DailySteps.razor"
+using VirtualWelshWalk.DataAccess.Services;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\DailySteps.razor"
+using VirtualWelshWalk.DataAccess.Models;
 
 #line default
 #line hidden
@@ -98,18 +112,25 @@ using DataAccess.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 18 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\DailySteps.razor"
+#line 25 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\DailySteps.razor"
  
-    DailyStepsDB dailyStepsDB;
+    VirtualTotalSteps virtualSteps = new VirtualTotalSteps();
 
-    //protected override Task OnInitializedAsync()
-    //{
-    //    //dailyStepsDB = await StepService;
-    //}
+    public People people { get; set; } = new People();
+    public VirtualWalk virtualWalk { get; set; } = new VirtualWalk();
+
+    string WalkName = "Welsh Coastal Walk";
+
+    protected override async Task OnInitializedAsync()
+    {
+        people = await WalkService.GetPerson();
+        virtualWalk = await WalkService.GetPersonVirtualWalk(WalkName, people);
+    }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IVirtualWalkService WalkService { get; set; }
     }
 }
 #pragma warning restore 1591

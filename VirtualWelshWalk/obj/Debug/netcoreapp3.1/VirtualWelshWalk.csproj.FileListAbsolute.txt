@@ -360,7 +360,6 @@ D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\netco
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netcoreapp3.1\VirtualWelshWalk.csprojAssemblyReference.cache
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netcoreapp3.1\VirtualWelshWalk.AssemblyInfoInputs.cache
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netcoreapp3.1\VirtualWelshWalk.AssemblyInfo.cs
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netcoreapp3.1\VirtualWelshWalk.csproj.CoreCompileInputs.cache
@@ -368,6 +367,7 @@ D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netco
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netcoreapp3.1\VirtualWelshWalk.MvcApplicationPartsAssemblyInfo.cache
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netcoreapp3.1\VirtualWelshWalk.RazorComponent.input.cache
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netcoreapp3.1\RazorDeclaration\App.razor.g.cs
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\DailySteps.razor.g.cs
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Index.razor.g.cs
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\LoginDisplay.razor.g.cs
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\MainLayout.razor.g.cs
@@ -379,6 +379,7 @@ D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netco
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netcoreapp3.1\VirtualWelshWalk.TagHelpers.output.cache
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netcoreapp3.1\VirtualWelshWalk.RazorCoreGenerate.cache
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netcoreapp3.1\Razor\App.razor.g.cs
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netcoreapp3.1\Razor\Pages\DailySteps.razor.g.cs
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netcoreapp3.1\Razor\Pages\Index.razor.g.cs
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netcoreapp3.1\Razor\Shared\LoginDisplay.razor.g.cs
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netcoreapp3.1\Razor\Shared\MainLayout.razor.g.cs
@@ -442,5 +443,4 @@ D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netco
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netcoreapp3.1\VirtualWelshWalk.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netcoreapp3.1\VirtualWelshWalk.pdb
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netcoreapp3.1\VirtualWelshWalk.genruntimeconfig.cache
-D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\DailySteps.razor.g.cs
-D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netcoreapp3.1\Razor\Pages\DailySteps.razor.g.cs
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netcoreapp3.1\VirtualWelshWalk.csprojAssemblyReference.cache

@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace VirtualWelshWalk.DataAccess.Data
 {
-    public class DailyStepsDB
+    public class VirtualTotalSteps
     {
         [Required]
-        [Range(1, 100000, ErrorMessage = "Can only input between 1-100000.")]   
+        [Range(1, 100000, ErrorMessage = "Can only input between 1-100000.")]
         public int NewSteps { get; set; }
 
         public int TotalSteps { get; set; }
-
     }
 }
