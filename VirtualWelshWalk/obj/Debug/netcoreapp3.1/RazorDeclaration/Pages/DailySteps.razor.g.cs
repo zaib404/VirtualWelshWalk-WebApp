@@ -89,7 +89,7 @@ using DataAccess.Data;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/DailyStepsForm")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/InputDailySteps")]
     public partial class DailySteps : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -98,7 +98,7 @@ using DataAccess.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 21 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\DailySteps.razor"
+#line 18 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\DailySteps.razor"
  
     DailyStepsDB dailyStepsDB;
 
@@ -110,7 +110,6 @@ using DataAccess.Data;
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private DailyStepsService StepService { get; set; }
     }
 }
 #pragma warning restore 1591

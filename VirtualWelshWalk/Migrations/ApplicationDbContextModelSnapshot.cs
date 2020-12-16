@@ -161,18 +161,12 @@ namespace VirtualWelshWalk.Migrations
                         .HasColumnType("varchar(50) CHARACTER SET utf8mb4")
                         .HasMaxLength(50);
 
-                    b.Property<string>("UserID")
-                        .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
-
                     b.Property<string>("UserName")
                         .IsRequired()
                         .HasColumnType("varchar(50) CHARACTER SET utf8mb4")
                         .HasMaxLength(50);
 
                     b.HasKey("PeopleId");
-
-                    b.HasIndex("UserID")
-                        .IsUnique();
 
                     b.ToTable("PeoplesTBL");
                 });
@@ -322,13 +316,6 @@ namespace VirtualWelshWalk.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("VirtualWelshWalk.DataAccess.Models.People", b =>
-                {
-                    b.HasOne("VirtualWelshWalk.DataAccess.Models.User", "User")
-                        .WithOne("People")
-                        .HasForeignKey("VirtualWelshWalk.DataAccess.Models.People", "UserID");
                 });
 
             modelBuilder.Entity("VirtualWelshWalk.DataAccess.Models.VirtualWalk", b =>

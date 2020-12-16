@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using VirtualWelshWalk.DataAccess.CRUD;
 using VirtualWelshWalk.DataAccess.Models;
 
 namespace VirtualWelshWalk.Areas.Identity.Pages.Account
@@ -25,16 +26,25 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
 
+        // New
+        readonly IPeopleRepository _peopleRepository;
+        readonly IVirtualWalkRepository _virtualWalkRepository;
+
         public RegisterModel(
             UserManager<User> userManager,
             SignInManager<User> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            IEmailSender emailSender,
+            IPeopleRepository peopleRepository,
+            IVirtualWalkRepository virtualWalkRepository)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+
+            _peopleRepository = peopleRepository;
+            _virtualWalkRepository = virtualWalkRepository;
         }
 
         [BindProperty]
@@ -101,7 +111,27 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
                     UserName = Input.UserName, 
                     Email = Input.Email
                 };
+
+                var People = new People
+                {
+                    FirstName = Input.FirstName,
+                    LastName = Input.LastName,
+                    UserName = Input.UserName
+                };
+                
                 var result = await _userManager.CreateAsync(user, Input.Password);
+
+                var resultPeople = await _peopleRepository.AddPeople(People);
+
+                var VWalk = new VirtualWalk
+                {
+                    VirtualWalkName = "Welsh Coastal Walk",
+                    TotalSteps = 0,
+                    PeopleId = resultPeople.PeopleId
+                };
+
+                var resultVWalk = await _virtualWalkRepository.AddVirtualWalk(VWalk);
+
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
@@ -126,13 +156,18 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
                         await _signInManager.SignInAsync(user, isPersistent: false);
                         return LocalRedirect(returnUrl);
                     }
+                }                
+                //foreach (var error in result.Errors)
+                //{
+                //    ModelState.AddModelError(string.Empty, error.Description);
+                //}
+
+                if (result.Errors.Count() != 0)
+                {
+                    ModelState.AddModelError(string.Empty, "The User name or Email address appears to be taken.");
                 }
 
-                ModelState.AddModelError(string.Empty, "The User name or Email address appears to be taken.");
-                foreach (var error in result.Errors)
-                {
-                    ModelState.AddModelError(string.Empty, error.Description);
-                }
+
             }
 
             // If we got this far, something failed, redisplay form
