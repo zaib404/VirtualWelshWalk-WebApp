@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using VirtualWelshWalk.Areas.Identity;
+using VirtualWelshWalk.DataAccess.CRUD;
 using VirtualWelshWalk.DataAccess.Data;
 using VirtualWelshWalk.DataAccess.Models;
 
@@ -44,6 +45,9 @@ namespace VirtualWelshWalk
             //services.AddSingleton<WeatherForecastService>();
 
             services.AddSingleton<IEmailSender, EmailSender>();
+
+            services.AddScoped<IPeopleRepository, PeopleRepository>();
+            services.AddScoped<IVirtualWalkRepository, VirtualWalkRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
