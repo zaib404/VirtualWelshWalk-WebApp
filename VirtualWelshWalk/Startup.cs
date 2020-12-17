@@ -49,6 +49,7 @@ namespace VirtualWelshWalk
 
             services.AddScoped<IPeopleRepository, PeopleRepository>();
             services.AddScoped<IVirtualWalkRepository, VirtualWalkRepository>();
+            services.AddScoped<IPeopleService, PeopleService>();
             services.AddScoped<IVirtualWalkService, VirtualWalkService>();
         }
 

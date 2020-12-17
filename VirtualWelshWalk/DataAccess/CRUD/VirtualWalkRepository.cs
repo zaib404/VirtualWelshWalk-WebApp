@@ -47,7 +47,6 @@ namespace VirtualWelshWalk.DataAccess.CRUD
 
             if (result != null)
             {
-                result.TotalSteps += VWalk.TotalSteps;
                 await dbContext.SaveChangesAsync();
             }
 

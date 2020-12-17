@@ -5,6 +5,7 @@
 @using VirtualWelshWalk.DataAccess.Models;
 
 @inject IVirtualWalkService WalkService
+@inject IPeopleService PeopleService
 
 <h1>Welcome! Input your steps for today. How far did you work? @WalkName, @people.UserName</h1>
 
@@ -19,6 +20,47 @@
 else
 {
 
+    if (!UserInputDailyWalk)
+    {
+        <EditForm OnValidSubmit="HandleValidSubmit" Model="@virtualSteps">
+            <DataAnnotationsValidator />
+            <div class="row content">
+                <div class="col-md-2">
+                    <label for="Input"> Input your total steps from today</label>
+                </div>
+                <div class="col-md-3">
+                    <InputNumber id="steps" @bind-Value="virtualSteps.NewSteps" />
+                </div>
+
+                <div class="col-md-5">
+                    <ValidationMessage For="@(() => virtualSteps.NewSteps)" />
+                </div>
+            </div>
+
+            <div class="row content">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </EditForm>
+        <br />
+        <br />
+        <div class="row content">
+            <div class="col-md-2">
+                <label for="TotalSteps">Total Steps curruntly in the @WalkName is @virtualSteps.TotalSteps</label>
+            </div>
+        </div>
+    }
+
+    else
+    {
+        <h1> Thank you for inputting your daily walk. See your progress on insert map link</h1>
+
+        <div class="row content">
+            <div class="col-md-2">
+                <label for="TotalSteps">Total Steps curruntly in the @WalkName is @virtualSteps.TotalSteps</label>
+            </div>
+        </div>
+    }
+
 }
 
 @code
@@ -30,9 +72,22 @@ else
 
     string WalkName = "Welsh Coastal Walk";
 
+    bool UserInputDailyWalk = false;
+
     protected override async Task OnInitializedAsync()
     {
-        people = await WalkService.GetPerson();
-        virtualWalk = await WalkService.GetPersonVirtualWalk(WalkName, people);
+        people = await PeopleService.GetPeople();
+        virtualWalk = await WalkService.GetVirtualWalk(WalkName, people.PeopleId);
+
+        virtualSteps.TotalSteps = virtualWalk.TotalSteps;
+    }
+
+    async Task HandleValidSubmit()
+    {
+        virtualWalk.TotalSteps += virtualSteps.NewSteps;
+        await WalkService.UpdateVirtualWalk(virtualWalk);
+        virtualSteps.NewSteps = 0;
+        virtualSteps.TotalSteps = virtualWalk.TotalSteps;
+        UserInputDailyWalk = true;
     }
 }
