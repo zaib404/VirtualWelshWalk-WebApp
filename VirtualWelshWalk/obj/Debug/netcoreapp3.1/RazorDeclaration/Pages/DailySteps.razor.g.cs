@@ -112,7 +112,7 @@ using VirtualWelshWalk.DataAccess.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 25 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\DailySteps.razor"
+#line 67 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\DailySteps.razor"
  
     VirtualTotalSteps virtualSteps = new VirtualTotalSteps();
 
@@ -121,15 +121,29 @@ using VirtualWelshWalk.DataAccess.Models;
 
     string WalkName = "Welsh Coastal Walk";
 
+    bool UserInputDailyWalk = false;
+
     protected override async Task OnInitializedAsync()
     {
-        people = await WalkService.GetPerson();
-        virtualWalk = await WalkService.GetPersonVirtualWalk(WalkName, people);
+        people = await PeopleService.GetPeople();
+        virtualWalk = await WalkService.GetVirtualWalk(WalkName, people.PeopleId);
+
+        virtualSteps.TotalSteps = virtualWalk.TotalSteps;
+    }
+
+    async Task HandleValidSubmit()
+    {
+        virtualWalk.TotalSteps += virtualSteps.NewSteps;
+        await WalkService.UpdateVirtualWalk(virtualWalk);
+        virtualSteps.NewSteps = 0;
+        virtualSteps.TotalSteps = virtualWalk.TotalSteps;
+        UserInputDailyWalk = true;
     }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IPeopleService PeopleService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IVirtualWalkService WalkService { get; set; }
     }
 }

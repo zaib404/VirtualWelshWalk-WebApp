@@ -11,31 +11,32 @@ namespace VirtualWelshWalk.DataAccess.Services
 {
     public class VirtualWalkService : IVirtualWalkService
     {
-        readonly IPeopleRepository peopleRepository;
         readonly IVirtualWalkRepository virtualWalkRepository;
-        readonly AuthenticationStateProvider authenticationStateProvider;
 
-        public VirtualWalkService(IPeopleRepository peopleRepository, IVirtualWalkRepository virtualWalkRepository, AuthenticationStateProvider authenticationStateProvider)
+        public VirtualWalkService(IVirtualWalkRepository virtualWalkRepository)
         {
-            this.peopleRepository = peopleRepository;
             this.virtualWalkRepository = virtualWalkRepository;
-            this.authenticationStateProvider = authenticationStateProvider;
         }
 
-        public async Task<VirtualWalk> GetPersonVirtualWalk(string virtualWalkName, People person)
+        public async Task AddVirtualWalk(VirtualWalk VWalk)
         {
-            return await virtualWalkRepository.GetVirtualWalk(person.PeopleId, virtualWalkName);
+            await virtualWalkRepository.AddVirtualWalk(VWalk);
         }
 
-        public async Task<People> GetPerson()
+        public Task DeleteVirtualWalk(int peopleID)
         {
-            var authState = await authenticationStateProvider.GetAuthenticationStateAsync();
-            var user = authState.User;
-            var uName = user.Identity.Name;
-
-            return await peopleRepository.GetPeople(uName);
+            virtualWalkRepository.DeleteVirtualWalk(peopleID);
+            return Task.CompletedTask;
         }
 
+        public async Task<VirtualWalk> GetVirtualWalk(string virtualWalkName, int peopleID)
+        {
+            return await virtualWalkRepository.GetVirtualWalk(peopleID, virtualWalkName);
+        }
 
+        public async Task UpdateVirtualWalk(VirtualWalk virtualWalk)
+        {
+            await virtualWalkRepository.UpdateVirtualWalk(virtualWalk);
+        }
     }
 }

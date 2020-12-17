@@ -10,8 +10,12 @@ namespace VirtualWelshWalk.DataAccess.Services
     {
         //Task<People> GetPersonVirtualWalk(int peopleID);
 
-        Task<VirtualWalk> GetPersonVirtualWalk(string virtualWalkName, People people);
+        Task<VirtualWalk> GetVirtualWalk(string virtualWalkName, int peopleID);
 
-        Task<People> GetPerson();
+        Task UpdateVirtualWalk(VirtualWalk virtualWalk);
+
+        Task DeleteVirtualWalk(int peopleID);
+
+        Task AddVirtualWalk(VirtualWalk VWalk);
     }
 }
