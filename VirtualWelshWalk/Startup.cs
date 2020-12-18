@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.Linq;
 using VirtualWelshWalk.Areas.Identity;
 using VirtualWelshWalk.DataAccess.CRUD;
 using VirtualWelshWalk.DataAccess.Data;
@@ -51,6 +52,24 @@ namespace VirtualWelshWalk
             services.AddScoped<IVirtualWalkRepository, VirtualWalkRepository>();
             services.AddScoped<IPeopleService, PeopleService>();
             services.AddScoped<IVirtualWalkService, VirtualWalkService>();
+
+            services.AddControllers();
+            services.AddLocalization(options => options.ResourcesPath = "Resources");
+        }
+
+        private RequestLocalizationOptions GetLocalizationOptions()
+        {
+            var cultures = Configuration.GetSection("Cultures")
+                .GetChildren().ToDictionary(X => X.Key, x => x.Value);
+
+            var supportedCultures = cultures.Keys.ToArray();
+
+            // Add the supported cultures from app settings 
+            var localizationOptions = new RequestLocalizationOptions()
+                .AddSupportedCultures(supportedCultures)
+                .AddSupportedUICultures(supportedCultures);
+
+            return localizationOptions;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
