@@ -90,6 +90,8 @@ namespace VirtualWelshWalk
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            app.UseRequestLocalization(GetLocalizationOptions());
+
             app.UseRouting();
 
             app.UseAuthentication();

@@ -443,3 +443,13 @@ D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netco
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netcoreapp3.1\VirtualWelshWalk.genruntimeconfig.cache
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\InputSteps.razor.g.cs
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netcoreapp3.1\Razor\Pages\InputSteps.razor.g.cs
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Localization.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Localization.Abstractions.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netcoreapp3.1\VirtualWelshWalk.csprojAssemblyReference.cache
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\ChooseLanguage.razor.g.cs
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netcoreapp3.1\Razor\Shared\ChooseLanguage.razor.g.cs
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\netcoreapp3.1\cy\VirtualWelshWalk.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netcoreapp3.1\VirtualWelshWalk.Resources.App.resources
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netcoreapp3.1\VirtualWelshWalk.Resources.app.cy.resources
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netcoreapp3.1\VirtualWelshWalk.csproj.GenerateResource.cache
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netcoreapp3.1\cy\VirtualWelshWalk.resources.dll
