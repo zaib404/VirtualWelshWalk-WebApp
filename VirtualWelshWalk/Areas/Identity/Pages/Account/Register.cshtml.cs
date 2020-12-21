@@ -15,10 +15,13 @@ using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 using VirtualWelshWalk.DataAccess.CRUD;
 using VirtualWelshWalk.DataAccess.Models;
+using EmailService;
+using IEmailSender = EmailService.IEmailSender;
 
 namespace VirtualWelshWalk.Areas.Identity.Pages.Account
 {
     [AllowAnonymous]
+    [ValidateAntiForgeryToken]
     public class RegisterModel : PageModel
     {
         private readonly SignInManager<User> _signInManager;
@@ -119,22 +122,23 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
                     UserName = Input.UserName
                 };
                 
-                var result = await _userManager.CreateAsync(user, Input.Password);
-
-                var resultPeople = await _peopleRepository.AddPeople(People);
-
-                var VWalk = new VirtualWalk
-                {
-                    VirtualWalkName = "Welsh Coastal Walk",
-                    TotalSteps = 0,
-                    PeopleId = resultPeople.PeopleId
-                };
-
-                var resultVWalk = await _virtualWalkRepository.AddVirtualWalk(VWalk);
+                var result = await _userManager.CreateAsync(user, Input.Password);                
 
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
+
+                    var resultPeople = await _peopleRepository.AddPeople(People);
+
+                    var VWalk = new VirtualWalk
+                    {
+                        VirtualWalkName = "Welsh Coastal Walk",
+                        TotalSteps = 0,
+                        PeopleId = resultPeople.PeopleId
+                    };
+
+                    var resultVWalk = await _virtualWalkRepository.AddVirtualWalk(VWalk);
+
 
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
@@ -144,8 +148,13 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
                         values: new { area = "Identity", userId = user.Id, code = code, returnUrl = returnUrl },
                         protocol: Request.Scheme);
 
-                    await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
+                    var message = new Message(new string[] { Input.Email }, "Confirm your email",
                         $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+
+                    await _emailSender.SendEmailAsync(message);
+
+                    //await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
+                    //    $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)
                     {

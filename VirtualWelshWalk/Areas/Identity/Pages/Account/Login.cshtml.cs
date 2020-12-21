@@ -16,6 +16,7 @@ using VirtualWelshWalk.DataAccess.Models;
 namespace VirtualWelshWalk.Areas.Identity.Pages.Account
 {
     [AllowAnonymous]
+    [ValidateAntiForgeryToken]
     public class LoginModel : PageModel
     {
         private readonly UserManager<User> _userManager;
