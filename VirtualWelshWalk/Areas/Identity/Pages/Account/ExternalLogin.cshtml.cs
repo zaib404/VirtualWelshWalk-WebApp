@@ -14,6 +14,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 using VirtualWelshWalk.DataAccess.Models;
+using EmailService;
+using IEmailSender = EmailService.IEmailSender;
 
 namespace VirtualWelshWalk.Areas.Identity.Pages.Account
 {
@@ -141,8 +143,13 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
                             values: new { area = "Identity", userId = userId, code = code },
                             protocol: Request.Scheme);
 
-                        await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
+                        var message = new Message(new string[] { Input.Email }, "Confirm your email",
                             $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+
+                        await _emailSender.SendEmailAsync(message);
+
+                        //await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
+                        //    $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
                         // If account confirmation is required, we need to show the link if we don't have a real email sender
                         if (_userManager.Options.SignIn.RequireConfirmedAccount)

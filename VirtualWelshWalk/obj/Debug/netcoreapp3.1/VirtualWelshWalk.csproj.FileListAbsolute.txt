@@ -453,3 +453,9 @@ D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netco
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netcoreapp3.1\VirtualWelshWalk.Resources.app.cy.resources
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netcoreapp3.1\VirtualWelshWalk.csproj.GenerateResource.cache
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netcoreapp3.1\cy\VirtualWelshWalk.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\netcoreapp3.1\MailKit.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\netcoreapp3.1\MimeKit.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\netcoreapp3.1\NETCore.MailKit.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\netcoreapp3.1\EmailService.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\netcoreapp3.1\EmailService.pdb

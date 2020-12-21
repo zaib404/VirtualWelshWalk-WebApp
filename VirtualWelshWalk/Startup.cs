@@ -1,6 +1,8 @@
+using EmailService;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
@@ -13,6 +15,7 @@ using VirtualWelshWalk.DataAccess.CRUD;
 using VirtualWelshWalk.DataAccess.Data;
 using VirtualWelshWalk.DataAccess.Models;
 using VirtualWelshWalk.DataAccess.Services;
+using IEmailSender = EmailService.IEmailSender;
 
 namespace VirtualWelshWalk
 {
@@ -46,7 +49,20 @@ namespace VirtualWelshWalk
             services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<IdentityUser>>();
             //services.AddSingleton<WeatherForecastService>();
 
-            services.AddSingleton<IEmailSender, EmailSender>();
+            var emailConfig = Configuration
+                .GetSection("EmailConfiguration")
+                .Get<EmailConfiguration>();
+            services.AddSingleton(emailConfig);
+
+            services.AddScoped<IEmailSender, EmailSender>();
+
+
+            services.Configure<FormOptions>(o =>
+            {
+                o.ValueLengthLimit = int.MaxValue;
+                o.MultipartBodyLengthLimit = int.MaxValue;
+                o.MemoryBufferThreshold = int.MaxValue;
+            });
 
             services.AddScoped<IPeopleRepository, PeopleRepository>();
             services.AddScoped<IVirtualWalkRepository, VirtualWalkRepository>();

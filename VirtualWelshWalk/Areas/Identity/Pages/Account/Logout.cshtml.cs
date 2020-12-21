@@ -12,6 +12,7 @@ using VirtualWelshWalk.DataAccess.Models;
 namespace VirtualWelshWalk.Areas.Identity.Pages.Account
 {
     [AllowAnonymous]
+    [ValidateAntiForgeryToken]
     public class LogoutModel : PageModel
     {
         private readonly SignInManager<User> _signInManager;

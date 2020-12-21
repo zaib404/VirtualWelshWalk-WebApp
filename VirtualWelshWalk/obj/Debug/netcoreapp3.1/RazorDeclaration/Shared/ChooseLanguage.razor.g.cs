@@ -104,7 +104,7 @@ using VirtualWelshWalk.Shared;
 
     private void RequestCultureChange()
     {
-        if (string.IsNullOrWhiteSpace(selectedCulture))
+        if (string.IsNullOrWhiteSpace(selectedCulture) || !cultures.Values.Contains(selectedCulture))
         {
             return;
         }
