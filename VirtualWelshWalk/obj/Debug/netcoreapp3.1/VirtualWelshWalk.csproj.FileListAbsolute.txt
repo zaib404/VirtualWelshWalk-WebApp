@@ -459,3 +459,5 @@ D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\netco
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\netcoreapp3.1\EmailService.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\netcoreapp3.1\EmailService.pdb
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\VirtualMap.razor.g.cs
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\netcoreapp3.1\Razor\Pages\VirtualMap.razor.g.cs

@@ -1,0 +1,19 @@
+﻿@page "/Virtual Welsh Map"
+@inject IJSRuntime jsRunTime
+
+
+<h3>VirtualMap</h3>
+<div id='map' style='width: 400px; height: 300px;'></div>
+
+
+@code
+{
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await jsRunTime.InvokeVoidAsync("initialize", null);
+            StateHasChanged();
+        }
+    }
+}
