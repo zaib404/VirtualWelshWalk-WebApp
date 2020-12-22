@@ -76,35 +76,14 @@ using VirtualWelshWalk.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\InputSteps.razor"
-using DataAccess.Data;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 4 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\InputSteps.razor"
-using VirtualWelshWalk.DataAccess.Services;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 5 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\InputSteps.razor"
-using VirtualWelshWalk.DataAccess.Models;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
 #line 10 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
 [Authorize]
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/Input Virtual Steps")]
-    public partial class InputSteps : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/Virtual Welsh Map")]
+    public partial class VirtualMap : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -112,39 +91,21 @@ using VirtualWelshWalk.DataAccess.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 67 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\InputSteps.razor"
+#line 10 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
  
-    VirtualTotalSteps virtualSteps = new VirtualTotalSteps();
-
-    public People people { get; set; } = new People();
-    public VirtualWalk virtualWalk { get; set; } = new VirtualWalk();
-
-    string WalkName = "Welsh Coastal Walk";
-
-    bool UserInputDailyWalk = false;
-
-    protected override async Task OnInitializedAsync()
+    protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        people = await PeopleService.GetPeople();
-        virtualWalk = await WalkService.GetVirtualWalk(WalkName, people.PeopleId);
-
-        virtualSteps.TotalSteps = virtualWalk.TotalSteps;
-    }
-
-    async Task HandleValidSubmit()
-    {
-        virtualWalk.TotalSteps += virtualSteps.NewSteps;
-        await WalkService.UpdateVirtualWalk(virtualWalk);
-        virtualSteps.NewSteps = 0;
-        virtualSteps.TotalSteps = virtualWalk.TotalSteps;
-        UserInputDailyWalk = true;
+        if (firstRender)
+        {
+            await jsRunTime.InvokeVoidAsync("initialize", null);
+            StateHasChanged();
+        }
     }
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IPeopleService PeopleService { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IVirtualWalkService WalkService { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime jsRunTime { get; set; }
     }
 }
 #pragma warning restore 1591

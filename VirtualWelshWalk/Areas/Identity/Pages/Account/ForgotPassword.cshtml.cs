@@ -17,6 +17,7 @@ using IEmailSender = EmailService.IEmailSender;
 namespace VirtualWelshWalk.Areas.Identity.Pages.Account
 {
     [AllowAnonymous]
+    [ValidateAntiForgeryToken]
     public class ForgotPasswordModel : PageModel
     {
         private readonly UserManager<User> _userManager;
@@ -37,7 +38,7 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
             [EmailAddress]
             public string Email { get; set; }
         }
-
+                
         public async Task<IActionResult> OnPostAsync()
         {
             if (ModelState.IsValid)
