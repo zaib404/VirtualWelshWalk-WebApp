@@ -1,18 +1,21 @@
 ﻿@page "/Virtual Welsh Map"
 @inject IJSRuntime jsRunTime
 
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
 
 <h3>VirtualMap</h3>
-<div id='map' style='width: 400px; height: 300px;'></div>
 
+<div @ref="mapElement" id="map" style="width: 400px; height: 300px;"></div>
 
 @code
 {
+    ElementReference mapElement;
+
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
         {
-            await jsRunTime.InvokeVoidAsync("initialize", null);
+            await jsRunTime.InvokeVoidAsync("initialize", mapElement);
             StateHasChanged();
         }
     }
