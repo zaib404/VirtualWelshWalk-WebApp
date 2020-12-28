@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <UserSecretsId>aspnet-VirtualWelshWalk-C25F1E57-4AE8-42FC-8C4B-92865DC40EA2</UserSecretsId>
   </PropertyGroup>
 
