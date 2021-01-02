@@ -2,8 +2,11 @@
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiemFpYjk3IiwiYSI6ImNrajAzODdncTJuMWIycXNjOG1qZ2lnenkifQ.pyZXLfrmzU-f-FhoHMBd5Q';
 
+var personMarker = new mapboxgl.Marker();
+var map;
+
 export function initialize() {
-    var map = new mapboxgl.Map({
+    map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',
         center: [-2.676758, 51.696951],
@@ -30,6 +33,16 @@ export function initialize() {
             .addTo(map);
     });
 
+    // add markers to map
+    var el = document.createElement('div');
+    el.className = 'marker';
+
+    personMarker = new mapboxgl.Marker(el)
+        .setLngLat(directionAPI().routes[0].geometry.coordinates[0])
+        .setPopup(new mapboxgl.Popup({ offset: [0, -15] })
+            .setHTML('<h4>' + "You are here" + '</h4>'))
+        .addTo(map);
+
     map.on('load', function ()
     {
         drawPath(map);
@@ -37,8 +50,362 @@ export function initialize() {
 
 }
 
-function drawPath(map)
-{
+function welshMarkers() {
+    var geojson = {
+        "features": [
+            {
+                "type": "Feature",
+                "properties": {
+                    "title": "Tintern Abbey",
+                    "description": "Tintern Abbey - North On The A466, Tintern NP16 6SE"
+                },
+                "geometry": {
+                    "coordinates": [
+                        -2.676758,
+                        51.696951
+                    ],
+                    "type": "Point"
+                },
+                "id": "982b142c055bba0586864a635935db8f"
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "title": "Transporter Bridge",
+                    "description": "Stephenson Street, Newport NP20 2JG"
+                },
+                "geometry": {
+                    "coordinates": [
+                        -2.987047,
+                        51.571205
+                    ],
+                    "type": "Point"
+                },
+                "id": "53c32a4fc578bf46eefee4f16b97773c"
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "title": "Cardiff Castle",
+                    "description": "Castle Street, Cardiff CF10 3RB"
+                },
+                "geometry": {
+                    "coordinates": [
+                        -3.181199,
+                        51.4824
+                    ],
+                    "type": "Point"
+                },
+                "id": "67d840afa4062fbc507b41c2094d7aa0"
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "title": "Rest Bay Beach",
+                    "description": "Rest Bay Beach, Porthcawl CF36 3UW"
+                },
+                "geometry": {
+                    "coordinates": [
+                        -3.72351,
+                        51.489127
+                    ],
+                    "type": "Point"
+                },
+                "id": "10279b7a5a292ebb5cc5116c16182b9e"
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "title": "Mumbles Pier",
+                    "description": "Mumbles Road, Swansea SA3 4EN"
+                },
+                "geometry": {
+                    "coordinates": [
+                        -3.97508,
+                        51.569502
+                    ],
+                    "type": "Point"
+                },
+                "id": "ee1ec07050dd3cd4d88f347c1fc2fba4"
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "title": "Fall Bay",
+                    "description": "Fallbay Cottage Middleton, Rhossili, Swansea SA3 1PL"
+                },
+                "geometry": {
+                    "coordinates": [
+                        -4.291686,
+                        51.56257
+                    ],
+                    "type": "Point"
+                },
+                "id": "abb15fdd2a0fd622c30e76028ab358fc"
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "title": "Parc y Scarlets",
+                    "description": "Maes-Ar-Ddafen Road, Llanelli SA14 9UZ"
+                },
+                "geometry": {
+                    "coordinates": [
+                        -4.128228,
+                        51.678375
+                    ],
+                    "type": "Point"
+                },
+                "id": "b1047062dc5c4e0f0a29e68ad930229d"
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "title": "Kidwelly Castel",
+                    "description": "Castle Road, Kidwelly SA17 5BQ"
+                },
+                "geometry": {
+                    "coordinates": [
+                        -4.306339,
+                        51.739136
+                    ],
+                    "type": "Point"
+                },
+                "id": "c4351f3b33b42f96ef75519938f813a2"
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "title": "St Catherine’s Island",
+                    "description": "Castle Beach, Tenby SA70 7BL"
+                },
+                "geometry": {
+                    "coordinates": [
+                        -4.691669,
+                        51.670491
+                    ],
+                    "type": "Point"
+                },
+                "id": "87d27027f3bf2c78cdc52017b8c40a40"
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "title": "Barafundle Bay",
+                    "description": "Stackpole Estate, Stackpole SA71 5LS"
+                },
+                "geometry": {
+                    "coordinates": [
+                        -4.904206,
+                        51.618515
+                    ],
+                    "type": "Point"
+                },
+                "id": "5f7e1d4e344b60351a006d75bdd25c88"
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "title": "Stack Rock Fort",
+                    "description": "Pembrokeshire Coast Path, Milford Haven SA73 3RU"
+                },
+                "geometry": {
+                    "coordinates": [
+                        -5.092088,
+                        51.702564
+                    ],
+                    "type": "Point"
+                },
+                "id": "c4183cc4db13c7daf98ec3aa60c7926b"
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "title": "St Davids Cathedral",
+                    "description": "5A The Pebbles, St Davids SA62 6RD"
+                },
+                "geometry": {
+                    "coordinates": [
+                        -5.268446,
+                        51.882029
+                    ],
+                    "type": "Point"
+                },
+                "id": "eca38fed0eba8bc6b9a0fe5302f12285"
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "title": "Strumble Head Lighthouse",
+                    "description": "Pencaer SA64 0JL"
+                },
+                "geometry": {
+                    "coordinates": [
+                        -5.073719,
+                        52.029812
+                    ],
+                    "type": "Point"
+                },
+                "id": "ae70256aaf880e5542481cba38e73b30"
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "title": "Cardigan Castle",
+                    "description": "Cardigan Castle Green Street, Cardigan SA43 1JA"
+                },
+                "geometry": {
+                    "coordinates": [
+                        -4.660491,
+                        52.081882
+                    ],
+                    "type": "Point"
+                },
+                "id": "9ec4d5b31a2711d39d1028e1f0ec68fc"
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "title": "St Padarns Church",
+                    "description": "Terrace Road, Aberystwyth SY23 2AG"
+                },
+                "geometry": {
+                    "coordinates": [
+                        -4.060874,
+                        52.409171
+                    ],
+                    "type": "Point"
+                },
+                "id": "1fc57f80d88f70b905c43bc1c507a77d"
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "title": "Round House",
+                    "description": "Barmouth LL42 1HA"
+                },
+                "geometry": {
+                    "coordinates": [
+                        -4.052523,
+                        52.719298
+                    ],
+                    "type": "Point"
+                },
+                "id": "87029f6ced6acae3b6614c38abb65c13"
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "title": "Harlech Castle",
+                    "description": "Ffordd Newydd Road, Harlech LL46 2YH"
+                },
+                "geometry": {
+                    "coordinates": [
+                        -4.108899,
+                        52.860019
+                    ],
+                    "type": "Point"
+                },
+                "id": "5ffa9ef7f5e6197fb9f7f51f5656bb07"
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "title": "Nant Gwrtheyrnh",
+                    "description": "Nant Gwrtheyrn, Llithfaen, Pwllheli, Gwynedd, Wales, Ll53 6Nl, Pwllheli LL53 6NL"
+                },
+                "geometry": {
+                    "coordinates": [
+                        -4.458386,
+                        52.975466
+                    ],
+                    "type": "Point"
+                },
+                "id": "3d4a106e6755dbb19e3b03d9b2f74cdb"
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "title": "Bedd Gelert",
+                    "description": "Dryll Beddgelert, Beddgelert LL55 4NE"
+                },
+                "geometry": {
+                    "coordinates": [
+                        -4.102831,
+                        53.011968
+                    ],
+                    "type": "Point"
+                },
+                "id": "bc3136dbdf29786e63fe07e515827bd7"
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "title": "Caernarfon Castle",
+                    "description": "Castle Ditch, Caernarfon LL55 2AY"
+                },
+                "geometry": {
+                    "coordinates": [
+                        -4.276934,
+                        53.139147
+                    ],
+                    "type": "Point"
+                },
+                "id": "f6030bace85547914f0b8e026f1d7967"
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "title": "Beaumaris Castle",
+                    "description": "Castle Street, Beaumaris LL58 8AP"
+                },
+                "geometry": {
+                    "coordinates": [
+                        -4.089712,
+                        53.264872
+                    ],
+                    "type": "Point"
+                },
+                "id": "9d7a907aa415d2d27aff589b3f117ed2"
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "title": "Conwy Castle",
+                    "description": "Rose Hill Street, Conwy LL32 8AY"
+                },
+                "geometry": {
+                    "coordinates": [
+                        -3.825617,
+                        53.280071
+                    ],
+                    "type": "Point"
+                },
+                "id": "8bcf34fd15159cf32503b295910ccc19"
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                    "title": "City Walls",
+                    "description": "St Martins Way, Chester CH1 2NR"
+                },
+                "geometry": {
+                    "coordinates": [
+                        -2.890298,
+                        53.193988
+                    ],
+                    "type": "Point"
+                },
+                "id": "9f445beda59430ad2ca78c4669971c64"
+            }
+        ],
+        "type": "FeatureCollection"
+    }
+
+    return geojson;
+}
+
+function drawPath(map) {
     var json = directionAPI();
     var data = json.routes[0];
     var route = data.geometry.coordinates;
@@ -76,361 +443,6 @@ function drawPath(map)
             'line-opacity': 0.75
         }
     });
-}
-
-function welshMarkers() {
-    var geojson = {
-        "features": [
-            {
-                "type": "Feature",
-                "properties": {
-                    "title": "Rest Bay Beach",
-                    "description": "Rest Bay Beach, Porthcawl CF36 3UW"
-                },
-                "geometry": {
-                    "coordinates": [
-                        -3.72351,
-                        51.489127
-                    ],
-                    "type": "Point"
-                },
-                "id": "10279b7a5a292ebb5cc5116c16182b9e"
-            },
-            {
-                "type": "Feature",
-                "properties": {
-                    "title": "St Padarns Church",
-                    "description": "Terrace Road, Aberystwyth SY23 2AG"
-                },
-                "geometry": {
-                    "coordinates": [
-                        -4.060874,
-                        52.409171
-                    ],
-                    "type": "Point"
-                },
-                "id": "1fc57f80d88f70b905c43bc1c507a77d"
-            },
-            {
-                "type": "Feature",
-                "properties": {
-                    "title": "Nant Gwrtheyrnh",
-                    "description": "Nant Gwrtheyrn, Llithfaen, Pwllheli, Gwynedd, Wales, Ll53 6Nl, Pwllheli LL53 6NL"
-                },
-                "geometry": {
-                    "coordinates": [
-                        -4.458386,
-                        52.975466
-                    ],
-                    "type": "Point"
-                },
-                "id": "3d4a106e6755dbb19e3b03d9b2f74cdb"
-            },
-            {
-                "type": "Feature",
-                "properties": {
-                    "title": "Transporter Bridge",
-                    "description": "Stephenson Street, Newport NP20 2JG"
-                },
-                "geometry": {
-                    "coordinates": [
-                        -2.987047,
-                        51.571205
-                    ],
-                    "type": "Point"
-                },
-                "id": "53c32a4fc578bf46eefee4f16b97773c"
-            },
-            {
-                "type": "Feature",
-                "properties": {
-                    "title": "Barafundle Bay",
-                    "description": "Stackpole Estate, Stackpole SA71 5LS"
-                },
-                "geometry": {
-                    "coordinates": [
-                        -4.904206,
-                        51.618515
-                    ],
-                    "type": "Point"
-                },
-                "id": "5f7e1d4e344b60351a006d75bdd25c88"
-            },
-            {
-                "type": "Feature",
-                "properties": {
-                    "title": "Harlech Castle",
-                    "description": "Ffordd Newydd Road, Harlech LL46 2YH"
-                },
-                "geometry": {
-                    "coordinates": [
-                        -4.108899,
-                        52.860019
-                    ],
-                    "type": "Point"
-                },
-                "id": "5ffa9ef7f5e6197fb9f7f51f5656bb07"
-            },
-            {
-                "type": "Feature",
-                "properties": {
-                    "title": "Cardiff Castle",
-                    "description": "Castle Street, Cardiff CF10 3RB"
-                },
-                "geometry": {
-                    "coordinates": [
-                        -3.181199,
-                        51.4824
-                    ],
-                    "type": "Point"
-                },
-                "id": "67d840afa4062fbc507b41c2094d7aa0"
-            },
-            {
-                "type": "Feature",
-                "properties": {
-                    "title": "Round House",
-                    "description": "Barmouth LL42 1HA"
-                },
-                "geometry": {
-                    "coordinates": [
-                        -4.052523,
-                        52.719298
-                    ],
-                    "type": "Point"
-                },
-                "id": "87029f6ced6acae3b6614c38abb65c13"
-            },
-            {
-                "type": "Feature",
-                "properties": {
-                    "title": "St Catherine’s Island",
-                    "description": "Castle Beach, Tenby SA70 7BL"
-                },
-                "geometry": {
-                    "coordinates": [
-                        -4.691669,
-                        51.670491
-                    ],
-                    "type": "Point"
-                },
-                "id": "87d27027f3bf2c78cdc52017b8c40a40"
-            },
-            {
-                "type": "Feature",
-                "properties": {
-                    "title": "Conwy Castle",
-                    "description": "Rose Hill Street, Conwy LL32 8AY"
-                },
-                "geometry": {
-                    "coordinates": [
-                        -3.825617,
-                        53.280071
-                    ],
-                    "type": "Point"
-                },
-                "id": "8bcf34fd15159cf32503b295910ccc19"
-            },
-            {
-                "type": "Feature",
-                "properties": {
-                    "title": "Tintern Abbey",
-                    "description": "Tintern Abbey - North On The A466, Tintern NP16 6SE"
-                },
-                "geometry": {
-                    "coordinates": [
-                        -2.676758,
-                        51.696951
-                    ],
-                    "type": "Point"
-                },
-                "id": "982b142c055bba0586864a635935db8f"
-            },
-            {
-                "type": "Feature",
-                "properties": {
-                    "title": "Beaumaris Castle",
-                    "description": "Castle Street, Beaumaris LL58 8AP"
-                },
-                "geometry": {
-                    "coordinates": [
-                        -4.089712,
-                        53.264872
-                    ],
-                    "type": "Point"
-                },
-                "id": "9d7a907aa415d2d27aff589b3f117ed2"
-            },
-            {
-                "type": "Feature",
-                "properties": {
-                    "title": "Cardigan Castle",
-                    "description": "Cardigan Castle Green Street, Cardigan SA43 1JA"
-                },
-                "geometry": {
-                    "coordinates": [
-                        -4.660491,
-                        52.081882
-                    ],
-                    "type": "Point"
-                },
-                "id": "9ec4d5b31a2711d39d1028e1f0ec68fc"
-            },
-            {
-                "type": "Feature",
-                "properties": {
-                    "title": "City Walls",
-                    "description": "St Martins Way, Chester CH1 2NR"
-                },
-                "geometry": {
-                    "coordinates": [
-                        -2.890298,
-                        53.193988
-                    ],
-                    "type": "Point"
-                },
-                "id": "9f445beda59430ad2ca78c4669971c64"
-            },
-            {
-                "type": "Feature",
-                "properties": {
-                    "title": "Fall Bay",
-                    "description": "Fallbay Cottage Middleton, Rhossili, Swansea SA3 1PL"
-                },
-                "geometry": {
-                    "coordinates": [
-                        -4.291686,
-                        51.56257
-                    ],
-                    "type": "Point"
-                },
-                "id": "abb15fdd2a0fd622c30e76028ab358fc"
-            },
-            {
-                "type": "Feature",
-                "properties": {
-                    "title": "Strumble Head Lighthouse",
-                    "description": "Pencaer SA64 0JL"
-                },
-                "geometry": {
-                    "coordinates": [
-                        -5.073719,
-                        52.029812
-                    ],
-                    "type": "Point"
-                },
-                "id": "ae70256aaf880e5542481cba38e73b30"
-            },
-            {
-                "type": "Feature",
-                "properties": {
-                    "title": "Parc y Scarlets",
-                    "description": "Maes-Ar-Ddafen Road, Llanelli SA14 9UZ"
-                },
-                "geometry": {
-                    "coordinates": [
-                        -4.128228,
-                        51.678375
-                    ],
-                    "type": "Point"
-                },
-                "id": "b1047062dc5c4e0f0a29e68ad930229d"
-            },
-            {
-                "type": "Feature",
-                "properties": {
-                    "title": "Bedd Gelert",
-                    "description": "Dryll Beddgelert, Beddgelert LL55 4NE"
-                },
-                "geometry": {
-                    "coordinates": [
-                        -4.102831,
-                        53.011968
-                    ],
-                    "type": "Point"
-                },
-                "id": "bc3136dbdf29786e63fe07e515827bd7"
-            },
-            {
-                "type": "Feature",
-                "properties": {
-                    "title": "Stack Rock Fort",
-                    "description": "Pembrokeshire Coast Path, Milford Haven SA73 3RU"
-                },
-                "geometry": {
-                    "coordinates": [
-                        -5.092088,
-                        51.702564
-                    ],
-                    "type": "Point"
-                },
-                "id": "c4183cc4db13c7daf98ec3aa60c7926b"
-            },
-            {
-                "type": "Feature",
-                "properties": {
-                    "title": "Kidwelly Castel",
-                    "description": "Castle Road, Kidwelly SA17 5BQ"
-                },
-                "geometry": {
-                    "coordinates": [
-                        -4.306339,
-                        51.739136
-                    ],
-                    "type": "Point"
-                },
-                "id": "c4351f3b33b42f96ef75519938f813a2"
-            },
-            {
-                "type": "Feature",
-                "properties": {
-                    "title": "St Davids Cathedral",
-                    "description": "5A The Pebbles, St Davids SA62 6RD"
-                },
-                "geometry": {
-                    "coordinates": [
-                        -5.268446,
-                        51.882029
-                    ],
-                    "type": "Point"
-                },
-                "id": "eca38fed0eba8bc6b9a0fe5302f12285"
-            },
-            {
-                "type": "Feature",
-                "properties": {
-                    "title": "Mumbles Pier",
-                    "description": "Mumbles Road, Swansea SA3 4EN"
-                },
-                "geometry": {
-                    "coordinates": [
-                        -3.97508,
-                        51.569502
-                    ],
-                    "type": "Point"
-                },
-                "id": "ee1ec07050dd3cd4d88f347c1fc2fba4"
-            },
-            {
-                "type": "Feature",
-                "properties": {
-                    "title": "Caernarfon Castle",
-                    "description": "Castle Ditch, Caernarfon LL55 2AY"
-                },
-                "geometry": {
-                    "coordinates": [
-                        -4.276934,
-                        53.139147
-                    ],
-                    "type": "Point"
-                },
-                "id": "f6030bace85547914f0b8e026f1d7967"
-            }
-        ],
-        "type": "FeatureCollection"
-    }
-
-    return geojson;
 }
 
 function directionAPI() {
@@ -4984,4 +4996,9 @@ function directionAPI() {
     }
 
     return directions;
+}
+
+export function updatePersonIcon(index)
+{
+    personMarker.setLngLat(directionAPI().routes[0].geometry.coordinates[index]);
 }

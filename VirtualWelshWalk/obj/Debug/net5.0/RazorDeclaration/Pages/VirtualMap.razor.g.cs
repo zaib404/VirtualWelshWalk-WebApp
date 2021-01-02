@@ -76,6 +76,27 @@ using VirtualWelshWalk.Shared;
 #line hidden
 #nullable disable
 #nullable restore
+#line 3 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
+using DataAccess.Data;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
+using VirtualWelshWalk.DataAccess.Services;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
+using VirtualWelshWalk.DataAccess.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 10 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
 [Authorize]
 
@@ -83,7 +104,7 @@ using VirtualWelshWalk.Shared;
 #line hidden
 #nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/Virtual Welsh Map")]
-    public partial class VirtualMap : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class VirtualMap : Microsoft.AspNetCore.Components.ComponentBase, IAsyncDisposable
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -91,11 +112,17 @@ using VirtualWelshWalk.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 11 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
+#line 39 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
  
     ElementReference mapElement;
     IJSObjectReference mapModule;
     IJSObjectReference mapInstance;
+
+    public People people { get; set; } = new People();
+    public VirtualWalk virtualWalk { get; set; } = new VirtualWalk();
+    string WalkName = "Welsh Coastal Walk";
+
+    CalculatePersonsPosition calculatePerson = new CalculatePersonsPosition();
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -108,12 +135,46 @@ using VirtualWelshWalk.Shared;
 
             StateHasChanged();
         }
+
+        if (virtualWalk.TotalSteps >= 1)
+        {
+            await mapModule.InvokeVoidAsync("updatePersonIcon", 5);
+        }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        people = await PeopleService.GetPeople();
+        virtualWalk = await WalkService.GetVirtualWalk(WalkName, people.PeopleId);
+    }
+
+    async Task UpdatePersonLocation()
+    {
+        if (virtualWalk.TotalSteps >= 1)
+        {
+            await mapModule.InvokeVoidAsync("updatePersonIcon", 5);
+        }
+    }
+
+    async ValueTask IAsyncDisposable.DisposeAsync()
+    {
+        if (mapInstance != null)
+        {
+            await mapInstance.DisposeAsync();
+        }
+
+        if (mapModule != null)
+        {
+            await mapModule.DisposeAsync();
+        }
     }
 
 #line default
 #line hidden
 #nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime jsRunTime { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IPeopleService PeopleService { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IVirtualWalkService WalkService { get; set; }
     }
 }
 #pragma warning restore 1591
