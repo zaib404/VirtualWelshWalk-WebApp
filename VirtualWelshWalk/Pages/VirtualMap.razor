@@ -7,8 +7,8 @@
 @inject IVirtualWalkService WalkService
 @inject IPeopleService PeopleService
 @inject IJSRuntime jsRunTime
-@implements IAsyncDisposable
 
+@*@implements IAsyncDisposable*@
 
 <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
 
@@ -32,18 +32,16 @@
 else
 {
     <div @ref="mapElement" id="map" style="position:fixed; width: 50%; height: 50%;"></div>
-    //UpdatePersonLocation();
 }
 
 @code
 {
-    ElementReference mapElement;
-    IJSObjectReference mapModule;
-    IJSObjectReference mapInstance;
-
     public People people { get; set; } = new People();
     public VirtualWalk virtualWalk { get; set; } = new VirtualWalk();
     string WalkName = "Welsh Coastal Walk";
+
+    ElementReference mapElement;
+    IJSObjectReference mapModule, mapInstance;
 
     CalculatePersonsPosition calculatePerson = new CalculatePersonsPosition();
 
@@ -59,9 +57,9 @@ else
             StateHasChanged();
         }
 
-        if (virtualWalk.TotalSteps >= 1)
+        if (virtualWalk != null && mapModule != null)
         {
-            await mapModule.InvokeVoidAsync("updatePersonIcon", 5);
+            await UpdatePersonLocation();
         }
     }
 
@@ -73,22 +71,22 @@ else
 
     async Task UpdatePersonLocation()
     {
-        if (virtualWalk.TotalSteps >= 1)
+        if (virtualWalk.TotalSteps >= 0)
         {
-            await mapModule.InvokeVoidAsync("updatePersonIcon", 5);
+            await mapModule.InvokeVoidAsync("updatePersonIcon", calculatePerson.NewPosition(virtualWalk.TotalSteps));
         }
     }
 
-    async ValueTask IAsyncDisposable.DisposeAsync()
-    {
-        if (mapInstance != null)
-        {
-            await mapInstance.DisposeAsync();
-        }
+    //async ValueTask IAsyncDisposable.DisposeAsync()
+    //{
+    //    if (mapInstance != null)
+    //    {
+    //        await mapInstance.DisposeAsync();
+    //    }
 
-        if (mapModule != null)
-        {
-            await mapModule.DisposeAsync();
-        }
-    }
+    //    if (mapModule != null)
+    //    {
+    //        await mapModule.DisposeAsync();
+    //    }
+    //}
 }

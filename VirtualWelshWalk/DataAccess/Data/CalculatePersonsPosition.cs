@@ -8,10 +8,11 @@ namespace VirtualWelshWalk.DataAccess.Data
     public class CalculatePersonsPosition
     {
 
-        public int NewPosition(int totalSteps)
+        public double NewPosition(int totalSteps)
         {
-
-            return 0;
+            // Convert to kilometers 
+            return Convert.ToDouble(totalSteps / 1312.33595801);
         }
+
     }
 }

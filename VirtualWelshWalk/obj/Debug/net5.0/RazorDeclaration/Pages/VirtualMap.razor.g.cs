@@ -104,7 +104,7 @@ using VirtualWelshWalk.DataAccess.Models;
 #line hidden
 #nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/Virtual Welsh Map")]
-    public partial class VirtualMap : Microsoft.AspNetCore.Components.ComponentBase, IAsyncDisposable
+    public partial class VirtualMap : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -112,15 +112,14 @@ using VirtualWelshWalk.DataAccess.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 39 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
+#line 38 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
  
-    ElementReference mapElement;
-    IJSObjectReference mapModule;
-    IJSObjectReference mapInstance;
-
     public People people { get; set; } = new People();
     public VirtualWalk virtualWalk { get; set; } = new VirtualWalk();
     string WalkName = "Welsh Coastal Walk";
+
+    ElementReference mapElement;
+    IJSObjectReference mapModule, mapInstance;
 
     CalculatePersonsPosition calculatePerson = new CalculatePersonsPosition();
 
@@ -136,9 +135,9 @@ using VirtualWelshWalk.DataAccess.Models;
             StateHasChanged();
         }
 
-        if (virtualWalk.TotalSteps >= 1)
+        if (virtualWalk != null && mapModule != null)
         {
-            await mapModule.InvokeVoidAsync("updatePersonIcon", 5);
+            await UpdatePersonLocation();
         }
     }
 
@@ -150,24 +149,24 @@ using VirtualWelshWalk.DataAccess.Models;
 
     async Task UpdatePersonLocation()
     {
-        if (virtualWalk.TotalSteps >= 1)
+        if (virtualWalk.TotalSteps >= 0)
         {
-            await mapModule.InvokeVoidAsync("updatePersonIcon", 5);
+            await mapModule.InvokeVoidAsync("updatePersonIcon", calculatePerson.NewPosition(virtualWalk.TotalSteps));
         }
     }
 
-    async ValueTask IAsyncDisposable.DisposeAsync()
-    {
-        if (mapInstance != null)
-        {
-            await mapInstance.DisposeAsync();
-        }
+    //async ValueTask IAsyncDisposable.DisposeAsync()
+    //{
+    //    if (mapInstance != null)
+    //    {
+    //        await mapInstance.DisposeAsync();
+    //    }
 
-        if (mapModule != null)
-        {
-            await mapModule.DisposeAsync();
-        }
-    }
+    //    if (mapModule != null)
+    //    {
+    //        await mapModule.DisposeAsync();
+    //    }
+    //}
 
 #line default
 #line hidden

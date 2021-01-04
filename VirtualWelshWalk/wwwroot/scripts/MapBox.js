@@ -1,4 +1,4 @@
-﻿import 'https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js';
+﻿import './ExternalScripts.js';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiemFpYjk3IiwiYSI6ImNrajAzODdncTJuMWIycXNjOG1qZ2lnenkifQ.pyZXLfrmzU-f-FhoHMBd5Q';
 
@@ -6,6 +6,7 @@ var personMarker = new mapboxgl.Marker();
 var map;
 
 export function initialize() {
+
     map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',
@@ -5000,5 +5001,33 @@ function directionAPI() {
 
 export function updatePersonIcon(index)
 {
-    personMarker.setLngLat(directionAPI().routes[0].geometry.coordinates[index]);
+    var json = directionAPI();
+    var data = json.routes[0];
+    var route = data.geometry.coordinates;
+
+    var alongLine = {
+        type: 'Feature',
+        geometry: {
+            type: 'LineString',
+            coordinates: route
+        }
+    };
+
+    var options = { units: 'kilometers' };
+    var along = turf.along(alongLine, index, options);
+    personMarker.setLngLat(along.geometry.coordinates);
+
+    colourPath(alongLine);
+
+    //personMarker.setLngLat(directionAPI().routes[0].geometry.coordinates[index]);
+}
+
+function colourPath(alongLine)
+{
+    var targetPoint = [personMarker._lngLat.lng, personMarker._lngLat.lat];
+
+    var points = turf.helpers.featureCollection(alongLine.features);
+
+
+    var neaest = turf.nearestPoint(targetPoint, points.features);
 }
