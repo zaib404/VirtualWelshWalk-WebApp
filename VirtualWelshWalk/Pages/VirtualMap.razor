@@ -8,8 +8,6 @@
 @inject IPeopleService PeopleService
 @inject IJSRuntime jsRunTime
 
-@*@implements IAsyncDisposable*@
-
 <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
 
 <style>
@@ -31,6 +29,13 @@
 }
 else
 {
+    <br />
+    <br />
+    <br />
+    <p id="demo">  test  @err</p>
+    <br />
+    <br />
+    <br />
     <div @ref="mapElement" id="map" style="position:fixed; width: 50%; height: 50%;"></div>
 }
 
@@ -42,6 +47,7 @@ else
 
     ElementReference mapElement;
     IJSObjectReference mapModule, mapInstance;
+    string err = "";
 
     CalculatePersonsPosition calculatePerson = new CalculatePersonsPosition();
 
@@ -49,10 +55,11 @@ else
     {
         if (firstRender)
         {
+
             mapModule = await jsRunTime.InvokeAsync<IJSObjectReference>(
-                "import", "./scripts/MapBox.js");
+               "import", "./scripts/MapBox.js").AsTask();
             mapInstance = await mapModule.InvokeAsync<IJSObjectReference>(
-                "initialize", mapElement);
+                "initialize", mapElement).AsTask();
 
             StateHasChanged();
         }
@@ -73,20 +80,16 @@ else
     {
         if (virtualWalk.TotalSteps >= 0)
         {
-            await mapModule.InvokeVoidAsync("updatePersonIcon", calculatePerson.NewPosition(virtualWalk.TotalSteps));
+            try
+            {
+                await mapModule.InvokeVoidAsync("updatePersonIcon", calculatePerson.NewPosition(virtualWalk.TotalSteps));
+
+            }
+            catch (Exception e)
+            {
+
+                err = e.Message.ToString();
+            }
         }
     }
-
-    //async ValueTask IAsyncDisposable.DisposeAsync()
-    //{
-    //    if (mapInstance != null)
-    //    {
-    //        await mapInstance.DisposeAsync();
-    //    }
-
-    //    if (mapModule != null)
-    //    {
-    //        await mapModule.DisposeAsync();
-    //    }
-    //}
 }

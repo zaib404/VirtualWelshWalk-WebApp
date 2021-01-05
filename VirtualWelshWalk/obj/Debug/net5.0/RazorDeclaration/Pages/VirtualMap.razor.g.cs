@@ -112,7 +112,7 @@ using VirtualWelshWalk.DataAccess.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 38 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
+#line 43 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
  
     public People people { get; set; } = new People();
     public VirtualWalk virtualWalk { get; set; } = new VirtualWalk();
@@ -120,6 +120,7 @@ using VirtualWelshWalk.DataAccess.Models;
 
     ElementReference mapElement;
     IJSObjectReference mapModule, mapInstance;
+    string err = "";
 
     CalculatePersonsPosition calculatePerson = new CalculatePersonsPosition();
 
@@ -127,10 +128,11 @@ using VirtualWelshWalk.DataAccess.Models;
     {
         if (firstRender)
         {
+
             mapModule = await jsRunTime.InvokeAsync<IJSObjectReference>(
-                "import", "./scripts/MapBox.js");
+               "import", "./scripts/MapBox.js").AsTask();
             mapInstance = await mapModule.InvokeAsync<IJSObjectReference>(
-                "initialize", mapElement);
+                "initialize", mapElement).AsTask();
 
             StateHasChanged();
         }
@@ -151,22 +153,18 @@ using VirtualWelshWalk.DataAccess.Models;
     {
         if (virtualWalk.TotalSteps >= 0)
         {
-            await mapModule.InvokeVoidAsync("updatePersonIcon", calculatePerson.NewPosition(virtualWalk.TotalSteps));
+            try
+            {
+                await mapModule.InvokeVoidAsync("updatePersonIcon", calculatePerson.NewPosition(virtualWalk.TotalSteps));
+
+            }
+            catch (Exception e)
+            {
+
+                err = e.Message.ToString();
+            }
         }
     }
-
-    //async ValueTask IAsyncDisposable.DisposeAsync()
-    //{
-    //    if (mapInstance != null)
-    //    {
-    //        await mapInstance.DisposeAsync();
-    //    }
-
-    //    if (mapModule != null)
-    //    {
-    //        await mapModule.DisposeAsync();
-    //    }
-    //}
 
 #line default
 #line hidden
