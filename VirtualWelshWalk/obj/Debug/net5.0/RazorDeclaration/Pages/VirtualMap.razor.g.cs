@@ -104,7 +104,7 @@ using VirtualWelshWalk.DataAccess.Models;
 #line hidden
 #nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/Virtual Welsh Map")]
-    public partial class VirtualMap : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class VirtualMap : Microsoft.AspNetCore.Components.ComponentBase, IAsyncDisposable
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -112,7 +112,7 @@ using VirtualWelshWalk.DataAccess.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 43 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
+#line 46 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
  
     public People people { get; set; } = new People();
     public VirtualWalk virtualWalk { get; set; } = new VirtualWalk();
@@ -120,7 +120,6 @@ using VirtualWelshWalk.DataAccess.Models;
 
     ElementReference mapElement;
     IJSObjectReference mapModule, mapInstance;
-    string err = "";
 
     CalculatePersonsPosition calculatePerson = new CalculatePersonsPosition();
 
@@ -153,16 +152,20 @@ using VirtualWelshWalk.DataAccess.Models;
     {
         if (virtualWalk.TotalSteps >= 0)
         {
-            try
-            {
-                await mapModule.InvokeVoidAsync("updatePersonIcon", calculatePerson.NewPosition(virtualWalk.TotalSteps));
+            await mapModule.InvokeVoidAsync("updatePersonIcon", calculatePerson.NewPosition(virtualWalk.TotalSteps));
+        }
+    }
 
-            }
-            catch (Exception e)
-            {
+    async ValueTask IAsyncDisposable.DisposeAsync()
+    {
+        if (mapInstance != null)
+        {
+            await mapInstance.DisposeAsync();
+        }
 
-                err = e.Message.ToString();
-            }
+        if (mapModule != null)
+        {
+            await mapModule.DisposeAsync();
         }
     }
 

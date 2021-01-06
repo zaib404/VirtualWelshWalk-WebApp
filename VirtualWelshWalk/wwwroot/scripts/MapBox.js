@@ -11,7 +11,7 @@ var mapRouteJson;
 function readJSON(file) {
     var request = new XMLHttpRequest();
     request.open("GET", file, false);
-    request.send(null)
+    request.send(null);
     return JSON.parse(request.responseText);
 };
 
@@ -36,11 +36,16 @@ export function initialize() {
 
     // add markers to map
     WelshWalkMarker.features.forEach(function (marker) {
+
+        var e = document.createElement('div');
+        e.className = 'marker1';
+        e.style.backgroundImage = "url('./Assets/Map-Icon.png')";
+
         var popup = new mapboxgl.Popup({ offset: [0, -15] })
             .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>');
 
         // add marker to map
-        new mapboxgl.Marker()
+        new mapboxgl.Marker(e)
             .setLngLat(marker.geometry.coordinates)
             .setPopup(popup)
             .addTo(map);
@@ -50,6 +55,7 @@ export function initialize() {
     var el = document.createElement('div');
     el.className = 'marker';
 
+    //el.style.backgroundImage = "url('./Assets/Walking-Man.png')";
 
     personMarker = new mapboxgl.Marker(el)
         .setLngLat(mapRouteJson.routes[0].geometry.coordinates[0])
@@ -62,6 +68,8 @@ export function initialize() {
             colourPath();
         }
     });
+
+    return map;
 
 }
 

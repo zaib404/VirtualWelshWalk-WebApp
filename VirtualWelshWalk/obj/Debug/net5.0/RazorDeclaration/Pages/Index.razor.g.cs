@@ -101,7 +101,7 @@ using VirtualWelshWalk.Shared;
 #line 9 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\Index.razor"
        
 
-    private string test = "Hello World";
+    private string Welcome = "Welcome to Educ8’s Welsh Cultural Coastal Walk";
 
 #line default
 #line hidden

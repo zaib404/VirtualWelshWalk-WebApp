@@ -117,7 +117,289 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Hello World" xml:space="preserve">
-    <value>Hello World</value>
+  <data name="Aberystwyth" xml:space="preserve">
+    <value>Aberystwyth</value>
+  </data>
+  <data name="Aberystwyth to Barmouth (Round House) 40 miles" xml:space="preserve">
+    <value>Aberystwyth to Barmouth (Round House) 40 miles</value>
+  </data>
+  <data name="Anglesey" xml:space="preserve">
+    <value>Anglesey</value>
+  </data>
+  <data name="Anglesey to Conwy (Conwy Castle) 27 miles" xml:space="preserve">
+    <value>Anglesey to Conwy (Conwy Castle) 27 miles</value>
+  </data>
+  <data name="Barafundle Bay" xml:space="preserve">
+    <value>Barafundle Bay</value>
+  </data>
+  <data name="Barafundle Bay was named in Passport Magazine’s best beaches in the world. The remote sand patch came 17th in the top 25. Barafundle Bay is a remote, slightly curved, east-facing sandy beach in Pembrokeshire, Wales, near Stackpole Quay and is part of the Stackpole Estate, managed by The National Trust." xml:space="preserve">
+    <value>Barafundle Bay was named in Passport Magazine’s best beaches in the world. The remote sand patch came 17th in the top 25. Barafundle Bay is a remote, slightly curved, east-facing sandy beach in Pembrokeshire, Wales, near Stackpole Quay and is part of the Stackpole Estate, managed by The National Trust.</value>
+  </data>
+  <data name="Barmouth" xml:space="preserve">
+    <value>Barmouth</value>
+  </data>
+  <data name="Barmouth to Harlech (Harlech Castle) 11 miles" xml:space="preserve">
+    <value>Barmouth to Harlech (Harlech Castle) 11 miles</value>
+  </data>
+  <data name="Beaumaris Castle" xml:space="preserve">
+    <value>Beaumaris Castle</value>
+  </data>
+  <data name="Beaumaris on the island of Anglesey is famous as the greatest castle never built. It was the last of the royal strongholds created by Edward I in Wales – and perhaps his masterpiece. Beaumaris Castle was never fully built, but had it been completed it would probably have closely resembled Harlech Castle. Both castles are concentric in plan, with walls within walls, although Beaumaris is the more regular in design." xml:space="preserve">
+    <value>Beaumaris on the island of Anglesey is famous as the greatest castle never built. It was the last of the royal strongholds created by Edward I in Wales – and perhaps his masterpiece. Beaumaris Castle was never fully built, but had it been completed it would probably have closely resembled Harlech Castle. Both castles are concentric in plan, with walls within walls, although Beaumaris is the more regular in design.</value>
+  </data>
+  <data name="Bedd Gelert" xml:space="preserve">
+    <value>Bedd Gelert</value>
+  </data>
+  <data name="Beddgelert is a village and community in the Snowdonia area of Gwynedd, Wales. It is reputed to be named after the legendary hound Gelert. Gelert is a legendary dog associated with the village of Beddgelert (whose name means &quot;Gelert's Grave&quot;) in Gwynedd, north-west Wales. In the legend, Llywelyn the Great returns from hunting to find his baby missing, the cradle overturned, and Gelert with a blood-smeared mouth. Believing the dog had savaged the child, Llywelyn draws his sword and kills Gelert. After the dog's dying yelp Llywelyn hears the cries of the baby, unharmed under the cradle, along with a dead wolf which had attacked the child and been killed by Gelert. Llywelyn is overcome with remorse and buries the dog with great ceremony, but can still hear its dying yelp. After that day Llywelyn never smiles again." xml:space="preserve">
+    <value>Beddgelert is a village and community in the Snowdonia area of Gwynedd, Wales. It is reputed to be named after the legendary hound Gelert. Gelert is a legendary dog associated with the village of Beddgelert (whose name means "Gelert's Grave") in Gwynedd, north-west Wales. In the legend, Llywelyn the Great returns from hunting to find his baby missing, the cradle overturned, and Gelert with a blood-smeared mouth. Believing the dog had savaged the child, Llywelyn draws his sword and kills Gelert. After the dog's dying yelp Llywelyn hears the cries of the baby, unharmed under the cradle, along with a dead wolf which had attacked the child and been killed by Gelert. Llywelyn is overcome with remorse and buries the dog with great ceremony, but can still hear its dying yelp. After that day Llywelyn never smiles again.</value>
+  </data>
+  <data name="Caernarfon" xml:space="preserve">
+    <value>Caernarfon</value>
+  </data>
+  <data name="Caernarfon Castle" xml:space="preserve">
+    <value>Caernarfon Castle</value>
+  </data>
+  <data name="Caernarfon Castle is a medieval fortress in Caernarfon, Gwynedd, north-west Wales cared for by Cadw, the Welsh Government's historic environment service. It was a motte-and-bailey castle from the late 11th century until 1283 when King Edward I of England began to replace it with the current stone structure." xml:space="preserve">
+    <value>Caernarfon Castle is a medieval fortress in Caernarfon, Gwynedd, north-west Wales cared for by Cadw, the Welsh Government's historic environment service. It was a motte-and-bailey castle from the late 11th century until 1283 when King Edward I of England began to replace it with the current stone structure.</value>
+  </data>
+  <data name="Caernarfon to Anglesey (Beaumaris Castle) 13 miles" xml:space="preserve">
+    <value>Caernarfon to Anglesey (Beaumaris Castle) 13 miles</value>
+  </data>
+  <data name="Cardiff" xml:space="preserve">
+    <value>Cardiff</value>
+  </data>
+  <data name="Cardiff Castle" xml:space="preserve">
+    <value>Cardiff Castle</value>
+  </data>
+  <data name="Cardiff Castle is located in the Castle Quarter, in the heart of Cardiff, the capital of Wales. There has been a fort on the site for almost 2,000 years. The current building was built in the late 11th century, replacing a Roman fort." xml:space="preserve">
+    <value>Cardiff Castle is located in the Castle Quarter, in the heart of Cardiff, the capital of Wales. There has been a fort on the site for almost 2,000 years. The current building was built in the late 11th century, replacing a Roman fort.</value>
+  </data>
+  <data name="Cardiff to Porthcawl (Rest Bay Beach) 26 miles" xml:space="preserve">
+    <value>Cardiff to Porthcawl (Rest Bay Beach) 26 miles</value>
+  </data>
+  <data name="Cardigan" xml:space="preserve">
+    <value>Cardigan</value>
+  </data>
+  <data name="Cardigan Castle" xml:space="preserve">
+    <value>Cardigan Castle</value>
+  </data>
+  <data name="Cardigan Castle is a castle overlooking the River Teifi in Cardigan, Ceredigion, Wales. The castle dates from the late 11th-century, though was rebuilt in 1244. Castle Green House was built inside the castle walls in the early 1800s." xml:space="preserve">
+    <value>Cardigan Castle is a castle overlooking the River Teifi in Cardigan, Ceredigion, Wales. The castle dates from the late 11th-century, though was rebuilt in 1244. Castle Green House was built inside the castle walls in the early 1800s.</value>
+  </data>
+  <data name="Cardigan to Aberystwyth (St Padarns Church) 39 miles" xml:space="preserve">
+    <value>Cardigan to Aberystwyth (St Padarns Church) 39 miles</value>
+  </data>
+  <data name="Carmarthen" xml:space="preserve">
+    <value>Carmarthen</value>
+  </data>
+  <data name="Carmarthen to Tenby (St Catherines Island) 35 miles" xml:space="preserve">
+    <value>Carmarthen to Tenby (St Catherines Island) 35 miles</value>
+  </data>
+  <data name="Chepstow" xml:space="preserve">
+    <value>Chepstow</value>
+  </data>
+  <data name="Chepstow (Tintern Abbey) to Newport (Transporter bridge) 20 miles" xml:space="preserve">
+    <value>Chepstow (Tintern Abbey) to Newport (Transporter bridge) 20 miles</value>
+  </data>
+  <data name="Chester" xml:space="preserve">
+    <value>Chester</value>
+  </data>
+  <data name="City Walls" xml:space="preserve">
+    <value>City Walls</value>
+  </data>
+  <data name="Conwy" xml:space="preserve">
+    <value>Conwy</value>
+  </data>
+  <data name="Conwy Castle" xml:space="preserve">
+    <value>Conwy Castle</value>
+  </data>
+  <data name="Conwy Castle (Welsh: Castell Conwy) is a fortification in Conwy, located in North Wales. It was built by Edward I, during his conquest of Wales, between 1283 and 1289. The castle hugs a rocky coastal ridge of grey sandstone and limestone, and much of the stone from the castle is largely taken from the ridge itself, probably when the site was first cleared." xml:space="preserve">
+    <value>Conwy Castle (Welsh: Castell Conwy) is a fortification in Conwy, located in North Wales. It was built by Edward I, during his conquest of Wales, between 1283 and 1289. The castle hugs a rocky coastal ridge of grey sandstone and limestone, and much of the stone from the castle is largely taken from the ridge itself, probably when the site was first cleared.</value>
+  </data>
+  <data name="Conwy to Chester (City Walls) 44 miles" xml:space="preserve">
+    <value>Conwy to Chester (City Walls) 44 miles</value>
+  </data>
+  <data name="Fall Bay" xml:space="preserve">
+    <value>Fall Bay</value>
+  </data>
+  <data name="Fall bay is one of the hardest to reach bays on Gower, however the walk is well worth it and the beach is never crowded due to its remoteness. There is no beach visible at high tide. The beach is very popular with surfers. At very low tide, it is possible to walk over from the beach to Mewslade Bay." xml:space="preserve">
+    <value>Fall bay is one of the hardest to reach bays on Gower, however the walk is well worth it and the beach is never crowded due to its remoteness. There is no beach visible at high tide. The beach is very popular with surfers. At very low tide, it is possible to walk over from the beach to Mewslade Bay.</value>
+  </data>
+  <data name="Fishguard" xml:space="preserve">
+    <value>Fishguard</value>
+  </data>
+  <data name="Fishguard to Cardigan (Cardigan Castle) 22 miles" xml:space="preserve">
+    <value>Fishguard to Cardigan (Cardigan Castle) 22 miles</value>
+  </data>
+  <data name="Gwynedd" xml:space="preserve">
+    <value>Gwynedd</value>
+  </data>
+  <data name="Gwynedd to Caernarfon (Caernarfon Castle) 13 miles" xml:space="preserve">
+    <value>Gwynedd to Caernarfon (Caernarfon Castle) 13 miles</value>
+  </data>
+  <data name="Harlech" xml:space="preserve">
+    <value>Harlech</value>
+  </data>
+  <data name="Harlech Castle" xml:space="preserve">
+    <value>Harlech Castle</value>
+  </data>
+  <data name="Harlech Castle in Harlech, Gwynedd, Wales, is a medieval fortification built onto a rocky knoll close to the Irish Sea. It was built by Edward I during his invasion of Wales between 1282 and 1289 at the relatively modest cost of £8,190. Over the next few centuries, the castle played an important part in several wars, withstanding the siege of Madog ap Llywelyn between 1294–95, but falling to Owain Glyndŵr in 1404. It then became Glyndŵr's residence and military headquarters for the remainder of the uprising until being recaptured by English forces in 1409." xml:space="preserve">
+    <value>Harlech Castle in Harlech, Gwynedd, Wales, is a medieval fortification built onto a rocky knoll close to the Irish Sea. It was built by Edward I during his invasion of Wales between 1282 and 1289 at the relatively modest cost of £8,190. Over the next few centuries, the castle played an important part in several wars, withstanding the siege of Madog ap Llywelyn between 1294–95, but falling to Owain Glyndŵr in 1404. It then became Glyndŵr's residence and military headquarters for the remainder of the uprising until being recaptured by English forces in 1409.</value>
+  </data>
+  <data name="Harlech to Pwllheli (Nant Gwrtheyrn) 26 miles" xml:space="preserve">
+    <value>Harlech to Pwllheli (Nant Gwrtheyrn) 26 miles</value>
+  </data>
+  <data name="Kidwelly Castel" xml:space="preserve">
+    <value>Kidwelly Castel</value>
+  </data>
+  <data name="Kidwelly Castle is a Norman castle overlooking the River Gwendraeth and the town of Kidwelly, Carmarthenshire, Wales. Origin of this surname trace back to when it was spelled Cygweli which means &quot;swan.&quot; Later in its history, it was unsuccessfully besieged by forces of Owain Glyndŵr in 1403 with assistance from soldiers from France and Brittany who captured Kidwelly town. The castle was relieved by a Norman army after just three weeks." xml:space="preserve">
+    <value>Kidwelly Castle is a Norman castle overlooking the River Gwendraeth and the town of Kidwelly, Carmarthenshire, Wales. Origin of this surname trace back to when it was spelled Cygweli which means "swan." Later in its history, it was unsuccessfully besieged by forces of Owain Glyndŵr in 1403 with assistance from soldiers from France and Brittany who captured Kidwelly town. The castle was relieved by a Norman army after just three weeks.</value>
+  </data>
+  <data name="Llanelli" xml:space="preserve">
+    <value>Llanelli</value>
+  </data>
+  <data name="Llanelli to Carmarthen (Kidwelly Castle) 10 miles" xml:space="preserve">
+    <value>Llanelli to Carmarthen (Kidwelly Castle) 10 miles</value>
+  </data>
+  <data name="Milford Haven" xml:space="preserve">
+    <value>Milford Haven</value>
+  </data>
+  <data name="Milford Haven to St David’s (St Davids Cathedral) 23 miles" xml:space="preserve">
+    <value>Milford Haven to St David’s (St Davids Cathedral) 23 miles</value>
+  </data>
+  <data name="Mumbles Pier" xml:space="preserve">
+    <value>Mumbles Pier</value>
+  </data>
+  <data name="Nant Gwrtheyrn" xml:space="preserve">
+    <value>Nant Gwrtheyrn</value>
+  </data>
+  <data name="Nant Gwrtheyrn is a Welsh Language and Heritage Centre, located near the village of Llithfaen on the northern coast of the Llŷn Peninsula, Gwynedd, in northwest Wales. The Centre specialises in Welsh for Adults (as a second language) and offers intensive residential courses throughout the year. Visitors to the area can enjoy our Heritage Centre which houses displays about the Welsh language and culture, as well as the history of the village which includes a period house set in a Victorian quarry community and information about the unique wildlife which can be discovered in this remote coastal valley and beach." xml:space="preserve">
+    <value>Nant Gwrtheyrn is a Welsh Language and Heritage Centre, located near the village of Llithfaen on the northern coast of the Llŷn Peninsula, Gwynedd, in northwest Wales. The Centre specialises in Welsh for Adults (as a second language) and offers intensive residential courses throughout the year. Visitors to the area can enjoy our Heritage Centre which houses displays about the Welsh language and culture, as well as the history of the village which includes a period house set in a Victorian quarry community and information about the unique wildlife which can be discovered in this remote coastal valley and beach.</value>
+  </data>
+  <data name="Newport" xml:space="preserve">
+    <value>Newport</value>
+  </data>
+  <data name="Newport to Cardiff (Cardiff Castle) 12 miles" xml:space="preserve">
+    <value>Newport to Cardiff (Cardiff Castle) 12 miles</value>
+  </data>
+  <data name="Parc y Scarlets" xml:space="preserve">
+    <value>Parc y Scarlets</value>
+  </data>
+  <data name="Parc y Scarlets is a rugby union stadium in Llanelli, Carmarthenshire, that opened in November 2008 as the new home of the Scarlets and Llanelli RFC. The ground replaced Stradey Park, the home of Llanelli's rugby teams for almost 130 years. The stadium complex includes facilities for matchday supporters and for non-matchday revenue generation, as well as a training barn and a training pitch with athletics track." xml:space="preserve">
+    <value>Parc y Scarlets is a rugby union stadium in Llanelli, Carmarthenshire, that opened in November 2008 as the new home of the Scarlets and Llanelli RFC. The ground replaced Stradey Park, the home of Llanelli's rugby teams for almost 130 years. The stadium complex includes facilities for matchday supporters and for non-matchday revenue generation, as well as a training barn and a training pitch with athletics track.</value>
+  </data>
+  <data name="Pembrokeshire" xml:space="preserve">
+    <value>Pembrokeshire</value>
+  </data>
+  <data name="Pembrokeshire to Milford Haven (Stack rock fort) 20 miles" xml:space="preserve">
+    <value>Pembrokeshire to Milford Haven (Stack rock fort) 20 miles</value>
+  </data>
+  <data name="Plas Tan y Bwlch" xml:space="preserve">
+    <value>Plas Tan y Bwlch</value>
+  </data>
+  <data name="Plas Tan y Bwlch in Gwynedd, Wales, is the Snowdonia National Park Environmental Studies Centre, administered by the National Park Authority. The Centre aims to provide courses which are of interest to all lovers of the countryside who would like to know about this fascinating area of Wales." xml:space="preserve">
+    <value>Plas Tan y Bwlch in Gwynedd, Wales, is the Snowdonia National Park Environmental Studies Centre, administered by the National Park Authority. The Centre aims to provide courses which are of interest to all lovers of the countryside who would like to know about this fascinating area of Wales.</value>
+  </data>
+  <data name="Porthcawl" xml:space="preserve">
+    <value>Porthcawl</value>
+  </data>
+  <data name="Porthcawl to Swansea (Mumbles Pier) 24 miles" xml:space="preserve">
+    <value>Porthcawl to Swansea (Mumbles Pier) 24 miles</value>
+  </data>
+  <data name="Pwllheli" xml:space="preserve">
+    <value>Pwllheli</value>
+  </data>
+  <data name="Pwllheli to Gwynedd (Beddgelert) 22 miles" xml:space="preserve">
+    <value>Pwllheli to Gwynedd (Beddgelert) 22 miles</value>
+  </data>
+  <data name="Rest Bay Beach" xml:space="preserve">
+    <value>Rest Bay Beach</value>
+  </data>
+  <data name="Rest Bay is a golden, sandy beach on the outskirts of the town of Porthcawl, backed by The Royal Porthcawl Golf Club and low cliffs. The beach faces south-west, which means that it is not sheltered from the Atlantic winds and the waves here can be quite large, making it a good beach for surfing, as well as wind/kite surfing." xml:space="preserve">
+    <value>Rest Bay is a golden, sandy beach on the outskirts of the town of Porthcawl, backed by The Royal Porthcawl Golf Club and low cliffs. The beach faces south-west, which means that it is not sheltered from the Atlantic winds and the waves here can be quite large, making it a good beach for surfing, as well as wind/kite surfing.</value>
+  </data>
+  <data name="Rhossili" xml:space="preserve">
+    <value>Rhossili</value>
+  </data>
+  <data name="Rhossili to Llanelli (Parc y Scarlets) 22 miles" xml:space="preserve">
+    <value>Rhossili to Llanelli (Parc y Scarlets) 22 miles</value>
+  </data>
+  <data name="Round House" xml:space="preserve">
+    <value>Round House</value>
+  </data>
+  <data name="Route:" xml:space="preserve">
+    <value>Route:</value>
+  </data>
+  <data name="St Catherines Island" xml:space="preserve">
+    <value>St Catherines Island</value>
+  </data>
+  <data name="St Catherines Island is a small tidal island linked to Tenby in Pembrokeshire, Wales. 2016 The Final Problem, the third and last episode of the fourth series of the BBC TV series Sherlock was filmed on the island, with it standing in as a maximum security prison.  Formed from an outcrop of limestone, on average 25m high, the island is riddled with tidal caves." xml:space="preserve">
+    <value>St Catherines Island is a small tidal island linked to Tenby in Pembrokeshire, Wales. 2016 The Final Problem, the third and last episode of the fourth series of the BBC TV series Sherlock was filmed on the island, with it standing in as a maximum security prison.  Formed from an outcrop of limestone, on average 25m high, the island is riddled with tidal caves.</value>
+  </data>
+  <data name="St Davids" xml:space="preserve">
+    <value>St Davids</value>
+  </data>
+  <data name="St Davids Cathedral" xml:space="preserve">
+    <value>St Davids Cathedral</value>
+  </data>
+  <data name="St Davids Cathedral is situated in St Davids in the county of Pembrokeshire, on the most westerly point of Wales. There are at least three services said or sung per day, each week, with sung services on five out of seven days. The cathedral choir at St Davids was the first cathedral choir in the United Kingdom to use girls and men as the main choir, rather than boys and men." xml:space="preserve">
+    <value>St Davids Cathedral is situated in St Davids in the county of Pembrokeshire, on the most westerly point of Wales. There are at least three services said or sung per day, each week, with sung services on five out of seven days. The cathedral choir at St Davids was the first cathedral choir in the United Kingdom to use girls and men as the main choir, rather than boys and men.</value>
+  </data>
+  <data name="St Davids to Fishguard (Strumble Head Lighthouse) 16 miles" xml:space="preserve">
+    <value>St Davids to Fishguard (Strumble Head Lighthouse) 16 miles</value>
+  </data>
+  <data name="Stack Rock Fort" xml:space="preserve">
+    <value>Stack Rock Fort</value>
+  </data>
+  <data name="Stack Rock Fort is a fort built on a small island in the Milford Haven Waterway, Pembrokeshire. A 3-gun fort was built between 1850 and 1852, and then upgraded in 1859 with a new building that completely encased the original gun tower. The fort housed three 32-pounder guns, as well as a single 12-pounder for protection of the walls of the dock." xml:space="preserve">
+    <value>Stack Rock Fort is a fort built on a small island in the Milford Haven Waterway, Pembrokeshire. A 3-gun fort was built between 1850 and 1852, and then upgraded in 1859 with a new building that completely encased the original gun tower. The fort housed three 32-pounder guns, as well as a single 12-pounder for protection of the walls of the dock.</value>
+  </data>
+  <data name="Strumble Head Lighthouse" xml:space="preserve">
+    <value>Strumble Head Lighthouse</value>
+  </data>
+  <data name="Strumble Head Lighthouse stands imposingly on Ynysmeicl (St. Michael's Island), an islet to the west of Fishguard, separated from the mainland by a very narrow gap through which the sea boils and froths in stormy weather." xml:space="preserve">
+    <value>Strumble Head Lighthouse stands imposingly on Ynysmeicl (St. Michael's Island), an islet to the west of Fishguard, separated from the mainland by a very narrow gap through which the sea boils and froths in stormy weather.</value>
+  </data>
+  <data name="Swansea" xml:space="preserve">
+    <value>Swansea</value>
+  </data>
+  <data name="Swansea to Rhossili (Fall Bay) 20 miles" xml:space="preserve">
+    <value>Swansea to Rhossili (Fall Bay) 20 miles</value>
+  </data>
+  <data name="Tenby" xml:space="preserve">
+    <value>Tenby</value>
+  </data>
+  <data name="Tenby to Pembrokeshire (Barafundle Bay) 15 miles" xml:space="preserve">
+    <value>Tenby to Pembrokeshire (Barafundle Bay) 15 miles</value>
+  </data>
+  <data name="The city walls are the oldest, longest and most complete in Britain, parts of which are almost 2000 years old. Chester is the only city in Britain that retains the full circuit of its ancient defensive walls. Walking the complete circuit gives wondrous views down into the city and gives a fantastic insight into Chester's long history." xml:space="preserve">
+    <value>The city walls are the oldest, longest and most complete in Britain, parts of which are almost 2000 years old. Chester is the only city in Britain that retains the full circuit of its ancient defensive walls. Walking the complete circuit gives wondrous views down into the city and gives a fantastic insight into Chester's long history.</value>
+  </data>
+  <data name="The Mumbles Pier is one of only six surviving iron piers in Wales. Mumbles Pier was opened to the public on the 10th May 1898. A family run business ‘The Pier’ is one of very few privately owned Piers left in the UK. Once a station for the world famous Mumbles Railway, the site is steeped in a rich history and continues to be a seaside tourist attraction for many families across the UK." xml:space="preserve">
+    <value>The Mumbles Pier is one of only six surviving iron piers in Wales. Mumbles Pier was opened to the public on the 10th May 1898. A family run business ‘The Pier’ is one of very few privately owned Piers left in the UK. Once a station for the world famous Mumbles Railway, the site is steeped in a rich history and continues to be a seaside tourist attraction for many families across the UK.</value>
+  </data>
+  <data name="The Newport Transporter Bridge is a transporter bridge that crosses the River Usk in Newport, South East Wales. It is one of fewer than 10 transporter bridges that remain in use worldwide; only a few dozen were ever built. It is one of only two operational transporter bridges in Britain, the other being the Tees Transporter Bridge." xml:space="preserve">
+    <value>The Newport Transporter Bridge is a transporter bridge that crosses the River Usk in Newport, South East Wales. It is one of fewer than 10 transporter bridges that remain in use worldwide; only a few dozen were ever built. It is one of only two operational transporter bridges in Britain, the other being the Tees Transporter Bridge.</value>
+  </data>
+  <data name="This Round House was erected in 1834. It was built as a lock-up where drunkards were detained until they became sober. It was also a place of detention pending the transfer of an accused to the nearest place where justice could be administered. The key was kept by the Parish Constable. The building is divided by a partition wall forming two cells of equal dimensions. One cell was reserved for men and the other for women." xml:space="preserve">
+    <value>This Round House was erected in 1834. It was built as a lock-up where drunkards were detained until they became sober. It was also a place of detention pending the transfer of an accused to the nearest place where justice could be administered. The key was kept by the Parish Constable. The building is divided by a partition wall forming two cells of equal dimensions. One cell was reserved for men and the other for women.</value>
+  </data>
+  <data name="Tintern Abbey" xml:space="preserve">
+    <value>Tintern Abbey</value>
+  </data>
+  <data name="Tintern Abbey was founded on 9 May 1131 by Walter de Clare, Lord of Chepstow. It is situated adjacent to the village of Tintern in Monmouthshire, on the Welsh bank of the River Wye, which at this location forms the border between Monmouthshire in Wales and Gloucestershire in England." xml:space="preserve">
+    <value>Tintern Abbey was founded on 9 May 1131 by Walter de Clare, Lord of Chepstow. It is situated adjacent to the village of Tintern in Monmouthshire, on the Welsh bank of the River Wye, which at this location forms the border between Monmouthshire in Wales and Gloucestershire in England.</value>
+  </data>
+  <data name="Total miles: 500" xml:space="preserve">
+    <value>Total miles: 500</value>
+  </data>
+  <data name="Transporter Bridge" xml:space="preserve">
+    <value>Transporter Bridge</value>
+  </data>
+  <data name="Welcome to Educ8’s Welsh Cultural Coastal Walk" xml:space="preserve">
+    <value>Welcome to Educ8’s Welsh Cultural Coastal Walk</value>
+  </data>
+  <data name="Welsh Cultural Coastal Walk" xml:space="preserve">
+    <value>Welsh Cultural Coastal Walk</value>
   </data>
 </root>
