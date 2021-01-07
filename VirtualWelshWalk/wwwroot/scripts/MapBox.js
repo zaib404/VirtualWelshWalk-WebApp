@@ -37,15 +37,18 @@ export function initialize() {
     // add markers to map
     WelshWalkMarker.features.forEach(function (marker) {
 
-        var e = document.createElement('div');
-        e.className = 'marker1';
-        e.style.backgroundImage = "url('./Assets/Map-Icon.png')";
+        var ele = document.createElement('div');
+        ele.className = 'marker';
+        ele.style.backgroundImage = "url('/Assets/Map-Icon.png')";
+
+        ele.style.width = '62.5px';
+        ele.style.height = '81.25px';
 
         var popup = new mapboxgl.Popup({ offset: [0, -15] })
             .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>');
 
         // add marker to map
-        new mapboxgl.Marker(e)
+        new mapboxgl.Marker(ele)
             .setLngLat(marker.geometry.coordinates)
             .setPopup(popup)
             .addTo(map);
@@ -55,7 +58,9 @@ export function initialize() {
     var el = document.createElement('div');
     el.className = 'marker';
 
-    //el.style.backgroundImage = "url('./Assets/Walking-Man.png')";
+    el.style.backgroundImage = "url('/Assets/Walking-Man.png')";
+    el.style.width = '63px';
+    el.style.height = '99px';
 
     personMarker = new mapboxgl.Marker(el)
         .setLngLat(mapRouteJson.routes[0].geometry.coordinates[0])
@@ -64,13 +69,21 @@ export function initialize() {
         .addTo(map);
 
     map.on('load', function () {
-        if (draw) {
+        if (draw)
+        {
+            addLogo();
             colourPath();
         }
     });
 
-    return map;
+    personMarker.getElement().addEventListener('click', () => {
+        map.flyTo({
+            center: mapRouteJson.routes[0].geometry.coordinates[0],
+            zoom: 15.3
+        })
+    });
 
+    return map;
 }
 
 function welshMarkers() {
@@ -426,6 +439,41 @@ function welshMarkers() {
     }
 
     return geojson;
+}
+
+function addLogo()
+{
+    map.loadImage(
+        '/Assets/Educ8-Logo.png',
+        function (error, image) {
+            if (error) throw error;
+            map.addImage('logo', image);
+            map.addSource('point', {
+                'type': 'geojson',
+                'data': {
+                    'type': 'FeatureCollection',
+                    'features': [
+                        {
+                            'type': 'Feature',
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [-2.7143930352329164, 52.493999147154824]
+                            }
+                        }
+                    ]
+                }
+            });
+            map.addLayer({
+                'id': 'points',
+                'type': 'symbol',
+                'source': 'point',
+                'layout': {
+                    'icon-image': 'logo',
+                    'icon-size': 0.5
+                }
+            });
+        }
+    );
 }
 
 export function updatePersonIcon(index) {

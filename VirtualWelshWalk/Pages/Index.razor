@@ -1,12 +1,124 @@
 ﻿@page "/"
 @attribute [AllowAnonymous]
 @inject Microsoft.Extensions.Localization.IStringLocalizer<App> Localizer
+@*@inject IJSRuntime jsRunTime*@
 
-<h1>@Localizer[Welcome]!</h1>
+@*@implements IAsyncDisposable*@
 
-Welcome to your new app.
+<style>
+    .container {
+        position: relative;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+        .container .content {
+            position: absolute;
+            bottom: 0;
+            background: rgb(0, 0, 0);
+            background: rgba(0, 0, 0, 0.5);
+            color: #f1f1f1;
+            width: 100%;
+            padding: 20px;
+            height: 100%;
+        }
+
+    .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    /* Create two unequal columns that floats next to each other */
+    .column {
+        float: left;
+        padding: 10px;
+        height: 300px; /* Should be removed. Only for demonstration */
+    }
+
+    .left {
+        width: 25%;
+    }
+
+    .right {
+        width: 75%;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+</style>
+
+<!-- Header -->
+<div class="container row">
+    <img src="./Assets/Culture/Strumble Head Lighthouse.jpg" alt="Strumble Head Lighthouse" style="width:100%;">
+    <div class="content">
+        <div class="centered">
+            <h1>@Localizer[Welcome]!</h1>
+            <p>Take part in Educ8 interactive learning experience. digital Welsh Cultural Coastal Walk.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Second Block -->
+
+<div class="row">
+    <div class="column left" style="background-color:#aaa;">
+        <h2>Approximately 625 mile long walk</h2>
+        <p>From Chepstow to chester following the Welsh coastal path.</p>
+    </div>
+    <div class="column right" style="background-color:#bbb;">
+        <h2>Visit Welsh landmarks</h2>
+        <p>Such as Cardiff Castle, St Davids Cathedral and Beddgelert.</p>
+    </div>
+</div>
+
+<br>
+
+<!-- Third Block -->
+<div class="row">
+    <div class="column left" style="background-color:#aaa;">
+        <h2>Learn</h2>
+    </div>
+    <div class="column right" style="background-color:#bbb;">
+        <p>Learn the history about significant places of interests as you reach milestones.</p>
+    </div>
+</div>
+
+<!-- Fourth -->
+
+<div class="row">
+    iconics
+</div>
 
 @code {
 
     private string Welcome = "Welcome to Educ8’s Welsh Cultural Coastal Walk";
+    //IJSObjectReference jsSlide;
+
+    ////protected override async Task OnAfterRenderAsync(bool firstRender)
+    ////{
+    ////    if (firstRender)
+    ////    {
+    ////        jsSlide = await jsRunTime.InvokeAsync<IJSObjectReference>(
+    ////        "import", "./scripts/Slides.js");
+    ////    }
+
+    ////    if (jsSlide != null)
+    ////    {
+    ////        await jsSlide.InvokeVoidAsync("showSlides");
+    ////    }
+    ////}
+
+    //async ValueTask IAsyncDisposable.DisposeAsync()
+    //{
+    //    if (jsSlide != null)
+    //    {
+    //        await jsSlide.DisposeAsync();
+    //    }
+    //}
 }
