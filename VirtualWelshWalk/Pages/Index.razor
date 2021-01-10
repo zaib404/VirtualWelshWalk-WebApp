@@ -1,10 +1,6 @@
 ﻿@page "/"
 @attribute [AllowAnonymous]
 @inject Microsoft.Extensions.Localization.IStringLocalizer<App> Localizer
-@*@inject IJSRuntime jsRunTime*@
-
-@*@implements IAsyncDisposable*@
-
 @*Hero Image*@
 <div class="jumbotron jumbotron-fluid bg-cover text-white" style="margin-bottom:0; background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url('./Assets/Culture/Strumble Head Lighthouse.jpg'); background-repeat:no-repeat; background-size:cover;">
     <div class="container text-center">
@@ -15,25 +11,34 @@
 </div>
 
 <div class="jumbotron jumbotron-fluid">
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-4" style="background-color: cornsilk;">
-            <h1>Approximately 625 mile long walk</h1>
-            <p>From Chepstow to chester following the Welsh coastal path</p>
-        </div>
-        <div class="col" style="background-color:#667073">
-            <h1>Visit Welsh Landmarks</h1>
-            <p>Such as Cardiff Castle, St Davids Cathedral and Beddgelert.</p>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-4" style="background-color: cornsilk;">
+                <h1>A 500 mile long walk</h1>
+                <p>From Chepstow to chester following the Welsh coastal path</p>
+            </div>
+            <div class="col" style="background-color:#667073">
+                <h1>Visit Welsh Landmarks</h1>
+                <p>Such as Cardiff Castle, St Davids Cathedral and Beddgelert.</p>
+            </div>
         </div>
     </div>
 </div>
-    </div>
 
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
         <h1>Learn the history about the significant places of interests as you reach milestones</h1>
-        <p>Register now to start your journey</p>
-        <a href="Identity/Account/Register" class="btn btn-primary btn-lg">Register</a>
+        <AuthorizeView>
+            <Authorized>
+                <p>View your progress</p>
+                <a href="Virtual Coastal Map" class="btn btn-primary btn-lg">View Progress</a>
+            </Authorized>
+            <NotAuthorized>
+                <p>Register now to start your journey</p>
+                <a href="Identity/Account/Register" class="btn btn-primary btn-lg">Register</a>
+            </NotAuthorized>
+
+        </AuthorizeView>
     </div>
 </div>
 
@@ -41,11 +46,6 @@
     <div class="container text-center">
         <h1>Route:</h1>
         <hr />
-    </div>
-</div>
-
-<div class="jumbotron jumbotron-fluid">
-    <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="main-timeline">
@@ -263,30 +263,8 @@
     </div>
 </div>
 
-    @code {
 
-        private string Welcome = "Welcome to Educ8’s Welsh Cultural Coastal Walk";
-        //IJSObjectReference jsSlide;
+@code {
 
-        ////protected override async Task OnAfterRenderAsync(bool firstRender)
-        ////{
-        ////    if (firstRender)
-        ////    {
-        ////        jsSlide = await jsRunTime.InvokeAsync<IJSObjectReference>(
-        ////        "import", "./scripts/Slides.js");
-        ////    }
-
-        ////    if (jsSlide != null)
-        ////    {
-        ////        await jsSlide.InvokeVoidAsync("showSlides");
-        ////    }
-        ////}
-
-        //async ValueTask IAsyncDisposable.DisposeAsync()
-        //{
-        //    if (jsSlide != null)
-        //    {
-        //        await jsSlide.DisposeAsync();
-        //    }
-        //}
-    }
+    private string Welcome = "Welcome to Educ8’s Welsh Cultural Coastal Walk";
+}

@@ -1,4 +1,4 @@
-﻿@page "/Input Virtual Steps"
+﻿@page "/Virtual Coastal Steps"
 
 @using DataAccess.Data
 @using VirtualWelshWalk.DataAccess.Services;
@@ -7,54 +7,73 @@
 @inject IVirtualWalkService WalkService
 @inject IPeopleService PeopleService
 
-<h1>Welcome! Input your steps for today. How far did you work? @WalkName, @people.UserName</h1>
-
-<h3>DailySteps</h3>
-
 @if (virtualSteps == null)
 {
     <p><em>Loading...</em></p>
 }
 else
 {
+    if (showAlert)
+    {
+        <div class="modal-backdrop fade show"></div>
+
+        <div class="modal fade show" tabindex="-1" role="dialog" style="display: block;">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">New Area of Interest Unlocked</h5>
+                            <button type="button" @onclick="() => { showAlert = false; }" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>You reached a new milestone and a significant place of interest. Check your emails and the map to see more.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" @onclick="() => { showAlert = false; }" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    }
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container text-center">
+            <h1>@WalkName: @virtualSteps.TotalSteps</h1>
+            <hr />
+            <p>You have walked approximately - @virtualStepsInMiles Miles</p>
+        </div>
+    </div>
 
     if (!UserInputDailyWalk)
     {
-        <EditForm OnValidSubmit="HandleValidSubmit" Model="@virtualSteps">
-            <DataAnnotationsValidator />
-            <div class="row content">
-                <div class="col-md-2">
-                    <label for="Input"> Input your total steps from today</label>
-                </div>
-                <div class="col-md-3">
-                    <InputNumber id="steps" @bind-Value="virtualSteps.NewSteps" />
-                </div>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container text-center">
 
-                <div class="col-md-5">
-                    <ValidationMessage For="@(() => virtualSteps.NewSteps)" />
-                </div>
-            </div>
+                <EditForm class="form-group" OnValidSubmit="HandleValidSubmit" Model="@virtualSteps">
+                    <DataAnnotationsValidator />
 
-            <div class="row content">
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-        </EditForm>
-        <br />
-        <br />
-        <div class="row content">
-            <div class="col-md-2">
-                <label for="TotalSteps">Total Steps curruntly in the @WalkName is @virtualSteps.TotalSteps</label>
+                    <h3>Enter Steps</h3>
+                    <div class="col">
+                        <InputNumber class="form-control" @bind-Value="virtualSteps.NewSteps" id="steps" />
+                    </div>
+                    <div class="col text-center">
+                        <ValidationMessage For="@(() => virtualSteps.NewSteps)" />
+                    </div>
+
+                    <div class="col content text-center">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+                    </div>
+
+                </EditForm>
             </div>
         </div>
     }
-
     else
     {
-        <h1> Thank you for inputting your daily walk. See your progress on <a href="Virtual Welsh Map">Virtual Welsh Map</a> </h1>
-
-        <div class="row content">
-            <div class="col-md-2">
-                <label for="TotalSteps">Total Steps curruntly in the @WalkName is @virtualSteps.TotalSteps</label>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container text-center">
+                <h1> Thank you. See your progress on the <a href="Virtual Welsh Map">Virtual Coastal Welsh Map</a> </h1>
             </div>
         </div>
     }
@@ -65,27 +84,136 @@ else
 {
     VirtualTotalSteps virtualSteps = new VirtualTotalSteps();
 
-    public People people { get; set; } = new People();
-    public VirtualWalk virtualWalk { get; set; } = new VirtualWalk();
+    public People dbPeople { get; set; } = new People();
+    public VirtualWalk dpVirtualWalk { get; set; } = new VirtualWalk();
 
     string WalkName = "Welsh Coastal Walk";
 
     bool UserInputDailyWalk = false;
 
+    double virtualStepsInMiles = 0;
+    bool showAlert = false;
+
+    public EventCallback OnClose { get; set; }
+
     protected override async Task OnInitializedAsync()
     {
-        people = await PeopleService.GetPeople();
-        virtualWalk = await WalkService.GetVirtualWalk(WalkName, people.PeopleId);
+        dbPeople = await PeopleService.GetPeople();
+        dpVirtualWalk = await WalkService.GetVirtualWalk(WalkName, dbPeople.PeopleId);
 
-        virtualSteps.TotalSteps = virtualWalk.TotalSteps;
+        virtualSteps.TotalSteps = dpVirtualWalk.TotalSteps;
+
+        StepsInMiles();
     }
 
     async Task HandleValidSubmit()
     {
-        virtualWalk.TotalSteps += virtualSteps.NewSteps;
-        await WalkService.UpdateVirtualWalk(virtualWalk);
+        dpVirtualWalk.TotalSteps += virtualSteps.NewSteps;
+        await WalkService.UpdateVirtualWalk(dpVirtualWalk);
         virtualSteps.NewSteps = 0;
-        virtualSteps.TotalSteps = virtualWalk.TotalSteps;
+        virtualSteps.TotalSteps = dpVirtualWalk.TotalSteps;
         UserInputDailyWalk = true;
+        StepsInMiles();
+        CheckMilestone();
+    }
+
+    void StepsInMiles()
+    {
+        // Convert to kilometers
+        double km = Math.Round(virtualSteps.TotalSteps / 1312.33595801, 2);
+
+        virtualStepsInMiles = Math.Round(km * 0.62137, 2);
+    }
+
+    void CheckMilestone()
+    {
+        if (virtualSteps.TotalSteps >= 41989 && virtualSteps.TotalSteps <= 42001)
+        {
+            showAlert = true;
+        }
+        else if (virtualSteps.TotalSteps >= 66923 && virtualSteps.TotalSteps <= 66935)
+        {
+            showAlert = true;
+        }
+        else if (virtualSteps.TotalSteps >= 122041 && virtualSteps.TotalSteps <= 122053)
+        {
+            showAlert = true;
+        }
+        else if (virtualSteps.TotalSteps >= 173183 && virtualSteps.TotalSteps <= 173195)
+        {
+            showAlert = true;
+        }
+        else if (virtualSteps.TotalSteps >= 215414 && virtualSteps.TotalSteps <= 215426)
+        {
+            showAlert = true;
+        }
+        else if (virtualSteps.TotalSteps >= 261884 && virtualSteps.TotalSteps <= 261896)
+        {
+            showAlert = true;
+        }
+        else if (virtualSteps.TotalSteps >= 282999 && virtualSteps.TotalSteps <= 283011)
+        {
+            showAlert = true;
+        }
+        else if (virtualSteps.TotalSteps >= 356923 && virtualSteps.TotalSteps <= 356935)
+        {
+            showAlert = true;
+        }
+        else if (virtualSteps.TotalSteps >= 388603 && virtualSteps.TotalSteps <= 388615)
+        {
+            showAlert = true;
+        }
+        else if (virtualSteps.TotalSteps >= 430847 && virtualSteps.TotalSteps <= 430859)
+        {
+            showAlert = true;
+        }
+        else if (virtualSteps.TotalSteps >= 479417 && virtualSteps.TotalSteps <= 479429)
+        {
+            showAlert = true;
+        }
+        else if (virtualSteps.TotalSteps >= 513209 && virtualSteps.TotalSteps <= 513221)
+        {
+            showAlert = true;
+        }
+        else if (virtualSteps.TotalSteps >= 559679 && virtualSteps.TotalSteps <= 559691)
+        {
+            showAlert = true;
+        }
+        else if (virtualSteps.TotalSteps >= 642041 && virtualSteps.TotalSteps <= 642053)
+        {
+            showAlert = true;
+        }
+        else if (virtualSteps.TotalSteps >= 726516 && virtualSteps.TotalSteps <= 726528)
+        {
+            showAlert = true;
+        }
+        else if (virtualSteps.TotalSteps >= 749758 && virtualSteps.TotalSteps <= 749770)
+        {
+            showAlert = true;
+        }
+        else if (virtualStepsInMiles >= 804666 && virtualSteps.TotalSteps <= 804678)
+        {
+            showAlert = true;
+        }
+        else if (virtualStepsInMiles >= 851136 && virtualSteps.TotalSteps <= 851148)
+        {
+            showAlert = true;
+        }
+        else if (virtualStepsInMiles >= 878590 && virtualSteps.TotalSteps <= 878603)
+        {
+            showAlert = true;
+        }
+        else if (virtualStepsInMiles >= 906044 && virtualSteps.TotalSteps <= 906056)
+        {
+            showAlert = true;
+        }
+        else if (virtualStepsInMiles >= 329469 && virtualSteps.TotalSteps <= 329481)
+        {
+            showAlert = true;
+        }
+        else if (virtualStepsInMiles >= 1055991 && virtualSteps.TotalSteps <= 1056003)
+        {
+            showAlert = true;
+        }
     }
 }

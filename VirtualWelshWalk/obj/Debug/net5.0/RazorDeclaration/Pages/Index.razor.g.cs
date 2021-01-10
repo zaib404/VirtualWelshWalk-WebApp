@@ -98,34 +98,10 @@ using VirtualWelshWalk.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 266 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\Index.razor"
-           
+#line 267 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\Index.razor"
+       
 
-        private string Welcome = "Welcome to Educ8’s Welsh Cultural Coastal Walk";
-        //IJSObjectReference jsSlide;
-
-        ////protected override async Task OnAfterRenderAsync(bool firstRender)
-        ////{
-        ////    if (firstRender)
-        ////    {
-        ////        jsSlide = await jsRunTime.InvokeAsync<IJSObjectReference>(
-        ////        "import", "./scripts/Slides.js");
-        ////    }
-
-        ////    if (jsSlide != null)
-        ////    {
-        ////        await jsSlide.InvokeVoidAsync("showSlides");
-        ////    }
-        ////}
-
-        //async ValueTask IAsyncDisposable.DisposeAsync()
-        //{
-        //    if (jsSlide != null)
-        //    {
-        //        await jsSlide.DisposeAsync();
-        //    }
-        //}
-    
+    private string Welcome = "Welcome to Educ8’s Welsh Cultural Coastal Walk";
 
 #line default
 #line hidden

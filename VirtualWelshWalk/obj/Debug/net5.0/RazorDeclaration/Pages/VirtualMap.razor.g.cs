@@ -103,7 +103,7 @@ using VirtualWelshWalk.DataAccess.Models;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/Virtual Welsh Map")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/Virtual Coastal Map")]
     public partial class VirtualMap : Microsoft.AspNetCore.Components.ComponentBase, IAsyncDisposable
     {
         #pragma warning disable 1998
@@ -112,7 +112,7 @@ using VirtualWelshWalk.DataAccess.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 36 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
+#line 68 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
  
     public People people { get; set; } = new People();
     public VirtualWalk virtualWalk { get; set; } = new VirtualWalk();
@@ -122,6 +122,8 @@ using VirtualWelshWalk.DataAccess.Models;
     IJSObjectReference mapModule, mapInstance;
 
     CalculatePersonsPosition calculatePerson = new CalculatePersonsPosition();
+
+    bool showInfo = false;
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {

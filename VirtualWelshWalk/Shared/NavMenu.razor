@@ -1,31 +1,69 @@
-﻿<AuthorizeView>
+﻿<div class="top-row pl-4 navbar navbar-dark">
+    <a class="navbar-brand" href="">Walking Welsh</a>
+    <button class="navbar-toggler" @onclick="ToggleNavMenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</div>
 
-    <div class="top-row pl-4 navbar navbar-dark">
-        <a class="navbar-brand" href="">Welsh Cultural Coastal Walk</a>
-        <button class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
+<AuthorizeView>
+    <Authorized>
+        <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+            <ul class="nav flex-column">
 
-    <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
-        <ul class="nav flex-column">
-            <li class="nav-item px-3">
-                <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                    <span class="oi oi-home" aria-hidden="true"></span> Home
-                </NavLink>
-            </li>
-            <li class="nav-item px-3">
-                <NavLink class="nav-link" href="Input Virtual Steps">
-                    <span class="oi oi-plus" aria-hidden="true"></span> Input Steps
-                </NavLink>
-            </li>
-            <li class="nav-item px-3">
-                <NavLink class="nav-link" href="Virtual Welsh Map">
-                    <span class="oi oi-map" aria-hidden="true"></span> Virtual Map
-                </NavLink>
-            </li>
-        </ul>
-    </div>
+                <li class="nav-item px-3">
+                    <NavLink class="nav-link" href="Identity/Account/Manage">
+                        <span class="oi oi-person"></span>Hello, @context.User.Identity.Name!
+                    </NavLink>
+                </li>
+
+                <li class="nav-item px-3">
+                    <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                        <span class="oi oi-home" aria-hidden="true"></span> Home
+                    </NavLink>
+                </li>
+                <li class="nav-item px-3">
+                    <NavLink class="nav-link" href="Virtual Coastal Steps">
+                        <span class="oi oi-plus" aria-hidden="true"></span> Input Steps
+                    </NavLink>
+                </li>
+                <li class="nav-item px-3">
+                    <NavLink class="nav-link" href="Virtual Coastal Map">
+                        <span class="oi oi-map" aria-hidden="true"></span> Virtual Map
+                    </NavLink>
+                </li>
+
+                <li class="nav-item px-3">
+
+                    <NavLink class="nav-link">
+                        <form method="post" action="Identity/Account/LogOut">
+                            <span @onclick="SubmitBtn" class="oi oi-account-logout" aria-hidden="true"></span> Log out
+                            <button type="submit" id="hiddenBtn"></button>
+                        </form>
+
+                    </NavLink>
+                    
+                </li>
+            </ul>
+        </div>
+    </Authorized>
+
+    <NotAuthorized>
+        <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+            <ul class="nav flex-column">
+                <li class="nav-item px-3">
+                    <NavLink class="nav-link" href="Identity/Account/Register">
+                        <span class="oi oi-person" aria-hidden="true"></span>Register
+                    </NavLink>
+                </li>
+
+                <li class="nav-item px-3">
+                    <NavLink class="nav-link" href="Identity/Account/Login">
+                        <span class="oi oi-account-login" aria-hidden="true"></span>Log in
+                    </NavLink>
+                </li>
+            </ul>
+        </div>
+    </NotAuthorized>
 </AuthorizeView>
 
 
@@ -37,5 +75,10 @@
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
+    }
+
+    void SubmitBtn()
+    {
+        
     }
 }

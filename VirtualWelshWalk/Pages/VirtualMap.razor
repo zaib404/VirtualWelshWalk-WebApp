@@ -1,4 +1,4 @@
-﻿@page "/Virtual Welsh Map"
+﻿@page "/Virtual Coastal Map"
 
 @using DataAccess.Data
 @using VirtualWelshWalk.DataAccess.Services;
@@ -14,14 +14,17 @@
 
 <style>
     .marker {
-        background-size: cover;        
+        background-size: cover;
         cursor: pointer;
         background-position: center;
         background-repeat: no-repeat;
     }
-</style>
+    #map {
+        height: 500px;
+        width: 100%;
+    }
 
-<h3>VirtualMap</h3>
+</style>
 
 @if (virtualWalk.Equals(null))
 {
@@ -29,7 +32,36 @@
 }
 else
 {
-    <div @ref="mapElement" id="map" style="position:fixed; width: 50%; height: 50%;"></div>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container text-center">
+            <h1>You have passed Chepstow (Tintern Abbey)</h1>
+            <hr />
+        </div>
+    </div>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+
+            <h2 class="text-center">
+                You have walked @virtualWalk.TotalSteps. You have 99 steps to go until your next milestone
+            </h2>
+
+            <div class="row">
+                <div class="col">
+                    <div id="map" @ref="mapElement"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    if (showInfo)
+    {
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1>Test</h1>
+            </div>
+        </div>
+    }
 }
 
 @code
@@ -42,6 +74,8 @@ else
     IJSObjectReference mapModule, mapInstance;
 
     CalculatePersonsPosition calculatePerson = new CalculatePersonsPosition();
+
+    bool showInfo = false;
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {

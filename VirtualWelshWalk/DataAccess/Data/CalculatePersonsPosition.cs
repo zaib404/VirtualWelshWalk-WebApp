@@ -11,7 +11,8 @@ namespace VirtualWelshWalk.DataAccess.Data
         public double NewPosition(int totalSteps)
         {
             // Convert to kilometers 
-            return Convert.ToDouble(totalSteps / 1312.33595801);
+            return Math.Round(totalSteps / 1312.33595801,2);
+            //return Convert.ToDouble(totalSteps / 1312.33595801);
         }
 
     }
