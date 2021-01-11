@@ -1,4 +1,8 @@
-﻿.main-timeline {
+﻿/*
+    CSS FROM BEST JQUERY.COM CODELAB STARTS HERE
+    https://bestjquery.com/tutorial/timeline/demo92/
+*/
+.main-timeline {
     font-family: 'Century Gothic', sans-serif;
     position: relative;
 }
@@ -172,3 +176,8 @@
         font-size: 18px;
     }
 }
+
+/* 
+    CSS FROM BEST JQUERY.COM CODELAB ENDS HERE
+
+*/

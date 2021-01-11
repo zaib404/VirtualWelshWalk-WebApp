@@ -90,32 +90,48 @@ using VirtualWelshWalk.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 23 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Shared\ChooseLanguage.razor"
+#line 30 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Shared\ChooseLanguage.razor"
        
 
     private string selectedCulture = System.Threading.Thread.CurrentThread.CurrentCulture.Name;
     private Dictionary<string, string> cultures;
+    private bool isWelshChecked;
 
     protected override void OnInitialized()
     {
         cultures = Configuration.GetSection("Cultures")
             .GetChildren().ToDictionary(x => x.Key, x => x.Value);
+
+        if (selectedCulture.ToLower() == "en-gb".ToLower())
+        {
+            isWelshChecked = false;
+        }
+        else
+        {
+            isWelshChecked = true;
+        }
     }
 
-    private void RequestCultureChange()
+    private void RequestCultureChange(bool pWelshCheck)
     {
-        if (string.IsNullOrWhiteSpace(selectedCulture) || !cultures.Keys.Contains(selectedCulture))
-        {
-            return;
-        }
-
         var uri = new Uri(NavigationManager.Uri)
-            .GetComponents(UriComponents.PathAndQuery, UriFormat.Unescaped);
+        .GetComponents(UriComponents.PathAndQuery, UriFormat.Unescaped);
 
+        if (!pWelshCheck)
+        {
+            selectedCulture = cultures.FirstOrDefault(x => x.Value.ToLower() == "English".ToLower()).Key;
+        }
+        else
+        {
+            selectedCulture = cultures.FirstOrDefault(x => x.Value.ToLower() == "Welsh".ToLower()).Key;
+        }
         var query = $"?culture={Uri.EscapeDataString(selectedCulture)}&" +
-            $"redirectUri={Uri.EscapeDataString(uri)}";
+        $"redirectUri={Uri.EscapeDataString(uri)}";
 
         NavigationManager.NavigateTo("/Culture/SetCulture" + query, forceLoad: true);
+
+        isWelshChecked = pWelshCheck;
+
     }
 
 

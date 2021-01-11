@@ -3,48 +3,71 @@
 
 @if (cultures != null)
 {
-    <form class="form-inline">
+    @*<form class="form-inline">
 
-        <select class="form-control mr-2" @bind="selectedCulture">
-            <option>Select...</option>
+            <select class="form-control mr-2" @bind="selectedCulture">
+                <option>Select...</option>
 
-            @foreach (var culture in cultures)
-            {
-                <option value="@culture.Key">@culture.Value</option>
-            }
-        </select>
+                @foreach (var culture in cultures)
+                {
+                    <option value="@culture.Key">@culture.Value</option>
+                }
+            </select>
 
-        <button class="btn btn-outline-primary" @onclick="RequestCultureChange">
-            Change
-        </button>
-    </form>
+            <button class="btn btn-outline-primary" @onclick="RequestCultureChange">
+                Change
+            </button>
+        </form>*@
+
+
+    <div class="custom-control custom-switch">
+        <input type="checkbox" @bind="isWelshChecked" @onclick="() => RequestCultureChange(isWelshChecked = !isWelshChecked)" class="custom-control-input" id="lngSwitch">
+        <label class="custom-control-label" for="lngSwitch">EN/CY</label>
+    </div>
+
 }
 
 @code {
 
     private string selectedCulture = System.Threading.Thread.CurrentThread.CurrentCulture.Name;
     private Dictionary<string, string> cultures;
+    private bool isWelshChecked;
 
     protected override void OnInitialized()
     {
         cultures = Configuration.GetSection("Cultures")
             .GetChildren().ToDictionary(x => x.Key, x => x.Value);
+
+        if (selectedCulture.ToLower() == "en-gb".ToLower())
+        {
+            isWelshChecked = false;
+        }
+        else
+        {
+            isWelshChecked = true;
+        }
     }
 
-    private void RequestCultureChange()
+    private void RequestCultureChange(bool pWelshCheck)
     {
-        if (string.IsNullOrWhiteSpace(selectedCulture) || !cultures.Keys.Contains(selectedCulture))
-        {
-            return;
-        }
-
         var uri = new Uri(NavigationManager.Uri)
-            .GetComponents(UriComponents.PathAndQuery, UriFormat.Unescaped);
+        .GetComponents(UriComponents.PathAndQuery, UriFormat.Unescaped);
 
+        if (!pWelshCheck)
+        {
+            selectedCulture = cultures.FirstOrDefault(x => x.Value.ToLower() == "English".ToLower()).Key;
+        }
+        else
+        {
+            selectedCulture = cultures.FirstOrDefault(x => x.Value.ToLower() == "Welsh".ToLower()).Key;
+        }
         var query = $"?culture={Uri.EscapeDataString(selectedCulture)}&" +
-            $"redirectUri={Uri.EscapeDataString(uri)}";
+        $"redirectUri={Uri.EscapeDataString(uri)}";
 
         NavigationManager.NavigateTo("/Culture/SetCulture" + query, forceLoad: true);
+
+        isWelshChecked = pWelshCheck;
+
     }
 
 }

@@ -1,20 +1,16 @@
 ﻿@inherits LayoutComponentBase
-<div class="sidebar">
-    <NavMenu />
-</div>
+@*<div class="sidebar">
+    
+</div>*@
 
 <div class="main">
-    <div class="top-row px-4 auth">
-        <span class="pr-2">Site Language</span>
-        <ChooseLanguage />
-        @*<LoginDisplay />*@
+    <div class="auth" style="top:0; position:sticky; z-index:100;">
+        <NavMenu/>
     </div>
 
     <div class="content px-0" style="padding:0;">
         @Body
     </div>
 
-    <div class="mt-auto">
-        <Footer />
-    </div>
+    <Footer />
 </div>
