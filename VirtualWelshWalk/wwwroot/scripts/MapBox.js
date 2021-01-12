@@ -17,7 +17,7 @@ function readJSON(file) {
 
 export function initialize() {
 
-    mapRouteJson = readJSON('./scripts/WalkRoute.json');
+    mapRouteJson = readJSON('./scripts/WalkRoute1.json');
 
     map = new mapboxgl.Map({
         container: 'map',
@@ -98,8 +98,8 @@ function welshMarkers() {
                 },
                 "geometry": {
                     "coordinates": [
-                        -2.676758,
-                        51.696951
+                        -2.677815,
+                        51.697084
                     ],
                     "type": "Point"
                 },
@@ -113,8 +113,8 @@ function welshMarkers() {
                 },
                 "geometry": {
                     "coordinates": [
-                        -2.987047,
-                        51.571205
+                        -2.987332,
+                        51.571209
                     ],
                     "type": "Point"
                 },
@@ -128,8 +128,8 @@ function welshMarkers() {
                 },
                 "geometry": {
                     "coordinates": [
-                        -3.181199,
-                        51.4824
+                        -3.181046,
+                        51.482255
                     ],
                     "type": "Point"
                 },
@@ -143,8 +143,8 @@ function welshMarkers() {
                 },
                 "geometry": {
                     "coordinates": [
-                        -3.72351,
-                        51.489127
+                        -3.723539,
+                        51.489119
                     ],
                     "type": "Point"
                 },
@@ -158,8 +158,8 @@ function welshMarkers() {
                 },
                 "geometry": {
                     "coordinates": [
-                        -3.97508,
-                        51.569502
+                        -3.977779,
+                        51.569108
                     ],
                     "type": "Point"
                 },
@@ -173,8 +173,8 @@ function welshMarkers() {
                 },
                 "geometry": {
                     "coordinates": [
-                        -4.291686,
-                        51.56257
+                        -4.291874,
+                        51.563078
                     ],
                     "type": "Point"
                 },
@@ -188,8 +188,8 @@ function welshMarkers() {
                 },
                 "geometry": {
                     "coordinates": [
-                        -4.128228,
-                        51.678375
+                        -4.128446,
+                        51.678217
                     ],
                     "type": "Point"
                 },
@@ -203,8 +203,8 @@ function welshMarkers() {
                 },
                 "geometry": {
                     "coordinates": [
-                        -4.306339,
-                        51.739136
+                        -4.305838,
+                        51.739019
                     ],
                     "type": "Point"
                 },
@@ -218,8 +218,8 @@ function welshMarkers() {
                 },
                 "geometry": {
                     "coordinates": [
-                        -4.691669,
-                        51.670491
+                        -4.693686,
+                        51.672046
                     ],
                     "type": "Point"
                 },
@@ -233,8 +233,8 @@ function welshMarkers() {
                 },
                 "geometry": {
                     "coordinates": [
-                        -4.904206,
-                        51.618515
+                        -4.903263,
+                        51.619624
                     ],
                     "type": "Point"
                 },
@@ -248,8 +248,8 @@ function welshMarkers() {
                 },
                 "geometry": {
                     "coordinates": [
-                        -5.092088,
-                        51.702564
+                        -5.093473,
+                        51.696745
                     ],
                     "type": "Point"
                 },
@@ -263,8 +263,8 @@ function welshMarkers() {
                 },
                 "geometry": {
                     "coordinates": [
-                        -5.268446,
-                        51.882029
+                        -5.26807,
+                        51.88212
                     ],
                     "type": "Point"
                 },
@@ -278,8 +278,8 @@ function welshMarkers() {
                 },
                 "geometry": {
                     "coordinates": [
-                        -5.073719,
-                        52.029812
+                        -5.073484,
+                        52.029662
                     ],
                     "type": "Point"
                 },
@@ -293,8 +293,8 @@ function welshMarkers() {
                 },
                 "geometry": {
                     "coordinates": [
-                        -4.660491,
-                        52.081882
+                        -4.660502,
+                        52.08197
                     ],
                     "type": "Point"
                 },
@@ -308,8 +308,8 @@ function welshMarkers() {
                 },
                 "geometry": {
                     "coordinates": [
-                        -4.060874,
-                        52.409171
+                        -4.061308,
+                        52.409038
                     ],
                     "type": "Point"
                 },
@@ -323,8 +323,8 @@ function welshMarkers() {
                 },
                 "geometry": {
                     "coordinates": [
-                        -4.052523,
-                        52.719298
+                        -4.052533,
+                        52.719312
                     ],
                     "type": "Point"
                 },
@@ -338,8 +338,8 @@ function welshMarkers() {
                 },
                 "geometry": {
                     "coordinates": [
-                        -4.108899,
-                        52.860019
+                        -4.108895,
+                        52.85996
                     ],
                     "type": "Point"
                 },
@@ -353,8 +353,8 @@ function welshMarkers() {
                 },
                 "geometry": {
                     "coordinates": [
-                        -4.458386,
-                        52.975466
+                        -4.458264,
+                        52.975332
                     ],
                     "type": "Point"
                 },
@@ -368,8 +368,8 @@ function welshMarkers() {
                 },
                 "geometry": {
                     "coordinates": [
-                        -4.102831,
-                        53.011968
+                        -4.10283,
+                        53.011971
                     ],
                     "type": "Point"
                 },
@@ -383,8 +383,8 @@ function welshMarkers() {
                 },
                 "geometry": {
                     "coordinates": [
-                        -4.276934,
-                        53.139147
+                        -4.276922,
+                        53.139061
                     ],
                     "type": "Point"
                 },
@@ -398,8 +398,8 @@ function welshMarkers() {
                 },
                 "geometry": {
                     "coordinates": [
-                        -4.089712,
-                        53.264872
+                        -4.08984,
+                        53.264125
                     ],
                     "type": "Point"
                 },
@@ -413,8 +413,8 @@ function welshMarkers() {
                 },
                 "geometry": {
                     "coordinates": [
-                        -3.825617,
-                        53.280071
+                        -3.825355,
+                        53.280387
                     ],
                     "type": "Point"
                 },
@@ -428,8 +428,8 @@ function welshMarkers() {
                 },
                 "geometry": {
                     "coordinates": [
-                        -2.890298,
-                        53.193988
+                        -2.890356,
+                        53.193975
                     ],
                     "type": "Point"
                 },
@@ -477,7 +477,7 @@ function addLogo()
     );
 }
 
-export function updatePersonIcon(index) {
+export function updatePersonIcon(pKM) {
     var json = mapRouteJson;
     var data = json.routes[0];
     var route = data.geometry.coordinates;
@@ -491,7 +491,9 @@ export function updatePersonIcon(index) {
     };
 
     var options = { units: 'kilometers' };
-    var along = turf.along(alongLine, index, options);
+    var along = turf.along(alongLine, pKM, options);
+
+    // set person icon based on how many steps they have taken
     personMarker.setLngLat(along.geometry.coordinates);
 
     draw = true;
@@ -575,7 +577,7 @@ function colourWalkedPath() {
 
     var nearest = turf.nearestPoint(targetPoint, points);
 
-    // Grab all coords till it matches the nearest
+    // Grab all coords till it matches the nearest coordinate
     var route = [];
 
     for (i = 0; i < alongLine.geometry.coordinates.length; i++) {
@@ -620,4 +622,69 @@ function GreyPath(index) {
     };
 
     return geojson;
+}
+
+export function LandMarksPassed(pElementId)
+{
+    // turn person icon to a point
+    var targetPoint = turf.helpers.point([personMarker._lngLat.lng, personMarker._lngLat.lat]);
+
+    let allGeoPoints = [];
+
+    // put everything into an array
+    for (var i = 0; i < alongLine.geometry.coordinates.length; i++) {
+        allGeoPoints.push(turf.helpers.point([alongLine.geometry.coordinates[i][0], alongLine.geometry.coordinates[i][1]]));
+    }
+
+    // turn it into a geojson
+    var points = turf.helpers.featureCollection(allGeoPoints);
+
+    // grab the nearest point between all the points
+    var nearest = turf.nearestPoint(targetPoint, points);
+
+    // Grab all coords of the persons path so far.
+    var route = [];
+
+    // loop through inputting each location into route till it matches a coordinate
+    for (var i = 0; i < alongLine.geometry.coordinates.length; i++) {
+        route.push([alongLine.geometry.coordinates[i][0], alongLine.geometry.coordinates[i][1]]);
+
+        if (alongLine.geometry.coordinates[i][0] == nearest.geometry.coordinates[0] &&
+            alongLine.geometry.coordinates[i][1] == nearest.geometry.coordinates[1]) {
+            break;
+        }
+    }
+
+    // grab all marker points
+    var welshMarkerPoints = welshMarkers();
+
+    var breakLoop = false;
+    var name;
+
+    // loop through every route
+    for (var i = route.length - 1; i >= 0; i--)
+    {
+        for (var ii = welshMarkerPoints.features.length - 1; ii >= 0; ii--)
+        {
+            if (route[i][0] == welshMarkerPoints.features[ii].geometry.coordinates[0] &&
+                route[i][1] == welshMarkerPoints.features[ii].geometry.coordinates[1])
+            {
+                breakLoop = true;
+
+                name = welshMarkerPoints.features[ii].properties.title;
+
+                if (breakLoop)
+                {
+                    break;
+                }
+            }
+        }
+
+        if (breakLoop) {
+            break;
+        }
+    }
+
+    var header = document.getElementById(pElementId);
+    header.innerHTML = name;
 }

@@ -112,11 +112,13 @@ using VirtualWelshWalk.DataAccess.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 68 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
+#line 70 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
  
     public People people { get; set; } = new People();
     public VirtualWalk virtualWalk { get; set; } = new VirtualWalk();
     string WalkName = "Welsh Coastal Walk";
+    string land = "landID";
+    public string LandMarkPassed { get; set; }
 
     ElementReference mapElement;
     IJSObjectReference mapModule, mapInstance;
@@ -154,9 +156,11 @@ using VirtualWelshWalk.DataAccess.Models;
     {
         if (virtualWalk.TotalSteps >= 0)
         {
-            await mapModule.InvokeVoidAsync("updatePersonIcon", calculatePerson.NewPosition(virtualWalk.TotalSteps));
+            await mapModule.InvokeVoidAsync("updatePersonIcon", calculatePerson.NewPosition(virtualWalk.TotalSteps)).AsTask();
+            await mapModule.InvokeVoidAsync("LandMarksPassed", land);
         }
     }
+
 
     async ValueTask IAsyncDisposable.DisposeAsync()
     {

@@ -18,6 +18,7 @@
         cursor: pointer;
         background-position: center;
         background-repeat: no-repeat;
+        top: -30px;
     }
     #map {
         height: 500px;
@@ -34,7 +35,8 @@ else
 {
     <div class="jumbotron jumbotron-fluid">
         <div class="container text-center">
-            <h1>You have passed Chepstow (Tintern Abbey)</h1>
+
+            <h1 id="@land">@LandMarkPassed</h1>
             <hr />
         </div>
     </div>
@@ -69,6 +71,8 @@ else
     public People people { get; set; } = new People();
     public VirtualWalk virtualWalk { get; set; } = new VirtualWalk();
     string WalkName = "Welsh Coastal Walk";
+    string land = "landID";
+    public string LandMarkPassed { get; set; }
 
     ElementReference mapElement;
     IJSObjectReference mapModule, mapInstance;
@@ -106,9 +110,11 @@ else
     {
         if (virtualWalk.TotalSteps >= 0)
         {
-            await mapModule.InvokeVoidAsync("updatePersonIcon", calculatePerson.NewPosition(virtualWalk.TotalSteps));
+            await mapModule.InvokeVoidAsync("updatePersonIcon", calculatePerson.NewPosition(virtualWalk.TotalSteps)).AsTask();
+            await mapModule.InvokeVoidAsync("LandMarksPassed", land);
         }
     }
+
 
     async ValueTask IAsyncDisposable.DisposeAsync()
     {
