@@ -26,22 +26,7 @@ else
     {
         <div class="jumbotron jumbotron-fluid">
             <div class="container text-center">
-                <EditForm class="form-group" OnValidSubmit="HandleValidSubmit" Model="@virtualSteps">
-                    <DataAnnotationsValidator />
-
-                    <h3>Enter Steps</h3>
-                    <div class="col">
-                        <InputNumber class="form-control" @bind-Value="virtualSteps.NewSteps" id="steps" />
-                    </div>
-                    <div class="col text-center">
-                        <ValidationMessage For="@(() => virtualSteps.NewSteps)" />
-                    </div>
-
-                    <div class="col content text-center">
-                        <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
-                    </div>
-
-                </EditForm>
+                <InputStepsForm/>
             </div>
         </div>
     }
