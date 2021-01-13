@@ -661,11 +661,12 @@ export function LandMarksPassed(pElementId)
     var breakLoop = false;
     var name;
 
-    // loop through every route
+    // loop through every route backwards
     for (var i = route.length - 1; i >= 0; i--)
     {
         for (var ii = welshMarkerPoints.features.length - 1; ii >= 0; ii--)
         {
+            // if route matched one of the markers then set name as the latest marker postion and break
             if (route[i][0] == welshMarkerPoints.features[ii].geometry.coordinates[0] &&
                 route[i][1] == welshMarkerPoints.features[ii].geometry.coordinates[1])
             {
@@ -685,6 +686,7 @@ export function LandMarksPassed(pElementId)
         }
     }
 
+    // Change the dom text
     var header = document.getElementById(pElementId);
     header.innerHTML = name;
 }

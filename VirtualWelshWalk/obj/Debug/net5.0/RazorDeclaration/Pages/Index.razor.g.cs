@@ -98,10 +98,10 @@ using VirtualWelshWalk.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 284 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\Index.razor"
+#line 337 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\Index.razor"
        
 
-    private string Welcome = "Welcome to Educ8’s Welsh Cultural Coastal Walk";
+    //private string Welcome = "Welcome to Educ8’s Welsh Cultural Coastal Walk";
 
 #line default
 #line hidden

@@ -222,3 +222,34 @@ D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\VirtualWelshWalk.genruntimeconfig.cache
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\RazorDeclaration\Shared\Footer.razor.g.cs
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\Razor\Shared\Footer.razor.g.cs
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\RazorDeclaration\Shared\InputStepsForm.razor.g.cs
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\Razor\Shared\InputStepsForm.razor.g.cs
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\RazorDeclaration\Pages\Test.razor.g.cs
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\Razor\Pages\Test.razor.g.cs
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\Assets\Banner.PNG
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\Assets\Culture\Barafundle Bay.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\Assets\Culture\Beaumaris Castle.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\Assets\Culture\Bedd Gelert.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\Assets\Culture\Caernarfon Castle.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\Assets\Culture\Cardiff Castle.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\Assets\Culture\Cardigan Castle.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\Assets\Culture\City Walls.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\Assets\Culture\Conwy Castle.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\Assets\Culture\Fall Bay.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\Assets\Culture\Harlech Castle.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\Assets\Culture\Kidwelly Castle.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\Assets\Culture\Mumbles Pier.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\Assets\Culture\Nant Gwrtheyrn.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\Assets\Culture\Parc y Scarlets.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\Assets\Culture\Rest bay Beach.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\Assets\Culture\Round House.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\Assets\Culture\St Catherine’s Island.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\Assets\Culture\St Davids Cathedral.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\Assets\Culture\St Padarns Church.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\Assets\Culture\Stack Rock Fort.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\Assets\Culture\Strumble Head Lighthouse.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\Assets\Culture\Tintern Abbey.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\Assets\Culture\Transporter Bridge.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\Assets\Educ8-Logo.png
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\Assets\Map-Icon.png
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\Assets\Walking-Man.png

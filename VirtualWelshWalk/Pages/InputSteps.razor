@@ -13,33 +13,10 @@
 }
 else
 {
-    if (showAlert)
-    {
-        <div class="modal-backdrop fade show"></div>
-
-        <div class="modal fade show" tabindex="-1" role="dialog" style="display: block;">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">New Area of Interest Unlocked</h5>
-                            <button type="button" @onclick="() => { showAlert = false; }" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <p>You reached a new milestone and a significant place of interest. Check your emails and the map to see more.</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" @onclick="() => { showAlert = false; }" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    }
-
+    // Top Heading
     <div class="jumbotron jumbotron-fluid">
         <div class="container text-center">
-            <h1>@WalkName: @virtualSteps.TotalSteps</h1>
+            <h1>@WalkName: @virtualSteps.TotalSteps Steps</h1>
             <hr />
             <p>You have walked approximately - @virtualStepsInMiles Miles</p>
         </div>
@@ -49,7 +26,6 @@ else
     {
         <div class="jumbotron jumbotron-fluid">
             <div class="container text-center">
-
                 <EditForm class="form-group" OnValidSubmit="HandleValidSubmit" Model="@virtualSteps">
                     <DataAnnotationsValidator />
 
@@ -78,12 +54,36 @@ else
         </div>
     }
 
+    if (showModalLandmarkPassed)
+    {
+        // Show modal/popup of user reaching a new milestone
+        <div class="modal-backdrop fade show"></div>
+
+        <div class="modal fade show" tabindex="-1" role="dialog" style="display: block;">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">New Area of Interest Unlocked</h5>
+                        <button type="button" @onclick="() => { showModalLandmarkPassed = false; }" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>You reached a new milestone and a significant place of interest. Check your emails and the map to see more.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" @onclick="() => { showModalLandmarkPassed = false; }" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
 }
 
 @code
 {
     VirtualTotalSteps virtualSteps = new VirtualTotalSteps();
-
     public People dbPeople { get; set; } = new People();
     public VirtualWalk dpVirtualWalk { get; set; } = new VirtualWalk();
 
@@ -92,9 +92,7 @@ else
     bool UserInputDailyWalk = false;
 
     double virtualStepsInMiles = 0;
-    bool showAlert = false;
-
-    public EventCallback OnClose { get; set; }
+    bool showModalLandmarkPassed = false;
 
     protected override async Task OnInitializedAsync()
     {
@@ -129,91 +127,91 @@ else
     {
         if (virtualSteps.TotalSteps >= 41989 && virtualSteps.TotalSteps <= 42001)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualSteps.TotalSteps >= 66923 && virtualSteps.TotalSteps <= 66935)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualSteps.TotalSteps >= 122041 && virtualSteps.TotalSteps <= 122053)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualSteps.TotalSteps >= 173183 && virtualSteps.TotalSteps <= 173195)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualSteps.TotalSteps >= 215414 && virtualSteps.TotalSteps <= 215426)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualSteps.TotalSteps >= 261884 && virtualSteps.TotalSteps <= 261896)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualSteps.TotalSteps >= 282999 && virtualSteps.TotalSteps <= 283011)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualSteps.TotalSteps >= 356923 && virtualSteps.TotalSteps <= 356935)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualSteps.TotalSteps >= 388603 && virtualSteps.TotalSteps <= 388615)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualSteps.TotalSteps >= 430847 && virtualSteps.TotalSteps <= 430859)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualSteps.TotalSteps >= 479417 && virtualSteps.TotalSteps <= 479429)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualSteps.TotalSteps >= 513209 && virtualSteps.TotalSteps <= 513221)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualSteps.TotalSteps >= 559679 && virtualSteps.TotalSteps <= 559691)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualSteps.TotalSteps >= 642041 && virtualSteps.TotalSteps <= 642053)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualSteps.TotalSteps >= 726516 && virtualSteps.TotalSteps <= 726528)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualSteps.TotalSteps >= 749758 && virtualSteps.TotalSteps <= 749770)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualStepsInMiles >= 804666 && virtualSteps.TotalSteps <= 804678)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualStepsInMiles >= 851136 && virtualSteps.TotalSteps <= 851148)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualStepsInMiles >= 878590 && virtualSteps.TotalSteps <= 878603)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualStepsInMiles >= 906044 && virtualSteps.TotalSteps <= 906056)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualStepsInMiles >= 329469 && virtualSteps.TotalSteps <= 329481)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualStepsInMiles >= 1055991 && virtualSteps.TotalSteps <= 1056003)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
     }
 }

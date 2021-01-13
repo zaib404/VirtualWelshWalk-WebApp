@@ -1,0 +1,120 @@
+﻿@page "/Test"
+
+@using DataAccess.Data
+@using VirtualWelshWalk.DataAccess.Services;
+@using VirtualWelshWalk.DataAccess.Models;
+
+@inject IVirtualWalkService WalkService
+@inject IPeopleService PeopleService
+@inject IJSRuntime jsRunTime
+
+@implements IAsyncDisposable
+
+<link href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
+
+<style>
+    .marker {
+        background-size: cover;
+        cursor: pointer;
+        background-position: center;
+        background-repeat: no-repeat;
+        top: -30px;
+    }
+
+    #map {
+        height: 1000px;
+        width: 100%;
+    }
+</style>
+
+
+<div class="jumbotron jumbotron-fluid bg-cover text-white"
+     style="margin-bottom:0;
+background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url('./Assets/Culture/Strumble Head Lighthouse.jpg');
+background-repeat:no-repeat; background-size:cover;">
+    
+    <div id="map" @ref="mapElement"></div>
+</div>
+
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-4" style="background-color: cornsilk;">
+                <h1>A 500 mile long walk</h1>
+                <p>From Chepstow to chester following the Welsh coastal path</p>
+            </div>
+            <div class="col" style="background-color:#667073">
+                <h1>Visit Welsh Landmarks</h1>
+                <p>Such as Cardiff Castle, St Davids Cathedral and Beddgelert.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1>Discover places of history along the way as you reach milestones</h1>
+        <p>Register now to start your journey</p>
+        <a href="Identity/Account/Register" class="btn btn-primary btn-lg">Register</a>
+    </div>
+</div>
+
+
+@code
+{
+    public People people { get; set; } = new People();
+    public VirtualWalk virtualWalk { get; set; } = new VirtualWalk();
+
+    ElementReference mapElement;
+    IJSObjectReference mapModule, mapInstance;
+
+    string WalkName = "Welsh Coastal Walk";
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+
+            mapModule = await jsRunTime.InvokeAsync<IJSObjectReference>(
+               "import", "./scripts/MapBox.js").AsTask();
+            mapInstance = await mapModule.InvokeAsync<IJSObjectReference>(
+                "initialize", mapElement).AsTask();
+
+            StateHasChanged();
+        }
+
+        if (virtualWalk != null && mapModule != null)
+        {
+            await UpdatePersonLocation();
+        }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        people = await PeopleService.GetPeople();
+        virtualWalk = await WalkService.GetVirtualWalk(WalkName, people.PeopleId);
+    }
+
+    async Task UpdatePersonLocation()
+    {
+        if (virtualWalk.TotalSteps >= 0)
+        {
+            await mapModule.InvokeVoidAsync("updatePersonIcon", 112.2).AsTask();
+        }
+    }
+
+
+    async ValueTask IAsyncDisposable.DisposeAsync()
+    {
+        if (mapInstance != null)
+        {
+            await mapInstance.DisposeAsync();
+        }
+
+        if (mapModule != null)
+        {
+            await mapModule.DisposeAsync();
+        }
+    }
+}

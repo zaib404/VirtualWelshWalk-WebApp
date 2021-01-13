@@ -112,10 +112,9 @@ using VirtualWelshWalk.DataAccess.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 84 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\InputSteps.razor"
+#line 85 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\InputSteps.razor"
  
     VirtualTotalSteps virtualSteps = new VirtualTotalSteps();
-
     public People dbPeople { get; set; } = new People();
     public VirtualWalk dpVirtualWalk { get; set; } = new VirtualWalk();
 
@@ -124,9 +123,7 @@ using VirtualWelshWalk.DataAccess.Models;
     bool UserInputDailyWalk = false;
 
     double virtualStepsInMiles = 0;
-    bool showAlert = false;
-
-    public EventCallback OnClose { get; set; }
+    bool showModalLandmarkPassed = false;
 
     protected override async Task OnInitializedAsync()
     {
@@ -161,91 +158,91 @@ using VirtualWelshWalk.DataAccess.Models;
     {
         if (virtualSteps.TotalSteps >= 41989 && virtualSteps.TotalSteps <= 42001)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualSteps.TotalSteps >= 66923 && virtualSteps.TotalSteps <= 66935)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualSteps.TotalSteps >= 122041 && virtualSteps.TotalSteps <= 122053)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualSteps.TotalSteps >= 173183 && virtualSteps.TotalSteps <= 173195)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualSteps.TotalSteps >= 215414 && virtualSteps.TotalSteps <= 215426)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualSteps.TotalSteps >= 261884 && virtualSteps.TotalSteps <= 261896)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualSteps.TotalSteps >= 282999 && virtualSteps.TotalSteps <= 283011)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualSteps.TotalSteps >= 356923 && virtualSteps.TotalSteps <= 356935)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualSteps.TotalSteps >= 388603 && virtualSteps.TotalSteps <= 388615)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualSteps.TotalSteps >= 430847 && virtualSteps.TotalSteps <= 430859)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualSteps.TotalSteps >= 479417 && virtualSteps.TotalSteps <= 479429)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualSteps.TotalSteps >= 513209 && virtualSteps.TotalSteps <= 513221)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualSteps.TotalSteps >= 559679 && virtualSteps.TotalSteps <= 559691)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualSteps.TotalSteps >= 642041 && virtualSteps.TotalSteps <= 642053)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualSteps.TotalSteps >= 726516 && virtualSteps.TotalSteps <= 726528)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualSteps.TotalSteps >= 749758 && virtualSteps.TotalSteps <= 749770)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualStepsInMiles >= 804666 && virtualSteps.TotalSteps <= 804678)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualStepsInMiles >= 851136 && virtualSteps.TotalSteps <= 851148)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualStepsInMiles >= 878590 && virtualSteps.TotalSteps <= 878603)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualStepsInMiles >= 906044 && virtualSteps.TotalSteps <= 906056)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualStepsInMiles >= 329469 && virtualSteps.TotalSteps <= 329481)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
         else if (virtualStepsInMiles >= 1055991 && virtualSteps.TotalSteps <= 1056003)
         {
-            showAlert = true;
+            showModalLandmarkPassed = true;
         }
     }
 

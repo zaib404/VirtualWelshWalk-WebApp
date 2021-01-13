@@ -116,14 +116,16 @@ using VirtualWelshWalk.DataAccess.Models;
  
     public People people { get; set; } = new People();
     public VirtualWalk virtualWalk { get; set; } = new VirtualWalk();
-    string WalkName = "Welsh Coastal Walk";
-    string land = "landID";
-    public string LandMarkPassed { get; set; }
+    CalculatePersonsPosition calculatePerson = new CalculatePersonsPosition();
 
     ElementReference mapElement;
     IJSObjectReference mapModule, mapInstance;
 
-    CalculatePersonsPosition calculatePerson = new CalculatePersonsPosition();
+    #region elementIds
+    string landID = "landID";
+    #endregion
+
+    string WalkName = "Welsh Coastal Walk";
 
     bool showInfo = false;
 
@@ -157,7 +159,7 @@ using VirtualWelshWalk.DataAccess.Models;
         if (virtualWalk.TotalSteps >= 0)
         {
             await mapModule.InvokeVoidAsync("updatePersonIcon", calculatePerson.NewPosition(virtualWalk.TotalSteps)).AsTask();
-            await mapModule.InvokeVoidAsync("LandMarksPassed", land);
+            await mapModule.InvokeVoidAsync("LandMarksPassed", landID);
         }
     }
 

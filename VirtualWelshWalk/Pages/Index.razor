@@ -2,35 +2,90 @@
 @attribute [AllowAnonymous]
 @inject Microsoft.Extensions.Localization.IStringLocalizer<App> Localizer
 
+<style>
+    .hero {
+        margin-bottom: 0;
+        background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url('./Assets/Banner.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .imgs {
+        width: 100%; /* You can set the dimensions to whatever you want */
+        height: 70%;
+        object-fit: fill;
+    }
+
+    .imgHeading
+    {
+        margin-top:.5rem;
+    }
+</style>
+
 <AuthorizeView>
 
     <Authorized>
-
-        <VirtualMap/>
+        @*<Test/>*@
+        <VirtualMap />
 
     </Authorized>
 
     <NotAuthorized>
 
         @*Hero Image*@
-        <div class="jumbotron jumbotron-fluid bg-cover text-white" style="margin-bottom:0; background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url('./Assets/Culture/Strumble Head Lighthouse.jpg'); background-repeat:no-repeat; background-size:cover;">
+        <div class="jumbotron jumbotron-fluid bg-cover text-white hero">
             <div class="container text-center">
-                <h1 class="display-4">@Localizer[Welcome]!</h1>
+                <h3>@Localizer["Welsh Cultural Coastal Walk"]</h3>
                 <br />
                 <p class="lead">Take part in Educ8 interactive learning experience.</p>
+                <a href="Identity/Account/Login" class="btn btn-primary">
+                    Login Now
+                </a>
             </div>
         </div>
 
         <div class="jumbotron jumbotron-fluid">
-            <div class="container-fluid">
+            <div class="container text-center">
                 <div class="row">
-                    <div class="col-4" style="background-color: cornsilk;">
-                        <h1>A 500 mile long walk</h1>
-                        <p>From Chepstow to chester following the Welsh coastal path</p>
+                    <div class="col col-sm-4">
+                        <h2>A 500 mile long walk</h2>
                     </div>
-                    <div class="col" style="background-color:#667073">
-                        <h1>Visit Welsh Landmarks</h1>
-                        <p>Such as Cardiff Castle, St Davids Cathedral and Beddgelert.</p>
+                    <div class="col col-sm-8">
+                        <p>From Chepstow to Chester</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="jumbotron jumbotron-fluid">
+
+            <div class="container-fluid text-center">
+
+                <h2>Visit Welsh Landmarks</h2>
+                <h5 class="lead">Such as: </h5>
+
+                <hr />
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="./Assets/Culture/Cardiff Castle.jpg" class="img-fluid imgs rounded-circle" alt="Cardiff Castle" />
+                        <h3>
+                            Cardiff Castle
+                        </h3>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="./Assets/Culture/St Davids Cathedral.jpg" class="img-fluid imgs" alt="St Davids Cathedral" />
+                        <h3>
+                            St Davids Cathedral
+                        </h3>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="./Assets/Culture/Bedd Gelert.jpg" class="img-fluid imgs" alt="Bedd Gelert" />
+                        <h3>
+                            Bedd Gelert
+                        </h3>
                     </div>
                 </div>
             </div>
@@ -43,7 +98,7 @@
                 <a href="Identity/Account/Register" class="btn btn-primary btn-lg">Register</a>
             </div>
         </div>
-    
+
     </NotAuthorized>
 
 </AuthorizeView>
@@ -56,225 +111,225 @@
 *@
 
 @*<div class="jumbotron jumbotron-fluid">
-    <div class="container text-center">
-        <h1>Route:</h1>
-        <hr />
-        <div class="row">
-            <div class="col-md-12">
-                <div class="main-timeline">
+        <div class="container text-center">
+            <h1>Route:</h1>
+            <hr />
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="main-timeline">
 
-                    <div class="timeline">
-                        <a class="timeline-content">
-                            <h3 class="title">1. Chepstow (Tintern Abbey)</h3>
-                            <p class="description">
-                                Start
-                            </p>
-                        </a>
+                        <div class="timeline">
+                            <a class="timeline-content">
+                                <h3 class="title">1. Chepstow (Tintern Abbey)</h3>
+                                <p class="description">
+                                    Start
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="timeline">
+                            <a class="timeline-content">
+                                <h3 class="title" style="color:#fd2661;">2. Newport (Transporter bridge)</h3>
+                                <p class="description">
+                                    20 Miles
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="timeline">
+                            <a class="timeline-content">
+                                <h3 class="title">3. Cardiff (Cardiff Castle)</h3>
+                                <p class="description">
+                                    12 miles
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="timeline">
+                            <a class="timeline-content">
+                                <h3 class="title">4. Porthcawl (Rest Bay Beach)</h3>
+                                <p class="description">
+                                    26 miles
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="timeline">
+                            <a class="timeline-content">
+                                <h3 class="title">5. Swansea (Mumbles Pier)</h3>
+                                <p class="description">
+                                    24 Miles
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="timeline">
+                            <a class="timeline-content">
+                                <h3 class="title">6. Rhossili (Fall Bay)</h3>
+                                <p class="description">
+                                    20 Miles
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="timeline">
+                            <a class="timeline-content">
+                                <h3 class="title">7. Llanelli (Parc y Scarlets)</h3>
+                                <p class="description">
+                                    22 Miles
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="timeline">
+                            <a class="timeline-content">
+                                <h3 class="title">8. Carmarthen (Kidwelly Castle)</h3>
+                                <p class="description">
+                                    10 Miles
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="timeline">
+                            <a class="timeline-content">
+                                <h3 class="title">9. Tenby (St Catherines Island)</h3>
+                                <p class="description">
+                                    35 Miles
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="timeline">
+                            <a class="timeline-content">
+                                <h3 class="title">10. Pembrokeshire (Barafundle Bay)</h3>
+                                <p class="description">
+                                    15 Miles
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="timeline">
+                            <a class="timeline-content">
+                                <h3 class="title">11. Milford Haven (Stack rock fort)</h3>
+                                <p class="description">
+                                    20 Miles
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="timeline">
+                            <a class="timeline-content">
+                                <h3 class="title">12. St David’s (St Davids Cathedral)</h3>
+                                <p class="description">
+                                    23 Miles
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="timeline">
+                            <a class="timeline-content">
+                                <h3 class="title">13. Fishguard (Strumble Head Lighthouse)</h3>
+                                <p class="description">
+                                    16 Miles
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="timeline">
+                            <a class="timeline-content">
+                                <h3 class="title">14. Cardigan (Cardigan Castle)</h3>
+                                <p class="description">
+                                    22 Miles
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="timeline">
+                            <a class="timeline-content">
+                                <h3 class="title">15. Aberystwyth (St Padarns Church)</h3>
+                                <p class="description">
+                                    39 Miles
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="timeline">
+                            <a class="timeline-content">
+                                <h3 class="title">16. Barmouth (Round House)</h3>
+                                <p class="description">
+                                    40 Miles
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="timeline">
+                            <a class="timeline-content">
+                                <h3 class="title">17. Harlech (Harlech Castle)</h3>
+                                <p class="description">
+                                    11 Miles
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="timeline">
+                            <a class="timeline-content">
+                                <h3 class="title">18. Pwllheli (Nant Gwrtheyrn)</h3>
+                                <p class="description">
+                                    26 Miles
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="timeline">
+                            <a class="timeline-content">
+                                <h3 class="title">19. Gwynedd (Beddgelert)</h3>
+                                <p class="description">
+                                    22 Miles
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="timeline">
+                            <a class="timeline-content">
+                                <h3 class="title">20. Caernarfon (Caernarfon Castle)</h3>
+                                <p class="description">
+                                    13 Miles
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="timeline">
+                            <a class="timeline-content">
+                                <h3 class="title">21. Anglesey (Beaumaris Castle)</h3>
+                                <p class="description">
+                                    13 Miles
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="timeline">
+                            <a class="timeline-content">
+                                <h3 class="title">22. Conwy (Conwy Castle)</h3>
+                                <p class="description">
+                                    27 Miles
+                                </p>
+                            </a>
+                        </div>
+
+                        <div class="timeline">
+                            <a class="timeline-content">
+                                <h3 class="title">23. Chester (City Walls)</h3>
+                                <p class="description">
+                                    44 Miles
+                                </p>
+                            </a>
+                        </div>
+
                     </div>
-
-                    <div class="timeline">
-                        <a class="timeline-content">
-                            <h3 class="title" style="color:#fd2661;">2. Newport (Transporter bridge)</h3>
-                            <p class="description">
-                                20 Miles
-                            </p>
-                        </a>
-                    </div>
-
-                    <div class="timeline">
-                        <a class="timeline-content">
-                            <h3 class="title">3. Cardiff (Cardiff Castle)</h3>
-                            <p class="description">
-                                12 miles
-                            </p>
-                        </a>
-                    </div>
-
-                    <div class="timeline">
-                        <a class="timeline-content">
-                            <h3 class="title">4. Porthcawl (Rest Bay Beach)</h3>
-                            <p class="description">
-                                26 miles
-                            </p>
-                        </a>
-                    </div>
-
-                    <div class="timeline">
-                        <a class="timeline-content">
-                            <h3 class="title">5. Swansea (Mumbles Pier)</h3>
-                            <p class="description">
-                                24 Miles
-                            </p>
-                        </a>
-                    </div>
-
-                    <div class="timeline">
-                        <a class="timeline-content">
-                            <h3 class="title">6. Rhossili (Fall Bay)</h3>
-                            <p class="description">
-                                20 Miles
-                            </p>
-                        </a>
-                    </div>
-
-                    <div class="timeline">
-                        <a class="timeline-content">
-                            <h3 class="title">7. Llanelli (Parc y Scarlets)</h3>
-                            <p class="description">
-                                22 Miles
-                            </p>
-                        </a>
-                    </div>
-
-                    <div class="timeline">
-                        <a class="timeline-content">
-                            <h3 class="title">8. Carmarthen (Kidwelly Castle)</h3>
-                            <p class="description">
-                                10 Miles
-                            </p>
-                        </a>
-                    </div>
-
-                    <div class="timeline">
-                        <a class="timeline-content">
-                            <h3 class="title">9. Tenby (St Catherines Island)</h3>
-                            <p class="description">
-                                35 Miles
-                            </p>
-                        </a>
-                    </div>
-
-                    <div class="timeline">
-                        <a class="timeline-content">
-                            <h3 class="title">10. Pembrokeshire (Barafundle Bay)</h3>
-                            <p class="description">
-                                15 Miles
-                            </p>
-                        </a>
-                    </div>
-
-                    <div class="timeline">
-                        <a class="timeline-content">
-                            <h3 class="title">11. Milford Haven (Stack rock fort)</h3>
-                            <p class="description">
-                                20 Miles
-                            </p>
-                        </a>
-                    </div>
-
-                    <div class="timeline">
-                        <a class="timeline-content">
-                            <h3 class="title">12. St David’s (St Davids Cathedral)</h3>
-                            <p class="description">
-                                23 Miles
-                            </p>
-                        </a>
-                    </div>
-
-                    <div class="timeline">
-                        <a class="timeline-content">
-                            <h3 class="title">13. Fishguard (Strumble Head Lighthouse)</h3>
-                            <p class="description">
-                                16 Miles
-                            </p>
-                        </a>
-                    </div>
-
-                    <div class="timeline">
-                        <a class="timeline-content">
-                            <h3 class="title">14. Cardigan (Cardigan Castle)</h3>
-                            <p class="description">
-                                22 Miles
-                            </p>
-                        </a>
-                    </div>
-
-                    <div class="timeline">
-                        <a class="timeline-content">
-                            <h3 class="title">15. Aberystwyth (St Padarns Church)</h3>
-                            <p class="description">
-                                39 Miles
-                            </p>
-                        </a>
-                    </div>
-
-                    <div class="timeline">
-                        <a class="timeline-content">
-                            <h3 class="title">16. Barmouth (Round House)</h3>
-                            <p class="description">
-                                40 Miles
-                            </p>
-                        </a>
-                    </div>
-
-                    <div class="timeline">
-                        <a class="timeline-content">
-                            <h3 class="title">17. Harlech (Harlech Castle)</h3>
-                            <p class="description">
-                                11 Miles
-                            </p>
-                        </a>
-                    </div>
-
-                    <div class="timeline">
-                        <a class="timeline-content">
-                            <h3 class="title">18. Pwllheli (Nant Gwrtheyrn)</h3>
-                            <p class="description">
-                                26 Miles
-                            </p>
-                        </a>
-                    </div>
-
-                    <div class="timeline">
-                        <a class="timeline-content">
-                            <h3 class="title">19. Gwynedd (Beddgelert)</h3>
-                            <p class="description">
-                                22 Miles
-                            </p>
-                        </a>
-                    </div>
-
-                    <div class="timeline">
-                        <a class="timeline-content">
-                            <h3 class="title">20. Caernarfon (Caernarfon Castle)</h3>
-                            <p class="description">
-                                13 Miles
-                            </p>
-                        </a>
-                    </div>
-
-                    <div class="timeline">
-                        <a class="timeline-content">
-                            <h3 class="title">21. Anglesey (Beaumaris Castle)</h3>
-                            <p class="description">
-                                13 Miles
-                            </p>
-                        </a>
-                    </div>
-
-                    <div class="timeline">
-                        <a class="timeline-content">
-                            <h3 class="title">22. Conwy (Conwy Castle)</h3>
-                            <p class="description">
-                                27 Miles
-                            </p>
-                        </a>
-                    </div>
-
-                    <div class="timeline">
-                        <a class="timeline-content">
-                            <h3 class="title">23. Chester (City Walls)</h3>
-                            <p class="description">
-                                44 Miles
-                            </p>
-                        </a>
-                    </div>
-
                 </div>
             </div>
         </div>
-    </div>
-</div>*@
+    </div>*@
 
 @*
     HTML FROM BEST JQUERY.COM CODELAB ENDS HERE
@@ -283,5 +338,5 @@
 
 @code {
 
-    private string Welcome = "Welcome to Educ8’s Welsh Cultural Coastal Walk";
+    //private string Welcome = "Welcome to Educ8’s Welsh Cultural Coastal Walk";
 }

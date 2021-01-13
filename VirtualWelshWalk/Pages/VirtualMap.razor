@@ -36,7 +36,7 @@ else
     <div class="jumbotron jumbotron-fluid">
         <div class="container text-center">
 
-            <h1 id="@land">@LandMarkPassed</h1>
+            <h1 id="@landID">Loading...</h1>
             <hr />
         </div>
     </div>
@@ -70,14 +70,16 @@ else
 {
     public People people { get; set; } = new People();
     public VirtualWalk virtualWalk { get; set; } = new VirtualWalk();
-    string WalkName = "Welsh Coastal Walk";
-    string land = "landID";
-    public string LandMarkPassed { get; set; }
+    CalculatePersonsPosition calculatePerson = new CalculatePersonsPosition();
 
     ElementReference mapElement;
     IJSObjectReference mapModule, mapInstance;
 
-    CalculatePersonsPosition calculatePerson = new CalculatePersonsPosition();
+    #region elementIds
+    string landID = "landID";
+    #endregion
+
+    string WalkName = "Welsh Coastal Walk";
 
     bool showInfo = false;
 
@@ -111,7 +113,7 @@ else
         if (virtualWalk.TotalSteps >= 0)
         {
             await mapModule.InvokeVoidAsync("updatePersonIcon", calculatePerson.NewPosition(virtualWalk.TotalSteps)).AsTask();
-            await mapModule.InvokeVoidAsync("LandMarksPassed", land);
+            await mapModule.InvokeVoidAsync("LandMarksPassed", landID);
         }
     }
 
