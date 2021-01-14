@@ -1,7 +1,6 @@
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailService\bin\Debug\netcoreapp3.1\EmailService.deps.json
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailService\bin\Debug\netcoreapp3.1\EmailService.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailService\bin\Debug\netcoreapp3.1\EmailService.pdb
-D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailService\obj\Debug\netcoreapp3.1\EmailService.csprojAssemblyReference.cache
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailService\obj\Debug\netcoreapp3.1\EmailService.AssemblyInfoInputs.cache
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailService\obj\Debug\netcoreapp3.1\EmailService.AssemblyInfo.cs
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailService\obj\Debug\netcoreapp3.1\EmailService.csproj.CoreCompileInputs.cache

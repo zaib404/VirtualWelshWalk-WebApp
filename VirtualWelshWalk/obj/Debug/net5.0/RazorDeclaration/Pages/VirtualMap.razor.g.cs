@@ -112,7 +112,7 @@ using VirtualWelshWalk.DataAccess.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 70 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
+#line 83 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
  
     public People people { get; set; } = new People();
     public VirtualWalk virtualWalk { get; set; } = new VirtualWalk();
@@ -127,7 +127,17 @@ using VirtualWelshWalk.DataAccess.Models;
 
     string WalkName = "Welsh Coastal Walk";
 
-    bool showInfo = false;
+    double stepToNextMilestone = 0;
+
+    bool showEnterStepsModal = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        people = await PeopleService.GetPeople();
+        virtualWalk = await WalkService.GetVirtualWalk(WalkName, people.PeopleId);
+
+        showEnterStepsModal = true;
+    }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -139,19 +149,13 @@ using VirtualWelshWalk.DataAccess.Models;
             mapInstance = await mapModule.InvokeAsync<IJSObjectReference>(
                 "initialize", mapElement).AsTask();
 
+            if (virtualWalk != null && mapModule != null)
+            {
+                await UpdatePersonLocation();
+            }
+
             StateHasChanged();
         }
-
-        if (virtualWalk != null && mapModule != null)
-        {
-            await UpdatePersonLocation();
-        }
-    }
-
-    protected override async Task OnInitializedAsync()
-    {
-        people = await PeopleService.GetPeople();
-        virtualWalk = await WalkService.GetVirtualWalk(WalkName, people.PeopleId);
     }
 
     async Task UpdatePersonLocation()
@@ -160,9 +164,16 @@ using VirtualWelshWalk.DataAccess.Models;
         {
             await mapModule.InvokeVoidAsync("updatePersonIcon", calculatePerson.NewPosition(virtualWalk.TotalSteps)).AsTask();
             await mapModule.InvokeVoidAsync("LandMarksPassed", landID);
+            stepToNextMilestone = Math.Round(await mapModule.InvokeAsync<double>("ApproximateStepsToNextMilestone"), 2);
         }
     }
 
+    async Task Update()
+    {
+        showEnterStepsModal = false;
+        await UpdatePersonLocation();
+        await mapModule.InvokeVoidAsync("UpdateColourPath");
+    }
 
     async ValueTask IAsyncDisposable.DisposeAsync()
     {

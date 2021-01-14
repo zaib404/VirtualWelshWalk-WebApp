@@ -20,11 +20,11 @@
         background-repeat: no-repeat;
         top: -30px;
     }
+
     #map {
         height: 500px;
         width: 100%;
     }
-
 </style>
 
 @if (virtualWalk.Equals(null))
@@ -43,24 +43,37 @@ else
 
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-
-            <h2 class="text-center">
-                You have walked @virtualWalk.TotalSteps. You have 99 steps to go until your next milestone
-            </h2>
-
             <div class="row">
                 <div class="col">
                     <div id="map" @ref="mapElement"></div>
                 </div>
             </div>
+
+            <h2 class="text-center">
+                You have walked @virtualWalk.TotalSteps. You have @stepToNextMilestone miles to go until your next milestone
+            </h2>
         </div>
     </div>
 
-    if (showInfo)
+    @if (showEnterStepsModal)
     {
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-                <h1>Test</h1>
+        // Show modal/popup of user confirming
+        <div class="modal-backdrop fade show"></div>
+
+        <div class="modal fade show" tabindex="-1" role="dialog" style="display: block;">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <button type="button" @onclick="Update" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <InputSteps dbPeople="people" dbVirtualWalk="virtualWalk" />
+                    </div>
+                </div>
             </div>
         </div>
     }
@@ -81,7 +94,17 @@ else
 
     string WalkName = "Welsh Coastal Walk";
 
-    bool showInfo = false;
+    double stepToNextMilestone = 0;
+
+    bool showEnterStepsModal = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        people = await PeopleService.GetPeople();
+        virtualWalk = await WalkService.GetVirtualWalk(WalkName, people.PeopleId);
+
+        showEnterStepsModal = true;
+    }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -93,19 +116,13 @@ else
             mapInstance = await mapModule.InvokeAsync<IJSObjectReference>(
                 "initialize", mapElement).AsTask();
 
+            if (virtualWalk != null && mapModule != null)
+            {
+                await UpdatePersonLocation();
+            }
+
             StateHasChanged();
         }
-
-        if (virtualWalk != null && mapModule != null)
-        {
-            await UpdatePersonLocation();
-        }
-    }
-
-    protected override async Task OnInitializedAsync()
-    {
-        people = await PeopleService.GetPeople();
-        virtualWalk = await WalkService.GetVirtualWalk(WalkName, people.PeopleId);
     }
 
     async Task UpdatePersonLocation()
@@ -114,9 +131,16 @@ else
         {
             await mapModule.InvokeVoidAsync("updatePersonIcon", calculatePerson.NewPosition(virtualWalk.TotalSteps)).AsTask();
             await mapModule.InvokeVoidAsync("LandMarksPassed", landID);
+            stepToNextMilestone = Math.Round(await mapModule.InvokeAsync<double>("ApproximateStepsToNextMilestone"), 2);
         }
     }
 
+    async Task Update()
+    {
+        showEnterStepsModal = false;
+        await UpdatePersonLocation();
+        await mapModule.InvokeVoidAsync("UpdateColourPath");
+    }
 
     async ValueTask IAsyncDisposable.DisposeAsync()
     {

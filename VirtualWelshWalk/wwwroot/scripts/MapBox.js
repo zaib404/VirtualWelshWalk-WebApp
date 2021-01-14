@@ -580,11 +580,15 @@ function colourWalkedPath() {
     // Grab all coords till it matches the nearest coordinate
     var route = [];
 
-    for (i = 0; i < alongLine.geometry.coordinates.length; i++) {
+    for (i = 0; i < alongLine.geometry.coordinates.length; i++)
+    {
         route.push([alongLine.geometry.coordinates[i][0], alongLine.geometry.coordinates[i][1]]);
 
         if (alongLine.geometry.coordinates[i][0] == nearest.geometry.coordinates[0] &&
-            alongLine.geometry.coordinates[i][1] == nearest.geometry.coordinates[1]) {
+            alongLine.geometry.coordinates[i][1] == nearest.geometry.coordinates[1])
+        {
+            //route.pop();
+            route.push([personMarker._lngLat.lng, personMarker._lngLat.lat]);
             break;
         }
     }
@@ -607,7 +611,10 @@ function GreyPath(index) {
     // Grab all coords starting from persons locations
     var route = [];
 
+    route.push([personMarker._lngLat.lng, personMarker._lngLat.lat]);
+
     var i;
+
     for (i = index; i < alongLine.geometry.coordinates.length; i++) {
         route.push([alongLine.geometry.coordinates[i][0], alongLine.geometry.coordinates[i][1]]);
     }
@@ -689,4 +696,98 @@ export function LandMarksPassed(pElementId)
     // Change the dom text
     var header = document.getElementById(pElementId);
     header.innerHTML = name;
+}
+
+export function ApproximateStepsToNextMilestone()
+{
+    // turn person icon to a point
+    var targetPoint = turf.helpers.point([personMarker._lngLat.lng, personMarker._lngLat.lat]);
+
+    let allGeoPoints = [];
+
+    // put everything into an array
+    for (var i = 0; i < alongLine.geometry.coordinates.length; i++) {
+        allGeoPoints.push(turf.helpers.point([alongLine.geometry.coordinates[i][0], alongLine.geometry.coordinates[i][1]]));
+    }
+
+    // turn it into a geojson
+    var points = turf.helpers.featureCollection(allGeoPoints);
+
+    // grab the nearest point by the person between all the points
+    var nearest = turf.nearestPoint(targetPoint, points);
+
+    // Grab all coords of the persons path so far.
+    var route = [];
+
+    // loop through inputting each location into route till it matches a coordinate
+    for (var i = 0; i < alongLine.geometry.coordinates.length; i++)
+    {
+        route.push([alongLine.geometry.coordinates[i][0], alongLine.geometry.coordinates[i][1]]);
+
+        if (alongLine.geometry.coordinates[i][0] == nearest.geometry.coordinates[0] &&
+            alongLine.geometry.coordinates[i][1] == nearest.geometry.coordinates[1]) {
+            break;
+        }
+    }
+
+    // grab all marker points
+    var welshMarkerPoints = welshMarkers();
+
+    var breakLoop = false;
+    var markerIndex = 0;
+
+    // loop through all the welsh markers backwards
+    for (var i = route.length - 1; i >= 0; i--)
+    {
+        for (var ii = welshMarkerPoints.features.length - 1; ii >= 0; ii--)
+        {
+            // if route matched one of the markers then break out
+            if (route[i][0] == welshMarkerPoints.features[ii].geometry.coordinates[0] &&
+                route[i][1] == welshMarkerPoints.features[ii].geometry.coordinates[1])
+            {
+                breakLoop = true;
+
+                markerIndex = ii;// welshMarkerPoints.features[ii].properties.title;
+
+                if (breakLoop) {
+                    break;
+                }
+            }
+        }
+
+        if (breakLoop) {
+            break;
+        }
+    }
+
+    var nextPointMarker = turf.helpers.point([welshMarkerPoints.features[markerIndex+1].geometry.coordinates[0], welshMarkerPoints.features[markerIndex+1].geometry.coordinates[1]]);
+
+    var slice = turf.lineSlice([personMarker._lngLat.lng, personMarker._lngLat.lat], nextPointMarker, alongLine.geometry)
+
+    var distance = turf.length(slice, { units: 'miles' })
+
+    return distance;
+
+}
+
+export function UpdateColourPath()
+{
+    if (map.getLayer('greenRoute'))
+    {
+        map.removeLayer('greenRoute');
+    }
+
+    if (map.getSource('greenRoute')) {
+        map.removeSource('greenRoute');
+    }
+
+
+    if (map.getLayer('greyRoute')) {
+        map.removeLayer('greyRoute');
+    }    
+    if (map.getSource('greyRoute')) {
+        map.removeSource('greyRoute');
+    }
+
+    colourPath();
 }

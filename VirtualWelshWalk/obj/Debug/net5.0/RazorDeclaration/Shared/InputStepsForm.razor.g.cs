@@ -76,6 +76,27 @@ using VirtualWelshWalk.Shared;
 #line hidden
 #nullable disable
 #nullable restore
+#line 1 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Shared\InputStepsForm.razor"
+using DataAccess.Data;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 2 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Shared\InputStepsForm.razor"
+using VirtualWelshWalk.DataAccess.Services;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Shared\InputStepsForm.razor"
+using VirtualWelshWalk.DataAccess.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 10 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
 [Authorize]
 
@@ -89,6 +110,48 @@ using VirtualWelshWalk.Shared;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 58 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Shared\InputStepsForm.razor"
+ 
+    [Parameter]
+    public VirtualTotalSteps virtualSteps { get; set; }
+
+    [Parameter]
+    public People dbPeople { get; set; }
+
+    [Parameter]
+    public VirtualWalk dbVirtualWalk { get; set; }
+
+    [Parameter]
+    public EventCallback<int> OnTotalStepsChanged { get; set; }
+
+    bool ShowConfirmationModal = false;
+
+    async Task HandleValidSubmit()
+    {
+        dbVirtualWalk.TotalSteps += virtualSteps.NewSteps;
+
+        await WalkService.UpdateVirtualWalk(dbVirtualWalk);
+
+        virtualSteps.NewSteps = 0;
+
+        virtualSteps.TotalSteps = dbVirtualWalk.TotalSteps;
+
+        ShowConfirmationModal = false;
+
+        await UpdateTotalStepsChanged();
+    }
+
+    private async Task UpdateTotalStepsChanged()
+    {
+        await OnTotalStepsChanged.InvokeAsync(virtualSteps.TotalSteps);
+    }
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IPeopleService PeopleService { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IVirtualWalkService WalkService { get; set; }
     }
 }
 #pragma warning restore 1591
