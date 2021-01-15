@@ -4,8 +4,7 @@
 
 @inject IVirtualWalkService WalkService
 @inject IPeopleService PeopleService
-
-@* edit form on valid submit change bool ShowConfirmationModal to true Which then will display a modal asking to confirm changes *@ 
+@* edit form on valid submit change bool ShowConfirmationModal to true Which then will display a modal asking to confirm changes *@
 <EditForm class="form-group" OnValidSubmit="() => ShowConfirmationModal = true" Model="@virtualSteps" method="post">
     <DataAnnotationsValidator />
 
@@ -68,7 +67,18 @@
     [Parameter]
     public EventCallback<int> OnTotalStepsChanged { get; set; }
 
+    [Parameter]
+    public EventCallback OnVirtualMapSubmit { get; set; }
+
     bool ShowConfirmationModal = false;
+
+    protected override void OnInitialized()
+    {
+        if (virtualSteps == null)
+        {
+            virtualSteps = new VirtualTotalSteps();
+        }
+    }
 
     async Task HandleValidSubmit()
     {
@@ -82,11 +92,24 @@
 
         ShowConfirmationModal = false;
 
-        await UpdateTotalStepsChanged();
+        if (OnTotalStepsChanged.HasDelegate)
+        {
+            await UpdateTotalStepsChanged();
+        }
+
+        if (OnVirtualMapSubmit.HasDelegate)
+        {
+            await VirtualMapModalSubmitChanged();
+        }
     }
 
     private async Task UpdateTotalStepsChanged()
     {
         await OnTotalStepsChanged.InvokeAsync(virtualSteps.TotalSteps);
+    }
+
+    async Task VirtualMapModalSubmitChanged()
+    {
+        await OnVirtualMapSubmit.InvokeAsync();
     }
 }

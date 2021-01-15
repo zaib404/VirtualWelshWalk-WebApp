@@ -112,7 +112,7 @@ using VirtualWelshWalk.DataAccess.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 83 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
+#line 94 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
  
     public People people { get; set; } = new People();
     public VirtualWalk virtualWalk { get; set; } = new VirtualWalk();
@@ -143,9 +143,8 @@ using VirtualWelshWalk.DataAccess.Models;
     {
         if (firstRender)
         {
-
             mapModule = await jsRunTime.InvokeAsync<IJSObjectReference>(
-               "import", "./scripts/MapBox.js").AsTask();
+           "import", "./scripts/MapBox.js").AsTask();
             mapInstance = await mapModule.InvokeAsync<IJSObjectReference>(
                 "initialize", mapElement).AsTask();
 

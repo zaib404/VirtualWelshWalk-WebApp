@@ -111,7 +111,7 @@ using VirtualWelshWalk.DataAccess.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 58 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Shared\InputStepsForm.razor"
+#line 57 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Shared\InputStepsForm.razor"
  
     [Parameter]
     public VirtualTotalSteps virtualSteps { get; set; }
@@ -125,7 +125,18 @@ using VirtualWelshWalk.DataAccess.Models;
     [Parameter]
     public EventCallback<int> OnTotalStepsChanged { get; set; }
 
+    [Parameter]
+    public EventCallback OnVirtualMapSubmit { get; set; }
+
     bool ShowConfirmationModal = false;
+
+    protected override void OnInitialized()
+    {
+        if (virtualSteps == null)
+        {
+            virtualSteps = new VirtualTotalSteps();
+        }
+    }
 
     async Task HandleValidSubmit()
     {
@@ -139,12 +150,25 @@ using VirtualWelshWalk.DataAccess.Models;
 
         ShowConfirmationModal = false;
 
-        await UpdateTotalStepsChanged();
+        if (OnTotalStepsChanged.HasDelegate)
+        {
+            await UpdateTotalStepsChanged();
+        }
+
+        if (OnVirtualMapSubmit.HasDelegate)
+        {
+            await VirtualMapModalSubmitChanged();
+        }
     }
 
     private async Task UpdateTotalStepsChanged()
     {
         await OnTotalStepsChanged.InvokeAsync(virtualSteps.TotalSteps);
+    }
+
+    async Task VirtualMapModalSubmitChanged()
+    {
+        await OnVirtualMapSubmit.InvokeAsync();
     }
 
 #line default

@@ -28,5 +28,7 @@ namespace VirtualWelshWalk.DataAccess.Models
         public string UserName { get; set; }
 
         public List<VirtualWalk> VirtualWalk { get; set; }
+
+        public List<VirtualMilestone> virtualMilestones { get; set; }
     }
 }

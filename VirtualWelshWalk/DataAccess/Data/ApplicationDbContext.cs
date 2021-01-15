@@ -15,6 +15,8 @@ namespace VirtualWelshWalk.DataAccess.Data
 
         public DbSet<VirtualWalk> VirtualWalksTBL { get; set; }
 
+        public DbSet<VirtualMilestone> VirtualMilestonesTBL { get; set; }
+
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)

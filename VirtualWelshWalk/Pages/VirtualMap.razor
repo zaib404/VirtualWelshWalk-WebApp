@@ -36,22 +36,28 @@ else
     <div class="jumbotron jumbotron-fluid">
         <div class="container text-center">
 
-            <h1 id="@landID">Loading...</h1>
+            <h1>Current Milestone:</h1>
             <hr />
+            <h2 id="@landID">Loading...</h2>
         </div>
     </div>
 
     <div class="jumbotron jumbotron-fluid">
-        <div class="container">
+        <div class="container-fluid" style="padding-left: 5%; padding-right:5%;">
             <div class="row">
                 <div class="col">
                     <div id="map" @ref="mapElement"></div>
                 </div>
             </div>
 
-            <h2 class="text-center">
-                You have walked @virtualWalk.TotalSteps. You have @stepToNextMilestone miles to go until your next milestone
-            </h2>
+            <br />
+            <h4 class="text-center">
+                Steps Taken: @virtualWalk.TotalSteps
+            </h4>
+            <hr />
+            <h5 class="text-center">
+                Miles Remaining Till Next Milestone: @stepToNextMilestone mi
+            </h5>
         </div>
     </div>
 
@@ -62,16 +68,21 @@ else
 
         <div class="modal fade show" tabindex="-1" role="dialog" style="display: block;">
             <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
+                <div class="modal-content text-center">
 
                     <div class="modal-header">
-                        <button type="button" @onclick="Update" class="close" data-dismiss="modal" aria-label="Close">
+                        <h2 class="modal-title text-left">Welsh Coastal Walk</h2>
+                        <button type="button" @onclick="() => { showEnterStepsModal = false; }" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
 
                     <div class="modal-body">
-                        <InputSteps dbPeople="people" dbVirtualWalk="virtualWalk" />
+                        <InputStepsForm dbPeople="people" dbVirtualWalk="virtualWalk" OnVirtualMapSubmit="Update" />
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" @onclick="() => { showEnterStepsModal = false; }" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
@@ -110,9 +121,8 @@ else
     {
         if (firstRender)
         {
-
             mapModule = await jsRunTime.InvokeAsync<IJSObjectReference>(
-               "import", "./scripts/MapBox.js").AsTask();
+           "import", "./scripts/MapBox.js").AsTask();
             mapInstance = await mapModule.InvokeAsync<IJSObjectReference>(
                 "initialize", mapElement).AsTask();
 

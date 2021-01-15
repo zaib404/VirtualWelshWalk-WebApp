@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VirtualWelshWalk.DataAccess.Data;
 
 namespace VirtualWelshWalk.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210115164108_MilestoneTable")]
+    partial class MilestoneTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -318,7 +320,7 @@ namespace VirtualWelshWalk.Migrations
                     b.Property<ulong>("Milestone9")
                         .HasColumnType("bit");
 
-                    b.Property<int>("PeopleId")
+                    b.Property<int?>("PeopleId")
                         .HasColumnType("int");
 
                     b.Property<string>("VirtualWalkName")
@@ -412,9 +414,7 @@ namespace VirtualWelshWalk.Migrations
                 {
                     b.HasOne("VirtualWelshWalk.DataAccess.Models.People", null)
                         .WithMany("virtualMilestones")
-                        .HasForeignKey("PeopleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PeopleId");
                 });
 
             modelBuilder.Entity("VirtualWelshWalk.DataAccess.Models.VirtualWalk", b =>

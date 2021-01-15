@@ -66,8 +66,10 @@ namespace VirtualWelshWalk
 
             services.AddScoped<IPeopleRepository, PeopleRepository>();
             services.AddScoped<IVirtualWalkRepository, VirtualWalkRepository>();
+            services.AddScoped<IMilestoneRepository, MilestoneRepository>();
             services.AddScoped<IPeopleService, PeopleService>();
             services.AddScoped<IVirtualWalkService, VirtualWalkService>();
+            services.AddScoped<IVirtualMilestonesService, VirtualMilestonesService>();
 
             services.AddControllers();
             services.AddLocalization(options => options.ResourcesPath = "Resources");

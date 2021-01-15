@@ -8,6 +8,8 @@
   <ItemGroup>
     <Compile Remove="Migrations\20201216195225_RemovedPeopleFromVirtualWalk.cs" />
     <Compile Remove="Migrations\20201216195225_RemovedPeopleFromVirtualWalk.Designer.cs" />
+    <Compile Remove="Migrations\20210115163322_MilestoneTable.cs" />
+    <Compile Remove="Migrations\20210115163322_MilestoneTable.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

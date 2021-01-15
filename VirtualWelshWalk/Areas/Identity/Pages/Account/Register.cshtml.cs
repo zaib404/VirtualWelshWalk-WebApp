@@ -32,6 +32,7 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
         // New
         readonly IPeopleRepository _peopleRepository;
         readonly IVirtualWalkRepository _virtualWalkRepository;
+        readonly IMilestoneRepository _milestoneRepository;
 
         public RegisterModel(
             UserManager<User> userManager,
@@ -39,7 +40,8 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
             ILogger<RegisterModel> logger,
             IEmailSender emailSender,
             IPeopleRepository peopleRepository,
-            IVirtualWalkRepository virtualWalkRepository)
+            IVirtualWalkRepository virtualWalkRepository,
+            IMilestoneRepository milestoneRepository)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -48,6 +50,7 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
 
             _peopleRepository = peopleRepository;
             _virtualWalkRepository = virtualWalkRepository;
+            _milestoneRepository = milestoneRepository;
         }
 
         [BindProperty]
@@ -138,6 +141,15 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
                     };
 
                     var resultVWalk = await _virtualWalkRepository.AddVirtualWalk(VWalk);
+
+                    var virtualMilestone = new VirtualMilestone
+                    {
+                        VirtualWalkName = VWalk.VirtualWalkName,
+                        PeopleId = resultPeople.PeopleId,
+                        Milestone1 = true
+                    };
+
+                    var resultMilestone = await _milestoneRepository.AddVirtualMilestones(virtualMilestone);
 
 
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
