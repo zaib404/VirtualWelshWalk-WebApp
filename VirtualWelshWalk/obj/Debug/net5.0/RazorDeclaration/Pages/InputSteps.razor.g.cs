@@ -112,7 +112,7 @@ using VirtualWelshWalk.DataAccess.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 61 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\InputSteps.razor"
+#line 62 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\InputSteps.razor"
  
     #region This gets passed over to InputStepsForm
 
@@ -124,8 +124,8 @@ using VirtualWelshWalk.DataAccess.Models;
 
     VirtualTotalSteps virtualSteps = new VirtualTotalSteps();
 
-    //public People dbPeople { get; set; } = new People();
-    //public VirtualWalk dbVirtualWalk { get; set; } = new VirtualWalk();
+    [Parameter]
+    public VirtualMilestone dbMilestone { get; set; }
 
     #endregion
 
@@ -133,9 +133,26 @@ using VirtualWelshWalk.DataAccess.Models;
 
     double virtualStepsInMiles = 0;
 
-    bool showNewMilestoneUnlocked = false;
+    //bool showNewMilestoneUnlocked = false;
 
     protected override async Task OnInitializedAsync()
+    {
+        DBNullCheck();
+
+        // get people db
+        dbPeople = await PeopleService.GetPeople();
+        // get virtual walk db
+        dbVirtualWalk = await WalkService.GetVirtualWalk(WalkName, dbPeople.PeopleId);
+
+        // get virtualmilestone table
+        dbMilestone = await VirtualMilestoneService.GetVirtualMilestones(WalkName, dbPeople.PeopleId);
+
+        virtualSteps.TotalSteps = dbVirtualWalk.TotalSteps;
+
+        StepsInMiles();
+    }
+
+    void DBNullCheck()
     {
         if (dbPeople == null)
         {
@@ -147,21 +164,17 @@ using VirtualWelshWalk.DataAccess.Models;
             dbVirtualWalk = new VirtualWalk();
         }
 
-        // get people db
-        dbPeople = await PeopleService.GetPeople();
-        // get virtual walk db
-        dbVirtualWalk = await WalkService.GetVirtualWalk(WalkName, dbPeople.PeopleId);
-
-        virtualSteps.TotalSteps = dbVirtualWalk.TotalSteps;
-
-        StepsInMiles();
+        if (dbMilestone == null)
+        {
+            dbMilestone = new VirtualMilestone();
+        }
     }
 
     protected void TotalStepsChanged(int pNewSteps)
     {
         virtualSteps.TotalSteps = pNewSteps;
         StepsInMiles();
-        showNewMilestoneUnlocked = true;
+        //showNewMilestoneUnlocked = true;
     }
 
     void StepsInMiles()
@@ -173,101 +186,10 @@ using VirtualWelshWalk.DataAccess.Models;
         virtualStepsInMiles = Math.Round(km * 0.62137, 2);
     }
 
-    void CheckMilestone()
-    {
-        if (virtualSteps.TotalSteps >= 41989 && virtualSteps.TotalSteps <= 42001)
-        {
-            //showNewMilestoneUnlocked = true;
-        }
-        else if (virtualSteps.TotalSteps >= 66923 && virtualSteps.TotalSteps <= 66935)
-        {
-            //showNewMilestoneUnlocked = true;
-        }
-        else if (virtualSteps.TotalSteps >= 122041 && virtualSteps.TotalSteps <= 122053)
-        {
-            //showNewMilestoneUnlocked = true;
-        }
-        else if (virtualSteps.TotalSteps >= 173183 && virtualSteps.TotalSteps <= 173195)
-        {
-            //showNewMilestoneUnlocked = true;
-        }
-        else if (virtualSteps.TotalSteps >= 215414 && virtualSteps.TotalSteps <= 215426)
-        {
-            //showNewMilestoneUnlocked = true;
-        }
-        else if (virtualSteps.TotalSteps >= 261884 && virtualSteps.TotalSteps <= 261896)
-        {
-            //showNewMilestoneUnlocked = true;
-        }
-        else if (virtualSteps.TotalSteps >= 282999 && virtualSteps.TotalSteps <= 283011)
-        {
-            //showNewMilestoneUnlocked = true;
-        }
-        else if (virtualSteps.TotalSteps >= 356923 && virtualSteps.TotalSteps <= 356935)
-        {
-            //showNewMilestoneUnlocked = true;
-        }
-        else if (virtualSteps.TotalSteps >= 388603 && virtualSteps.TotalSteps <= 388615)
-        {
-            //showNewMilestoneUnlocked = true;
-        }
-        else if (virtualSteps.TotalSteps >= 430847 && virtualSteps.TotalSteps <= 430859)
-        {
-            //showNewMilestoneUnlocked = true;
-        }
-        else if (virtualSteps.TotalSteps >= 479417 && virtualSteps.TotalSteps <= 479429)
-        {
-            //showNewMilestoneUnlocked = true;
-        }
-        else if (virtualSteps.TotalSteps >= 513209 && virtualSteps.TotalSteps <= 513221)
-        {
-            //showNewMilestoneUnlocked = true;
-        }
-        else if (virtualSteps.TotalSteps >= 559679 && virtualSteps.TotalSteps <= 559691)
-        {
-            //showNewMilestoneUnlocked = true;
-        }
-        else if (virtualSteps.TotalSteps >= 642041 && virtualSteps.TotalSteps <= 642053)
-        {
-            //showNewMilestoneUnlocked = true;
-        }
-        else if (virtualSteps.TotalSteps >= 726516 && virtualSteps.TotalSteps <= 726528)
-        {
-            //showNewMilestoneUnlocked = true;
-        }
-        else if (virtualSteps.TotalSteps >= 749758 && virtualSteps.TotalSteps <= 749770)
-        {
-            //showNewMilestoneUnlocked = true;
-        }
-        else if (virtualStepsInMiles >= 804666 && virtualSteps.TotalSteps <= 804678)
-        {
-            //showNewMilestoneUnlocked = true;
-        }
-        else if (virtualStepsInMiles >= 851136 && virtualSteps.TotalSteps <= 851148)
-        {
-            //showNewMilestoneUnlocked = true;
-        }
-        else if (virtualStepsInMiles >= 878590 && virtualSteps.TotalSteps <= 878603)
-        {
-            //showNewMilestoneUnlocked = true;
-        }
-        else if (virtualStepsInMiles >= 906044 && virtualSteps.TotalSteps <= 906056)
-        {
-            //showNewMilestoneUnlocked = true;
-        }
-        else if (virtualStepsInMiles >= 329469 && virtualSteps.TotalSteps <= 329481)
-        {
-            //showNewMilestoneUnlocked = true;
-        }
-        else if (virtualStepsInMiles >= 1055991 && virtualSteps.TotalSteps <= 1056003)
-        {
-            //showNewMilestoneUnlocked = true;
-        }
-    }
-
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IVirtualMilestonesService VirtualMilestoneService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IPeopleService PeopleService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IVirtualWalkService WalkService { get; set; }
     }

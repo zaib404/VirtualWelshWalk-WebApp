@@ -145,8 +145,7 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
                     var virtualMilestone = new VirtualMilestone
                     {
                         VirtualWalkName = VWalk.VirtualWalkName,
-                        PeopleId = resultPeople.PeopleId,
-                        Milestone1 = true
+                        PeopleId = resultPeople.PeopleId
                     };
 
                     var resultMilestone = await _milestoneRepository.AddVirtualMilestones(virtualMilestone);

@@ -53,6 +53,32 @@
     </div>
 }
 
+
+@if (showNewMilestoneUnlocked)
+{
+    // Show modal/popup of user reaching a new milestone
+    <div class="modal-backdrop fade show"></div>
+
+    <div class="modal fade show" tabindex="-1" role="dialog" style="display: block;">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">New Area of Interest Unlocked</h5>
+                    <button type="button" @onclick="() => { showNewMilestoneUnlocked = false; }" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>You reached a new milestone and a significant place of interest. Check your emails and the <a href="/Virtual Coastal Map">map</a> to see more.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" @onclick="() => { showNewMilestoneUnlocked = false; }" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
 @code
 {
     [Parameter]
@@ -65,12 +91,20 @@
     public VirtualWalk dbVirtualWalk { get; set; }
 
     [Parameter]
+    public VirtualMilestone dbMilestone { get; set; }
+
+    [Parameter]
     public EventCallback<int> OnTotalStepsChanged { get; set; }
 
     [Parameter]
     public EventCallback OnVirtualMapSubmit { get; set; }
 
+    public CheckMilestone checkMilestone;
+
     bool ShowConfirmationModal = false;
+    bool showNewMilestoneUnlocked = false;
+
+    double virtualStepsInMiles = 0;
 
     protected override void OnInitialized()
     {
@@ -78,6 +112,8 @@
         {
             virtualSteps = new VirtualTotalSteps();
         }
+
+        checkMilestone = new CheckMilestone(dbMilestone);
     }
 
     async Task HandleValidSubmit()
@@ -101,6 +137,8 @@
         {
             await VirtualMapModalSubmitChanged();
         }
+
+        checkMilestone.MilestoneCheck(StepsInMiles());
     }
 
     private async Task UpdateTotalStepsChanged()
@@ -111,5 +149,14 @@
     async Task VirtualMapModalSubmitChanged()
     {
         await OnVirtualMapSubmit.InvokeAsync();
+    }
+
+    double StepsInMiles()
+    {
+        // Convert to kilometers
+        double km = Math.Round(virtualSteps.TotalSteps / 1312.33595801, 2);
+
+        // Convert to miles
+        return virtualStepsInMiles = Math.Round(km * 0.62137, 2);
     }
 }

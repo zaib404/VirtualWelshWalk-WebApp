@@ -112,10 +112,12 @@ using VirtualWelshWalk.DataAccess.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 94 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
+#line 95 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
  
     public People people { get; set; } = new People();
     public VirtualWalk virtualWalk { get; set; } = new VirtualWalk();
+    public VirtualMilestone milestone { get; set; } = new VirtualMilestone();
+
     CalculatePersonsPosition calculatePerson = new CalculatePersonsPosition();
 
     ElementReference mapElement;
@@ -135,6 +137,8 @@ using VirtualWelshWalk.DataAccess.Models;
     {
         people = await PeopleService.GetPeople();
         virtualWalk = await WalkService.GetVirtualWalk(WalkName, people.PeopleId);
+
+        milestone = await VirtualMilestoneService.GetVirtualMilestones(WalkName, people.PeopleId);
 
         showEnterStepsModal = true;
     }
@@ -191,6 +195,7 @@ using VirtualWelshWalk.DataAccess.Models;
 #line hidden
 #nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime jsRunTime { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IVirtualMilestonesService VirtualMilestoneService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IPeopleService PeopleService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IVirtualWalkService WalkService { get; set; }
     }

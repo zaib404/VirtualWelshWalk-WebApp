@@ -111,7 +111,7 @@ using VirtualWelshWalk.DataAccess.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 57 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Shared\InputStepsForm.razor"
+#line 83 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Shared\InputStepsForm.razor"
  
     [Parameter]
     public VirtualTotalSteps virtualSteps { get; set; }
@@ -123,12 +123,20 @@ using VirtualWelshWalk.DataAccess.Models;
     public VirtualWalk dbVirtualWalk { get; set; }
 
     [Parameter]
+    public VirtualMilestone dbMilestone { get; set; }
+
+    [Parameter]
     public EventCallback<int> OnTotalStepsChanged { get; set; }
 
     [Parameter]
     public EventCallback OnVirtualMapSubmit { get; set; }
 
+    public CheckMilestone checkMilestone;
+
     bool ShowConfirmationModal = false;
+    bool showNewMilestoneUnlocked = false;
+
+    double virtualStepsInMiles = 0;
 
     protected override void OnInitialized()
     {
@@ -136,6 +144,8 @@ using VirtualWelshWalk.DataAccess.Models;
         {
             virtualSteps = new VirtualTotalSteps();
         }
+
+        checkMilestone = new CheckMilestone(dbMilestone);
     }
 
     async Task HandleValidSubmit()
@@ -159,6 +169,8 @@ using VirtualWelshWalk.DataAccess.Models;
         {
             await VirtualMapModalSubmitChanged();
         }
+
+        checkMilestone.MilestoneCheck(StepsInMiles());
     }
 
     private async Task UpdateTotalStepsChanged()
@@ -169,6 +181,15 @@ using VirtualWelshWalk.DataAccess.Models;
     async Task VirtualMapModalSubmitChanged()
     {
         await OnVirtualMapSubmit.InvokeAsync();
+    }
+
+    double StepsInMiles()
+    {
+        // Convert to kilometers
+        double km = Math.Round(virtualSteps.TotalSteps / 1312.33595801, 2);
+
+        // Convert to miles
+        return virtualStepsInMiles = Math.Round(km * 0.62137, 2);
     }
 
 #line default
