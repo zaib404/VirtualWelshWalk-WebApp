@@ -1,3 +1,4 @@
+using Blazored.SessionStorage;
 using EmailService;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components.Authorization;
@@ -73,6 +74,8 @@ namespace VirtualWelshWalk
 
             services.AddControllers();
             services.AddLocalization(options => options.ResourcesPath = "Resources");
+
+            services.AddBlazoredSessionStorage();
         }
 
         private RequestLocalizationOptions GetLocalizationOptions()

@@ -97,7 +97,7 @@ using VirtualWelshWalk.DataAccess.Models;
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
+#line 11 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
 [Authorize]
 
 #line default
@@ -112,7 +112,7 @@ using VirtualWelshWalk.DataAccess.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 95 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
+#line 96 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
  
     public People people { get; set; } = new People();
     public VirtualWalk virtualWalk { get; set; } = new VirtualWalk();
@@ -140,15 +140,28 @@ using VirtualWelshWalk.DataAccess.Models;
 
         milestone = await VirtualMilestoneService.GetVirtualMilestones(WalkName, people.PeopleId);
 
-        showEnterStepsModal = true;
+        //showEnterStepsModal = true;
+    }
+
+    async Task GetSession()
+    {
+        var count = await sessionStorage.GetItemAsync<int>("firstVisit");
+
+        if (count == 0)
+        {
+            showEnterStepsModal = true;
+            await sessionStorage.SetItemAsync("firstVisit", 1);
+        }
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
         {
+            await GetSession();
+
             mapModule = await jsRunTime.InvokeAsync<IJSObjectReference>(
-           "import", "./scripts/MapBox.js").AsTask();
+       "import", "./scripts/MapBox.js").AsTask();
             mapInstance = await mapModule.InvokeAsync<IJSObjectReference>(
                 "initialize", mapElement).AsTask();
 
@@ -194,6 +207,7 @@ using VirtualWelshWalk.DataAccess.Models;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private Blazored.SessionStorage.ISessionStorageService sessionStorage { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime jsRunTime { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IVirtualMilestonesService VirtualMilestoneService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IPeopleService PeopleService { get; set; }

@@ -45,9 +45,286 @@ namespace VirtualWelshWalk.DataAccess.Data
         {
             int landMarksPassed = 0;
 
-            switch (falseCounter)
+            #region If statement to check if they have passed a certain landmark
+            // First Milestone Tintern Abbey
+            if (stepInMiles >= 0 || stepInMiles <= 18.8)
+            {
+                landMarksPassed = 1;
+            }
+            // Transporter bridge
+            if (stepInMiles >= 18.9 || stepInMiles <= 30.3)
+            {
+                if (landMarksPassed == 0)
+                {
+                    landMarksPassed = 2;
+                }
+                else
+                {
+                    landMarksPassed++;
+                }
+            }
+            // Cardiff castle
+            if (stepInMiles >= 30.4 || stepInMiles <= 56.1)
+            {
+                if (landMarksPassed == 0)
+                {
+                    landMarksPassed = 3;
+                }
+                else
+                {
+                    landMarksPassed++;
+                }
+            }
+            // rest bay beach
+            if (stepInMiles >= 56.2 || stepInMiles <= 80)
+            {
+                if (landMarksPassed == 0)
+                {
+                    landMarksPassed = 4;
+                }
+                else
+                {
+                    landMarksPassed++;
+                }
+            }
+            // mumbles pier
+            if (stepInMiles >= 80.1 || stepInMiles <= 95.6)
+            {
+                if (landMarksPassed == 0)
+                {
+                    landMarksPassed = 5;
+                }
+                else
+                {
+                    landMarksPassed++;
+                }
+            }
+            // fall bay
+            if (stepInMiles >= 95.7 || stepInMiles <= 114.5)
+            {
+                if (landMarksPassed == 0)
+                {
+                    landMarksPassed = 6;
+                }
+                else
+                {
+                    landMarksPassed++;
+                }
+            }
+            // parc y scarlets
+            if (stepInMiles >= 114.6 || stepInMiles <= 124.4)
+            {
+                if (landMarksPassed == 0)
+                {
+                    landMarksPassed = 7;
+                }
+                else
+                {
+                    landMarksPassed++;
+                }
+            }
+            // kidwelly castel
+            if (stepInMiles >= 124.5 || stepInMiles <= 152.8)
+            {
+                if (landMarksPassed == 0)
+                {
+                    landMarksPassed = 8;
+                }
+                else
+                {
+                    landMarksPassed++;
+                }
+            }
+            // st catherines island
+            if (stepInMiles >= 152.9 || stepInMiles <= 164.9)
+            {
+                if (landMarksPassed == 0)
+                {
+                    landMarksPassed = 9;
+                }
+                else
+                {
+                    landMarksPassed++;
+                }
+            }
+            // barafundle bay
+            if (stepInMiles >= 165.0 || stepInMiles <= 179.7)
+            {
+                if (landMarksPassed == 0)
+                {
+                    landMarksPassed = 10;
+                }
+                else
+                {
+                    landMarksPassed++;
+                }
+            }
+            // stack rock fort
+            if (stepInMiles >= 179.8 || stepInMiles <= 211.2)
+            {
+                if (landMarksPassed == 0)
+                {
+                    landMarksPassed = 11;
+                }
+                else
+                {
+                    landMarksPassed++;
+                }
+            }
+            // st davids catherdral
+            if (stepInMiles >= 211.3 || stepInMiles <= 227.4)
+            {
+                if (landMarksPassed == 0)
+                {
+                    landMarksPassed = 12;
+                }
+                else
+                {
+                    landMarksPassed++;
+                }
+            }
+            // strumble head lighthouse
+            if (stepInMiles >= 227.5 || stepInMiles <= 249.9)
+            {
+                if (landMarksPassed == 0)
+                {
+                    landMarksPassed = 13;
+                }
+                else
+                {
+                    landMarksPassed++;
+                }
+            }
+            // cardigan castle
+            if (stepInMiles >= 250 || stepInMiles <= 287.8)
+            {
+                if (landMarksPassed == 0)
+                {
+                    landMarksPassed = 14;
+                }
+                else
+                {
+                    landMarksPassed++;
+                }
+            }
+            // plas tan y bwlch
+            if (stepInMiles >= 287.9 || stepInMiles <= 327.2)
+            {
+                if (landMarksPassed == 0)
+                {
+                    landMarksPassed = 15;
+                }
+                else
+                {
+                    landMarksPassed++;
+                }
+            }
+            //round house 
+            if (stepInMiles >= 327.3 || stepInMiles <= 338.1)
+            {
+                if (landMarksPassed == 0)
+                {
+                    landMarksPassed = 16;
+                }
+                else
+                {
+                    landMarksPassed++;
+                }
+            }
+            // harlech castle
+            if (stepInMiles >= 338.2 || stepInMiles <= 365.7)
+            {
+                if (landMarksPassed == 0)
+                {
+                    landMarksPassed = 17;
+                }
+                else
+                {
+                    landMarksPassed++;
+                }
+            }
+            // nant gwrtheyrn
+            if (stepInMiles >= 365.8 || stepInMiles <= 387.2)
+            {
+                if (landMarksPassed == 0)
+                {
+                    landMarksPassed = 18;
+                }
+                else
+                {
+                    landMarksPassed++;
+                }
+            }
+            // bedd gelert
+            if (stepInMiles >= 387.3 || stepInMiles <= 400.1)
+            {
+                if (landMarksPassed == 0)
+                {
+                    landMarksPassed = 19;
+                }
+                else
+                {
+                    landMarksPassed++;
+                }
+            }
+            // caernarfon castle
+            if (stepInMiles >= 400.2 || stepInMiles <= 412.5)
+            {
+                if (landMarksPassed == 0)
+                {
+                    landMarksPassed = 20;
+                }
+                else
+                {
+                    landMarksPassed++;
+                }
+            }
+            // beaumaris castle 
+            if (stepInMiles >= 412.6 || stepInMiles <= 433.5)
+            {
+                if (landMarksPassed == 0)
+                {
+                    landMarksPassed = 21;
+                }
+                else
+                {
+                    landMarksPassed++;
+                }
+            }
+            // conwy castle
+            if (stepInMiles >= 433.6 || stepInMiles <= 476.9)
+            {
+                if (landMarksPassed == 0)
+                {
+                    landMarksPassed = 22;
+                }
+                else
+                {
+                    landMarksPassed++;
+                }
+            }
+            // city walls
+            if (stepInMiles >= 477)
+            {
+                if (landMarksPassed == 0)
+                {
+                    landMarksPassed = 23;
+                }
+                else
+                {
+                    landMarksPassed++;
+                }
+            }
+
+            #endregion
+
+            switch (landMarksPassed-1)
             {
                 case 0:
+                    if (!dbMilestone.Milestone1)
+                    {
+                        // send email
+                    }
                     break;
 
                 case 1:
@@ -111,134 +388,15 @@ namespace VirtualWelshWalk.DataAccess.Data
                     break;
 
                 case 21:
+                    
                     break;
 
                 case 22:
+                    
                     break;
 
                 case 23:
-                    // First Milestone Tintern Abbey
-                    if (stepInMiles >= 0 || stepInMiles <= 18.8)
-                    {
-                        landMarksPassed = 1;
-                    }
-                    //
-                    if (stepInMiles >= 18.9 || stepInMiles <= 30.3)
-                    {
-                        if (landMarksPassed == 0)
-                        {
-                            landMarksPassed = 2;
-                        }
-                        else
-                        {
-                            landMarksPassed++;
-                        }
-                    }
-
-                    if (stepInMiles >= 30.4 || stepInMiles <= 56.1)
-                    {
-                        // done
-                    }
-
-                    if (stepInMiles >= 56.2 || stepInMiles <= 80)
-                    {
-                        // done
-                    }
-
-                    if (stepInMiles >= 80.1 || stepInMiles <= 95.6)
-                    {
-                        // done
-                    }
-
-                    if (stepInMiles >= 95.7 || stepInMiles <= 114.5)
-                    {
-                        // done
-                    }
-
-                    if (stepInMiles >= 114.6 || stepInMiles <= 124.4)
-                    {
-                        // done
-                    }
-
-                    if (stepInMiles >= 124.5 || stepInMiles <= 152.8)
-                    {
-                        // done
-                    }
-
-                    if (stepInMiles >= 152.9 || stepInMiles <= 164.9)
-                    {
-                        // done
-                    }
-
-                    if (stepInMiles >= 165.0 || stepInMiles <= 179.7)
-                    {
-                        // done
-                    }
-
-                    if (stepInMiles >= 179.8 || stepInMiles <= 211.2)
-                    {
-                        // done
-                    }
-
-                    if (stepInMiles >= 211.3 || stepInMiles <= 227.4)
-                    {
-                        // done
-                    }
-
-                    if (stepInMiles >= 227.5 || stepInMiles <= 249.9)
-                    {
-                        // done
-                    }
-
-                    if (stepInMiles >= 250 || stepInMiles <= 287.8)
-                    {
-                        // done
-                    }
-
-                    if (stepInMiles >= 287.9 || stepInMiles <= 327.2)
-                    {
-                        // done
-                    }
-
-                    if (stepInMiles >= 327.3 || stepInMiles <= 338.1)
-                    {
-                        // done
-                    }
-
-                    if (stepInMiles >= 338.2 || stepInMiles <= 365.7)
-                    {
-                        // done
-                    }
-
-                    if (stepInMiles >= 365.8 || stepInMiles <= 387.2)
-                    {
-                        // done
-                    }
-
-                    if (stepInMiles >= 387.3 || stepInMiles <= 400.1)
-                    {
-                        // done
-                    }
-
-                    if (stepInMiles >= 400.2 || stepInMiles <= 412.5)
-                    {
-                        // done
-                    }
-
-                    if (stepInMiles >= 412.6 || stepInMiles <= 433.5)
-                    {
-                        // done
-                    }
-
-                    if (stepInMiles >= 433.6 || stepInMiles <= 476.9)
-                    {
-                        // done
-                    }
-
-                    if (stepInMiles >= 477)
-                    {
-                        // done - last one
-                    }
+                    
                     break;
 
                 default:

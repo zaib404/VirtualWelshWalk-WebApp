@@ -8,6 +8,7 @@
 @inject IPeopleService PeopleService
 @inject IVirtualMilestonesService VirtualMilestoneService
 @inject IJSRuntime jsRunTime
+@inject Blazored.SessionStorage.ISessionStorageService sessionStorage
 
 @implements IAsyncDisposable
 
@@ -119,15 +120,28 @@ else
 
         milestone = await VirtualMilestoneService.GetVirtualMilestones(WalkName, people.PeopleId);
 
-        showEnterStepsModal = true;
+        //showEnterStepsModal = true;
+    }
+
+    async Task GetSession()
+    {
+        var count = await sessionStorage.GetItemAsync<int>("firstVisit");
+
+        if (count == 0)
+        {
+            showEnterStepsModal = true;
+            await sessionStorage.SetItemAsync("firstVisit", 1);
+        }
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
         {
+            await GetSession();
+
             mapModule = await jsRunTime.InvokeAsync<IJSObjectReference>(
-           "import", "./scripts/MapBox.js").AsTask();
+       "import", "./scripts/MapBox.js").AsTask();
             mapInstance = await mapModule.InvokeAsync<IJSObjectReference>(
                 "initialize", mapElement).AsTask();
 

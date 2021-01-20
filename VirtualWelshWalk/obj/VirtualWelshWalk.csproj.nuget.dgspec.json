@@ -114,6 +114,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Blazored.SessionStorage": {
+              "target": "Package",
+              "version": "[1.0.13, )"
+            },
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.8, )"

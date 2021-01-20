@@ -76,7 +76,7 @@ using VirtualWelshWalk.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
+#line 11 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
            [Authorize]
 
 #line default

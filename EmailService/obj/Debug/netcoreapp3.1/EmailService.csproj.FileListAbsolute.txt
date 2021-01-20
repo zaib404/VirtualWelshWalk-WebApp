@@ -6,3 +6,4 @@ D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailService\obj\Debug\netcoreap
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailService\obj\Debug\netcoreapp3.1\EmailService.csproj.CoreCompileInputs.cache
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailService\obj\Debug\netcoreapp3.1\EmailService.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailService\obj\Debug\netcoreapp3.1\EmailService.pdb
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailService\obj\Debug\netcoreapp3.1\EmailService.csprojAssemblyReference.cache
