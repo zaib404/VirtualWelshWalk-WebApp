@@ -40,8 +40,15 @@ using VirtualWelshWalk.DataAccess.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 6 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Areas\Identity\Pages\_ViewImports.cshtml"
+using VirtualWelshWalk.Shared;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0ea4e2edd7aef7d88ddb6bb3ad20bfc24d25a542", @"/Areas/Identity/Pages/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2f082439b4d45bcd0c657b3bf7f7e4fa2cbcc553", @"/Areas/Identity/Pages/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"eb9c3341290c447ddaaa14094267723968efb75f", @"/Areas/Identity/Pages/_ViewImports.cshtml")]
     public class Areas_Identity_Pages__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

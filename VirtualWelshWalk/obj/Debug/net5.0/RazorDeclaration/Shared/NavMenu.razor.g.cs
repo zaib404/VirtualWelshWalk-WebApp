@@ -90,12 +90,11 @@ using VirtualWelshWalk.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 75 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Shared\NavMenu.razor"
+#line 76 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 
     private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
 
     private void ToggleNavMenu()
     {

@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using VirtualWelshWalk.DataAccess.Models;
+using VirtualWelshWalk.Pages;
 
 namespace VirtualWelshWalk.Areas.Identity.Pages.Account
 {
@@ -38,7 +39,7 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
             }
             else
             {
-                return RedirectToPage();
+                return RedirectToPage(); /*Redirect("~/");*/
             }
         }
     }

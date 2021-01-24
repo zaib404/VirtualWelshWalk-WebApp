@@ -1,5 +1,9 @@
-﻿<div class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Walking Welsh</a>
+﻿<div class="navbar navbar-expand-sm navbar-dark bg-dark navBG">
+
+    <a href="#" class="navbar-brand">
+        <img src="/Assets/WebPage/logo.jpg" class="navLogo" />
+    </a>
+
     <button class="navbar-toggler" @onclick="ToggleNavMenu">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -20,12 +24,6 @@
                             <span class="oi oi-plus" aria-hidden="true"></span> Input Steps
                         </NavLink>
                     </li>
-
-                    <li class="nav-item">
-                        <NavLink class="nav-link" href="Virtual Coastal Map">
-                            <span class="oi oi-map" aria-hidden="true"></span> Virtual Map
-                        </NavLink>
-                    </li>
                 </ul>
 
                 <ul class="navbar-nav">
@@ -44,26 +42,29 @@
                         </form>
                     </li>
                 </ul>
-                
+
             </div>
         </Authorized>
 
         <NotAuthorized>
             <div class="@NavMenuCssClass navbar-collapse" @onclick="ToggleNavMenu">
-                
+
                 <ul class="navbar-nav ml-auto">
 
                     <li class="nav-item">
-                        <NavLink class="nav-link" href="Identity/Account/Register">
-                            <span class="oi oi-person" aria-hidden="true"></span>Register
+                        <NavLink class="nav-link" href="Identity/Account/Login">
+                            @*<span class="oi oi-account-login" aria-hidden="true"></span>Log in*@
+                            <img src="/Assets/WebPage/log_in.png" aria-hidden="true" class="navButtons" />
                         </NavLink>
                     </li>
 
                     <li class="nav-item">
-                        <NavLink class="nav-link" href="Identity/Account/Login">
-                            <span class="oi oi-account-login" aria-hidden="true"></span>Log in
+                        <NavLink class="nav-link" href="Identity/Account/Register">
+                            @*<span class="oi oi-person" src="/Assets/WebPage/log_in.png" aria-hidden="true"></span>Register*@
+                            <img src="/Assets/WebPage/Register.png" aria-hidden="true" class="navButtons" />
                         </NavLink>
                     </li>
+
                 </ul>
 
             </div>
@@ -76,7 +77,6 @@
     private bool collapseNavMenu = true;
 
     private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
 
     private void ToggleNavMenu()
     {
