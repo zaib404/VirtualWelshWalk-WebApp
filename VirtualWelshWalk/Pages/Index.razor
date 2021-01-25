@@ -5,10 +5,11 @@
 <style>
     .hero {
         margin-bottom: 0;
-        background-image: url('/Assets/WebPage/blue_bg_watermark.jpg');
+        background-image: url('/Assets/WebPage/picture_bg.jpg'); /*url('/Assets/WebPage/blue_bg_watermark.jpg');*/
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
+        height: 25em;
     }
 
     .imgs {
@@ -38,8 +39,6 @@
     }
 </style>
 
-<div style="height: 5px; background-color: #af3182"></div>
-
 <AuthorizeView>
 
     <Authorized>
@@ -52,124 +51,53 @@
 
         @*Do HERO IMAGE LATER*@
         <div class="container-fluid text-white hero">
-            <div class="row">
-                <div class="col-6 pt-2">
-                    <h1 class="h1 p-5" style="font-weight:900">@Localizer["Take part in Educ8's interactive learning experience"]</h1>
+            <div class="row align-items-center h-100">
+                <div class="col-7 pl-5 pt-sm-5">
+                    <h1 class="h1" style="font-weight:900">@Localizer["Take part in Educ8's interactive learning experience"]</h1>
+                </div>
+
+                <div class="col-7 pt-2 pl-5 pb-2">
+                    <button class="btn rounded-pill text-white" style="background-color:#af3182;">JOIN NOW</button>
                 </div>
             </div>
         </div>
 
         <div class="container-fluid text-center p-5" style="background-color:#303b3d; color:#dbdc52;">
 
-            <h1 class="h1">
-                Discover places of history
-                along the way from
-                Chepstow to Chester
-            </h1>
-
+            <div class="container" style="height:20em;">
+                <div class="row align-items-center h-100">
+                    <div class="col">
+                        <h1 class="h1">
+                            Discover places of history
+                            along the way from
+                            Chepstow to Chester
+                        </h1>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="container-fluid text-center text-white p-5" style="background-color:#474e58;">
-                <h1 class="h1">
+                <h1 class="h1 pb-5">
                     Visit exciting places in and around Wales
                 </h1>
 
             <div class="row">
-                <div class="col-auto">
-                    <img src="/Assets/WebPage/CardiffCastleRound.png" class="img-fluid" />Cardif Castle
+                <div class="col-sm">
+                    <img src="/Assets/WebPage/CardiffCastleRound.png" class="img-fluid" />
+                    <h5 class="h5 p-3">Cardif Castle</h5>
                 </div>
 
-                <div class="col-auto">
-                    <img src="/Assets/WebPage/StDavidsCathedralRound.png" class="img-fluid" />St. Davids Cathedral
+                <div class="col-sm">
+                    <img src="/Assets/WebPage/StDavidsCathedralRound.png" class="img-fluid" />
+                    <h5 class="h5 p-3">St. Davids Cathedral</h5>
                 </div>
 
-                <div class="col-auto">
-                    <img src="/Assets/WebPage/BeddGelertRound.png" class="img-fluid" />Bedd Gelert
-                </div>
-            </div>
-        </div>
-
-        <div style="height: 5px; background-color: #af3182"></div>
-
-        @*Hero Image*@
-        @*<div class="text-white">
-
-            <img class="imageHero" src="/Assets/Background/hero_bg.jpg" />
-
-            <h1 class="heading1 heroText">Take part in Educ8's interactive learning experience</h1>
-
-            <a href="Identity/Account/Login" class="btn btn-primary">
-                Login Now
-            </a>
-
-        </div>*@
-
-        @*Hero Image*@
-        <!--<div class="jumbotron jumbotron-fluid bg-cover text-white hero">
-        <div class="container text-center">
-            <h1 class="heading1">@Localizer["Welsh Cultural Coastal Walk"]</h1>
-            <br />
-            <p class="lead">Take part in Educ8 interactive learning&nbsp;experience.</p>
-            <a href="Identity/Account/Login" class="btn btn-primary">
-                Login Now
-            </a>
-        </div>
-    </div>
-
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container text-center">
-            <div class="row">
-                <div class="col">
-                    <h2 class="heading2">Discover places of history along the way from&nbsp;Chepstow to Chester.</h2>
-                </div>-->
-        @*<div class="col col-sm-8">
-            <p>From Chepstow to Chester</p>
-        </div>*@
-        <!--</div>
-
-        </div>
-    </div>
-
-    <div class="jumbotron jumbotron-fluid">
-
-        <div class="container-fluid text-center">
-
-            <h2>Visit Welsh Landmarks</h2>
-            <h5 class="lead">Such as: </h5>
-
-            <hr />
-
-            <div class="row">
-                <div class="col-md-4">
-                    <img src="./Assets/Culture/Cardiff Castle.jpg" class="img-fluid imgs rounded-circle border border-white borderWidth" alt="Cardiff Castle" />
-                    <div class="row">
-                        <h3 class="imgHeading text-center">
-                            Cardiff Castle
-                        </h3>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <img src="./Assets/Culture/St Davids Cathedral.jpg" class="img-fluid imgs rounded-circle border border-white borderWidth" alt="St Davids Cathedral" />
-                    <h3 class="imgHeading">
-                        St Davids Cathedral
-                    </h3>
-                </div>
-                <div class="col-md-4">
-                    <img src="./Assets/Culture/Bedd Gelert.jpg" class="img-fluid imgs rounded-circle border border-white borderWidth" alt="Bedd Gelert" />
-                    <h3 class="imgHeading">
-                        Bedd Gelert
-                    </h3>
+                <div class="col-sm">
+                    <img src="/Assets/WebPage/BeddGelertRound.png" class="img-fluid" /><h5 class="h5 p-3">Bedd Gelert</h5>
                 </div>
             </div>
         </div>
-    </div>-->
-        @*<div class="jumbotron jumbotron-fluid">
-            <div class="container">
-                <h1>Discover places of history along the way as you reach milestones</h1>
-                <p>Register now to start your journey</p>
-                <a href="Identity/Account/Register" class="btn btn-primary btn-lg">Register</a>
-            </div>
-        </div>*@
 
     </NotAuthorized>
 

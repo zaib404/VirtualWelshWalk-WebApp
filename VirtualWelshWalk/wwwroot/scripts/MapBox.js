@@ -74,6 +74,9 @@ export function initialize() {
             addLogo();
             colourPath();
             map.resize();
+            map.flyTo({
+                center: [personMarker._lngLat.lng, personMarker._lngLat.lat]
+            });
         }
     });
 

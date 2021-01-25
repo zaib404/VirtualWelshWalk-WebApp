@@ -3,7 +3,54 @@
 @inject UserManager<User> UserManager
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
+
 <ul class="navbar-nav ml-auto">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <li class="nav-item">
+            <a id="manage" class="nav-link navText" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
+                <span class="oi oi-person iconSize">
+                    <span class="navTextWIcon" style="vertical-align:super"> Hello @UserManager.GetUserName(User)!</span>
+                </span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <form id="logoutForm" class="form-inline navText" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })">
+                @*<button id="logout" type="submit" class="nav-link btn btn-link text-dark">Logout</button>*@
+                <button id="logout" type="submit" class="nav-link btn btn-link text-white">
+                    <span aria-hidden="true">
+                        <img src="/Assets/WebPage/log_outicon.png" aria-hidden="true" class="navButtons" />
+                        <span class="navText"> Log Out</span>
+                    </span>
+                </button>
+            </form>
+        </li>
+    }
+    else
+    {
+        <li class="nav-item">
+            <a class="nav-link text-white" id="login" asp-area="Identity" asp-page="/Account/Login">
+                <span aria-hidden="true">
+                    <img src="/Assets/WebPage/log_inicon.png" aria-hidden="true" class="navButtons" />
+                    <span class="navText"> Log in</span>
+                </span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link text-white" id="register" asp-area="Identity" asp-page="/Account/Register">
+                <span aria-hidden="true">
+                    <img src="/Assets/WebPage/Registericon.png" aria-hidden="true" class="navButtons" />
+                    <span class="navText"> Register</span>
+                </span>
+            </a>
+        </li>
+    }
+</ul>
+
+
+@*<ul class="navbar-nav ml-auto">
     @if (SignInManager.IsSignedIn(User))
     {
         <li class="nav-item">
@@ -29,7 +76,7 @@
             </a>
         </li>
     }
-</ul>
+</ul>*@
 
 
 @*<ul class="navbar-nav">

@@ -47,19 +47,17 @@ else
         </div>
     </div>
 
-    <div>
-        <div class="container-fluid" style="padding-left: 5%; padding-right:5%;">
-            <div class="row">
-                <div class="col">
-                    <div id="map" @ref="mapElement"></div>
-                </div>
-            </div>
+    <div class="container-fluid" style="padding-left: 5%; padding-right:5%;">
+        <div id="map" @ref="mapElement"></div>
 
-            <br />
-            <h4 class="text-center">
-                Step Counter: @virtualWalk.TotalSteps
-            </h4>
-        </div>
+        <br />
+        <h4 class="text-center">
+            Step Counter: @virtualWalk.TotalSteps
+        </h4>
+    </div>
+
+    <div class="container-fluid">
+        hdahdsa
     </div>
 
     @if (showEnterStepsModal)
@@ -118,8 +116,6 @@ else
         virtualWalk = await WalkService.GetVirtualWalk(WalkName, people.PeopleId);
 
         milestone = await VirtualMilestoneService.GetVirtualMilestones(WalkName, people.PeopleId);
-
-        //showEnterStepsModal = true;
     }
 
     async Task GetSession()

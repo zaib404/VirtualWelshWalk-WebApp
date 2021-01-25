@@ -2,21 +2,7 @@
 @media screen and (max-width: 767px) 
 {
     .navLogo{
-        max-height: 3em;
-    }
-
-    .heading1 
-    {
-        font-size: 2.3em;
-    }
-
-    .heading2{
-        font-size: 1.8em;
-    }
-
-    .lead
-    {
-        font-size: 1.25em
+        max-height: 2em;
     }
 }
 
@@ -25,20 +11,6 @@
     .navLogo {
         max-height: 4em;
     }
-
-    .heading1 
-    {
-        font-size: 3em;
-    }
-
-    .heading2 {
-        font-size: 2.5em;
-    }
-
-    .lead 
-    {
-        font-size: 1.5em
-    }
 }
 
 /* md */
@@ -46,44 +18,37 @@
     .navLogo {
         max-height: 5em;
     }
-
-    .heading1 
-    {
-        font-size: 4.2em;
-    }
-
-    .heading2 {
-        font-size: 3.7em;
-    }
-
-    .lead 
-    {
-        font-size: 2em
-    }
 }
 
 /* lg */
 @media screen and (min-width: 1200px) {
     
     .navLogo {
-        max-height: 7em;
-    }
-
-    .heading1 {
-        font-size: 4.3em;
-    }
-
-    .heading2 {
-        font-size: 3.8em;
-    }
-
-    .lead {
-        font-size: 1.5em
+        max-height: 5em;
     }
 }
 
 .navButtons {
     max-height: 2em;
+}
+
+.navText{
+    vertical-align: bottom;
+}
+
+.navTextWIcon {
+    vertical-align: text-top;
+}
+
+.navText, .navTextWIcon {
+    font-weight: 900;
+    font-size: x-large;
+    color: white;
+}
+
+.iconSize{
+    font-size: 2em;
+    color: white;
 }
 
 .navBG {

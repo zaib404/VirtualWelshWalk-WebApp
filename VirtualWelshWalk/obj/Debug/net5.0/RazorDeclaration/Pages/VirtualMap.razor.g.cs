@@ -112,7 +112,7 @@ using VirtualWelshWalk.DataAccess.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 95 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
+#line 93 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
  
     public People people { get; set; } = new People();
     public VirtualWalk virtualWalk { get; set; } = new VirtualWalk();
@@ -139,8 +139,6 @@ using VirtualWelshWalk.DataAccess.Models;
         virtualWalk = await WalkService.GetVirtualWalk(WalkName, people.PeopleId);
 
         milestone = await VirtualMilestoneService.GetVirtualMilestones(WalkName, people.PeopleId);
-
-        //showEnterStepsModal = true;
     }
 
     async Task GetSession()
