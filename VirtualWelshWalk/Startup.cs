@@ -3,12 +3,14 @@ using EmailService;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using System.Linq;
 using VirtualWelshWalk.Areas.Identity;
@@ -76,6 +78,11 @@ namespace VirtualWelshWalk
             services.AddLocalization(options => options.ResourcesPath = "Resources");
 
             services.AddBlazoredSessionStorage();
+            services.AddScoped<ApplicationDbContext>();
+
+            //services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+            //services.AddHttpContextAccessor();
         }
 
         private RequestLocalizationOptions GetLocalizationOptions()

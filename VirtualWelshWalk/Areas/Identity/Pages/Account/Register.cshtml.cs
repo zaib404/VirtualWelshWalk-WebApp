@@ -125,7 +125,7 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
                     UserName = Input.UserName
                 };
                 
-                var result = await _userManager.CreateAsync(user, Input.Password);                
+                var result = await _userManager.CreateAsync(user, Input.Password);
 
                 if (result.Succeeded)
                 {
@@ -160,7 +160,7 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
                         protocol: Request.Scheme);
 
                     var message = new Message(new string[] { Input.Email }, "Confirm your email",
-                        $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+                        $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.", null);
 
                     await _emailSender.SendEmailAsync(message);
 

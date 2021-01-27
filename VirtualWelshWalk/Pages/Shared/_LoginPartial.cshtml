@@ -11,9 +11,9 @@
     {
         <li class="nav-item">
             <a id="manage" class="nav-link navText" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
-                <span class="oi oi-person iconSize">
-                    <span class="navTextWIcon"> Hello @UserManager.GetUserName(User)!</span>
-                    </span>
+                <span class="fa fa-user iconSize" aria-hidden="true">
+                    <span class="iconText"> Hello @UserManager.GetUserName(User)!</span>
+                </span>
             </a>
         </li>
 
@@ -21,10 +21,13 @@
             <form id="logoutForm" class="form-inline navText" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })">
                 @*<button id="logout" type="submit" class="nav-link btn btn-link text-dark">Logout</button>*@
                 <button id="logout" type="submit" class="nav-link btn btn-link text-white">
-                    <span aria-hidden="true">
-                        <img src="/Assets/WebPage/log_outicon.png" aria-hidden="true" class="navButtons" />
-                        <span class="navText"> Log Out</span>
+                    <span class="fa fa-sign-out-alt iconSize" aria-hidden="true">
+                        <span class="iconText"> Log Out</span>
                     </span>
+                    @*<span aria-hidden="true">
+            <img src="/Assets/WebPage/log_outicon.png" aria-hidden="true" class="navButtons" />
+            <span class="navText"> Log Out</span>
+        </span>*@
                 </button>
             </form>
                 </li>
@@ -33,23 +36,29 @@
     {
                 <li class="nav-item">
                     <a class="nav-link text-white" id="login" asp-area="Identity" asp-page="/Account/Login">
-                        <span aria-hidden="true">
-                            <img src="/Assets/WebPage/log_inicon.png" aria-hidden="true" class="navButtons" />
-                            <span class="navText"> Log in</span>
+                        <span class="fa fa-sign-in-alt iconSize" aria-hidden="true">
+                            <span class="iconText"> Log In</span>
                         </span>
+                        @*<span aria-hidden="true">
+            <img src="/Assets/WebPage/log_inicon.png" aria-hidden="true" class="navButtons" />
+            <span class="navText"> Log in</span>
+        </span>*@
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link text-white" id="register" asp-area="Identity" asp-page="/Account/Register">
-                        <span aria-hidden="true">
+                        <span class="fa fa-user-plus iconSize" aria-hidden="true">
+                            <span class="iconText"> Register</span>
+                        </span>
+                        @*<span aria-hidden="true">
                             <img src="/Assets/WebPage/Registericon.png" aria-hidden="true" class="navButtons" />
                             <span class="navText"> Register</span>
-                        </span>
+                        </span>*@
                     </a>
                 </li>
             }
-        </ul>
+</ul>
 
         @*<ul class="navbar-nav">
             @if (SignInManager.IsSignedIn(User))

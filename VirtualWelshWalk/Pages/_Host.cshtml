@@ -15,11 +15,11 @@
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
     <link href="css/site.css" rel="stylesheet" />
     <link href="css/Main.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/font-awesome/css/fontawesome.min.css" />
+    <link href="font-awesome/css/all.css" rel="stylesheet" />
 </head>
 <body>
     <script type="text/javascript">
-        // removes widows from paragraphs and li      
+        // removes widows from paragraphs and li
         $('.widow').each(function () {
             var string = $.trim($(this).html());
             string = string.replace(/ ([^ ]*) ([^ ]*)$/, '&nbsp;$1&nbsp;$2');
@@ -43,6 +43,5 @@
     </div>
 
     <script src="_framework/blazor.server.js"></script>
-
 </body>
 </html>

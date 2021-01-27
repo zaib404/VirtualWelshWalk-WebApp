@@ -15,19 +15,21 @@
 
                     <li class="nav-item">
                         <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                            @*<span class="oi oi-home" aria-hidden="true"></span> Home*@
-                            <span aria-hidden="true">
-                                <img src="/Assets/WebPage/homeicon.png" aria-hidden="true" class="navButtons" />
-                                <span class="navText"> Home</span>
+                            <span class="fa fa-home iconSize" aria-hidden="true">
+                                <span class="iconText"> Home</span>
                             </span>
+                            @*<span aria-hidden="true">
+                                    <img src="/Assets/WebPage/homeicon.png" aria-hidden="true" class="navButtons" />
+                                    <span class="navText"> Home</span>
+                                </span>*@
 
                         </NavLink>
                     </li>
 
                     <li class="nav-item">
-                        <NavLink class="nav-link" href="Virtual Coastal Steps">
-                            <span class="oi oi-plus iconSize" aria-hidden="true">
-                                <span class="navTextWIcon"> Input Steps</span>
+                        <NavLink class="nav-link" href="Add Steps">
+                            <span class="fa fa-plus iconSize" aria-hidden="true">
+                                <span class="iconText"> Add Steps</span>
                             </span>
                         </NavLink>
                     </li>
@@ -37,8 +39,8 @@
 
                     <li class="nav-item">
                         <NavLink class="nav-link" href="Identity/Account/Manage">
-                            <span class="oi oi-person iconSize">
-                                <span class="navTextWIcon"> Hello, @context.User.Identity.Name!</span>
+                            <span class="fa fa-user iconSize" aria-hidden="true">
+                                <span class="iconText"> Hello, @context.User.Identity.Name!</span>
                             </span>
                         </NavLink>
                     </li>
@@ -46,11 +48,13 @@
                     <li class="nav-item">
                         <form method="post" action="Identity/Account/LogOut">
                             <NavLink class="nav-link" id="logout" onclick="document.forms[0].submit();" style="cursor: pointer">
-                                @*<span class="oi oi-account-logout" aria-hidden="true"></span> Log Out*@
-                                <span aria-hidden="true">
-                                    <img src="/Assets/WebPage/log_outicon.png" aria-hidden="true" class="navButtons" />
-                                    <span class="navText"> Log Out</span>
+                                <span class="fa fa-sign-out-alt iconSize" aria-hidden="true">
+                                    <span class="iconText"> Log Out</span>
                                 </span>
+                                @*<span aria-hidden="true">
+                                        <img src="/Assets/WebPage/log_outicon.png" aria-hidden="true" class="navButtons" />
+                                        <span class="navText"> Log Out</span>
+                                    </span>*@
                             </NavLink>
                         </form>
                     </li>
@@ -66,21 +70,25 @@
 
                     <li class="nav-item">
                         <NavLink class="nav-link" href="Identity/Account/Login">
-                            @*<span class="oi oi-account-login" aria-hidden="true"></span>Log in*@
-                            <span aria-hidden="true">
+                            <span class="fa fa-sign-in-alt iconSize" aria-hidden="true">
+                                <span class="iconText"> Log In</span>
+                            </span>
+                            @*<span aria-hidden="true">
                                 <img src="/Assets/WebPage/log_inicon.png" aria-hidden="true" class="navButtons" />
                                 <span class="navText"> Log in</span>
-                            </span>
+                            </span>*@
                         </NavLink>
                     </li>
 
                     <li class="nav-item">
                         <NavLink class="nav-link" href="Identity/Account/Register">
-                            @*<span class="oi oi-person" src="/Assets/WebPage/log_in.png" aria-hidden="true"></span>Register*@
-                            <span aria-hidden="true">
+                            <span class="fa fa-user-plus iconSize" aria-hidden="true">
+                                <span class="iconText"> Register</span>
+                            </span>
+                            @*<span aria-hidden="true">
                                 <img src="/Assets/WebPage/Registericon.png" aria-hidden="true" class="navButtons" />
                                 <span class="navText"> Register</span>
-                            </span>
+                            </span>*@
                         </NavLink>
                     </li>
 

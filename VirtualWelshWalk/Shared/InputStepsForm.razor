@@ -1,9 +1,19 @@
-﻿@using DataAccess.Data
+﻿@using DataAccess.Data;
 @using VirtualWelshWalk.DataAccess.Services;
 @using VirtualWelshWalk.DataAccess.Models;
+@using Microsoft.AspNetCore.Identity;
+@using VirtualWelshWalk.Controllers;
+@using System.Security.Claims;
 
 @inject IVirtualWalkService WalkService
 @inject IPeopleService PeopleService
+@inject IVirtualMilestonesService MilestoneService
+@inject EmailService.IEmailSender emailSender
+@*@inject UserManager<User> UserManager*@
+@*@inject Microsoft.AspNetCore.Http.IHttpContextAccessor httpContent*@
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+@implements IDisposable
 @* edit form on valid submit change bool ShowConfirmationModal to true Which then will display a modal asking to confirm changes *@
 <EditForm class="form-group" OnValidSubmit="() => ShowConfirmationModal = true" Model="@virtualSteps" method="post">
     <DataAnnotationsValidator />
@@ -53,8 +63,7 @@
     </div>
 }
 
-
-@if (showNewMilestoneUnlocked)
+@if (ShowNewMilestoneUnlocked)
 {
     // Show modal/popup of user reaching a new milestone
     <div class="modal-backdrop fade show"></div>
@@ -64,7 +73,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">New Area of Interest Unlocked</h5>
-                    <button type="button" @onclick="() => { showNewMilestoneUnlocked = false; }" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" @onclick="HandleValidSubmitPart2" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -72,7 +81,7 @@
                     <p>You reached a new milestone and a significant place of interest. Check your emails and the <a href="/Virtual Coastal Map">map</a> to see more.</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" @onclick="() => { showNewMilestoneUnlocked = false; }" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" @onclick="HandleValidSubmitPart2" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -99,12 +108,20 @@
     [Parameter]
     public EventCallback OnVirtualMapSubmit { get; set; }
 
-    public CheckMilestone checkMilestone;
+    [Parameter]
+    public EventCallback<int> OnVirtualMapGetInfo { get; set; }
+
+    [Parameter]
+    public int MilestoneCounter { get; set; }
+
+    CheckMilestone checkMilestone;
 
     bool ShowConfirmationModal = false;
-    bool showNewMilestoneUnlocked = false;
+    bool ShowNewMilestoneUnlocked = false;
 
     double virtualStepsInMiles = 0;
+
+    #region When first loading
 
     protected override void OnInitialized()
     {
@@ -112,12 +129,46 @@
         {
             virtualSteps = new VirtualTotalSteps();
         }
-
-        checkMilestone = new CheckMilestone(dbMilestone);
     }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        checkMilestone = new CheckMilestone(dbMilestone, emailSender/*, UserManager, httpContent*/);
+
+        try
+        {
+            var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+            var user = authState.User;
+
+            var UserName = authState.User.Identity.Name;
+
+            string email;
+            IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
+            
+            _claims = user.Claims;
+            
+            email = user.FindFirst(c => c.Type == ClaimTypes.Email)?.Value;
+
+            //var user = await UserManager.GetUserAsync(httpContent.HttpContext.User);
+
+            //checkMilestone.SetData(user.Email, user.UserName);
+
+            checkMilestone.SetData(email, UserName);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+    }
+
+    #endregion
+
+    #region Submitting data/checking and calling parent methods
 
     async Task HandleValidSubmit()
     {
+        ShowConfirmationModal = false;
+
         dbVirtualWalk.TotalSteps += virtualSteps.NewSteps;
 
         await WalkService.UpdateVirtualWalk(dbVirtualWalk);
@@ -126,8 +177,17 @@
 
         virtualSteps.TotalSteps = dbVirtualWalk.TotalSteps;
 
-        ShowConfirmationModal = false;
+        ShowNewMilestoneUnlocked = checkMilestone.MilestoneCheck(StepsInMiles());
+        //ShowNewMilestoneUnlocked = true;
 
+        if (ShowNewMilestoneUnlocked)
+        {
+            await MilestoneService.UpdateVirtualMilestones(checkMilestone.dbMilestone);
+        }
+    }
+
+    async Task HandleValidSubmitPart2()
+    {
         if (OnTotalStepsChanged.HasDelegate)
         {
             await UpdateTotalStepsChanged();
@@ -138,10 +198,20 @@
             await VirtualMapModalSubmitChanged();
         }
 
-        checkMilestone.MilestoneCheck(StepsInMiles());
+        if (OnVirtualMapGetInfo.HasDelegate)
+        {
+            await VirtualMapGetInfoChanged();
+        }
+
+        ShowNewMilestoneUnlocked = false;
     }
 
-    private async Task UpdateTotalStepsChanged()
+    async Task UpdateMilestoneInformation()
+    {
+        await OnVirtualMapGetInfo.InvokeAsync(checkMilestone.CheckMilestoneCounter(StepsInMiles()));
+    }
+
+    async Task UpdateTotalStepsChanged()
     {
         await OnTotalStepsChanged.InvokeAsync(virtualSteps.TotalSteps);
     }
@@ -151,6 +221,43 @@
         await OnVirtualMapSubmit.InvokeAsync();
     }
 
+    async Task VirtualMapGetInfoChanged()
+    {
+        if (checkMilestone.Counter == 0)
+        {
+            virtualSteps.TotalSteps = dbVirtualWalk.TotalSteps;
+            await OnVirtualMapGetInfo.InvokeAsync(checkMilestone.CheckMilestoneCounter(StepsInMiles()));
+        }
+        else
+        {
+            await OnVirtualMapGetInfo.InvokeAsync(checkMilestone.Counter);
+        }
+
+    }
+
+    public int CallVirtualMapGetInfoChanged(int pSteps)
+    {
+        if (virtualSteps == null)
+        {
+            virtualSteps = new VirtualTotalSteps();
+        }
+
+        virtualSteps.TotalSteps = pSteps;
+
+        if (checkMilestone == null)
+        {
+            checkMilestone = new CheckMilestone();
+        }
+
+        var milestoneNum = checkMilestone.CheckMilestoneCounter(StepsInMiles());
+
+        return milestoneNum;
+    }
+
+    #endregion
+
+    #region Misc
+
     double StepsInMiles()
     {
         // Convert to kilometers
@@ -159,4 +266,11 @@
         // Convert to miles
         return virtualStepsInMiles = Math.Round(km * 0.62137, 2);
     }
+
+    public void Dispose()
+    {
+        //UserManager.Dispose();
+    }
+
+    #endregion
 }

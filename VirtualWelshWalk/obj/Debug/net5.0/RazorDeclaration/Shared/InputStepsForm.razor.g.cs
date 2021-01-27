@@ -97,13 +97,34 @@ using VirtualWelshWalk.DataAccess.Models;
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
+#line 4 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Shared\InputStepsForm.razor"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Shared\InputStepsForm.razor"
+using VirtualWelshWalk.Controllers;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 6 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Shared\InputStepsForm.razor"
+using System.Security.Claims;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 12 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
 [Authorize]
 
 #line default
 #line hidden
 #nullable disable
-    public partial class InputStepsForm : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class InputStepsForm : Microsoft.AspNetCore.Components.ComponentBase, IDisposable
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -111,7 +132,7 @@ using VirtualWelshWalk.DataAccess.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 83 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Shared\InputStepsForm.razor"
+#line 92 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Shared\InputStepsForm.razor"
  
     [Parameter]
     public VirtualTotalSteps virtualSteps { get; set; }
@@ -131,12 +152,20 @@ using VirtualWelshWalk.DataAccess.Models;
     [Parameter]
     public EventCallback OnVirtualMapSubmit { get; set; }
 
-    public CheckMilestone checkMilestone;
+    [Parameter]
+    public EventCallback<int> OnVirtualMapGetInfo { get; set; }
+
+    [Parameter]
+    public int MilestoneCounter { get; set; }
+
+    CheckMilestone checkMilestone;
 
     bool ShowConfirmationModal = false;
-    bool showNewMilestoneUnlocked = false;
+    bool ShowNewMilestoneUnlocked = false;
 
     double virtualStepsInMiles = 0;
+
+    #region When first loading
 
     protected override void OnInitialized()
     {
@@ -144,12 +173,46 @@ using VirtualWelshWalk.DataAccess.Models;
         {
             virtualSteps = new VirtualTotalSteps();
         }
-
-        checkMilestone = new CheckMilestone(dbMilestone);
     }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        checkMilestone = new CheckMilestone(dbMilestone, emailSender/*, UserManager, httpContent*/);
+
+        try
+        {
+            var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+            var user = authState.User;
+
+            var UserName = authState.User.Identity.Name;
+
+            string email;
+            IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
+            
+            _claims = user.Claims;
+            
+            email = user.FindFirst(c => c.Type == ClaimTypes.Email)?.Value;
+
+            //var user = await UserManager.GetUserAsync(httpContent.HttpContext.User);
+
+            //checkMilestone.SetData(user.Email, user.UserName);
+
+            checkMilestone.SetData(email, UserName);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+    }
+
+    #endregion
+
+    #region Submitting data/checking and calling parent methods
 
     async Task HandleValidSubmit()
     {
+        ShowConfirmationModal = false;
+
         dbVirtualWalk.TotalSteps += virtualSteps.NewSteps;
 
         await WalkService.UpdateVirtualWalk(dbVirtualWalk);
@@ -158,8 +221,17 @@ using VirtualWelshWalk.DataAccess.Models;
 
         virtualSteps.TotalSteps = dbVirtualWalk.TotalSteps;
 
-        ShowConfirmationModal = false;
+        ShowNewMilestoneUnlocked = checkMilestone.MilestoneCheck(StepsInMiles());
+        //ShowNewMilestoneUnlocked = true;
 
+        if (ShowNewMilestoneUnlocked)
+        {
+            await MilestoneService.UpdateVirtualMilestones(checkMilestone.dbMilestone);
+        }
+    }
+
+    async Task HandleValidSubmitPart2()
+    {
         if (OnTotalStepsChanged.HasDelegate)
         {
             await UpdateTotalStepsChanged();
@@ -170,10 +242,20 @@ using VirtualWelshWalk.DataAccess.Models;
             await VirtualMapModalSubmitChanged();
         }
 
-        checkMilestone.MilestoneCheck(StepsInMiles());
+        if (OnVirtualMapGetInfo.HasDelegate)
+        {
+            await VirtualMapGetInfoChanged();
+        }
+
+        ShowNewMilestoneUnlocked = false;
     }
 
-    private async Task UpdateTotalStepsChanged()
+    async Task UpdateMilestoneInformation()
+    {
+        await OnVirtualMapGetInfo.InvokeAsync(checkMilestone.CheckMilestoneCounter(StepsInMiles()));
+    }
+
+    async Task UpdateTotalStepsChanged()
     {
         await OnTotalStepsChanged.InvokeAsync(virtualSteps.TotalSteps);
     }
@@ -182,6 +264,43 @@ using VirtualWelshWalk.DataAccess.Models;
     {
         await OnVirtualMapSubmit.InvokeAsync();
     }
+
+    async Task VirtualMapGetInfoChanged()
+    {
+        if (checkMilestone.Counter == 0)
+        {
+            virtualSteps.TotalSteps = dbVirtualWalk.TotalSteps;
+            await OnVirtualMapGetInfo.InvokeAsync(checkMilestone.CheckMilestoneCounter(StepsInMiles()));
+        }
+        else
+        {
+            await OnVirtualMapGetInfo.InvokeAsync(checkMilestone.Counter);
+        }
+
+    }
+
+    public int CallVirtualMapGetInfoChanged(int pSteps)
+    {
+        if (virtualSteps == null)
+        {
+            virtualSteps = new VirtualTotalSteps();
+        }
+
+        virtualSteps.TotalSteps = pSteps;
+
+        if (checkMilestone == null)
+        {
+            checkMilestone = new CheckMilestone();
+        }
+
+        var milestoneNum = checkMilestone.CheckMilestoneCounter(StepsInMiles());
+
+        return milestoneNum;
+    }
+
+    #endregion
+
+    #region Misc
 
     double StepsInMiles()
     {
@@ -192,11 +311,22 @@ using VirtualWelshWalk.DataAccess.Models;
         return virtualStepsInMiles = Math.Round(km * 0.62137, 2);
     }
 
+    public void Dispose()
+    {
+        //UserManager.Dispose();
+    }
+
+    #endregion
+
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private AuthenticationStateProvider AuthenticationStateProvider { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private EmailService.IEmailSender emailSender { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IVirtualMilestonesService MilestoneService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IPeopleService PeopleService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IVirtualWalkService WalkService { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private Microsoft.Extensions.Localization.IStringLocalizer<App> Localizer { get; set; }
     }
 }
 #pragma warning restore 1591

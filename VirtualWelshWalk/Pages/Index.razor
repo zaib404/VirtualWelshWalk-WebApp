@@ -1,6 +1,5 @@
 ﻿@page "/"
 @attribute [AllowAnonymous]
-@inject Microsoft.Extensions.Localization.IStringLocalizer<App> Localizer
 
 <style>
     .hero {
@@ -57,7 +56,9 @@
                 </div>
 
                 <div class="col-7 pt-2 pl-5 pb-2">
-                    <button class="btn rounded-pill text-white" style="background-color:#af3182;">JOIN NOW</button>
+                    <a class="btn rounded-pill text-white" style="background-color:#af3182;" href="Identity/Account/Register">
+                        JOIN NOW
+                    </a>
                 </div>
             </div>
         </div>

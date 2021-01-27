@@ -144,7 +144,7 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
                             protocol: Request.Scheme);
 
                         var message = new Message(new string[] { Input.Email }, "Confirm your email",
-                            $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+                            $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.", null);
 
                         await _emailSender.SendEmailAsync(message);
 

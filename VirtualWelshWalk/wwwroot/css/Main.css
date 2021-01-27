@@ -51,6 +51,13 @@
     color: white;
 }
 
+.iconText
+{
+    font-family:'Century Gothic';
+    font-size: 25px;
+    font-weight:normal;
+}
+
 .navBG {
     background-image: url('/Assets/WebPage/header_bg.jpg');
     background-repeat: no-repeat;

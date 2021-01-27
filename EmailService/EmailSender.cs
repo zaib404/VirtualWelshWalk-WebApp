@@ -2,6 +2,9 @@
 using MimeKit;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -62,6 +65,42 @@ namespace EmailService
             emailMessage.To.AddRange(message.To);
             emailMessage.Subject = message.Subject;
             emailMessage.Body = new TextPart(MimeKit.Text.TextFormat.Html) { Text = message.Content };
+
+            var bodyBuilder = new BodyBuilder { HtmlBody = message.Content };
+
+            
+
+            if (message.Attachments != null)
+            {
+                List<string> attachmentPath = new List<string>();
+
+                for (int i = 0; i < message.Attachments.Count; i++)
+                {
+                    attachmentPath.Add(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), message.Attachments[i]));
+                }
+
+                for (int i = 0; i < attachmentPath.Count; i++)
+                {
+                    bodyBuilder.Attachments.Add(attachmentPath[i]);
+                }
+            }
+
+            //if (message.Attachments != null && message.Attachments.Any())
+            //{
+            //    byte[] fileBytes;
+            //    foreach (var attachment in message.Attachments)
+            //    {
+            //        using (var ms = new MemoryStream())
+            //        {
+            //            attachment.CopyTo(ms);
+            //            fileBytes = ms.ToArray();
+            //        }
+
+            //        bodyBuilder.Attachments.Add(attachment.FileName, fileBytes, ContentType.Parse(attachment.ContentType));
+            //    }
+            //}
+
+            emailMessage.Body = bodyBuilder.ToMessageBody();
             return emailMessage;
         }
         private void Send(MimeMessage mailMessage)
