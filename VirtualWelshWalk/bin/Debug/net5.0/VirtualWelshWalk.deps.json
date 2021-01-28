@@ -27,6 +27,7 @@
         "dependencies": {
           "Blazored.SessionStorage": "1.0.13",
           "EmailService": "1.0.0",
+          "EmailTemplate": "1.0.0",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "3.1.8",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.10",
           "Microsoft.AspNetCore.Identity.UI": "3.1.10",
@@ -2483,6 +2484,14 @@
         },
         "compile": {
           "EmailService.dll": {}
+        }
+      },
+      "EmailTemplate/1.0.0": {
+        "runtime": {
+          "EmailTemplate.dll": {}
+        },
+        "compile": {
+          "EmailTemplate.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
@@ -5519,6 +5528,11 @@
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
     "EmailService/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EmailTemplate/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

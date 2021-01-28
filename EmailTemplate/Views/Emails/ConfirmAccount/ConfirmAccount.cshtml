@@ -1,0 +1,19 @@
+﻿@using EmailTemplate.Views.Emails.ConfirmAccount
+@using EmailTemplate.Views.Shared
+@model ConfirmAccountEmailViewModel
+
+@{
+    ViewData["EmailTitle"] = "Welcome!";
+}
+
+<p>
+    We're excited to have you get started. First, you need to confirm your account. Just press the button below.
+</p>
+
+<br />
+
+@await Html.PartialAsync("EmailButton", new EmailButtonViewModel("Confirm Account", Model.ConfirmEmailUrl))
+
+<br />
+
+<br />

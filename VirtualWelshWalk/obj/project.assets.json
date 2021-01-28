@@ -3084,6 +3084,19 @@
         "runtime": {
           "bin/placeholder/EmailService.dll": {}
         }
+      },
+      "EmailTemplate/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/EmailTemplate.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EmailTemplate.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -9850,12 +9863,18 @@
       "type": "project",
       "path": "../EmailService/EmailService.csproj",
       "msbuildProject": "../EmailService/EmailService.csproj"
+    },
+    "EmailTemplate/1.0.0": {
+      "type": "project",
+      "path": "../EmailTemplate/EmailTemplate.csproj",
+      "msbuildProject": "../EmailTemplate/EmailTemplate.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
       "Blazored.SessionStorage >= 1.0.13",
       "EmailService >= 1.0.0",
+      "EmailTemplate >= 1.0.0",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 3.1.8",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 3.1.10",
       "Microsoft.AspNetCore.Identity.UI >= 3.1.10",
@@ -9902,6 +9921,9 @@
           "projectReferences": {
             "D:\\Zaib\\Documents\\Areca Design\\VirtualWelshWalk\\EmailService\\EmailService.csproj": {
               "projectPath": "D:\\Zaib\\Documents\\Areca Design\\VirtualWelshWalk\\EmailService\\EmailService.csproj"
+            },
+            "D:\\Zaib\\Documents\\Areca Design\\VirtualWelshWalk\\EmailTemplate\\EmailTemplate.csproj": {
+              "projectPath": "D:\\Zaib\\Documents\\Areca Design\\VirtualWelshWalk\\EmailTemplate\\EmailTemplate.csproj"
             }
           }
         }

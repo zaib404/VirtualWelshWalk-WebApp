@@ -17,6 +17,8 @@ using VirtualWelshWalk.DataAccess.CRUD;
 using VirtualWelshWalk.DataAccess.Models;
 using EmailService;
 using IEmailSender = EmailService.IEmailSender;
+using EmailTemplate.Services;
+using EmailTemplate.Views.Emails.ConfirmAccount;
 
 namespace VirtualWelshWalk.Areas.Identity.Pages.Account
 {
@@ -34,6 +36,8 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
         readonly IVirtualWalkRepository _virtualWalkRepository;
         readonly IMilestoneRepository _milestoneRepository;
 
+        IRazorViewToStringRenderer _razorViewToStringRenderer;
+
         public RegisterModel(
             UserManager<User> userManager,
             SignInManager<User> signInManager,
@@ -41,7 +45,8 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
             IEmailSender emailSender,
             IPeopleRepository peopleRepository,
             IVirtualWalkRepository virtualWalkRepository,
-            IMilestoneRepository milestoneRepository)
+            IMilestoneRepository milestoneRepository,
+            IRazorViewToStringRenderer razorViewToStringRenderer)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -51,6 +56,7 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
             _peopleRepository = peopleRepository;
             _virtualWalkRepository = virtualWalkRepository;
             _milestoneRepository = milestoneRepository;
+            _razorViewToStringRenderer = razorViewToStringRenderer;
         }
 
         [BindProperty]
@@ -159,8 +165,14 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
                         values: new { area = "Identity", userId = user.Id, code = code, returnUrl = returnUrl },
                         protocol: Request.Scheme);
 
-                    var message = new Message(new string[] { Input.Email }, "Confirm your email",
-                        $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.", null);
+                    var confirmAccountModel = new ConfirmAccountEmailViewModel(callbackUrl);
+
+                    string body = await _razorViewToStringRenderer.RenderViewToStringAsync(@"\Views\Emails\ConfirmAccount\ConfirmAccount.cshtml", confirmAccountModel);
+
+                    //var message = new Message(new string[] { Input.Email }, "Confirm your email",
+                    //    $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.", null);
+
+                    var message = new Message(new string[] { Input.Email }, "Confirm your email", body, null);
 
                     await _emailSender.SendEmailAsync(message);
 

@@ -72,6 +72,9 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account.Manage
             }
 
             await LoadAsync(user);
+
+            var P = Page();
+
             return Page();
         }
 

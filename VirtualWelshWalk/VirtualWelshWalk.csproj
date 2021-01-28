@@ -30,6 +30,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EmailService\EmailService.csproj" />
+    <ProjectReference Include="..\EmailTemplate\EmailTemplate.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,5 +1,6 @@
 using Blazored.SessionStorage;
 using EmailService;
+using EmailTemplate.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Hosting;
@@ -79,6 +80,8 @@ namespace VirtualWelshWalk
 
             services.AddBlazoredSessionStorage();
             services.AddScoped<ApplicationDbContext>();
+
+            services.AddScoped<IRazorViewToStringRenderer, RazorViewToStringRenderer>();
 
             //services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
