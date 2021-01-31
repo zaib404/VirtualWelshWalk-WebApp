@@ -1,7 +1,18 @@
 ﻿@page
 @model ConfirmEmailModel
 @{
-    ViewData["Title"] = "Confirm email";
+    ViewData["Title"] = "Emailed Confirmed";
 }
 
-<h1>@ViewData["Title"]</h1>
+<div class="container-fluid p-5">
+    <h1>@ViewData["Title"]</h1>
+
+    <p>Thank you for confirming your email.</p>
+
+    <p>You will soon be redirected...</p>
+
+    <a href="/Identity/Account/Login"/>
+        Click here to login
+    </a>
+
+</div>

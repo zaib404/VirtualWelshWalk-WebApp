@@ -6,71 +6,76 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="css\bootstrap\bootstrap.min.css" />
-    <None Remove="css\bootstrap\bootstrap.min.css.map" />
-    <None Remove="css\Main.css" />
-    <None Remove="css\open-iconic\FONT-LICENSE" />
-    <None Remove="css\open-iconic\font\css\open-iconic-bootstrap.min.css" />
-    <None Remove="css\open-iconic\font\fonts\open-iconic.eot" />
-    <None Remove="css\open-iconic\font\fonts\open-iconic.otf" />
-    <None Remove="css\open-iconic\font\fonts\open-iconic.svg" />
-    <None Remove="css\open-iconic\font\fonts\open-iconic.ttf" />
-    <None Remove="css\open-iconic\font\fonts\open-iconic.woff" />
-    <None Remove="css\open-iconic\ICON-LICENSE" />
-    <None Remove="css\open-iconic\README.md" />
-    <None Remove="css\site.css" />
+    <None Remove="Assets\css\bootstrap\bootstrap.min.css" />
+    <None Remove="Assets\css\bootstrap\bootstrap.min.css.map" />
+    <None Remove="Assets\css\Main.css" />
+    <None Remove="Assets\css\open-iconic\FONT-LICENSE" />
+    <None Remove="Assets\css\open-iconic\font\css\open-iconic-bootstrap.min.css" />
+    <None Remove="Assets\css\open-iconic\font\fonts\open-iconic.eot" />
+    <None Remove="Assets\css\open-iconic\font\fonts\open-iconic.otf" />
+    <None Remove="Assets\css\open-iconic\font\fonts\open-iconic.svg" />
+    <None Remove="Assets\css\open-iconic\font\fonts\open-iconic.ttf" />
+    <None Remove="Assets\css\open-iconic\font\fonts\open-iconic.woff" />
+    <None Remove="Assets\css\open-iconic\ICON-LICENSE" />
+    <None Remove="Assets\css\open-iconic\README.md" />
+    <None Remove="Assets\css\site.css" />
+    <None Remove="Assets\Font\911Fonts.com_CenturyGothicBold__-_911fonts.com_fonts_pMgo.ttf" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="css\bootstrap\bootstrap.min.css">
+    <Content Include="Assets\css\bootstrap\bootstrap.min.css">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="css\bootstrap\bootstrap.min.css.map">
+    <Content Include="Assets\css\bootstrap\bootstrap.min.css.map">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="css\Main.css">
+    <Content Include="Assets\css\Main.css">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="css\open-iconic\FONT-LICENSE">
+    <Content Include="Assets\css\open-iconic\FONT-LICENSE">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="css\open-iconic\font\css\open-iconic-bootstrap.min.css">
+    <Content Include="Assets\css\open-iconic\font\css\open-iconic-bootstrap.min.css">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="css\open-iconic\font\fonts\open-iconic.eot">
+    <Content Include="Assets\css\open-iconic\font\fonts\open-iconic.eot">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="css\open-iconic\font\fonts\open-iconic.otf">
+    <Content Include="Assets\css\open-iconic\font\fonts\open-iconic.otf">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="css\open-iconic\font\fonts\open-iconic.svg">
+    <Content Include="Assets\css\open-iconic\font\fonts\open-iconic.svg">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="css\open-iconic\font\fonts\open-iconic.ttf">
+    <Content Include="Assets\css\open-iconic\font\fonts\open-iconic.ttf">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="css\open-iconic\font\fonts\open-iconic.woff">
+    <Content Include="Assets\css\open-iconic\font\fonts\open-iconic.woff">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="css\open-iconic\ICON-LICENSE">
+    <Content Include="Assets\css\open-iconic\ICON-LICENSE">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="css\open-iconic\README.md">
+    <Content Include="Assets\css\open-iconic\README.md">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="css\site.css">
+    <Content Include="Assets\css\site.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Assets\Font\911Fonts.com_CenturyGothicBold__-_911fonts.com_fonts_pMgo.ttf">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>

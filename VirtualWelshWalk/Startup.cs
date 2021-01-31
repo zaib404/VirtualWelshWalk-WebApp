@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using VirtualWelshWalk.Areas.Identity;
 using VirtualWelshWalk.DataAccess.CRUD;

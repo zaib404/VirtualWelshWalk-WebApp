@@ -3,6 +3,7 @@
 @using DataAccess.Data
 @using VirtualWelshWalk.DataAccess.Services;
 @using VirtualWelshWalk.DataAccess.Models;
+@using Microsoft.AspNetCore.Identity;
 
 @inject IVirtualWalkService WalkService
 @inject IPeopleService PeopleService
@@ -11,6 +12,8 @@
 @inject Blazored.SessionStorage.ISessionStorageService sessionStorage
 
 @implements IAsyncDisposable
+@inject NavigationManager NavigationManager
+@inject SignInManager<User> _signInManager
 
 <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
 
@@ -80,7 +83,7 @@ else
                     </div>
 
                     <div class="modal-body">
-                        <InputStepsForm @ref="stepsForm" dbPeople="people" dbVirtualWalk="virtualWalk" dbMilestone="milestone" 
+                        <InputStepsForm @ref="stepsForm" dbPeople="people" dbVirtualWalk="virtualWalk" dbMilestone="milestone"
                                         OnVirtualMapSubmit="Update" OnVirtualMapGetInfo="@ShowMileStoneUnlocked" />
                     </div>
 
@@ -122,9 +125,17 @@ else
     protected override async Task OnInitializedAsync()
     {
         people = await PeopleService.GetPeople();
-        virtualWalk = await WalkService.GetVirtualWalk(WalkName, people.PeopleId);
 
-        milestone = await VirtualMilestoneService.GetVirtualMilestones(WalkName, people.PeopleId);
+        if (people == null)
+        {
+            await _signInManager.SignOutAsync();
+        }
+        else
+        {
+            virtualWalk = await WalkService.GetVirtualWalk(WalkName, people.PeopleId);
+
+            milestone = await VirtualMilestoneService.GetVirtualMilestones(WalkName, people.PeopleId);
+        }
     }
 
     async Task GetSession()

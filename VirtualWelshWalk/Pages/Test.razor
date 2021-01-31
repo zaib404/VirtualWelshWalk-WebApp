@@ -1,0 +1,20 @@
+﻿@page "/Test"
+@attribute [AllowAnonymous]
+
+@inject EmailTemplate.Services.IRazorViewToStringRenderer _razorViewToStringRenderer
+
+@body
+
+@code {
+
+    MarkupString body;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var confirmAccountModel = new EmailTemplate.Views.Emails.ConfirmAccount.ConfirmAccountEmailViewModel("google.com");
+
+        var body11 = await _razorViewToStringRenderer.RenderViewToStringAsync(@"\Views\Emails\ConfirmAccount\ConfirmAccount.cshtml", confirmAccountModel);
+
+        body = (MarkupString)body11;
+    }
+}

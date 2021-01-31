@@ -266,3 +266,5 @@ D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailTemplate.Views.pdb
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailTemplate.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailTemplate.pdb
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\RazorDeclaration\Pages\Test.razor.g.cs
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\Razor\Pages\Test.razor.g.cs

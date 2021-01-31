@@ -5,7 +5,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using VirtualWelshWalk.DataAccess.CRUD;
 using VirtualWelshWalk.DataAccess.Models;
+using VirtualWelshWalk.DataAccess.Services;
 
 namespace VirtualWelshWalk.Areas.Identity.Pages.Account.Manage
 {
@@ -15,14 +17,26 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account.Manage
         private readonly SignInManager<User> _signInManager;
         private readonly ILogger<DeletePersonalDataModel> _logger;
 
+        // New
+        readonly IPeopleService _peopleRepository;
+        readonly IVirtualWalkService _virtualWalkRepository;
+        readonly IVirtualMilestonesService _milestoneRepository;
+
         public DeletePersonalDataModel(
             UserManager<User> userManager,
             SignInManager<User> signInManager,
-            ILogger<DeletePersonalDataModel> logger)
+            ILogger<DeletePersonalDataModel> logger,
+            IPeopleService peopleRepository,
+            IVirtualWalkService virtualWalkRepository,
+            IVirtualMilestonesService milestoneRepository)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
+
+            _peopleRepository = peopleRepository;
+            _virtualWalkRepository = virtualWalkRepository;
+            _milestoneRepository = milestoneRepository;
         }
 
         [BindProperty]
@@ -52,6 +66,9 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account.Manage
         public async Task<IActionResult> OnPostAsync()
         {
             var user = await _userManager.GetUserAsync(User);
+            var people = await _peopleRepository.GetPeople(user.UserName);
+
+            var peopleID = people.PeopleId;
             if (user == null)
             {
                 return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
@@ -69,6 +86,9 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account.Manage
 
             var result = await _userManager.DeleteAsync(user);
             var userId = await _userManager.GetUserIdAsync(user);
+
+            DeleteUsers(peopleID, user.UserName);
+
             if (!result.Succeeded)
             {
                 throw new InvalidOperationException($"Unexpected error occurred deleting user with ID '{userId}'.");
@@ -79,6 +99,13 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account.Manage
             _logger.LogInformation("User with ID '{UserId}' deleted themselves.", userId);
 
             return Redirect("~/");
+        }
+
+        void DeleteUsers(int peopleID, string uName)
+        {
+            _peopleRepository.DeletePeople(uName).Wait();
+            _virtualWalkRepository.DeleteVirtualWalk(peopleID).Wait();
+            _milestoneRepository.DeleteVirtualMilestones(peopleID).Wait();
         }
     }
 }

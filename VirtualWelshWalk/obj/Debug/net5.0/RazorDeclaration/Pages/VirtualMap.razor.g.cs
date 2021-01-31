@@ -97,6 +97,13 @@ using VirtualWelshWalk.DataAccess.Models;
 #line hidden
 #nullable disable
 #nullable restore
+#line 6 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 12 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
 [Authorize]
 
@@ -112,7 +119,7 @@ using VirtualWelshWalk.DataAccess.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 97 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
+#line 100 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
  
     public People people { get; set; } = new People();
     public VirtualWalk virtualWalk { get; set; } = new VirtualWalk();
@@ -141,9 +148,17 @@ using VirtualWelshWalk.DataAccess.Models;
     protected override async Task OnInitializedAsync()
     {
         people = await PeopleService.GetPeople();
-        virtualWalk = await WalkService.GetVirtualWalk(WalkName, people.PeopleId);
 
-        milestone = await VirtualMilestoneService.GetVirtualMilestones(WalkName, people.PeopleId);
+        if (people == null)
+        {
+            await _signInManager.SignOutAsync();
+        }
+        else
+        {
+            virtualWalk = await WalkService.GetVirtualWalk(WalkName, people.PeopleId);
+
+            milestone = await VirtualMilestoneService.GetVirtualMilestones(WalkName, people.PeopleId);
+        }
     }
 
     async Task GetSession()
@@ -497,6 +512,8 @@ using VirtualWelshWalk.DataAccess.Models;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private SignInManager<User> _signInManager { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private Blazored.SessionStorage.ISessionStorageService sessionStorage { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime jsRunTime { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IVirtualMilestonesService VirtualMilestoneService { get; set; }

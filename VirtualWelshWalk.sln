@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtualWelshWalk", "Virtual
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailService", "EmailService\EmailService.csproj", "{9433CEF2-5A62-44DF-96CD-A2EFE3E7322F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailTemplate", "EmailTemplate\EmailTemplate.csproj", "{6481A755-0F10-4A79-B274-87952BFF20E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailTemplate", "EmailTemplate\EmailTemplate.csproj", "{6481A755-0F10-4A79-B274-87952BFF20E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
