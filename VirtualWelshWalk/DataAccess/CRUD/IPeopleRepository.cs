@@ -18,9 +18,9 @@ namespace VirtualWelshWalk.DataAccess.CRUD
 
         Task<People> UpdatePeople(People people);
 
-        void DeletePeople(int peopleID);
+        Task DeletePeople(int peopleID);
 
-        void DeletePeople(string peopleUserName);
+        Task DeletePeople(string peopleUserName);
 
     }
 }

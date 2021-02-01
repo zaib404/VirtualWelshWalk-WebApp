@@ -21,10 +21,10 @@ namespace VirtualWelshWalk.DataAccess.Services
             await virtualMilestoneRepository.AddVirtualMilestones(VMilestones);
         }
 
-        public Task DeleteVirtualMilestones(int peopleID)
+        public async Task DeleteVirtualMilestones(int peopleID)
         {
-            virtualMilestoneRepository.DeleteVirtualMilestones(peopleID);
-            return Task.CompletedTask;
+            await virtualMilestoneRepository.DeleteVirtualMilestones(peopleID);
+            //return Task.CompletedTask;
         }
 
         public async Task<VirtualMilestone> GetVirtualMilestones(string virtualMilestones, int peopleID)

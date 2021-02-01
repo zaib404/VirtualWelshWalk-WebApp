@@ -87,25 +87,22 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account.Manage
             var result = await _userManager.DeleteAsync(user);
             var userId = await _userManager.GetUserIdAsync(user);
 
-            DeleteUsers(peopleID, user.UserName);
+            
 
             if (!result.Succeeded)
             {
                 throw new InvalidOperationException($"Unexpected error occurred deleting user with ID '{userId}'.");
             }
 
+            await _peopleRepository.DeletePeople(peopleID/*user.UserName*/);
+            await _virtualWalkRepository.DeleteVirtualWalk(peopleID);
+            await _milestoneRepository.DeleteVirtualMilestones(peopleID);
+
             await _signInManager.SignOutAsync();
 
             _logger.LogInformation("User with ID '{UserId}' deleted themselves.", userId);
 
             return Redirect("~/");
-        }
-
-        void DeleteUsers(int peopleID, string uName)
-        {
-            _peopleRepository.DeletePeople(uName).Wait();
-            _virtualWalkRepository.DeleteVirtualWalk(peopleID).Wait();
-            _milestoneRepository.DeleteVirtualMilestones(peopleID).Wait();
         }
     }
 }

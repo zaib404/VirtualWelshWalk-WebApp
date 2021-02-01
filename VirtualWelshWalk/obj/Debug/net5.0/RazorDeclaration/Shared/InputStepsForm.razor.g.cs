@@ -165,6 +165,9 @@ using System.Security.Claims;
 
     double virtualStepsInMiles = 0;
 
+    string UserName;
+    string EmailAddress;
+
     #region When first loading
 
     protected override void OnInitialized()
@@ -184,20 +187,20 @@ using System.Security.Claims;
             var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
             var user = authState.User;
 
-            var UserName = authState.User.Identity.Name;
+            UserName = authState.User.Identity.Name;
 
-            string email;
+
             IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
-            
+
             _claims = user.Claims;
-            
-            email = user.FindFirst(c => c.Type == ClaimTypes.Email)?.Value;
+
+            EmailAddress = user.FindFirst(c => c.Type == ClaimTypes.Email)?.Value;
 
             //var user = await UserManager.GetUserAsync(httpContent.HttpContext.User);
 
             //checkMilestone.SetData(user.Email, user.UserName);
 
-            checkMilestone.SetData(email, UserName);
+            checkMilestone.SetData(EmailAddress, UserName);
         }
         catch (Exception e)
         {
@@ -221,7 +224,7 @@ using System.Security.Claims;
 
         virtualSteps.TotalSteps = dbVirtualWalk.TotalSteps;
 
-        ShowNewMilestoneUnlocked = checkMilestone.MilestoneCheck(StepsInMiles());
+        ShowNewMilestoneUnlocked = checkMilestone.MilestoneCheckWithEmail(StepsInKM());
         //ShowNewMilestoneUnlocked = true;
 
         if (ShowNewMilestoneUnlocked)
@@ -252,7 +255,7 @@ using System.Security.Claims;
 
     async Task UpdateMilestoneInformation()
     {
-        await OnVirtualMapGetInfo.InvokeAsync(checkMilestone.CheckMilestoneCounter(StepsInMiles()));
+        await OnVirtualMapGetInfo.InvokeAsync(checkMilestone.CheckMilestoneCounter(StepsInKM()));
     }
 
     async Task UpdateTotalStepsChanged()
@@ -270,7 +273,7 @@ using System.Security.Claims;
         if (checkMilestone.Counter == 0)
         {
             virtualSteps.TotalSteps = dbVirtualWalk.TotalSteps;
-            await OnVirtualMapGetInfo.InvokeAsync(checkMilestone.CheckMilestoneCounter(StepsInMiles()));
+            await OnVirtualMapGetInfo.InvokeAsync(checkMilestone.CheckMilestoneCounter(StepsInKM()));
         }
         else
         {
@@ -279,7 +282,7 @@ using System.Security.Claims;
 
     }
 
-    public int CallVirtualMapGetInfoChanged(int pSteps)
+    public async Task<int> CallVirtualMapGetInfoChanged(int pSteps)
     {
         if (virtualSteps == null)
         {
@@ -293,7 +296,15 @@ using System.Security.Claims;
             checkMilestone = new CheckMilestone();
         }
 
-        var milestoneNum = checkMilestone.CheckMilestoneCounter(StepsInMiles());
+        var milestoneNum = checkMilestone.CheckMilestoneCounter(StepsInKM());
+
+        if (virtualSteps.TotalSteps == 0)
+        {
+            if (checkMilestone.SendEmailCheck(milestoneNum))
+            {
+                await MilestoneService.UpdateVirtualMilestones(dbMilestone);
+            }
+        }
 
         return milestoneNum;
     }
@@ -302,13 +313,14 @@ using System.Security.Claims;
 
     #region Misc
 
-    double StepsInMiles()
+    double StepsInKM()
     {
         // Convert to kilometers
         double km = Math.Round(virtualSteps.TotalSteps / 1312.33595801, 2);
 
+
         // Convert to miles
-        return virtualStepsInMiles = Math.Round(km * 0.62137, 2);
+        return virtualStepsInMiles = Math.Round(km * 0.62137, 1);
     }
 
     public void Dispose()
@@ -317,6 +329,17 @@ using System.Security.Claims;
     }
 
     #endregion
+
+    public void SetUpFromVirtualMap(IVirtualMilestonesService milestonesService,
+        VirtualMilestone pDbMilestone, EmailService.IEmailSender pEmailSender,
+        string pEmailAddress, string pUserName)
+    {
+        checkMilestone = new CheckMilestone(pDbMilestone, pEmailSender);
+        checkMilestone.SetData(pEmailAddress, pUserName);
+
+        dbMilestone = pDbMilestone;
+        MilestoneService = milestonesService;
+    }
 
 #line default
 #line hidden

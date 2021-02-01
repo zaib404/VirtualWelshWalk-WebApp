@@ -14,6 +14,6 @@ namespace VirtualWelshWalk.DataAccess.CRUD
 
         Task<VirtualMilestone> UpdateVirtualMilestones(VirtualMilestone VMilestone);
 
-        void DeleteVirtualMilestones(int peopleID);
+        Task DeleteVirtualMilestones(int peopleID);
     }
 }

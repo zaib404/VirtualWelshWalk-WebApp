@@ -14,6 +14,6 @@ namespace VirtualWelshWalk.DataAccess.CRUD
 
         Task<VirtualWalk> UpdateVirtualWalk(VirtualWalk VWalk);
 
-        void DeleteVirtualWalk(int peopleID);
+        Task DeleteVirtualWalk(int peopleID);
     }
 }

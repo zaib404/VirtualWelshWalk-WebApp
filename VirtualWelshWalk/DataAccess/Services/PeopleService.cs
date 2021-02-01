@@ -24,16 +24,16 @@ namespace VirtualWelshWalk.DataAccess.Services
             await peopleRepository.AddPeople(people);
         }
 
-        public Task DeletePeople(int peopleID)
+        public async Task DeletePeople(int peopleID)
         {
-            peopleRepository.DeletePeople(peopleID);
-            return Task.CompletedTask;
+            await peopleRepository.DeletePeople(peopleID);
+            //return Task.CompletedTask;
         }
 
-        public Task DeletePeople(string peopleUserName)
+        public async Task DeletePeople(string peopleUserName)
         {
-            peopleRepository.DeletePeople(peopleUserName);
-            return Task.CompletedTask;
+            await peopleRepository.DeletePeople(peopleUserName);
+            //return Task.CompletedTask;
         }
 
         public async Task<People> GetPeople(int peopleID)

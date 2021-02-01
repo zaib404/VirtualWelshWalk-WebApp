@@ -4,12 +4,15 @@
 @using VirtualWelshWalk.DataAccess.Services;
 @using VirtualWelshWalk.DataAccess.Models;
 @using Microsoft.AspNetCore.Identity;
+@using System.Security.Claims;
 
 @inject IVirtualWalkService WalkService
 @inject IPeopleService PeopleService
 @inject IVirtualMilestonesService VirtualMilestoneService
 @inject IJSRuntime jsRunTime
 @inject Blazored.SessionStorage.ISessionStorageService sessionStorage
+@inject EmailService.IEmailSender emailSender
+@inject AuthenticationStateProvider AuthenticationStateProvider
 
 @implements IAsyncDisposable
 @inject NavigationManager NavigationManager
@@ -120,7 +123,7 @@ else
     string MilestoneInfo = "Loading...";
     string MilestonePic;
 
-    InputStepsForm stepsForm = new InputStepsForm();
+    InputStepsForm stepsForm;
 
     protected override async Task OnInitializedAsync()
     {
@@ -155,8 +158,12 @@ else
         {
             await GetSession();
 
+            await SetUpInputStepsForm();
+
+            ShowMileStoneUnlocked(await stepsForm.CallVirtualMapGetInfoChanged(virtualWalk.TotalSteps));
+
             mapModule = await jsRunTime.InvokeAsync<IJSObjectReference>(
-   "import", "./scripts/MapBox.js").AsTask();
+"import", "./scripts/MapBox.js").AsTask();
             mapInstance = await mapModule.InvokeAsync<IJSObjectReference>(
                 "initialize", mapElement).AsTask();
 
@@ -165,9 +172,32 @@ else
                 await UpdatePersonLocation();
             }
 
-            ShowMileStoneUnlocked(stepsForm.CallVirtualMapGetInfoChanged(virtualWalk.TotalSteps));
-
             StateHasChanged();
+        }
+    }
+
+    async Task SetUpInputStepsForm()
+    {
+        try
+        {
+            var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+            var user = authState.User;
+
+            var UserName = authState.User.Identity.Name;
+
+            string email;
+            IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
+
+            _claims = user.Claims;
+
+            email = user.FindFirst(c => c.Type == ClaimTypes.Email)?.Value;
+
+            stepsForm = new InputStepsForm();
+            stepsForm.SetUpFromVirtualMap(VirtualMilestoneService, milestone, emailSender, email, UserName);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
         }
     }
 
@@ -188,9 +218,10 @@ else
         await mapModule.InvokeVoidAsync("UpdateColourPath");
     }
 
-    void CloseInputStepForms()
+    async Task CloseInputStepForms()
     {
         //await stepsForm.CallVirtualMapGetInfoChanged();
+        await Update();
         showEnterStepsModal = false;
     }
 
@@ -198,7 +229,7 @@ else
     {
         switch (number)
         {
-            case 1:
+            case 0:
 
                 MilestoneInfo = "Tintern Abbey was founded on 9 May 1131 by Walter de Clare, " +
                 "Lord of Chepstow. It is situated adjacent to the village of Tintern in " +
@@ -209,7 +240,7 @@ else
 
                 break;
 
-            case 2:
+            case 1:
 
                 MilestoneInfo = "The Newport Transporter Bridge is a transporter bridge that crosses " +
                         "the River Usk in Newport, South East Wales. It is one of fewer than 10 transporter " +
@@ -220,7 +251,7 @@ else
 
                 break;
 
-            case 3:
+            case 2:
 
                 MilestoneInfo = "Cardiff Castle is located in the Castle Quarter, in the heart of Cardiff, " +
                         "the capital of Wales. There has been a fort on the site for almost 2,000 years. " +
@@ -230,7 +261,7 @@ else
 
                 break;
 
-            case 4:
+            case 3:
 
                 MilestoneInfo = "Rest Bay is a golden, sandy beach on the outskirts of the town of Porthcawl, " +
                         "backed by The Royal Porthcawl Golf Club and low cliffs. The beach faces south-west, " +
@@ -241,7 +272,7 @@ else
 
                 break;
 
-            case 5:
+            case 4:
 
                 MilestoneInfo = "The Mumbles Pier is one of only six surviving iron piers in Wales. " +
                         "Mumbles Pier was opened to the public on the 10th May 1898. A family run business " +
@@ -253,7 +284,7 @@ else
 
                 break;
 
-            case 6:
+            case 5:
 
                 MilestoneInfo = "Fall bay is one of the hardest to reach bays on Gower, " +
                         "however the walk is well worth it and the beach is never crowded due " +
@@ -265,7 +296,7 @@ else
 
                 break;
 
-            case 7:
+            case 6:
 
                 MilestoneInfo = "Parc y Scarlets is a rugby union stadium in Llanelli, " +
                         "Carmarthenshire, that opened in November 2008 as the new home of " +
@@ -278,7 +309,7 @@ else
 
                 break;
 
-            case 8:
+            case 7:
 
                 MilestoneInfo = "Kidwelly Castle is a Norman castle overlooking the River Gwendraeth and the town of Kidwelly, Carmarthenshire, " +
                         "Wales. Origin of this surname trace back to when it was spelled Cygweli which means " + '\u0022' + "swan." + '\u0022' + "" +
@@ -289,7 +320,7 @@ else
 
                 break;
 
-            case 9:
+            case 8:
 
                 MilestoneInfo = "St Catherines Island is a small tidal island linked to Tenby in Pembrokeshire, Wales. " +
                         "2016 The Final Problem, the third and last episode of the fourth series of the BBC TV series " +
@@ -300,7 +331,7 @@ else
 
                 break;
 
-            case 10:
+            case 9:
 
                 MilestoneInfo = "Barafundle Bay was named in Passport Magazine’s best beaches in the world. " +
                         "The remote sand patch came 17th in the top 25. Barafundle Bay is a remote, slightly curved, " +
@@ -311,7 +342,7 @@ else
 
                 break;
 
-            case 11:
+            case 10:
 
                 MilestoneInfo = "Stack Rock Fort is a fort built on a small island in the Milford Haven Waterway, " +
                         "Pembrokeshire. A 3-gun fort was built between 1850 and 1852, and then upgraded in 1859 with a new " +
@@ -322,7 +353,7 @@ else
 
                 break;
 
-            case 12:
+            case 11:
 
                 MilestoneInfo = "St Davids Cathedral is situated in St Davids in the county of Pembrokeshire, on the most westerly point of Wales. " +
                         "There are at least three services said or sung per day, each week, with sung services on five out of seven days. " +
@@ -333,7 +364,7 @@ else
 
                 break;
 
-            case 13:
+            case 12:
 
                 MilestoneInfo = "Strumble Head Lighthouse stands imposingly on Ynysmeicl (St. Michael's Island), " +
                         "an islet to the west of Fishguard, separated from the mainland by a very narrow gap through " +
@@ -343,7 +374,7 @@ else
 
                 break;
 
-            case 14:
+            case 13:
 
                 MilestoneInfo = "Cardigan Castle is a castle overlooking the River Teifi in Cardigan, " +
                         "Ceredigion, Wales. The castle dates from the late 11th-century, " +
@@ -353,7 +384,7 @@ else
 
                 break;
 
-            case 15:
+            case 14:
 
                 MilestoneInfo = "Plas Tan y Bwlch in Gwynedd, Wales, is the Snowdonia National Park Environmental Studies Centre, " +
                         "administered by the National Park Authority. The Centre aims to provide courses which are of interest to all " +
@@ -363,7 +394,7 @@ else
 
                 break;
 
-            case 16:
+            case 15:
 
                 MilestoneInfo = "This Round House was erected in 1834. " +
                         "It was built as a lock-up where drunkards were detained until they became sober. " +
@@ -375,7 +406,7 @@ else
 
                 break;
 
-            case 17:
+            case 16:
 
                 MilestoneInfo = "Harlech Castle in Harlech, Gwynedd, Wales, is a medieval fortification built onto a rocky knoll close to the Irish Sea. " +
                         "It was built by Edward I during his invasion of Wales between 1282 and 1289 at the relatively modest cost of £8,190. Over the next " +
@@ -387,7 +418,7 @@ else
 
                 break;
 
-            case 18:
+            case 17:
 
                 MilestoneInfo = "Nant Gwrtheyrn is a Welsh Language and Heritage Centre, " +
                         "located near the village of Llithfaen on the northern coast of the Llŷn Peninsula, " +
@@ -401,7 +432,7 @@ else
 
                 break;
 
-            case 19:
+            case 18:
 
                 MilestoneInfo = "Beddgelert is a village and community in the Snowdonia area of Gwynedd, Wales. " +
                         "It is reputed to be named after the legendary hound Gelert. " +
@@ -418,7 +449,7 @@ else
 
                 break;
 
-            case 20:
+            case 19:
 
                 MilestoneInfo = "Caernarfon Castle is a medieval fortress in Caernarfon, Gwynedd, " +
                         "north-west Wales cared for by Cadw, the Welsh Government's historic environment service. " +
@@ -428,7 +459,7 @@ else
 
                 break;
 
-            case 21:
+            case 20:
 
                 MilestoneInfo = "Beaumaris on the island of Anglesey is famous as the greatest castle never built. " +
                         "It was the last of the royal strongholds created by Edward I in Wales – and perhaps his masterpiece. " +
@@ -439,7 +470,7 @@ else
 
                 break;
 
-            case 22:
+            case 21:
 
                 MilestoneInfo = "Conwy Castle (Welsh: Castell Conwy) is a fortification in Conwy, " +
                         "located in North Wales. It was built by Edward I, during his conquest of Wales, " +
@@ -450,7 +481,7 @@ else
 
                 break;
 
-            case 23:
+            case 22:
 
                 MilestoneInfo = "The city walls are the oldest, longest and most complete in Britain, parts of which are almost 2000 years old. " +
                     "Chester is the only city in Britain that retains the full circuit of its ancient defensive walls. " +

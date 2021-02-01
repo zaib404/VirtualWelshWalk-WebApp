@@ -25,7 +25,7 @@ namespace VirtualWelshWalk.DataAccess.CRUD
             return result.Entity;
         }
 
-        public async void DeletePeople(int peopleID)
+        public async Task DeletePeople(int peopleID)
         {
             var result = await dbContext.PeoplesTBL.FirstOrDefaultAsync(p => p.PeopleId==peopleID);
 
@@ -36,7 +36,7 @@ namespace VirtualWelshWalk.DataAccess.CRUD
             }
         }
 
-        public async void DeletePeople(string peopleUserName)
+        public async Task DeletePeople(string peopleUserName)
         {
             var result = await dbContext.PeoplesTBL.FirstOrDefaultAsync(p => p.UserName == peopleUserName);
 

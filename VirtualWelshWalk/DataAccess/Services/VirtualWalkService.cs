@@ -23,10 +23,10 @@ namespace VirtualWelshWalk.DataAccess.Services
             await virtualWalkRepository.AddVirtualWalk(VWalk);
         }
 
-        public Task DeleteVirtualWalk(int peopleID)
+        public async Task DeleteVirtualWalk(int peopleID)
         {
-            virtualWalkRepository.DeleteVirtualWalk(peopleID);
-            return Task.CompletedTask;
+            await virtualWalkRepository.DeleteVirtualWalk(peopleID);
+            //return Task.CompletedTask;
         }
 
         public async Task<VirtualWalk> GetVirtualWalk(string virtualWalkName, int peopleID)

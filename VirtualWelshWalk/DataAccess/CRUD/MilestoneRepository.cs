@@ -24,7 +24,7 @@ namespace VirtualWelshWalk.DataAccess.CRUD
             return result.Entity;
         }
 
-        public async void DeleteVirtualMilestones(int peopleID)
+        public async Task DeleteVirtualMilestones(int peopleID)
         {
             var result = await dbContext.VirtualMilestonesTBL.FirstOrDefaultAsync(v => v.PeopleId == peopleID);
 

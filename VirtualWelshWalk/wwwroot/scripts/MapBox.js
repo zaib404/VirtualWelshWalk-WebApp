@@ -682,7 +682,12 @@ export function LandMarksPassed(pElementId)
             {
                 breakLoop = true;
 
-                name = welshMarkerPoints.features[ii].properties.title;
+                if (ii == 22) {
+                    name = welshMarkerPoints.features[ii].properties.title;
+                }
+                else {
+                    name = welshMarkerPoints.features[ii+1].properties.title;
+                }
 
                 if (breakLoop)
                 {
@@ -750,7 +755,14 @@ export function ApproximateStepsToNextMilestone()
             {
                 breakLoop = true;
 
-                markerIndex = ii;// welshMarkerPoints.features[ii].properties.title;
+                markerIndex = ii;
+
+                if (ii == welshMarkerPoints.features.length - 1) {
+                    markerIndex == ii;
+                }
+                else {
+                    markerIndex == ii + 1;
+                }
 
                 if (breakLoop) {
                     break;
@@ -763,7 +775,7 @@ export function ApproximateStepsToNextMilestone()
         }
     }
 
-    var nextPointMarker = turf.helpers.point([welshMarkerPoints.features[markerIndex+1].geometry.coordinates[0], welshMarkerPoints.features[markerIndex+1].geometry.coordinates[1]]);
+    var nextPointMarker = turf.helpers.point([welshMarkerPoints.features[markerIndex].geometry.coordinates[0], welshMarkerPoints.features[markerIndex].geometry.coordinates[1]]);
 
     var slice = turf.lineSlice([personMarker._lngLat.lng, personMarker._lngLat.lat], nextPointMarker, alongLine.geometry)
 

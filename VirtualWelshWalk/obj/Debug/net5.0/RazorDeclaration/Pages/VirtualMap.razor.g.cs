@@ -104,6 +104,13 @@ using Microsoft.AspNetCore.Identity;
 #line hidden
 #nullable disable
 #nullable restore
+#line 7 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
+using System.Security.Claims;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 12 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
 [Authorize]
 
@@ -119,7 +126,7 @@ using Microsoft.AspNetCore.Identity;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 100 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
+#line 103 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
  
     public People people { get; set; } = new People();
     public VirtualWalk virtualWalk { get; set; } = new VirtualWalk();
@@ -143,7 +150,7 @@ using Microsoft.AspNetCore.Identity;
     string MilestoneInfo = "Loading...";
     string MilestonePic;
 
-    InputStepsForm stepsForm = new InputStepsForm();
+    InputStepsForm stepsForm;
 
     protected override async Task OnInitializedAsync()
     {
@@ -178,8 +185,12 @@ using Microsoft.AspNetCore.Identity;
         {
             await GetSession();
 
+            await SetUpInputStepsForm();
+
+            ShowMileStoneUnlocked(await stepsForm.CallVirtualMapGetInfoChanged(virtualWalk.TotalSteps));
+
             mapModule = await jsRunTime.InvokeAsync<IJSObjectReference>(
-   "import", "./scripts/MapBox.js").AsTask();
+"import", "./scripts/MapBox.js").AsTask();
             mapInstance = await mapModule.InvokeAsync<IJSObjectReference>(
                 "initialize", mapElement).AsTask();
 
@@ -188,9 +199,32 @@ using Microsoft.AspNetCore.Identity;
                 await UpdatePersonLocation();
             }
 
-            ShowMileStoneUnlocked(stepsForm.CallVirtualMapGetInfoChanged(virtualWalk.TotalSteps));
-
             StateHasChanged();
+        }
+    }
+
+    async Task SetUpInputStepsForm()
+    {
+        try
+        {
+            var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+            var user = authState.User;
+
+            var UserName = authState.User.Identity.Name;
+
+            string email;
+            IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
+
+            _claims = user.Claims;
+
+            email = user.FindFirst(c => c.Type == ClaimTypes.Email)?.Value;
+
+            stepsForm = new InputStepsForm();
+            stepsForm.SetUpFromVirtualMap(VirtualMilestoneService, milestone, emailSender, email, UserName);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
         }
     }
 
@@ -211,9 +245,10 @@ using Microsoft.AspNetCore.Identity;
         await mapModule.InvokeVoidAsync("UpdateColourPath");
     }
 
-    void CloseInputStepForms()
+    async Task CloseInputStepForms()
     {
         //await stepsForm.CallVirtualMapGetInfoChanged();
+        await Update();
         showEnterStepsModal = false;
     }
 
@@ -221,7 +256,7 @@ using Microsoft.AspNetCore.Identity;
     {
         switch (number)
         {
-            case 1:
+            case 0:
 
                 MilestoneInfo = "Tintern Abbey was founded on 9 May 1131 by Walter de Clare, " +
                 "Lord of Chepstow. It is situated adjacent to the village of Tintern in " +
@@ -232,7 +267,7 @@ using Microsoft.AspNetCore.Identity;
 
                 break;
 
-            case 2:
+            case 1:
 
                 MilestoneInfo = "The Newport Transporter Bridge is a transporter bridge that crosses " +
                         "the River Usk in Newport, South East Wales. It is one of fewer than 10 transporter " +
@@ -243,7 +278,7 @@ using Microsoft.AspNetCore.Identity;
 
                 break;
 
-            case 3:
+            case 2:
 
                 MilestoneInfo = "Cardiff Castle is located in the Castle Quarter, in the heart of Cardiff, " +
                         "the capital of Wales. There has been a fort on the site for almost 2,000 years. " +
@@ -253,7 +288,7 @@ using Microsoft.AspNetCore.Identity;
 
                 break;
 
-            case 4:
+            case 3:
 
                 MilestoneInfo = "Rest Bay is a golden, sandy beach on the outskirts of the town of Porthcawl, " +
                         "backed by The Royal Porthcawl Golf Club and low cliffs. The beach faces south-west, " +
@@ -264,7 +299,7 @@ using Microsoft.AspNetCore.Identity;
 
                 break;
 
-            case 5:
+            case 4:
 
                 MilestoneInfo = "The Mumbles Pier is one of only six surviving iron piers in Wales. " +
                         "Mumbles Pier was opened to the public on the 10th May 1898. A family run business " +
@@ -276,7 +311,7 @@ using Microsoft.AspNetCore.Identity;
 
                 break;
 
-            case 6:
+            case 5:
 
                 MilestoneInfo = "Fall bay is one of the hardest to reach bays on Gower, " +
                         "however the walk is well worth it and the beach is never crowded due " +
@@ -288,7 +323,7 @@ using Microsoft.AspNetCore.Identity;
 
                 break;
 
-            case 7:
+            case 6:
 
                 MilestoneInfo = "Parc y Scarlets is a rugby union stadium in Llanelli, " +
                         "Carmarthenshire, that opened in November 2008 as the new home of " +
@@ -301,7 +336,7 @@ using Microsoft.AspNetCore.Identity;
 
                 break;
 
-            case 8:
+            case 7:
 
                 MilestoneInfo = "Kidwelly Castle is a Norman castle overlooking the River Gwendraeth and the town of Kidwelly, Carmarthenshire, " +
                         "Wales. Origin of this surname trace back to when it was spelled Cygweli which means " + '\u0022' + "swan." + '\u0022' + "" +
@@ -312,7 +347,7 @@ using Microsoft.AspNetCore.Identity;
 
                 break;
 
-            case 9:
+            case 8:
 
                 MilestoneInfo = "St Catherines Island is a small tidal island linked to Tenby in Pembrokeshire, Wales. " +
                         "2016 The Final Problem, the third and last episode of the fourth series of the BBC TV series " +
@@ -323,7 +358,7 @@ using Microsoft.AspNetCore.Identity;
 
                 break;
 
-            case 10:
+            case 9:
 
                 MilestoneInfo = "Barafundle Bay was named in Passport Magazine’s best beaches in the world. " +
                         "The remote sand patch came 17th in the top 25. Barafundle Bay is a remote, slightly curved, " +
@@ -334,7 +369,7 @@ using Microsoft.AspNetCore.Identity;
 
                 break;
 
-            case 11:
+            case 10:
 
                 MilestoneInfo = "Stack Rock Fort is a fort built on a small island in the Milford Haven Waterway, " +
                         "Pembrokeshire. A 3-gun fort was built between 1850 and 1852, and then upgraded in 1859 with a new " +
@@ -345,7 +380,7 @@ using Microsoft.AspNetCore.Identity;
 
                 break;
 
-            case 12:
+            case 11:
 
                 MilestoneInfo = "St Davids Cathedral is situated in St Davids in the county of Pembrokeshire, on the most westerly point of Wales. " +
                         "There are at least three services said or sung per day, each week, with sung services on five out of seven days. " +
@@ -356,7 +391,7 @@ using Microsoft.AspNetCore.Identity;
 
                 break;
 
-            case 13:
+            case 12:
 
                 MilestoneInfo = "Strumble Head Lighthouse stands imposingly on Ynysmeicl (St. Michael's Island), " +
                         "an islet to the west of Fishguard, separated from the mainland by a very narrow gap through " +
@@ -366,7 +401,7 @@ using Microsoft.AspNetCore.Identity;
 
                 break;
 
-            case 14:
+            case 13:
 
                 MilestoneInfo = "Cardigan Castle is a castle overlooking the River Teifi in Cardigan, " +
                         "Ceredigion, Wales. The castle dates from the late 11th-century, " +
@@ -376,7 +411,7 @@ using Microsoft.AspNetCore.Identity;
 
                 break;
 
-            case 15:
+            case 14:
 
                 MilestoneInfo = "Plas Tan y Bwlch in Gwynedd, Wales, is the Snowdonia National Park Environmental Studies Centre, " +
                         "administered by the National Park Authority. The Centre aims to provide courses which are of interest to all " +
@@ -386,7 +421,7 @@ using Microsoft.AspNetCore.Identity;
 
                 break;
 
-            case 16:
+            case 15:
 
                 MilestoneInfo = "This Round House was erected in 1834. " +
                         "It was built as a lock-up where drunkards were detained until they became sober. " +
@@ -398,7 +433,7 @@ using Microsoft.AspNetCore.Identity;
 
                 break;
 
-            case 17:
+            case 16:
 
                 MilestoneInfo = "Harlech Castle in Harlech, Gwynedd, Wales, is a medieval fortification built onto a rocky knoll close to the Irish Sea. " +
                         "It was built by Edward I during his invasion of Wales between 1282 and 1289 at the relatively modest cost of £8,190. Over the next " +
@@ -410,7 +445,7 @@ using Microsoft.AspNetCore.Identity;
 
                 break;
 
-            case 18:
+            case 17:
 
                 MilestoneInfo = "Nant Gwrtheyrn is a Welsh Language and Heritage Centre, " +
                         "located near the village of Llithfaen on the northern coast of the Llŷn Peninsula, " +
@@ -424,7 +459,7 @@ using Microsoft.AspNetCore.Identity;
 
                 break;
 
-            case 19:
+            case 18:
 
                 MilestoneInfo = "Beddgelert is a village and community in the Snowdonia area of Gwynedd, Wales. " +
                         "It is reputed to be named after the legendary hound Gelert. " +
@@ -441,7 +476,7 @@ using Microsoft.AspNetCore.Identity;
 
                 break;
 
-            case 20:
+            case 19:
 
                 MilestoneInfo = "Caernarfon Castle is a medieval fortress in Caernarfon, Gwynedd, " +
                         "north-west Wales cared for by Cadw, the Welsh Government's historic environment service. " +
@@ -451,7 +486,7 @@ using Microsoft.AspNetCore.Identity;
 
                 break;
 
-            case 21:
+            case 20:
 
                 MilestoneInfo = "Beaumaris on the island of Anglesey is famous as the greatest castle never built. " +
                         "It was the last of the royal strongholds created by Edward I in Wales – and perhaps his masterpiece. " +
@@ -462,7 +497,7 @@ using Microsoft.AspNetCore.Identity;
 
                 break;
 
-            case 22:
+            case 21:
 
                 MilestoneInfo = "Conwy Castle (Welsh: Castell Conwy) is a fortification in Conwy, " +
                         "located in North Wales. It was built by Edward I, during his conquest of Wales, " +
@@ -473,7 +508,7 @@ using Microsoft.AspNetCore.Identity;
 
                 break;
 
-            case 23:
+            case 22:
 
                 MilestoneInfo = "The city walls are the oldest, longest and most complete in Britain, parts of which are almost 2000 years old. " +
                     "Chester is the only city in Britain that retains the full circuit of its ancient defensive walls. " +
@@ -514,6 +549,8 @@ using Microsoft.AspNetCore.Identity;
 #nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private SignInManager<User> _signInManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private AuthenticationStateProvider AuthenticationStateProvider { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private EmailService.IEmailSender emailSender { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private Blazored.SessionStorage.ISessionStorageService sessionStorage { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime jsRunTime { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IVirtualMilestonesService VirtualMilestoneService { get; set; }
