@@ -1,6 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Hosting
 @using Microsoft.AspNetCore.Mvc.ViewEngines
-@using VirtualWelshWalk.Shared
 @inject IWebHostEnvironment Environment
 @inject ICompositeViewEngine Engine
 
@@ -63,37 +62,45 @@
                 &copy; 2020 - VirtualWelshWalk - <a asp-area="" asp-page="Privacy">Privacy</a>
             </div>
         </footer>*@
-    
-<footer class="mt-auto" style="background-color: #838c93; width:100%;">
-    <div style="height: 5px; background-color: #af3182"></div>
-    
-    <div class="container-fluid text-white font-weight-bolder">
-        <div class="d-flex justify-content-around flex-wrap">
 
-            <div class="p-2">
-                @*@(await Html.RenderComponentAsync<ChooseLanguage>(RenderMode.Static))*@
-                <component type="typeof(ChooseLanguage)" render-mode="ServerPrerendered" />
+    <footer class="mt-auto" style="background-color: #838c93; width:100%;">
+        <div style="height: 5px; background-color: #af3182"></div>
+
+        <div class="container-fluid text-white font-weight-bolder">
+            <div class="d-flex justify-content-around flex-wrap">
+
+                <div class="p-2">
+
+                    @*@(await Html.RenderComponentAsync<VirtualWelshWalk.Shared.ChooseLanguage>(RenderMode.ServerPrerendered))*@
+
+                    @*<component type="typeof(VirtualWelshWalk.Shared.ChooseLanguage)" render-mode="ServerPrerendered" />*@
+
+                    @(await Html.RenderComponentAsync<VirtualWelshWalk.Shared.ChooseLanguage(RenderMode.ServerPrerendered, new { VirtualWelshWalk.Shared.ChooseLanguage = Model }))
+
+                </div>
+
+                <div class="p-2">
+                    <a href="" class="text-white">
+                        @Localizer["Privacy Policy - Cookie Policy"]
+                    </a>
+                </div>
+
+                <div class="p-2">
+                    @Localizer["© 2021 Copyright:"]
+                    <a class="text-white" href="https://www.arecadesign.co.uk/">Areca Design</a>
+                </div>
+
             </div>
-
-            <div class="p-2">
-                <a href="" class="text-white">
-                    Privacy Policy - Cookie Policy
-                </a>
-            </div>
-
-            <div class="p-2">
-                © 2021 Copyright:
-                <a class="text-white" href="https://www.arecadesign.co.uk/">Areca Design</a>
-            </div>
-
         </div>
-    </div>
 
-</footer>
+    </footer>
+
+
 
     <script src="~/Identity/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/Identity/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/Identity/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
+    <script src="_framework/blazor.server.js"></script>
 </body>
 </html>

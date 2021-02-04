@@ -43,11 +43,11 @@ else
 {
     <div class="container text-center pt-5">
 
-        <h1 class="heading1">Next Milestone:</h1>
-        <h2 class="heading2" id="@landID">Loading...</h2>
+        <h1 class="heading1">@Localizer["Next milestone"]:</h1>
+        <h2 class="heading2" id="@landID">@Localizer[landID]</h2>
         <hr />
         <h5 class="text-center">
-            <a class="font-weight-bold">@stepToNextMilestone miles</a> away
+            <a class="font-weight-bold">@stepToNextMilestone @Localizer["miles"]</a> @Localizer["away"]
         </h5>
     </div>
 
@@ -56,12 +56,12 @@ else
 
         <br />
         <h4 class="text-center">
-            Step Counter: @virtualWalk.TotalSteps
+            @Localizer["Step Counter"]: @virtualWalk.TotalSteps
         </h4>
     </div>
 
     <div class="container pb-5 text-center">
-        <h1 class="h1">Did you know:</h1>
+        <h1 class="h1">@Localizer["Did you know"]:</h1>
         <br />
         <p>@Localizer[MilestoneInfo]</p>
         <img class="img-fluid" src="@MilestonePic" />
@@ -79,7 +79,7 @@ else
                 <div class="modal-content text-center">
 
                     <div class="modal-header">
-                        <h2 class="modal-title text-left">Do You Wish to Add Steps?</h2>
+                        <h2 class="modal-title text-left">@Localizer["Do you wish to add new steps?"]</h2>
                         <button type="button" @onclick="CloseInputStepForms" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -91,7 +91,7 @@ else
                     </div>
 
                     <div class="modal-footer">
-                        <button type="button" @onclick="CloseInputStepForms" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" @onclick="CloseInputStepForms" class="btn btn-secondary" data-dismiss="modal">@Localizer["Close"]</button>
                     </div>
                 </div>
             </div>
@@ -122,6 +122,7 @@ else
 
     string MilestoneInfo = "Loading...";
     string MilestonePic;
+    //string nextLand = "Loading...";
 
     InputStepsForm stepsForm;
 
@@ -162,8 +163,7 @@ else
 
             ShowMileStoneUnlocked(await stepsForm.CallVirtualMapGetInfoChanged(virtualWalk.TotalSteps));
 
-            mapModule = await jsRunTime.InvokeAsync<IJSObjectReference>(
-"import", "./scripts/MapBox.js").AsTask();
+            mapModule = await jsRunTime.InvokeAsync<IJSObjectReference>("import", "./scripts/MapBox.js").AsTask();
             mapInstance = await mapModule.InvokeAsync<IJSObjectReference>(
                 "initialize", mapElement).AsTask();
 
@@ -322,7 +322,7 @@ else
 
             case 8:
 
-                MilestoneInfo = "St Catherines Island is a small tidal island linked to Tenby in Pembrokeshire, Wales. " +
+                MilestoneInfo = "St. Catherines Island is a small tidal island linked to Tenby in Pembrokeshire, Wales. " +
                         "2016 The Final Problem, the third and last episode of the fourth series of the BBC TV series " +
                         "Sherlock was filmed on the island, with it standing in as a maximum security prison.  Formed from an " +
                         "outcrop of limestone, on average 25m high, the island is riddled with tidal caves. ";
@@ -355,7 +355,7 @@ else
 
             case 11:
 
-                MilestoneInfo = "St Davids Cathedral is situated in St Davids in the county of Pembrokeshire, on the most westerly point of Wales. " +
+                MilestoneInfo = "St. Davids Cathedral is situated in St Davids in the county of Pembrokeshire, on the most westerly point of Wales. " +
                         "There are at least three services said or sung per day, each week, with sung services on five out of seven days. " +
                         "The cathedral choir at St Davids was the first cathedral choir in the United Kingdom to use girls and men as the main choir, " +
                         "rather than boys and men.";

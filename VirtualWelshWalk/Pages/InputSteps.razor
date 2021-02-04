@@ -17,9 +17,9 @@ else
     // Top Heading
 
     <div class="container text-center p-5">
-        <h1>@WalkName: @virtualSteps.TotalSteps Steps</h1>
+        <h1>@Localizer[@WalkName]: @virtualSteps.TotalSteps @Localizer["Steps"]</h1>
         <hr />
-        <p>You have walked approximately - @virtualStepsInMiles Miles</p>
+        <p>@Localizer["You have walked approximately"] - @virtualStepsInMiles @Localizer["Miles"].ToString().ToLower()</p>
     </div>
 
     <div class="container text-center">
@@ -46,7 +46,7 @@ else
 
     #endregion
 
-    string WalkName = "Welsh Coastal Walk";
+    string WalkName = "Welsh coastal walk";
 
     double virtualStepsInMiles = 0;
 

@@ -14,11 +14,12 @@
 @inject AuthenticationStateProvider AuthenticationStateProvider
 
 @implements IDisposable
+
 @* edit form on valid submit change bool ShowConfirmationModal to true Which then will display a modal asking to confirm changes *@
 <EditForm class="form-group" OnValidSubmit="() => ShowConfirmationModal = true" Model="@virtualSteps" method="post">
     <DataAnnotationsValidator />
 
-    <h3>Enter Steps</h3>
+    <h3>@Localizer["Enter your steps"]</h3>
     <div class="col">
         <InputNumber class="form-control" @bind-Value="virtualSteps.NewSteps" id="steps" />
     </div>
@@ -27,7 +28,7 @@
     </div>
 
     <div class="col content text-center">
-        <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+        <button type="submit" class="btn btn-primary btn-lg btn-block">@Localizer["Submit"]</button>
     </div>
 
 </EditForm>
@@ -43,7 +44,18 @@
 
                 <div class="modal-header">
 
-                    <h1 class="modal-title text-center">Add @virtualSteps.NewSteps Steps</h1>
+                    @if (virtualSteps.NewSteps == 1)
+                    {
+                        <h1 class="modal-title text-center">@Localizer["Add " + @virtualSteps.NewSteps + " Step"]</h1>
+                    }
+                    else if (virtualSteps.NewSteps <= 99)
+                    {
+                        <h1 class="modal-title text-center">@Localizer["Add Num Steps1"] @Space @virtualSteps.NewSteps @Space @Localizer["Add Num Steps2"]</h1>
+                    }
+                    else
+                    {
+                        <h1 class="modal-title text-center">@Localizer["Add Num Steps1"] @Space @virtualSteps.NewSteps @Space @Localizer["Add Num Steps3"]</h1>
+                    }
 
                     <button type="button" @onclick="() => { ShowConfirmationModal = false; }" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -52,11 +64,11 @@
                 </div>
 
                 <div class="modal-body">
-                    <p>Are you sure you want to add @virtualSteps.NewSteps towards your virtual walk?</p>
+                    <p class="text-center">@Localizer["Are you sure you?"]</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" @onclick="() => { ShowConfirmationModal = false; }" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" @onclick="HandleValidSubmit" class="btn btn-primary">Save changes</button>
+                    <button type="button" @onclick="() => { ShowConfirmationModal = false; }" class="btn btn-secondary" data-dismiss="modal">@Localizer["Close"]</button>
+                    <button type="button" @onclick="HandleValidSubmit" class="btn btn-primary">@Localizer["Save changes"]</button>
                 </div>
             </div>
         </div>
@@ -72,16 +84,17 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">New Area of Interest Unlocked</h5>
+                    <h5 class="modal-title">@Localizer["A new area of interest unlocked"]</h5>
                     <button type="button" @onclick="HandleValidSubmitPart2" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>You reached a new milestone and a significant place of interest. Check your emails and the <a href="/Virtual Coastal Map">map</a> to see more.</p>
+                    <p>@Localizer[@"You have reached a new milestone and a significant place of interest. Check your emails and the <a href=""/Virtual Coastal Map""> map </a> to see more"]
+                    @*You reached a new milestone and a significant place of interest. Check your emails and the <a href="/Virtual Coastal Map">map</a> to see more*@</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" @onclick="HandleValidSubmitPart2" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" @onclick="HandleValidSubmitPart2" class="btn btn-secondary" data-dismiss="modal">@Localizer["Close"]</button>
                 </div>
             </div>
         </div>
@@ -123,6 +136,7 @@
 
     string UserName;
     string EmailAddress;
+    string Space = "";
 
     #region When first loading
 

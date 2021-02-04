@@ -57,7 +57,7 @@
 
                 <div class="col-7 pt-2 pl-5 pb-2">
                     <a class="btn rounded-pill text-white" style="background-color:#af3182;" href="Identity/Account/Register">
-                        JOIN NOW
+                        @Localizer["JOIN NOW"]
                     </a>
                 </div>
             </div>
@@ -69,9 +69,7 @@
                 <div class="row align-items-center h-100">
                     <div class="col">
                         <h1 class="h1">
-                            Discover places of history
-                            along the way from
-                            Chepstow to Chester
+                            @Localizer["Discover places of history along the way from Chepstow to Chester"]
                         </h1>
                     </div>
                 </div>
@@ -79,23 +77,24 @@
         </div>
 
         <div class="container-fluid text-center text-white p-5" style="background-color:#474e58;">
-                <h1 class="h1 pb-5">
-                    Visit exciting places in and around Wales
-                </h1>
+            <h1 class="h1 pb-5">
+                @Localizer["Visit exciting places in and around Wales"]
+            </h1>
 
             <div class="row">
                 <div class="col-sm">
                     <img src="/Assets/WebPage/CardiffCastleRound.png" class="img-fluid" />
-                    <h5 class="h5 p-3">Cardif Castle</h5>
+                    <h5 class="h5 p-3">@Localizer["Cardiff Castle"]</h5>
                 </div>
 
                 <div class="col-sm">
                     <img src="/Assets/WebPage/StDavidsCathedralRound.png" class="img-fluid" />
-                    <h5 class="h5 p-3">St. Davids Cathedral</h5>
+                    <h5 class="h5 p-3">@Localizer["St. Davids Cathedral"]</h5>
                 </div>
 
                 <div class="col-sm">
-                    <img src="/Assets/WebPage/BeddGelertRound.png" class="img-fluid" /><h5 class="h5 p-3">Bedd Gelert</h5>
+                    <img src="/Assets/WebPage/BeddGelertRound.png" class="img-fluid" />
+                    <h5 class="h5 p-3">@Localizer["Bedd Gelert"]</h5>
                 </div>
             </div>
         </div>
@@ -103,8 +102,3 @@
     </NotAuthorized>
 
 </AuthorizeView>
-
-@code {
-
-    //private string Welcome = "Welcome to Educ8’s Welsh Cultural Coastal Walk";
-}

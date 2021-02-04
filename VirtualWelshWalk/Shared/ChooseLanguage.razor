@@ -1,5 +1,7 @@
 ﻿@inject NavigationManager NavigationManager
 @inject Microsoft.Extensions.Configuration.IConfiguration Configuration
+@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Web;
 
 @if (cultures != null)
 {
@@ -31,7 +33,8 @@
 
     private string selectedCulture = System.Threading.Thread.CurrentThread.CurrentCulture.Name;
     private Dictionary<string, string> cultures;
-    private bool isWelshChecked;
+    [Parameter]
+    public bool isWelshChecked { get; set; }
 
     protected override void OnInitialized()
     {

@@ -18,14 +18,14 @@
     <link href="font-awesome/css/all.css" rel="stylesheet" />
 </head>
 <body>
-    <script type="text/javascript">
+    @*<script type="text/javascript">
         // removes widows from paragraphs and li
         $('.widow').each(function () {
             var string = $.trim($(this).html());
             string = string.replace(/ ([^ ]*) ([^ ]*)$/, '&nbsp;$1&nbsp;$2');
             $(this).html(string);
         });
-    </script>
+    </script>*@
 
     <app>
         <component type="typeof(App)" render-mode="ServerPrerendered" />

@@ -1,8 +1,7 @@
 ﻿@page
 @model LoginModel
-
 @{
-    ViewData["Title"] = "Log in";
+    ViewData["Title"] = "Log In";
 }
 
 <div class="container-fluid Log min-vh-100">
@@ -13,6 +12,8 @@
                 <div class="card shadow" style="background-color:#eaeaea;">
                     <div class="card-body">
                         <form id="account" method="post">
+                            <h4 class="text-center">@Localizer[@ViewData["Title"].ToString()]</h4>
+                            <hr />
                             <div asp-validation-summary="All" class="text-danger"></div>
 
                             <div class="form-group">
@@ -25,7 +26,7 @@
                                         </span>
                                     </div>
 
-                                    <input asp-for="Input.UserName" class="form-control" placeholder="Username:" />
+                                    <input asp-for="Input.UserName" class="form-control" placeholder="@Localizer["Username"]:" />
                                     <span asp-validation-for="Input.UserName" class="text-danger"></span>
 
                                 </div>
@@ -39,7 +40,7 @@
                                             <i class="oi oi-lock-locked iconColor"></i>
                                         </span>
                                     </div>
-                                    <input asp-for="Input.Password" class="form-control" placeholder="Password:" />
+                                    <input asp-for="Input.Password" class="form-control" placeholder="@Localizer["Password"]:" />
                                     <span asp-validation-for="Input.Password" class="text-danger"></span>
                                 </div>
                             </div>
@@ -48,18 +49,18 @@
                                 <div class="justify-content-start checkbox">
                                     <label asp-for="Input.RememberMe">
                                         <input asp-for="Input.RememberMe" />
-                                        @Html.DisplayNameFor(m => m.Input.RememberMe)
+                                        @Localizer[@Html.DisplayNameFor(m => m.Input.RememberMe)]
                                     </label>
                                 </div>
                                 <div class="justify-content-end">
                                     <p>
-                                        <a id="forgot-password" asp-page="./ForgotPassword">Forgot password?</a>
+                                        <a id="forgot-password" asp-page="./ForgotPassword">@Localizer["Forgot password"]?</a>
                                     </p>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <button type="submit" class="btn rounded-0 text-white shadow" style="background-color:#af3182; width:100%;">Log in</button>
+                                <button type="submit" class="btn rounded-0 text-white shadow" style="background-color:#af3182; width:100%;">@Localizer["Log In"]</button>
                             </div>
 
                         </form>
@@ -70,8 +71,8 @@
                             <div class="d-flex justify-content-center">
                                 <div class="form-group">
                                     <p>
-                                        Don't have an account?
-                                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register here</a>
+                                        @Localizer["Don't have an account?"]
+                                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">@Localizer["Register here"]</a>
                                     </p>
                                 </div>
                             </div>

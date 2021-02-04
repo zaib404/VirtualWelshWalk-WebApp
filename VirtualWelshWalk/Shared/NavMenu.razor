@@ -16,7 +16,7 @@
                     <li class="nav-item">
                         <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
                             <span class="fa fa-home iconSize" aria-hidden="true">
-                                <span class="iconText"> Home</span>
+                                <span class="iconText">@space @Localizer["Home"]</span>
                             </span>
                             @*<span aria-hidden="true">
                                     <img src="/Assets/WebPage/homeicon.png" aria-hidden="true" class="navButtons" />
@@ -29,7 +29,7 @@
                     <li class="nav-item">
                         <NavLink class="nav-link" href="Add Steps">
                             <span class="fa fa-plus iconSize" aria-hidden="true">
-                                <span class="iconText"> Add Steps</span>
+                                <span class="iconText">@space @Localizer["Add Steps"]</span>
                             </span>
                         </NavLink>
                     </li>
@@ -40,7 +40,7 @@
                     <li class="nav-item">
                         <NavLink class="nav-link" href="Identity/Account/Manage">
                             <span class="fa fa-user iconSize" aria-hidden="true">
-                                <span class="iconText"> Hello, @context.User.Identity.Name!</span>
+                                <span class="iconText">@space @Localizer["Hello"], @context.User.Identity.Name!</span>
                             </span>
                         </NavLink>
                     </li>
@@ -49,7 +49,7 @@
                         <form method="post" action="Identity/Account/LogOut">
                             <NavLink class="nav-link" id="logout" onclick="document.forms[0].submit();" style="cursor: pointer">
                                 <span class="fa fa-sign-out-alt iconSize" aria-hidden="true">
-                                    <span class="iconText"> Log Out</span>
+                                    <span class="iconText">@space @Localizer["Log Out"]</span>
                                 </span>
                                 @*<span aria-hidden="true">
                                         <img src="/Assets/WebPage/log_outicon.png" aria-hidden="true" class="navButtons" />
@@ -71,7 +71,7 @@
                     <li class="nav-item">
                         <NavLink class="nav-link" href="Identity/Account/Login">
                             <span class="fa fa-sign-in-alt iconSize" aria-hidden="true">
-                                <span class="iconText"> Log In</span>
+                                <span class="iconText">@space @Localizer["Log In"]</span>
                             </span>
                             @*<span aria-hidden="true">
                                 <img src="/Assets/WebPage/log_inicon.png" aria-hidden="true" class="navButtons" />
@@ -83,7 +83,7 @@
                     <li class="nav-item">
                         <NavLink class="nav-link" href="Identity/Account/Register">
                             <span class="fa fa-user-plus iconSize" aria-hidden="true">
-                                <span class="iconText"> Register</span>
+                                <span class="iconText">@space @Localizer["Register"]</span>
                             </span>
                             @*<span aria-hidden="true">
                                 <img src="/Assets/WebPage/Registericon.png" aria-hidden="true" class="navButtons" />
@@ -101,6 +101,7 @@
 </div>
 
 @code {
+    private string space = " ";
     private bool collapseNavMenu = true;
 
     private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;

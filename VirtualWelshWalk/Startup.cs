@@ -65,7 +65,6 @@ namespace VirtualWelshWalk
 
             services.AddScoped<IEmailSender, EmailSender>();
 
-
             services.Configure<FormOptions>(o =>
             {
                 o.ValueLengthLimit = int.MaxValue;
