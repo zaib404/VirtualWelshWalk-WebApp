@@ -1,31 +1,29 @@
 ﻿@inject NavigationManager NavigationManager
 @inject Microsoft.Extensions.Configuration.IConfiguration Configuration
-@using Microsoft.AspNetCore.Components
-@using Microsoft.AspNetCore.Components.Web;
 
 @if (cultures != null)
 {
-    @*<form class="form-inline">
+@*<form class="form-inline">
 
-            <select class="form-control mr-2" @bind="selectedCulture">
-                <option>Select...</option>
+        <select class="form-control mr-2" @bind="selectedCulture">
+            <option>Select...</option>
 
-                @foreach (var culture in cultures)
-                {
-                    <option value="@culture.Key">@culture.Value</option>
-                }
-            </select>
+            @foreach (var culture in cultures)
+            {
+                <option value="@culture.Key">@culture.Value</option>
+            }
+        </select>
 
-            <button class="btn btn-outline-primary" @onclick="RequestCultureChange">
-                Change
-            </button>
-        </form>*@
+        <button class="btn btn-outline-primary" @onclick="RequestCultureChange">
+            Change
+        </button>
+    </form>*@
 
 
-    <div class="custom-control custom-switch">
-        <input type="checkbox" @bind="isWelshChecked" @onclick="() => RequestCultureChange(isWelshChecked = !isWelshChecked)" class="custom-control-input" id="lngSwitch">
-        <label class="custom-control-label" for="lngSwitch">EN/CY</label>
-    </div>
+<div class="custom-control custom-switch">
+    <input type="checkbox" @bind="isWelshChecked" @onclick="() => RequestCultureChange(isWelshChecked = !isWelshChecked)" class="custom-control-input" id="lngSwitch">
+    <label class="custom-control-label" for="lngSwitch">EN/CY</label>
+</div>
 
 }
 
@@ -33,8 +31,7 @@
 
     private string selectedCulture = System.Threading.Thread.CurrentThread.CurrentCulture.Name;
     private Dictionary<string, string> cultures;
-    [Parameter]
-    public bool isWelshChecked { get; set; }
+    bool isWelshChecked { get; set; }
 
     protected override void OnInitialized()
     {

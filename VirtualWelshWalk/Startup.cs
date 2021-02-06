@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
+using System;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using VirtualWelshWalk.Areas.Identity;
@@ -90,6 +91,15 @@ namespace VirtualWelshWalk
             //services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             //services.AddHttpContextAccessor();
+
+            services.ConfigureApplicationCookie(options => {
+                options.ExpireTimeSpan = TimeSpan.FromDays(5);
+                options.SlidingExpiration = true;
+            });
+
+            services.Configure<DataProtectionTokenProviderOptions>(options => 
+            options.TokenLifespan = TimeSpan.FromMinutes(1)
+            );
         }
 
         private RequestLocalizationOptions GetLocalizationOptions()
@@ -135,6 +145,7 @@ namespace VirtualWelshWalk
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapRazorPages();
                 endpoints.MapBlazorHub();
                 endpoints.MapFallbackToPage("/_Host");
             });

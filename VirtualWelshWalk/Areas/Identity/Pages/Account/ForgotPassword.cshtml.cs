@@ -13,6 +13,8 @@ using Microsoft.AspNetCore.WebUtilities;
 using VirtualWelshWalk.DataAccess.Models;
 using EmailService;
 using IEmailSender = EmailService.IEmailSender;
+using EmailTemplate.Services;
+using EmailTemplate.Views.Emails.ForgotPassword;
 
 namespace VirtualWelshWalk.Areas.Identity.Pages.Account
 {
@@ -23,14 +25,19 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
         private readonly UserManager<User> _userManager;
         private readonly IEmailSender _emailSender;
 
-        public ForgotPasswordModel(UserManager<User> userManager, IEmailSender emailSender)
+        IRazorViewToStringRenderer _razorViewToStringRenderer;
+        public ForgotPasswordModel(UserManager<User> userManager, IEmailSender emailSender, IRazorViewToStringRenderer razorViewToStringRenderer)
         {
             _userManager = userManager;
             _emailSender = emailSender;
+            _razorViewToStringRenderer = razorViewToStringRenderer;
         }
 
         [BindProperty]
         public InputModel Input { get; set; }
+
+        [BindProperty]
+        public bool DisplayMessage { get; set; } = false;
 
         public class InputModel
         {
@@ -38,7 +45,7 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
             [EmailAddress]
             public string Email { get; set; }
         }
-                
+
         public async Task<IActionResult> OnPostAsync()
         {
             if (ModelState.IsValid)
@@ -47,7 +54,9 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
                 if (user == null || !(await _userManager.IsEmailConfirmedAsync(user)))
                 {
                     // Don't reveal that the user does not exist or is not confirmed
-                    return RedirectToPage("./ForgotPasswordConfirmation");
+                    //return RedirectToPage("./ForgotPasswordConfirmation");
+                    DisplayMessage = true;
+                    return Page();
                 }
 
                 // For more information on how to enable account confirmation and password reset please 
@@ -60,9 +69,15 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
                     values: new { area = "Identity", code },
                     protocol: Request.Scheme);
 
-                var message = new Message(new string[] { Input.Email },
-                    "Reset Password",
-                    $"Please reset your password by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.", null);
+                //var message = new Message(new string[] { Input.Email },
+                //    "Reset Password",
+                //    $"Please reset your password by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.", null);
+
+                var confirmAccountModel = new ForgotPasswordEmailViewModel(callbackUrl, user.FirstName + " " + user.LastName);
+
+                string body = await _razorViewToStringRenderer.RenderViewToStringAsync(@"\Views\Emails\ForgotPassword\ForgotPassword.cshtml", confirmAccountModel);
+
+                var message = new Message(new string[] { Input.Email }, "Confirm your email", body, null);
 
                 await _emailSender.SendEmailAsync(message);
 
@@ -71,7 +86,9 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
                 //    "Reset Password",
                 //    $"Please reset your password by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
-                return RedirectToPage("./ForgotPasswordConfirmation");
+                //return RedirectToPage("./ForgotPasswordConfirmation");
+                DisplayMessage = true;
+                return Page();
             }
 
             return Page();

@@ -19,7 +19,7 @@ using EmailService;
 using IEmailSender = EmailService.IEmailSender;
 using EmailTemplate.Services;
 using EmailTemplate.Views.Emails.ConfirmAccount;
-
+using EmailTemplate.Views.Emails;
 namespace VirtualWelshWalk.Areas.Identity.Pages.Account
 {
     [AllowAnonymous]

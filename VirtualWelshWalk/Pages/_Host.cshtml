@@ -18,15 +18,6 @@
     <link href="font-awesome/css/all.css" rel="stylesheet" />
 </head>
 <body>
-    @*<script type="text/javascript">
-        // removes widows from paragraphs and li
-        $('.widow').each(function () {
-            var string = $.trim($(this).html());
-            string = string.replace(/ ([^ ]*) ([^ ]*)$/, '&nbsp;$1&nbsp;$2');
-            $(this).html(string);
-        });
-    </script>*@
-
     <app>
         <component type="typeof(App)" render-mode="ServerPrerendered" />
     </app>
@@ -43,5 +34,28 @@
     </div>
 
     <script src="_framework/blazor.server.js"></script>
+
+    @*<script type="text/javascript">
+
+        window.onload = function () {
+
+            $(document).ready(function () {
+
+                $('p').each(function () {
+                    var string = $(this).html();
+                    string = string.replace(/ ([^ ]*)$/, '&nbsp;$1');
+                    $(this).html(string);
+                });
+
+                $('h1').each(function () {
+                    var string = $(this).html();
+                    string = string.replace(/ ([^ ]*)$/, '&nbsp;$1');
+                    $(this).html(string);
+                });
+
+            });
+        }
+    </script>*@
+
 </body>
 </html>

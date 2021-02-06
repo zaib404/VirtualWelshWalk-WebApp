@@ -4,10 +4,10 @@
     ViewData["Title"] = "Register";
 }
 
-<div class="container-fluid Reg min-vh-100">
+<div class="container-fluid Reg">
 
-    <div class="container vh-100">
-        <div class="row min-vh-100 justify-content-center align-items-center">
+    <div class="container h-100">
+        <div class="row h-100 justify-content-center align-items-center">
             <div class="col-12">
                 <div class="card shadow" style="background-color:#eaeaea;">
                     <div class="card-body">
@@ -26,7 +26,7 @@
 
                                     @*<label asp-for="Input.FirstName"></label>*@
                                     <input asp-for="Input.FirstName" class="form-control" placeholder="@Localizer["First Name"]:" />
-                                    <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+                                    @*<span asp-validation-for="Input.FirstName" class="text-danger"></span>*@
                                 </div>
                             </div>
 
@@ -39,7 +39,7 @@
                                     </div>
                                     @*<label asp-for="Input.LastName"></label>*@
                                     <input asp-for="Input.LastName" class="form-control" placeholder="@Localizer["Last Name"]:" />
-                                    <span asp-validation-for="Input.LastName" class="text-danger"></span>
+                                    @*<span asp-validation-for="Input.LastName" class="text-danger"></span>*@
                                 </div>
                             </div>
 
@@ -52,7 +52,7 @@
                                     </div>
                                     @*<label asp-for="Input.UserName"></label>*@
                                     <input asp-for="Input.UserName" class="form-control" placeholder="@Localizer["Username"]:" />
-                                    <span asp-validation-for="Input.UserName" class="text-danger"></span>
+                                    @*<span asp-validation-for="Input.UserName" class="text-danger"></span>*@
                                 </div>
                             </div>
 
@@ -65,7 +65,7 @@
                                     </div>
                                     @*<label asp-for="Input.Email"></label>*@
                                     <input asp-for="Input.Email" class="form-control" placeholder="@Localizer["Email"]:" />
-                                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                                    @*<span asp-validation-for="Input.Email" class="text-danger"></span>*@
                                 </div>
                             </div>
 
@@ -78,7 +78,7 @@
                                     </div>
                                     @*<label asp-for="Input.Password"></label>*@
                                     <input asp-for="Input.Password" class="form-control" placeholder="@Localizer["Password"]:" />
-                                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                                    @*<span asp-validation-for="Input.Password" class="text-danger"></span>*@
                                 </div>
                             </div>
 
@@ -91,7 +91,7 @@
                                     </div>
                                     @*<label asp-for="Input.ConfirmPassword"></label>*@
                                     <input asp-for="Input.ConfirmPassword" class="form-control" placeholder="@Localizer["Confirm Password"]:" />
-                                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                                    @*<span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>*@
                                 </div>
                             </div>
 

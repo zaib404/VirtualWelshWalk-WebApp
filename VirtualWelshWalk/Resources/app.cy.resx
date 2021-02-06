@@ -237,6 +237,9 @@
   <data name="Email" xml:space="preserve">
     <value>E-bost</value>
   </data>
+  <data name="Enter email" xml:space="preserve">
+    <value>Rhowch e-bost</value>
+  </data>
   <data name="Enter your steps" xml:space="preserve">
     <value>Rhowch eich camau</value>
   </data>
@@ -254,6 +257,9 @@
   </data>
   <data name="Forgot password" xml:space="preserve">
     <value>Wedi anghofio cyfrinair</value>
+  </data>
+  <data name="Forgot your password?" xml:space="preserve">
+    <value>Wedi anghofio eich cyfrinair?</value>
   </data>
   <data name="Gwynedd" xml:space="preserve">
     <value>Gwynedd</value>
@@ -339,6 +345,12 @@
   <data name="Plas Tan y Bwlch in Gwynedd, Wales, is the Snowdonia National Park Environmental Studies Centre, administered by the National Park Authority. The Centre aims to provide courses which are of interest to all lovers of the countryside who would like to know about this fascinating area of Wales." xml:space="preserve">
     <value>Plas Tan y Bwlch yng Ngwynedd, Cymru, yw Canolfan Astudiaethau Parc Cenedlaethol Eryri, gweinyddwyd gan Parc Awdurdod Cenedlaethol. Pwrpas y ganolfan yw i ddarparu cyrsiau sydd o ddiddordeb i bawb sy’n hôff o gefn gwlad a hoffai wybod am yr ardal hyfryd yma yng Nghymru.</value>
   </data>
+  <data name="Please check your email to reset your password" xml:space="preserve">
+    <value>Gwiriwch eich e-bost i ailosod eich cyfrinair</value>
+  </data>
+  <data name="Please enter your email address below and we will send you information to change your password" xml:space="preserve">
+    <value>Rhowch eich cyfeiriad e-bost isod a byddwn yn anfon gwybodaeth atoch i newid eich cyfrinair</value>
+  </data>
   <data name="Porthcawl" xml:space="preserve">
     <value>Porthcawl</value>
   </data>
@@ -356,6 +368,9 @@
   </data>
   <data name="Remember me?" xml:space="preserve">
     <value>Cofiwch fi?</value>
+  </data>
+  <data name="Reset password" xml:space="preserve">
+    <value>Ailosod cyfrinair</value>
   </data>
   <data name="Rest Bay Beach" xml:space="preserve">
     <value>Traeth Rest Bay</value>

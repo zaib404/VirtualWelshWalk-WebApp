@@ -1,5 +1,6 @@
 ﻿using MailKit.Net.Smtp;
 using MimeKit;
+using MimeKit.Utils;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -66,9 +67,15 @@ namespace EmailService
             emailMessage.Subject = message.Subject;
             emailMessage.Body = new TextPart(MimeKit.Text.TextFormat.Html) { Text = message.Content };
 
-            var bodyBuilder = new BodyBuilder { HtmlBody = message.Content };
+            var bodyBuilder = new BodyBuilder { TextBody = message.Content };
 
+            var imagePath = $"{Directory.GetCurrentDirectory()}{@"\wwwroot\Assets\WebPage\logo_with_text.png"}";
+
+            var image = bodyBuilder.LinkedResources.Add(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), imagePath));
+
+            image.ContentId = MimeUtils.GenerateMessageId();
             
+            bodyBuilder.HtmlBody = string.Format(message.Content, image.ContentId);
 
             if (message.Attachments != null)
             {

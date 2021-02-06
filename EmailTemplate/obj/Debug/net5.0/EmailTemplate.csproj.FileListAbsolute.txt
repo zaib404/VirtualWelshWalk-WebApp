@@ -29,3 +29,4 @@ D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\obj\Debug\net5.0\r
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\obj\Debug\net5.0\EmailTemplate.pdb
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\obj\Debug\net5.0\EmailTemplate.csproj.CopyComplete
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\bin\Debug\net5.0\libman.json
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\obj\Debug\net5.0\Razor\Views\Emails\ForgotPassword\ForgotPassword.cshtml.g.cs
