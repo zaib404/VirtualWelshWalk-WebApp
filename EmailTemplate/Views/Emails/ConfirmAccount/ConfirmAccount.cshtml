@@ -15,15 +15,6 @@
 
 @await Html.PartialAsync("EmailButton", new EmailButtonViewModel("Confirm Account", Model.ConfirmEmailUrl))
 
-<p>
-    Or paste this link into your browser:
-</p>
-<p class="container">
-    <a href="@Model.ConfirmEmailUrl">
-        @Model.ConfirmEmailUrl
-    </a>
-</p>
-
 <br />
 
 <br />

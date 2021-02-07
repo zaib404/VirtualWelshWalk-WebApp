@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "VquUgR1fk3IDZls1Q3zamcx2XNyfGFLWAaUOfDjT9igS6m79XvOcj6mNAOs1KzLJH3mvj/oi8Gnc8TDzG8tN3g==",
+  "dgSpecHash": "HWmzF5l7BxgaQGuN6UbxNkxE5JU0A29ZBA3PQBLRIEn/9e1TCFRaLUsYPKdffjKSgxugGf53bsFc/2fn1YXMqA==",
   "success": true,
   "projectFilePath": "D:\\Zaib\\Documents\\Areca Design\\VirtualWelshWalk\\EmailService\\EmailService.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Zaib\\.nuget\\packages\\htmlagilitypack\\1.11.30\\htmlagilitypack.1.11.30.nupkg.sha512",
     "C:\\Users\\Zaib\\.nuget\\packages\\mailkit\\2.6.0\\mailkit.2.6.0.nupkg.sha512",
     "C:\\Users\\Zaib\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.2\\microsoft.aspnetcore.http.features.5.0.2.nupkg.sha512",
     "C:\\Users\\Zaib\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.4\\microsoft.extensions.dependencyinjection.3.1.4.nupkg.sha512",

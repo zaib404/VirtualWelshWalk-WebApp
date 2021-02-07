@@ -76,6 +76,13 @@ using VirtualWelshWalk.Shared;
 #line hidden
 #nullable disable
 #nullable restore
+#line 3 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\Test.razor"
+using EmailService;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 12 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
 [Authorize]
 
@@ -83,7 +90,7 @@ using VirtualWelshWalk.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\Test.razor"
+#line 4 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\Test.razor"
            [AllowAnonymous]
 
 #line default
@@ -98,23 +105,25 @@ using VirtualWelshWalk.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 8 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\Test.razor"
+#line 14 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\Test.razor"
        
 
-    MarkupString body;
-
-    protected override async Task OnInitializedAsync()
+    async Task SendEmail()
     {
-        var confirmAccountModel = new EmailTemplate.Views.Emails.ConfirmAccount.ConfirmAccountEmailViewModel("google.com");
+        var confirmAccountModel = new EmailTemplate.Views.Emails.ConfirmAccount.ConfirmAccountEmailViewModel(
+            "https://localhost:44350/Identity/Account/ConfirmEmail?userId=e800d8be-51eb-4a8d-a98c-b31cff6563c5&code=Q2ZESjhBVURsVUs1ZTkxRGlFSkU0OG5YNGNkcVp4M2VscFFRRW4wVkdOWjdFQ3JRQW9rVkFEa0MrQ0tVRWY0OGQ3VzRZVVZJOGNEcUVmT0hBS056RklBTDRHNzQvQTVVTTJ1VGFSTlNRaTJiaElKU25MTGJYcHNSU3BBVUhrQml5azRzdjJWTlVmbldHdFZTSTluRzJxVU5udUNqNGdmZ2NJOVhmVWJrVVJvMDRPRGZMb3BDNG80VHltOHl3Zm1EWG5tTElDRG5RVk4zL0pwWnovRTZwM1pXS3RuNC9WZUdZa25Gclh1OGxMSHpjSEJXZXVka2pnbWtRVGdhUU9PTFVhaVJrdz09&returnUrl=%2F");
 
-        var body11 = await _razorViewToStringRenderer.RenderViewToStringAsync(@"\Views\Emails\ConfirmAccount\ConfirmAccount.cshtml", confirmAccountModel);
+        string body = await _razorViewToStringRenderer.RenderViewToStringAsync(@"\Views\Emails\ConfirmAccount\ConfirmAccount.cshtml", confirmAccountModel);
 
-        body = (MarkupString)body11;
+        var message = new Message(new string[] { "zaib_inamdar@hotmail.com" }, "Confirm your email", body, null);
+
+        await _emailSender.SendEmailAsync(message);
     }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private EmailService.IEmailSender _emailSender { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private EmailTemplate.Services.IRazorViewToStringRenderer _razorViewToStringRenderer { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private Microsoft.Extensions.Localization.IStringLocalizer<App> Localizer { get; set; }
     }

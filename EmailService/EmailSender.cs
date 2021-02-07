@@ -1,4 +1,5 @@
-﻿using MailKit.Net.Smtp;
+﻿using HtmlAgilityPack;
+using MailKit.Net.Smtp;
 using MimeKit;
 using MimeKit.Utils;
 using System;
@@ -67,15 +68,36 @@ namespace EmailService
             emailMessage.Subject = message.Subject;
             emailMessage.Body = new TextPart(MimeKit.Text.TextFormat.Html) { Text = message.Content };
 
-            var bodyBuilder = new BodyBuilder { TextBody = message.Content };
-
+            var bodyBuilder = new BodyBuilder();
+            
             var imagePath = $"{Directory.GetCurrentDirectory()}{@"\wwwroot\Assets\WebPage\logo_with_text.png"}";
 
-            var image = bodyBuilder.LinkedResources.Add(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), imagePath));
+            var imgPath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), imagePath);
 
-            image.ContentId = MimeUtils.GenerateMessageId();
-            
-            bodyBuilder.HtmlBody = string.Format(message.Content, image.ContentId);
+            // Source - https://stackoverflow.com/questions/63712017/mailkit-email-doesnt-show-inline-images-on-gmail?noredirect=1&lq=1
+            var doc = new HtmlDocument();
+            doc.LoadHtml(message.Content);
+
+            foreach (var node in doc.DocumentNode.SelectNodes("//img"))
+            {
+                // File path to the image. We get the src attribute off the current node for the file name.
+                var file = Path.Combine(imgPath, node.GetAttributeValue("src", ""));
+                if (!File.Exists(file))
+                {
+                    continue;
+                }
+
+                // Set content type to the current image's extension, such as "png" or "jpg"
+                var contentType = new ContentType("image", Path.GetExtension(file));
+                var contentId = MimeUtils.GenerateMessageId();
+                var image = (MimePart)bodyBuilder.LinkedResources.Add(file, contentType);
+                image.ContentTransferEncoding = ContentEncoding.Base64;
+                image.ContentId = contentId;
+
+                // Set the current image's src attriubte to "cid:<content-id>"
+                node.SetAttributeValue("src", $"cid:" + contentId);
+            }
+            bodyBuilder.HtmlBody = doc.DocumentNode.OuterHtml;
 
             if (message.Attachments != null)
             {
@@ -92,24 +114,10 @@ namespace EmailService
                 }
             }
 
-            //if (message.Attachments != null && message.Attachments.Any())
-            //{
-            //    byte[] fileBytes;
-            //    foreach (var attachment in message.Attachments)
-            //    {
-            //        using (var ms = new MemoryStream())
-            //        {
-            //            attachment.CopyTo(ms);
-            //            fileBytes = ms.ToArray();
-            //        }
-
-            //        bodyBuilder.Attachments.Add(attachment.FileName, fileBytes, ContentType.Parse(attachment.ContentType));
-            //    }
-            //}
-
             emailMessage.Body = bodyBuilder.ToMessageBody();
             return emailMessage;
         }
+
         private void Send(MimeMessage mailMessage)
         {
             using (var client = new SmtpClient())
