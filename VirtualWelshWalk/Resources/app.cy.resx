@@ -123,6 +123,9 @@
   <data name="Aberystwyth" xml:space="preserve">
     <value>Aberystwyth</value>
   </data>
+  <data name="Account register confirmation" xml:space="preserve">
+    <value>Cadarnhad cofrestr cyfrifon</value>
+  </data>
   <data name="Add 1 step" xml:space="preserve">
     <value>Ychwanegwch 1 cam</value>
   </data>
@@ -204,6 +207,9 @@
   <data name="City Walls" xml:space="preserve">
     <value>Muriau’r Ddinas</value>
   </data>
+  <data name="Click here to login" xml:space="preserve">
+    <value>Cliciwch yma i fewngofnodi</value>
+  </data>
   <data name="Close" xml:space="preserve">
     <value>Caewch</value>
   </data>
@@ -225,6 +231,9 @@
   <data name="Did you know" xml:space="preserve">
     <value>Oeddet ti'n gwybod</value>
   </data>
+  <data name="Didn't receive an email within 15 minutes? Click the button below" xml:space="preserve">
+    <value>Heb dderbyn e-bost o fewn 15 munud? Cliciwch y botwm isod</value>
+  </data>
   <data name="Discover places of history along the way from Chepstow to Chester" xml:space="preserve">
     <value>Darganfyddwch fannau hanes ar hyd y ffordd o Gas-gwent i Gaer</value>
   </data>
@@ -237,11 +246,17 @@
   <data name="Email" xml:space="preserve">
     <value>E-bost</value>
   </data>
+  <data name="Emailed confirmed" xml:space="preserve">
+    <value>E-bost wedi'i gadarnhau</value>
+  </data>
   <data name="Enter email" xml:space="preserve">
     <value>Rhowch e-bost</value>
   </data>
   <data name="Enter your steps" xml:space="preserve">
     <value>Rhowch eich camau</value>
+  </data>
+  <data name="Error confirming email" xml:space="preserve">
+    <value>Gwall yn cadarnhau e-bost</value>
   </data>
   <data name="Fall Bay" xml:space="preserve">
     <value>Fall Bay</value>
@@ -278,6 +293,9 @@
   </data>
   <data name="Home" xml:space="preserve">
     <value>Hafan</value>
+  </data>
+  <data name="Invalid login attempt." xml:space="preserve">
+    <value>Ymgais mewngofnodi annilys.</value>
   </data>
   <data name="JOIN NOW" xml:space="preserve">
     <value>YMUNO NAWR</value>
@@ -345,8 +363,14 @@
   <data name="Plas Tan y Bwlch in Gwynedd, Wales, is the Snowdonia National Park Environmental Studies Centre, administered by the National Park Authority. The Centre aims to provide courses which are of interest to all lovers of the countryside who would like to know about this fascinating area of Wales." xml:space="preserve">
     <value>Plas Tan y Bwlch yng Ngwynedd, Cymru, yw Canolfan Astudiaethau Parc Cenedlaethol Eryri, gweinyddwyd gan Parc Awdurdod Cenedlaethol. Pwrpas y ganolfan yw i ddarparu cyrsiau sydd o ddiddordeb i bawb sy’n hôff o gefn gwlad a hoffai wybod am yr ardal hyfryd yma yng Nghymru.</value>
   </data>
+  <data name="Please check your email to confirm your account" xml:space="preserve">
+    <value>Gwiriwch eich e-bost i gadarnhau eich cyfrif</value>
+  </data>
   <data name="Please check your email to reset your password" xml:space="preserve">
     <value>Gwiriwch eich e-bost i ailosod eich cyfrinair</value>
+  </data>
+  <data name="Please ensure you confirm your email within an hour of being sent" xml:space="preserve">
+    <value>Sicrhewch eich bod yn cadarnhau eich e-bost cyn pen awr ar ôl ei anfon</value>
   </data>
   <data name="Please enter your email address below and we will send you information to change your password" xml:space="preserve">
     <value>Rhowch eich cyfeiriad e-bost isod a byddwn yn anfon gwybodaeth atoch i newid eich cyfrinair</value>
@@ -368,6 +392,9 @@
   </data>
   <data name="Remember me?" xml:space="preserve">
     <value>Cofiwch fi?</value>
+  </data>
+  <data name="Resend email" xml:space="preserve">
+    <value>Ail-anfon e-bost</value>
   </data>
   <data name="Reset password" xml:space="preserve">
     <value>Ailosod cyfrinair</value>
@@ -432,6 +459,9 @@
   <data name="Tenby" xml:space="preserve">
     <value>Dinbych-y-Pysgod</value>
   </data>
+  <data name="Thank you for confirming your email" xml:space="preserve">
+    <value>Diolch am gadarnhau eich e-bost</value>
+  </data>
   <data name="The city walls are the oldest, longest and most complete in Britain, parts of which are almost 2000 years old. Chester is the only city in Britain that retains the full circuit of its ancient defensive walls. Walking the complete circuit gives wondrous views down into the city and gives a fantastic insight into Chester's long history." xml:space="preserve">
     <value>Muriau’r ddinas yw’r hynaf, hiraf a mwyaf poblogaidd ym Mhrydain, rhannau ohonynyt bron yn 2000 oed. Caer yw’r unig ddinas ym Mhrydain sydd wedi cadw cylched lawn ei waliau amddiffynnol. Mae cerdded y gylched gyfan yn rhoi golygfeydd rhyfeddol i lawr i’r ddinas ac yn rhoi mewnwelediad gwych i hanes hir Caer.</value>
   </data>
@@ -440,6 +470,9 @@
   </data>
   <data name="The Newport Transporter Bridge is a transporter bridge that crosses the River Usk in Newport, South East Wales. It is one of fewer than 10 transporter bridges that remain in use worldwide; only a few dozen were ever built. It is one of only two operational transporter bridges in Britain, the other being the Tees Transporter Bridge." xml:space="preserve">
     <value>Pont Gludo Casnewydd yw’r bont sy’n croesi Afon Usk yng Nghasnewydd, de-ddwyrain Cymru. Mae’n un o lain a 10 pont cludo sy’n parhau i gaele u ddefnyddio ledled y byd; dim ond ychydig ddwsin a adeiladwyd erioed.</value>
+  </data>
+  <data name="There was an error" xml:space="preserve">
+    <value>Roedd gwall</value>
   </data>
   <data name="This Round House was erected in 1834. It was built as a lock-up where drunkards were detained until they became sober. It was also a place of detention pending the transfer of an accused to the nearest place where justice could be administered. The key was kept by the Parish Constable. The building is divided by a partition wall forming two cells of equal dimensions. One cell was reserved for men and the other for women." xml:space="preserve">
     <value>Adeiladwyd y Tŷ Crwn yma yn 1834. Adeiladwyd fel lle clo i feddwon cael eu cadw nes eu byd yn sobr. Roedd hefyd yn fan cadw hyd nes trosglwyddo cyhuddedig i’r ardal agosaf lle gellid weinyddu cyfiawnder. Cadwyd yr allwedd gan gwnstabl y plwyf. Mae’r adeilad wedi’i rannu a wal raniad sy’n ffurfio dwy gell o ddimensiynau cyfartal. Neilltuwyd un gell i ddynion a’r llall i ferched.</value>

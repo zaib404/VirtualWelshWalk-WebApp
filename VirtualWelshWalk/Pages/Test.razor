@@ -7,9 +7,35 @@
 @inject EmailService.IEmailSender _emailSender
 
 
-<div class="container">
-    <button @onclick="@SendEmail">Email</button>
+<div class="container p-5">
+    <button class="btn btn-primary" style="width:100%;" @onclick="@SendEmail">Email</button>
 </div>
+
+@*<div class="container-fluid Log">
+
+    <div class="container h-100">
+        <div class="row h-100 justify-content-center align-items-center">
+            <div class="col-12">
+                <div style="background-color:#eaeaea;">
+                    <div class="card-header text-center">
+                        <h2>@Localizer["Title"]</h2>
+                    </div>
+                    <div class="card-body">
+
+                        <h3 class="text-center">@Localizer["Please check your email to confirm your account"]</h3>
+
+                        <p class="lead text-center">@Localizer["Didn't receive an email within 15 minutes? Click the button below to resend another email."]</p>
+
+                        <form method="post">
+                            <button type="submit" class="btn rounded-0 text-white" style="background-color:#af3182; width:100%;">@Localizer["Resend email"]</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>*@
 
 @code {
 

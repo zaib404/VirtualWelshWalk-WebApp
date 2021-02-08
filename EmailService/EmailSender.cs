@@ -70,34 +70,44 @@ namespace EmailService
 
             var bodyBuilder = new BodyBuilder();
             
-            var imagePath = $"{Directory.GetCurrentDirectory()}{@"\wwwroot\Assets\WebPage\logo_with_text.png"}";
-
-            var imgPath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), imagePath);
 
             // Source - https://stackoverflow.com/questions/63712017/mailkit-email-doesnt-show-inline-images-on-gmail?noredirect=1&lq=1
             var doc = new HtmlDocument();
             doc.LoadHtml(message.Content);
 
-            foreach (var node in doc.DocumentNode.SelectNodes("//img"))
+            var nodes = doc.DocumentNode.SelectNodes("//img");
+
+            if (nodes != null)
             {
-                // File path to the image. We get the src attribute off the current node for the file name.
-                var file = Path.Combine(imgPath, node.GetAttributeValue("src", ""));
-                if (!File.Exists(file))
+                var imagePath = $"{Directory.GetCurrentDirectory()}{@"\wwwroot\Assets\WebPage\logo_with_text.png"}";
+
+                var imgPath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), imagePath);
+
+                foreach (var node in nodes)
                 {
-                    continue;
+                    // File path to the image. We get the src attribute off the current node for the file name.
+                    var file = Path.Combine(imgPath, node.GetAttributeValue("src", ""));
+                    if (!File.Exists(file))
+                    {
+                        continue;
+                    }
+
+                    // Set content type to the current image's extension, such as "png" or "jpg"
+                    var contentType = new ContentType("image", Path.GetExtension(file));
+                    var contentId = MimeUtils.GenerateMessageId();
+                    var image = (MimePart)bodyBuilder.LinkedResources.Add(file, contentType);
+                    image.ContentTransferEncoding = ContentEncoding.Base64;
+                    image.ContentId = contentId;
+
+                    // Set the current image's src attriubte to "cid:<content-id>"
+                    node.SetAttributeValue("src", $"cid:" + contentId);
                 }
-
-                // Set content type to the current image's extension, such as "png" or "jpg"
-                var contentType = new ContentType("image", Path.GetExtension(file));
-                var contentId = MimeUtils.GenerateMessageId();
-                var image = (MimePart)bodyBuilder.LinkedResources.Add(file, contentType);
-                image.ContentTransferEncoding = ContentEncoding.Base64;
-                image.ContentId = contentId;
-
-                // Set the current image's src attriubte to "cid:<content-id>"
-                node.SetAttributeValue("src", $"cid:" + contentId);
+                bodyBuilder.HtmlBody = doc.DocumentNode.OuterHtml;
             }
-            bodyBuilder.HtmlBody = doc.DocumentNode.OuterHtml;
+            else
+            {
+                bodyBuilder.HtmlBody = message.Content;
+            }
 
             if (message.Attachments != null)
             {

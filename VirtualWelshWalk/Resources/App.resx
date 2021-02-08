@@ -123,6 +123,9 @@
   <data name="Aberystwyth" xml:space="preserve">
     <value>Aberystwyth</value>
   </data>
+  <data name="Account register confirmation" xml:space="preserve">
+    <value>Account register confirmation</value>
+  </data>
   <data name="Add 1 step" xml:space="preserve">
     <value>Add 1 step</value>
   </data>
@@ -204,6 +207,9 @@
   <data name="City Walls" xml:space="preserve">
     <value>City Walls</value>
   </data>
+  <data name="Click here to login" xml:space="preserve">
+    <value>Click here to login</value>
+  </data>
   <data name="Close" xml:space="preserve">
     <value>Close</value>
   </data>
@@ -225,6 +231,9 @@
   <data name="Did you know" xml:space="preserve">
     <value>Did you know</value>
   </data>
+  <data name="Didn't receive an email within 15 minutes? Click the button below" xml:space="preserve">
+    <value>Didn't receive an email within 15 minutes? Click the button below</value>
+  </data>
   <data name="Discover places of history along the way from Chepstow to Chester" xml:space="preserve">
     <value>Discover places of history along the way from Chepstow to Chester</value>
   </data>
@@ -237,11 +246,17 @@
   <data name="Email" xml:space="preserve">
     <value>Email</value>
   </data>
+  <data name="Emailed confirmed" xml:space="preserve">
+    <value>Emailed confirmed</value>
+  </data>
   <data name="Enter email" xml:space="preserve">
     <value>Enter email</value>
   </data>
   <data name="Enter your steps" xml:space="preserve">
     <value>Enter your steps</value>
+  </data>
+  <data name="Error confirming email" xml:space="preserve">
+    <value>Error confirming email</value>
   </data>
   <data name="Fall Bay" xml:space="preserve">
     <value>Fall Bay</value>
@@ -278,6 +293,9 @@
   </data>
   <data name="Home" xml:space="preserve">
     <value>Home</value>
+  </data>
+  <data name="Invalid login attempt." xml:space="preserve">
+    <value>Invalid login attempt.</value>
   </data>
   <data name="JOIN NOW" xml:space="preserve">
     <value>JOIN NOW</value>
@@ -345,8 +363,14 @@
   <data name="Plas Tan y Bwlch in Gwynedd, Wales, is the Snowdonia National Park Environmental Studies Centre, administered by the National Park Authority. The Centre aims to provide courses which are of interest to all lovers of the countryside who would like to know about this fascinating area of Wales." xml:space="preserve">
     <value>Plas Tan y Bwlch in Gwynedd, Wales, is the Snowdonia National Park Environmental Studies Centre, administered by the National Park Authority. The Centre aims to provide courses which are of interest to all lovers of the countryside who would like to know about this fascinating area of Wales.</value>
   </data>
+  <data name="Please check your email to confirm your account" xml:space="preserve">
+    <value>Please check your email to confirm your account</value>
+  </data>
   <data name="Please check your email to reset your password" xml:space="preserve">
     <value>Please check your email to reset your password</value>
+  </data>
+  <data name="Please ensure you confirm your email within an hour of being sent" xml:space="preserve">
+    <value>Please ensure you confirm your email within an hour of being sent</value>
   </data>
   <data name="Please enter your email address below and we will send you information to change your password" xml:space="preserve">
     <value>Please enter your email address below and we will send you information to change your password</value>
@@ -368,6 +392,9 @@
   </data>
   <data name="Remember me?" xml:space="preserve">
     <value>Remember me?</value>
+  </data>
+  <data name="Resend email" xml:space="preserve">
+    <value>Resend email</value>
   </data>
   <data name="Reset password" xml:space="preserve">
     <value>Reset password</value>
@@ -433,6 +460,9 @@ The cathedral choir at St Davids was the first cathedral choir in the United Kin
   <data name="Tenby" xml:space="preserve">
     <value>Tenby</value>
   </data>
+  <data name="Thank you for confirming your email" xml:space="preserve">
+    <value>Thank you for confirming your email</value>
+  </data>
   <data name="The city walls are the oldest, longest and most complete in Britain, parts of which are almost 2000 years old. Chester is the only city in Britain that retains the full circuit of its ancient defensive walls. Walking the complete circuit gives wondrous views down into the city and gives a fantastic insight into Chester's long history." xml:space="preserve">
     <value>The city walls are the oldest, longest and most complete in Britain, parts of which are almost 2000 years old. Chester is the only city in Britain that retains the full circuit of its ancient defensive walls. Walking the complete circuit gives wondrous views down into the city and gives a fantastic insight into Chester's long history.</value>
   </data>
@@ -441,6 +471,9 @@ The cathedral choir at St Davids was the first cathedral choir in the United Kin
   </data>
   <data name="The Newport Transporter Bridge is a transporter bridge that crosses the River Usk in Newport, South East Wales. It is one of fewer than 10 transporter bridges that remain in use worldwide; only a few dozen were ever built. It is one of only two operational transporter bridges in Britain, the other being the Tees Transporter Bridge." xml:space="preserve">
     <value>The Newport Transporter Bridge is a transporter bridge that crosses the River Usk in Newport, South East Wales. It is one of fewer than 10 transporter bridges that remain in use worldwide; only a few dozen were ever built. It is one of only two operational transporter bridges in Britain, the other being the Tees Transporter Bridge.</value>
+  </data>
+  <data name="There was an error" xml:space="preserve">
+    <value>There was an error</value>
   </data>
   <data name="This Round House was erected in 1834. It was built as a lock-up where drunkards were detained until they became sober. It was also a place of detention pending the transfer of an accused to the nearest place where justice could be administered. The key was kept by the Parish Constable. The building is divided by a partition wall forming two cells of equal dimensions. One cell was reserved for men and the other for women." xml:space="preserve">
     <value>This Round House was erected in 1834. It was built as a lock-up where drunkards were detained until they became sober. It was also a place of detention pending the transfer of an accused to the nearest place where justice could be administered. The key was kept by the Parish Constable. The building is divided by a partition wall forming two cells of equal dimensions. One cell was reserved for men and the other for women.</value>

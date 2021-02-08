@@ -132,6 +132,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="EmailAttachments\Welsh coastal walk .pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="favicon.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

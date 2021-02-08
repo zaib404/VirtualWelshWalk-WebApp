@@ -1,18 +1,46 @@
 ﻿@page
 @model ConfirmEmailModel
 @{
-    ViewData["Title"] = "Emailed Confirmed";
+    ViewData["Title"] = "Emailed confirmed";
 }
 
-<div class="container-fluid p-5">
-    <h1>@ViewData["Title"]</h1>
+<div class="container-fluid Log">
 
-    <p>Thank you for confirming your email.</p>
+    <div class="container h-100">
+        <div class="row h-100 justify-content-center align-items-center">
+            <div class="col-12">
+                <div style="background-color:#eaeaea;">
+                    <div class="card-header text-center">
 
-    <p>You will soon be redirected...</p>
+                        @if (Model.TokenValid)
+                        {
+                            <h2>@Localizer[@ViewData["Title"].ToString()]</h2>
+                        }
+                        else
+                        {
+                            <h2>@Localizer["Error confirming email"]</h2>
+                        }
+                    </div>
+                    <div class="card-body">
 
-    <a href="/Identity/Account/Login"/>
-        Click here to login
-    </a>
+                        @if (Model.TokenValid)
+                        {
+                            <h3 class="text-center">@Localizer["Thank you for confirming your email"]</h3>
 
+                            <p class="lead text-center"><a href="/Identity/Account/Login">@Localizer["Click here to login"]</a></p>
+                        }
+                        else
+                        {
+                            <p class="lead text-center">@Localizer["Please ensure you confirm your email within an hour of being sent"]</p>
+
+                            <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                                <button type="submit" class="btn rounded-0 text-white" style="background-color:#af3182; width:100%;">@Localizer["Resend email verification"]</button>
+                            </form>
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

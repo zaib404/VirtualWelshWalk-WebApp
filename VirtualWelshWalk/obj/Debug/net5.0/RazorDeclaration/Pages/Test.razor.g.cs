@@ -105,7 +105,7 @@ using EmailService;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 14 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\Test.razor"
+#line 40 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\Test.razor"
        
 
     async Task SendEmail()

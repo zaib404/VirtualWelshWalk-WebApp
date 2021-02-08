@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using VirtualWelshWalk.DataAccess.Models;
+using Microsoft.Extensions.Localization;
 
 namespace VirtualWelshWalk.Areas.Identity.Pages.Account
 {
@@ -22,14 +23,19 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
         private readonly ILogger<LoginModel> _logger;
+        
+        public IStringLocalizer<VirtualWelshWalk.App> Localizer { get; set; }
 
         public LoginModel(SignInManager<User> signInManager, 
             ILogger<LoginModel> logger,
-            UserManager<User> userManager)
+            UserManager<User> userManager, 
+            IStringLocalizer<App> stringLocalizer)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
+
+            Localizer = stringLocalizer;
         }
 
         [BindProperty]
@@ -44,6 +50,7 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
 
         public class InputModel
         {
+
             //[Required]
             //[EmailAddress]
             //public string Email { get; set; }
@@ -103,9 +110,12 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
                 }
                 else
                 {
-                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    ModelState.AddModelError(string.Empty, Localizer["Invalid login attempt."]);
+                    
                     return Page();
                 }
+
+                
             }
 
             // If we got this far, something failed, redisplay form
