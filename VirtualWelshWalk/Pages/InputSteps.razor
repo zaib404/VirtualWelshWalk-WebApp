@@ -15,14 +15,13 @@
 else
 {
     // Top Heading
-
     <div class="container text-center p-5">
-        <h1>@Localizer[@WalkName]: @virtualSteps.TotalSteps @Localizer["Steps"]</h1>
+        <h1 class="widow-orpah-me">@Localizer[HeadingWalkName]: @virtualSteps.TotalSteps @Localizer["Steps"]</h1>
         <hr />
-        <p>@Localizer["You have walked approximately"] - @virtualStepsInMiles @Localizer["Miles"].ToString().ToLower()</p>
+        <p class="widow-orpah-me">@Localizer["You have walked approximately"] - @virtualStepsInMiles @Localizer["Miles"].ToString().ToLower()</p>
     </div>
 
-    <div class="container text-center">
+    <div class="container text-center pb-5">
 
         <InputStepsForm virtualSteps="virtualSteps" dbPeople="dbPeople" dbVirtualWalk="dbVirtualWalk" dbMilestone="dbMilestone" OnTotalStepsChanged="@TotalStepsChanged" />  @*() => { TotalStepsChanged(virtualSteps.TotalSteps); }*@<!--" />-->
 
@@ -47,6 +46,7 @@ else
     #endregion
 
     string WalkName = "Welsh coastal walk";
+    string HeadingWalkName = "Coastal walk";
 
     double virtualStepsInMiles = 0;
 
@@ -67,6 +67,14 @@ else
         virtualSteps.TotalSteps = dbVirtualWalk.TotalSteps;
 
         StepsInMiles();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await jsRunTime.InvokeVoidAsync("window.onload");
+        }
     }
 
     void DBNullCheck()

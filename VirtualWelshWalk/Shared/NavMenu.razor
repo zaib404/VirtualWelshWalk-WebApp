@@ -5,8 +5,9 @@
     </a>
 
     <button class="navbar-toggler" @onclick="ToggleNavMenu">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
 
     <AuthorizeView>
         <Authorized>
@@ -36,6 +37,10 @@
                 </ul>
 
                 <ul class="navbar-nav">
+
+                    <li class="d-none d-sm-block">
+                        <ChooseLanguage />
+                    </li>
 
                     <li class="nav-item">
                         <NavLink class="nav-link" href="Identity/Account/Manage">
@@ -68,15 +73,26 @@
 
                 <ul class="navbar-nav ml-auto">
 
+                    <li class="nav-item dropdown d-block d-sm-none">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#one">one</a>
+                            <a class="dropdown-item" href="#two">two</a>
+                            <div role="separator" class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#three">three</a>
+                        </div>
+
+                    </li>
+
                     <li class="nav-item">
                         <NavLink class="nav-link" href="Identity/Account/Login">
                             <span class="fa fa-sign-in-alt iconSize" aria-hidden="true">
                                 <span class="iconText">@space @Localizer["Log In"]</span>
                             </span>
                             @*<span aria-hidden="true">
-                                <img src="/Assets/WebPage/log_inicon.png" aria-hidden="true" class="navButtons" />
-                                <span class="navText"> Log in</span>
-                            </span>*@
+                                    <img src="/Assets/WebPage/log_inicon.png" aria-hidden="true" class="navButtons" />
+                                    <span class="navText"> Log in</span>
+                                </span>*@
                         </NavLink>
                     </li>
 
@@ -86,9 +102,9 @@
                                 <span class="iconText">@space @Localizer["Register"]</span>
                             </span>
                             @*<span aria-hidden="true">
-                                <img src="/Assets/WebPage/Registericon.png" aria-hidden="true" class="navButtons" />
-                                <span class="navText"> Register</span>
-                            </span>*@
+                                    <img src="/Assets/WebPage/Registericon.png" aria-hidden="true" class="navButtons" />
+                                    <span class="navText"> Register</span>
+                                </span>*@
                         </NavLink>
                     </li>
 

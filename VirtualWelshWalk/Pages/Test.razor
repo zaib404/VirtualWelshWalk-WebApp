@@ -8,34 +8,12 @@
 
 
 <div class="container p-5">
-    <button class="btn btn-primary" style="width:100%;" @onclick="@SendEmail">Email</button>
+    <button class="btn btn-primary" style="width:100%;" @onclick="@SendEmail">Confirm Email</button>
 </div>
 
-@*<div class="container-fluid Log">
-
-    <div class="container h-100">
-        <div class="row h-100 justify-content-center align-items-center">
-            <div class="col-12">
-                <div style="background-color:#eaeaea;">
-                    <div class="card-header text-center">
-                        <h2>@Localizer["Title"]</h2>
-                    </div>
-                    <div class="card-body">
-
-                        <h3 class="text-center">@Localizer["Please check your email to confirm your account"]</h3>
-
-                        <p class="lead text-center">@Localizer["Didn't receive an email within 15 minutes? Click the button below to resend another email."]</p>
-
-                        <form method="post">
-                            <button type="submit" class="btn rounded-0 text-white" style="background-color:#af3182; width:100%;">@Localizer["Resend email"]</button>
-                        </form>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>*@
+<div class="container p-5">
+    <button class="btn btn-primary" style="width:100%;" @onclick="@SendEmail2">Reset Password</button>
+</div>
 
 @code {
 
@@ -47,6 +25,18 @@
         string body = await _razorViewToStringRenderer.RenderViewToStringAsync(@"\Views\Emails\ConfirmAccount\ConfirmAccount.cshtml", confirmAccountModel);
 
         var message = new Message(new string[] { "zaib_inamdar@hotmail.com" }, "Confirm your email", body, null);
+
+        await _emailSender.SendEmailAsync(message);
+    }
+
+    async Task SendEmail2()
+    {
+        var confirmAccountModel = new EmailTemplate.Views.Emails.ForgotPassword.ForgotPasswordEmailViewModel("https://localhost:44350/Identity/Account/ConfirmEmail?userId=e800d8be-51eb-4a8d-a98c-b31cff6563c5&code=Q2ZESjhBVURsVUs1ZTkxRGlFSkU0OG5YNGNkcVp4M2VscFFRRW4wVkdOWjdFQ3JRQW9rVkFEa0MrQ0tVRWY0OGQ3VzRZVVZJOGNEcUVmT0hBS056RklBTDRHNzQvQTVVTTJ1VGFSTlNRaTJiaElKU25MTGJYcHNSU3BBVUhrQml5azRzdjJWTlVmbldHdFZTSTluRzJxVU5udUNqNGdmZ2NJOVhmVWJrVVJvMDRPRGZMb3BDNG80VHltOHl3Zm1EWG5tTElDRG5RVk4zL0pwWnovRTZwM1pXS3RuNC9WZUdZa25Gclh1OGxMSHpjSEJXZXVka2pnbWtRVGdhUU9PTFVhaVJrdz09&returnUrl=%2F",
+            "TEST" + " " + "Test");
+
+        string body = await _razorViewToStringRenderer.RenderViewToStringAsync(@"\Views\Emails\ForgotPassword\ForgotPassword.cshtml", confirmAccountModel);
+
+        var message = new Message(new string[] { "zaib_inamdar@hotmail.com" }, "Reset your password", body, null);
 
         await _emailSender.SendEmailAsync(message);
     }

@@ -111,7 +111,7 @@ using System.Security.Claims;
 #line hidden
 #nullable disable
 #nullable restore
-#line 12 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
+#line 13 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
 [Authorize]
 
 #line default
@@ -149,7 +149,6 @@ using System.Security.Claims;
 
     string MilestoneInfo = "Loading...";
     string MilestonePic;
-    //string nextLand = "Loading...";
 
     InputStepsForm stepsForm;
 
@@ -198,6 +197,8 @@ using System.Security.Claims;
             {
                 await UpdatePersonLocation();
             }
+
+            await jsRunTime.InvokeVoidAsync("window.onload").AsTask();
 
             StateHasChanged();
         }
@@ -552,10 +553,10 @@ using System.Security.Claims;
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private AuthenticationStateProvider AuthenticationStateProvider { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private EmailService.IEmailSender emailSender { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private Blazored.SessionStorage.ISessionStorageService sessionStorage { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime jsRunTime { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IVirtualMilestonesService VirtualMilestoneService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IPeopleService PeopleService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IVirtualWalkService WalkService { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime jsRunTime { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private Microsoft.Extensions.Localization.IStringLocalizer<App> Localizer { get; set; }
     }
 }

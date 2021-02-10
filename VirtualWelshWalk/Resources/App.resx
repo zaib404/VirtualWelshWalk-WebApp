@@ -207,6 +207,9 @@
   <data name="City Walls" xml:space="preserve">
     <value>City Walls</value>
   </data>
+  <data name="click here to log in" xml:space="preserve">
+    <value>click here to log in</value>
+  </data>
   <data name="Click here to login" xml:space="preserve">
     <value>Click here to login</value>
   </data>
@@ -345,6 +348,9 @@
   <data name="Next milestone" xml:space="preserve">
     <value>Next milestone</value>
   </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
   <data name="Parc y Scarlets" xml:space="preserve">
     <value>Parc y Scarlets</value>
   </data>
@@ -353,6 +359,9 @@
   </data>
   <data name="Password" xml:space="preserve">
     <value>Password</value>
+  </data>
+  <data name="Password reset confirmation" xml:space="preserve">
+    <value>Password reset confirmation</value>
   </data>
   <data name="Pembrokeshire" xml:space="preserve">
     <value>Pembrokeshire</value>
@@ -424,7 +433,7 @@
     <value>St. Davids</value>
   </data>
   <data name="St. Davids Cathedral" xml:space="preserve">
-    <value>St Davids Cathedral</value>
+    <value>St. Davids Cathedral</value>
   </data>
   <data name="St. Davids Cathedral is situated in St Davids in the county of Pembrokeshire, on the most westerly point of Wales. There are at least three services said or sung per day, each week, with sung services on five out of seven days.&#xD;&#xA;The cathedral choir at St Davids was the first cathedral choir in the United Kingdom to use girls and men as the main choir, rather than boys and men." xml:space="preserve">
     <value>St. Davids Cathedral is situated in St Davids in the county of Pembrokeshire, on the most westerly point of Wales. There are at least three services said or sung per day, each week, with sung services on five out of seven days.
@@ -481,6 +490,9 @@ The cathedral choir at St Davids was the first cathedral choir in the United Kin
   <data name="Tintern Abbey was founded on 9 May 1131 by Walter de Clare, Lord of Chepstow. It is situated adjacent to the village of Tintern in Monmouthshire, on the Welsh bank of the River Wye, which at this location forms the border between Monmouthshire in Wales and Gloucestershire in England." xml:space="preserve">
     <value>Tintern Abbey was founded on 9 May 1131 by Walter de Clare, Lord of Chepstow. It is situated adjacent to the village of Tintern in Monmouthshire, on the Welsh bank of the River Wye, which at this location forms the border between Monmouthshire in Wales and Gloucestershire in England.</value>
   </data>
+  <data name="to see more" xml:space="preserve">
+    <value>to see more</value>
+  </data>
   <data name="Transporter Bridge" xml:space="preserve">
     <value>Transporter Bridge</value>
   </data>
@@ -493,11 +505,17 @@ The cathedral choir at St Davids was the first cathedral choir in the United Kin
   <data name="Welsh coastal walk" xml:space="preserve">
     <value>Welsh coastal walk</value>
   </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="You have reached a new milestone. Check your emails and the" xml:space="preserve">
+    <value>You have reached a new milestone. Check your emails and the</value>
+  </data>
   <data name="You have walked approximately" xml:space="preserve">
     <value>You have walked approximately</value>
   </data>
-  <data name="You reached a new milestone and a significant place of interest. Check your emails and the map to see more" xml:space="preserve">
-    <value>You reached a new milestone and a significant place of interest. Check your emails and the map to see more</value>
+  <data name="Your password has been reset. Please" xml:space="preserve">
+    <value>Your password has been reset. Please</value>
   </data>
   <data name="© 2021 Copyright:" xml:space="preserve">
     <value>© 2021 Copyright:</value>

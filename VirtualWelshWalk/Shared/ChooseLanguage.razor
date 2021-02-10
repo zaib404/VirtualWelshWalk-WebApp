@@ -3,26 +3,19 @@
 
 @if (cultures != null)
 {
-@*<form class="form-inline">
+<div class="d-none d-sm-block">
+    <div class="custom-control custom-switch">
+        <input type="checkbox" @bind="isWelshChecked" @onclick="() => RequestCultureChange(isWelshChecked = !isWelshChecked)" class="custom-control-input" id="lngSwitch">
+        <label class="custom-control-label" for="lngSwitch">EN/CY</label>
+    </div>
+</div>
 
-        <select class="form-control mr-2" @bind="selectedCulture">
-            <option>Select...</option>
-
-            @foreach (var culture in cultures)
-            {
-                <option value="@culture.Key">@culture.Value</option>
-            }
-        </select>
-
-        <button class="btn btn-outline-primary" @onclick="RequestCultureChange">
-            Change
-        </button>
-    </form>*@
-
-
-<div class="custom-control custom-switch">
-    <input type="checkbox" @bind="isWelshChecked" @onclick="() => RequestCultureChange(isWelshChecked = !isWelshChecked)" class="custom-control-input" id="lngSwitch">
-    <label class="custom-control-label" for="lngSwitch">EN/CY</label>
+<div class="d-block d-sm-none">
+    <select @onchange="() => RequestCultureChange(isWelshChecked = !isWelshChecked)">
+        <option>Select...</option>
+        <option value="en-UK">English</option>
+        <option value="cy">Welsh</option>
+    </select>
 </div>
 
 }

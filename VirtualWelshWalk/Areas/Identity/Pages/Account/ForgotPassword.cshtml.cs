@@ -77,7 +77,7 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
 
                 string body = await _razorViewToStringRenderer.RenderViewToStringAsync(@"\Views\Emails\ForgotPassword\ForgotPassword.cshtml", confirmAccountModel);
 
-                var message = new Message(new string[] { Input.Email }, "Confirm your email", body, null);
+                var message = new Message(new string[] { Input.Email }, "Forgot your password", body, null);
 
                 await _emailSender.SendEmailAsync(message);
 

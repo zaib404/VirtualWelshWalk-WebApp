@@ -118,7 +118,7 @@ using System.Security.Claims;
 #line hidden
 #nullable disable
 #nullable restore
-#line 12 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
+#line 13 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
 [Authorize]
 
 #line default
@@ -132,7 +132,7 @@ using System.Security.Claims;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 105 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Shared\InputStepsForm.razor"
+#line 104 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Shared\InputStepsForm.razor"
  
     [Parameter]
     public VirtualTotalSteps virtualSteps { get; set; }
@@ -350,6 +350,7 @@ using System.Security.Claims;
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IVirtualMilestonesService MilestoneService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IPeopleService PeopleService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IVirtualWalkService WalkService { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime jsRunTime { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private Microsoft.Extensions.Localization.IStringLocalizer<App> Localizer { get; set; }
     }
 }

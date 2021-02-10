@@ -76,7 +76,7 @@ using VirtualWelshWalk.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 12 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
+#line 13 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
 [Authorize]
 
 #line default
@@ -90,7 +90,7 @@ using VirtualWelshWalk.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 30 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Shared\ChooseLanguage.razor"
+#line 23 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Shared\ChooseLanguage.razor"
        
 
     private string selectedCulture = System.Threading.Thread.CurrentThread.CurrentCulture.Name;
@@ -140,6 +140,7 @@ using VirtualWelshWalk.Shared;
 #nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private Microsoft.Extensions.Configuration.IConfiguration Configuration { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime jsRunTime { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private Microsoft.Extensions.Localization.IStringLocalizer<App> Localizer { get; set; }
     }
 }

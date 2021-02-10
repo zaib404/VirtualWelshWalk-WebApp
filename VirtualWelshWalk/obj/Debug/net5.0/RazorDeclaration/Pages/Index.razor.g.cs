@@ -76,7 +76,7 @@ using VirtualWelshWalk.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 12 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
+#line 13 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
 [Authorize]
 
 #line default
@@ -97,6 +97,21 @@ using VirtualWelshWalk.Shared;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 106 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\Index.razor"
+ 
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await jsRunTime.InvokeVoidAsync("window.onload");
+        }
+    }
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime jsRunTime { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private Microsoft.Extensions.Localization.IStringLocalizer<App> Localizer { get; set; }
     }
 }

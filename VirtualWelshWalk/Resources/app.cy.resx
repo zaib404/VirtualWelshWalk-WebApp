@@ -207,6 +207,9 @@
   <data name="City Walls" xml:space="preserve">
     <value>Muriau’r Ddinas</value>
   </data>
+  <data name="click here to log in" xml:space="preserve">
+    <value>cliciwch yma i fewngofnodi</value>
+  </data>
   <data name="Click here to login" xml:space="preserve">
     <value>Cliciwch yma i fewngofnodi</value>
   </data>
@@ -345,6 +348,9 @@
   <data name="Next milestone" xml:space="preserve">
     <value>Carreg filltir nesaf</value>
   </data>
+  <data name="No" xml:space="preserve">
+    <value>Na</value>
+  </data>
   <data name="Parc y Scarlets" xml:space="preserve">
     <value>Parc y Scarlets</value>
   </data>
@@ -353,6 +359,9 @@
   </data>
   <data name="Password" xml:space="preserve">
     <value>Cyfrinair</value>
+  </data>
+  <data name="Password reset confirmation" xml:space="preserve">
+    <value>Cadarnhad ailosod cyfrinair</value>
   </data>
   <data name="Pembrokeshire" xml:space="preserve">
     <value>Sir Benfro</value>
@@ -480,6 +489,9 @@
   <data name="Tintern Abbey was founded on 9 May 1131 by Walter de Clare, Lord of Chepstow. It is situated adjacent to the village of Tintern in Monmouthshire, on the Welsh bank of the River Wye, which at this location forms the border between Monmouthshire in Wales and Gloucestershire in England." xml:space="preserve">
     <value>Sefydlwyd Tintern Abbey ar Mai y 9fed 1131 gan Walter de Clare, arglwydd Cas-gwent. Mae wedi ei leoli ger pentref Tintern yn Sir Fynwy, ar lan yr Afon Wye, sydd yn y lleoliad hwn yn ffurfio’r ffin rhwng Sir Fynwy yng Nghymrua a Swydd Gaerloyw yn Lloegr.</value>
   </data>
+  <data name="to see more" xml:space="preserve">
+    <value>i weld mwy</value>
+  </data>
   <data name="Transporter Bridge" xml:space="preserve">
     <value>Pont Gludo Casnewydd</value>
   </data>
@@ -492,11 +504,17 @@
   <data name="Welsh coastal walk" xml:space="preserve">
     <value>Taith gerdded arfordirol Cymru</value>
   </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Ydw</value>
+  </data>
+  <data name="You have reached a new milestone. Check your emails and the" xml:space="preserve">
+    <value>Rydych chi wedi cyrraedd carreg filltir newydd. Gwiriwch eich e-byst a'r</value>
+  </data>
   <data name="You have walked approximately" xml:space="preserve">
     <value>Rydych chi wedi cerdded tua</value>
   </data>
-  <data name="You reached a new milestone and a significant place of interest. Check your emails and the map to see more" xml:space="preserve">
-    <value>Fe gyrhaeddoch chi garreg filltir newydd a lle o ddiddordeb sylweddol. Gwiriwch eich e-byst a'r map i weld mwy</value>
+  <data name="Your password has been reset. Please" xml:space="preserve">
+    <value>Mae eich cyfrinair wedi'i ailosod. Os gwelwch yn dda</value>
   </data>
   <data name="© 2021 Copyright:" xml:space="preserve">
     <value>© 2021 Hawlfraint:</value>

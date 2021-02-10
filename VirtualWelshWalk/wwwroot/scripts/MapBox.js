@@ -758,10 +758,10 @@ export function ApproximateStepsToNextMilestone()
                 markerIndex = ii;
 
                 if (ii == welshMarkerPoints.features.length - 1) {
-                    markerIndex == ii;
+                    markerIndex = ii;
                 }
                 else {
-                    markerIndex == ii + 1;
+                    markerIndex = ii + 1;
                 }
 
                 if (breakLoop) {

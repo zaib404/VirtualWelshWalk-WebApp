@@ -97,7 +97,7 @@ using VirtualWelshWalk.DataAccess.Models;
 #line hidden
 #nullable disable
 #nullable restore
-#line 12 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
+#line 13 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
 [Authorize]
 
 #line default
@@ -112,7 +112,7 @@ using VirtualWelshWalk.DataAccess.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 33 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\InputSteps.razor"
+#line 32 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\InputSteps.razor"
  
     #region This gets passed over to InputStepsForm
 
@@ -130,6 +130,7 @@ using VirtualWelshWalk.DataAccess.Models;
     #endregion
 
     string WalkName = "Welsh coastal walk";
+    string HeadingWalkName = "Coastal walk";
 
     double virtualStepsInMiles = 0;
 
@@ -150,6 +151,14 @@ using VirtualWelshWalk.DataAccess.Models;
         virtualSteps.TotalSteps = dbVirtualWalk.TotalSteps;
 
         StepsInMiles();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await jsRunTime.InvokeVoidAsync("window.onload");
+        }
     }
 
     void DBNullCheck()
@@ -192,6 +201,7 @@ using VirtualWelshWalk.DataAccess.Models;
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IVirtualMilestonesService VirtualMilestoneService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IPeopleService PeopleService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IVirtualWalkService WalkService { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime jsRunTime { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private Microsoft.Extensions.Localization.IStringLocalizer<App> Localizer { get; set; }
     }
 }

@@ -9,7 +9,7 @@
 @inject IVirtualWalkService WalkService
 @inject IPeopleService PeopleService
 @inject IVirtualMilestonesService VirtualMilestoneService
-@inject IJSRuntime jsRunTime
+@*@inject IJSRuntime jsRunTime*@
 @inject Blazored.SessionStorage.ISessionStorageService sessionStorage
 @inject EmailService.IEmailSender emailSender
 @inject AuthenticationStateProvider AuthenticationStateProvider
@@ -51,7 +51,7 @@ else
         </h5>
     </div>
 
-    <div class="container-fluid" style="padding: 5%;">
+    <div class="container-fluid" style="padding: 5%; padding-bottom:3%; padding-top:3%;">
         <div id="map" @ref="mapElement"></div>
 
         <br />
@@ -63,7 +63,7 @@ else
     <div class="container pb-5 text-center">
         <h1 class="h1">@Localizer["Did you know"]:</h1>
         <br />
-        <p>@Localizer[MilestoneInfo]</p>
+        <h4>@Localizer[MilestoneInfo]</h4>
         <img class="img-fluid" src="@MilestonePic" />
     </div>
 
@@ -79,7 +79,7 @@ else
                 <div class="modal-content text-center">
 
                     <div class="modal-header">
-                        <h2 class="modal-title text-left">@Localizer["Do you wish to add new steps?"]</h2>
+                        <h2 class="modal-title text-center">@Localizer["Do you wish to add new steps?"]</h2>
                         <button type="button" @onclick="CloseInputStepForms" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -122,7 +122,6 @@ else
 
     string MilestoneInfo = "Loading...";
     string MilestonePic;
-    //string nextLand = "Loading...";
 
     InputStepsForm stepsForm;
 
@@ -171,6 +170,8 @@ else
             {
                 await UpdatePersonLocation();
             }
+
+            await jsRunTime.InvokeVoidAsync("window.onload").AsTask();
 
             StateHasChanged();
         }

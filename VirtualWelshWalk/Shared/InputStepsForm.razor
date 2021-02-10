@@ -67,8 +67,8 @@
                     <p class="text-center">@Localizer["Are you sure you?"]</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" @onclick="() => { ShowConfirmationModal = false; }" class="btn btn-secondary" data-dismiss="modal">@Localizer["Close"]</button>
-                    <button type="button" @onclick="HandleValidSubmit" class="btn btn-primary">@Localizer["Save changes"]</button>
+                    <button type="button" @onclick="() => { ShowConfirmationModal = false; }" class="btn btn-secondary" data-dismiss="modal">@Localizer["No"]</button>
+                    <button type="button" @onclick="HandleValidSubmit" class="btn btn-primary">@Localizer["Yes"]</button>
                 </div>
             </div>
         </div>
@@ -90,8 +90,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>@Localizer[@"You have reached a new milestone and a significant place of interest. Check your emails and the <a href=""/Virtual Coastal Map""> map </a> to see more"]
-                    @*You reached a new milestone and a significant place of interest. Check your emails and the <a href="/Virtual Coastal Map">map</a> to see more*@</p>
+                    <p>@Localizer["You have reached a new milestone. Check your emails and the"] <a href="/Virtual Coastal Map"> map </a> @Localizer["to see more"]</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" @onclick="HandleValidSubmitPart2" class="btn btn-secondary" data-dismiss="modal">@Localizer["Close"]</button>

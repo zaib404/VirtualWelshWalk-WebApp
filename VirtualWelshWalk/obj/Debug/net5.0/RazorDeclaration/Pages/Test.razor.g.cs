@@ -83,7 +83,7 @@ using EmailService;
 #line hidden
 #nullable disable
 #nullable restore
-#line 12 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
+#line 13 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
 [Authorize]
 
 #line default
@@ -105,7 +105,7 @@ using EmailService;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 40 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\Test.razor"
+#line 18 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\Test.razor"
        
 
     async Task SendEmail()
@@ -120,11 +120,24 @@ using EmailService;
         await _emailSender.SendEmailAsync(message);
     }
 
+    async Task SendEmail2()
+    {
+        var confirmAccountModel = new EmailTemplate.Views.Emails.ForgotPassword.ForgotPasswordEmailViewModel("https://localhost:44350/Identity/Account/ConfirmEmail?userId=e800d8be-51eb-4a8d-a98c-b31cff6563c5&code=Q2ZESjhBVURsVUs1ZTkxRGlFSkU0OG5YNGNkcVp4M2VscFFRRW4wVkdOWjdFQ3JRQW9rVkFEa0MrQ0tVRWY0OGQ3VzRZVVZJOGNEcUVmT0hBS056RklBTDRHNzQvQTVVTTJ1VGFSTlNRaTJiaElKU25MTGJYcHNSU3BBVUhrQml5azRzdjJWTlVmbldHdFZTSTluRzJxVU5udUNqNGdmZ2NJOVhmVWJrVVJvMDRPRGZMb3BDNG80VHltOHl3Zm1EWG5tTElDRG5RVk4zL0pwWnovRTZwM1pXS3RuNC9WZUdZa25Gclh1OGxMSHpjSEJXZXVka2pnbWtRVGdhUU9PTFVhaVJrdz09&returnUrl=%2F",
+            "TEST" + " " + "Test");
+
+        string body = await _razorViewToStringRenderer.RenderViewToStringAsync(@"\Views\Emails\ForgotPassword\ForgotPassword.cshtml", confirmAccountModel);
+
+        var message = new Message(new string[] { "zaib_inamdar@hotmail.com" }, "Reset your password", body, null);
+
+        await _emailSender.SendEmailAsync(message);
+    }
+
 #line default
 #line hidden
 #nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private EmailService.IEmailSender _emailSender { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private EmailTemplate.Services.IRazorViewToStringRenderer _razorViewToStringRenderer { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime jsRunTime { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private Microsoft.Extensions.Localization.IStringLocalizer<App> Localizer { get; set; }
     }
 }
