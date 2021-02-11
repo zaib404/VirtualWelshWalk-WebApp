@@ -27,6 +27,8 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
         [TempData]
         public string StatusMessage { get; set; }
 
+        public bool Success { get; set; } = false;
+
         public async Task<IActionResult> OnGetAsync(string userId, string email, string code)
         {
             if (userId == null || email == null || code == null)
@@ -41,7 +43,9 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
             }
 
             code = Encoding.UTF8.GetString(WebEncoders.Base64UrlDecode(code));
+
             var result = await _userManager.ChangeEmailAsync(user, email, code);
+
             if (!result.Succeeded)
             {
                 StatusMessage = "Error changing email.";
@@ -59,6 +63,7 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
 
             await _signInManager.RefreshSignInAsync(user);
             StatusMessage = "Thank you for confirming your email change.";
+            Success = true;
             return Page();
         }
     }

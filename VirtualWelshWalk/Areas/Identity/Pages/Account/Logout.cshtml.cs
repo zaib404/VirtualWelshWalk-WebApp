@@ -39,6 +39,7 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
             }
             else
             {
+                // redirect to homepage
                 return Redirect("~/");
                 //return RedirectToPage();
             }

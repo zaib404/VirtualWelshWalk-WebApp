@@ -11,6 +11,7 @@ using EmailService;
 using IEmailSender = EmailService.IEmailSender;
 using EmailTemplate.Views.Emails.ConfirmAccount;
 using EmailTemplate.Services;
+using System.Text.Encodings.Web;
 
 namespace VirtualWelshWalk.Areas.Identity.Pages.Account
 {
@@ -88,7 +89,9 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
             }
 
             var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+
             code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
+
             var callbackUrl = Url.Page(
                 "/Account/ConfirmEmail",
                 pageHandler: null,

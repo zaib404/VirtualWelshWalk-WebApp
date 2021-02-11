@@ -123,6 +123,9 @@
   <data name="Aberystwyth" xml:space="preserve">
     <value>Aberystwyth</value>
   </data>
+  <data name="Access denied" xml:space="preserve">
+    <value>Access denied</value>
+  </data>
   <data name="Account register confirmation" xml:space="preserve">
     <value>Account register confirmation</value>
   </data>
@@ -215,6 +218,9 @@
   </data>
   <data name="Close" xml:space="preserve">
     <value>Close</value>
+  </data>
+  <data name="Confirm email change" xml:space="preserve">
+    <value>Confirm email change</value>
   </data>
   <data name="Confirm Password" xml:space="preserve">
     <value>Confirm Password</value>
@@ -510,6 +516,9 @@ The cathedral choir at St Davids was the first cathedral choir in the United Kin
   </data>
   <data name="Yes" xml:space="preserve">
     <value>Yes</value>
+  </data>
+  <data name="You do not have access to this resource" xml:space="preserve">
+    <value>You do not have access to this resource</value>
   </data>
   <data name="You have reached a new milestone. Check your emails and the" xml:space="preserve">
     <value>You have reached a new milestone. Check your emails and the</value>

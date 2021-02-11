@@ -13,6 +13,8 @@ using Microsoft.AspNetCore.WebUtilities;
 using VirtualWelshWalk.DataAccess.Models;
 using IEmailSender = EmailService.IEmailSender;
 using EmailService;
+using EmailTemplate.Services;
+using EmailTemplate.Views.Emails.ChangeEmail;
 
 namespace VirtualWelshWalk.Areas.Identity.Pages.Account.Manage
 {
@@ -22,14 +24,19 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account.Manage
         private readonly SignInManager<User> _signInManager;
         private readonly IEmailSender _emailSender;
 
+        IRazorViewToStringRenderer _razorViewToStringRenderer;
+
         public EmailModel(
             UserManager<User> userManager,
             SignInManager<User> signInManager,
-            IEmailSender emailSender)
+            IEmailSender emailSender,
+            IRazorViewToStringRenderer razorViewToStringRenderer)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
+
+            _razorViewToStringRenderer = razorViewToStringRenderer;
         }
 
         public string Username { get; set; }
@@ -105,18 +112,13 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account.Manage
                     values: new { userId = userId, email = Input.NewEmail, code = code },
                     protocol: Request.Scheme);
 
-                //var message = new Message(new string[] { Input.NewEmail }, "Confirm your email",
-                //    $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.", null);
+                var confirmAccountModel = new ChangeEmailModel(callbackUrl, user.FirstName + " " + user.LastName);
 
-                var message = new Message(new string[] { Input.NewEmail }, "Confirm your email",
-                    $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.", null);
+                string body = await _razorViewToStringRenderer.RenderViewToStringAsync(@"\Views\Emails\ChangeEmail\ChangeEmail.cshtml", confirmAccountModel);
+
+                var message = new Message(new string[] { Input.NewEmail }, "Confirm your email", body, null);
 
                 await _emailSender.SendEmailAsync(message);
-
-                //await _emailSender.SendEmailAsync(
-                //    Input.NewEmail,
-                //    "Confirm your email",
-                //    $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
                 StatusMessage = "Confirmation link to change email sent. Please check your email.";
                 return RedirectToPage();

@@ -123,6 +123,9 @@
   <data name="Aberystwyth" xml:space="preserve">
     <value>Aberystwyth</value>
   </data>
+  <data name="Access denied" xml:space="preserve">
+    <value>Mynediad wedi ei wrthod</value>
+  </data>
   <data name="Account register confirmation" xml:space="preserve">
     <value>Cadarnhad cofrestr cyfrifon</value>
   </data>
@@ -215,6 +218,9 @@
   </data>
   <data name="Close" xml:space="preserve">
     <value>Caewch</value>
+  </data>
+  <data name="Confirm email change" xml:space="preserve">
+    <value>Cadarnhau newid e-bost</value>
   </data>
   <data name="Confirm Password" xml:space="preserve">
     <value>Cadarnhau Cyfrinair</value>
@@ -509,6 +515,9 @@
   </data>
   <data name="Yes" xml:space="preserve">
     <value>Ydw</value>
+  </data>
+  <data name="You do not have access to this resource" xml:space="preserve">
+    <value>Nid oes gennych fynediad i'r adnodd hwn</value>
   </data>
   <data name="You have reached a new milestone. Check your emails and the" xml:space="preserve">
     <value>Rydych chi wedi cyrraedd carreg filltir newydd. Gwiriwch eich e-byst a'r</value>

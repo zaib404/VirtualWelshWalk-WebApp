@@ -71,22 +71,13 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
                     values: new { area = "Identity", code },
                     protocol: Request.Scheme);
 
-                //var message = new Message(new string[] { Input.Email },
-                //    "Reset Password",
-                //    $"Please reset your password by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.", null);
-
-                var confirmAccountModel = new ForgotPasswordEmailViewModel(HtmlEncoder.Default.Encode(callbackUrl), user.FirstName + " " + user.LastName);
+                var confirmAccountModel = new ForgotPasswordEmailViewModel(callbackUrl, user.FirstName + " " + user.LastName);
 
                 string body = await _razorViewToStringRenderer.RenderViewToStringAsync(@"\Views\Emails\ForgotPassword\ForgotPassword.cshtml", confirmAccountModel);
 
                 var message = new Message(new string[] { Input.Email }, "Forgot your password", body, null);
 
                 await _emailSender.SendEmailAsync(message);
-
-                //await _emailSender.SendEmailAsync(
-                //    Input.Email,
-                //    "Reset Password",
-                //    $"Please reset your password by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
                 //return RedirectToPage("./ForgotPasswordConfirmation");
                 DisplayMessage = true;
