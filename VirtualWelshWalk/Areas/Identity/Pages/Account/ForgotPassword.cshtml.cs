@@ -62,7 +62,9 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
                 // For more information on how to enable account confirmation and password reset please 
                 // visit https://go.microsoft.com/fwlink/?LinkID=532713
                 var code = await _userManager.GeneratePasswordResetTokenAsync(user);
+
                 code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
+
                 var callbackUrl = Url.Page(
                     "/Account/ResetPassword",
                     pageHandler: null,
@@ -73,7 +75,7 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
                 //    "Reset Password",
                 //    $"Please reset your password by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.", null);
 
-                var confirmAccountModel = new ForgotPasswordEmailViewModel(callbackUrl, user.FirstName + " " + user.LastName);
+                var confirmAccountModel = new ForgotPasswordEmailViewModel(HtmlEncoder.Default.Encode(callbackUrl), user.FirstName + " " + user.LastName);
 
                 string body = await _razorViewToStringRenderer.RenderViewToStringAsync(@"\Views\Emails\ForgotPassword\ForgotPassword.cshtml", confirmAccountModel);
 

@@ -90,7 +90,7 @@ using VirtualWelshWalk.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 23 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Shared\ChooseLanguage.razor"
+#line 12 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Shared\ChooseLanguage.razor"
        
 
     private string selectedCulture = System.Threading.Thread.CurrentThread.CurrentCulture.Name;

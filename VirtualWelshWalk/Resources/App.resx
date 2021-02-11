@@ -405,6 +405,9 @@
   <data name="Resend email" xml:space="preserve">
     <value>Resend email</value>
   </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
   <data name="Reset password" xml:space="preserve">
     <value>Reset password</value>
   </data>
