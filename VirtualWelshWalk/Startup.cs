@@ -48,7 +48,7 @@ namespace VirtualWelshWalk
 
             services.AddIdentity<User, IdentityRole>(options =>
             {
-                options.SignIn.RequireConfirmedAccount = true;
+                //options.SignIn.RequireConfirmedAccount = true;
                 options.User.RequireUniqueEmail = true;
             })
                 .AddEntityFrameworkStores<ApplicationDbContext>()

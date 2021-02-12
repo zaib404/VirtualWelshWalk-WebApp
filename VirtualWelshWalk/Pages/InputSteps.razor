@@ -16,9 +16,11 @@ else
 {
     // Top Heading
     <div class="container text-center p-5">
-        <h1 class="widow-orpah-me">@Localizer[HeadingWalkName]: @virtualSteps.TotalSteps @Localizer["Steps"]</h1>
+        <h1 class="widow-orpah-me">@Localizer[HeadingWalkName]: </h1> 
+        <h1>@virtualSteps.TotalSteps @Localizer["Steps"]</h1>
         <hr />
-        <p class="widow-orpah-me">@Localizer["You have walked approximately"] - @virtualStepsInMiles @Localizer["Miles"].ToString().ToLower()</p>
+        <p class="widow-orpah-me">@Localizer["You have walked approximately"] - </p>
+        <p> @virtualStepsInMiles @Localizer["Miles"].ToString().ToLower()</p>
     </div>
 
     <div class="container text-center pb-5">
@@ -67,6 +69,7 @@ else
         virtualSteps.TotalSteps = dbVirtualWalk.TotalSteps;
 
         StepsInMiles();
+
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)

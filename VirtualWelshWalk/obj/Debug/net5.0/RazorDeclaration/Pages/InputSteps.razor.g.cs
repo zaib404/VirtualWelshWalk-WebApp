@@ -112,7 +112,7 @@ using VirtualWelshWalk.DataAccess.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 32 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\InputSteps.razor"
+#line 34 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\InputSteps.razor"
  
     #region This gets passed over to InputStepsForm
 
@@ -151,6 +151,7 @@ using VirtualWelshWalk.DataAccess.Models;
         virtualSteps.TotalSteps = dbVirtualWalk.TotalSteps;
 
         StepsInMiles();
+
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)

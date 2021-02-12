@@ -1,3 +1,4 @@
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\bin\Debug\net5.0\libman.json
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\bin\Debug\net5.0\EmailTemplate.deps.json
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\bin\Debug\net5.0\EmailTemplate.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\bin\Debug\net5.0\ref\EmailTemplate.dll
@@ -17,7 +18,9 @@ D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\obj\Debug\net5.0\s
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\obj\Debug\net5.0\EmailTemplate.TagHelpers.input.cache
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\obj\Debug\net5.0\EmailTemplate.TagHelpers.output.cache
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\obj\Debug\net5.0\EmailTemplate.RazorCoreGenerate.cache
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\obj\Debug\net5.0\Razor\Views\Emails\ChangeEmail\ChangeEmail.cshtml.g.cs
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\obj\Debug\net5.0\Razor\Views\Emails\ConfirmAccount\ConfirmAccount.cshtml.g.cs
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\obj\Debug\net5.0\Razor\Views\Emails\ForgotPassword\ForgotPassword.cshtml.g.cs
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\obj\Debug\net5.0\Razor\Views\Emails\_ViewStart.cshtml.g.cs
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\obj\Debug\net5.0\Razor\Views\Shared\EmailButton.cshtml.g.cs
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\obj\Debug\net5.0\Razor\Views\Shared\EmailLayout.cshtml.g.cs
@@ -28,6 +31,3 @@ D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\obj\Debug\net5.0\E
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\obj\Debug\net5.0\ref\EmailTemplate.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\obj\Debug\net5.0\EmailTemplate.pdb
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\obj\Debug\net5.0\EmailTemplate.csproj.CopyComplete
-D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\bin\Debug\net5.0\libman.json
-D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\obj\Debug\net5.0\Razor\Views\Emails\ForgotPassword\ForgotPassword.cshtml.g.cs
-D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\obj\Debug\net5.0\Razor\Views\Emails\ChangeEmail\ChangeEmail.cshtml.g.cs

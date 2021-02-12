@@ -74,9 +74,6 @@ export function initialize() {
             addLogo();
             colourPath();
             map.resize();
-            map.flyTo({
-                center: [personMarker._lngLat.lng, personMarker._lngLat.lat]
-            });
         }
     });
 
@@ -498,6 +495,10 @@ export function updatePersonIcon(pKM) {
 
     // set person icon based on how many steps they have taken
     personMarker.setLngLat(along.geometry.coordinates);
+
+    map.flyTo({
+        center: [personMarker._lngLat.lng, personMarker._lngLat.lat]
+    });
 
     draw = true;
 }

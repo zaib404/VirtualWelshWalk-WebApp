@@ -152,16 +152,13 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account.Manage
                 values: new { area = "Identity", userId = userId, code = code },
                 protocol: Request.Scheme);
 
-            var message = new Message(new string[] { email },
-                "Confirm your email",
-                $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.", null);
+            var confirmAccountModel = new ChangeEmailModel(callbackUrl, user.FirstName + " " + user.LastName);
+
+            string body = await _razorViewToStringRenderer.RenderViewToStringAsync(@"\Views\Emails\ChangeEmail\ChangeEmail.cshtml", confirmAccountModel);
+
+            var message = new Message(new string[] { Input.NewEmail }, "Confirm your email", body, null);
 
             await _emailSender.SendEmailAsync(message);
-
-            //await _emailSender.SendEmailAsync(
-            //    email,
-            //    "Confirm your email",
-            //    $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
             StatusMessage = "Verification email sent. Please check your email.";
             return RedirectToPage();

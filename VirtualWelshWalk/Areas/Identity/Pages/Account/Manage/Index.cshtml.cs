@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using VirtualWelshWalk.DataAccess.CRUD;
 using VirtualWelshWalk.DataAccess.Models;
 
 namespace VirtualWelshWalk.Areas.Identity.Pages.Account.Manage
@@ -15,12 +16,18 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account.Manage
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
 
+        // New
+        readonly IPeopleRepository _peopleRepository;
+
         public IndexModel(
             UserManager<User> userManager,
-            SignInManager<User> signInManager)
+            SignInManager<User> signInManager,
+            IPeopleRepository peopleRepository)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+
+            _peopleRepository = peopleRepository;
         }
 
         public string Username { get; set; }
@@ -73,14 +80,13 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account.Manage
 
             await LoadAsync(user);
 
-            var P = Page();
-
             return Page();
         }
 
         public async Task<IActionResult> OnPostAsync()
         {
             var user = await _userManager.GetUserAsync(User);
+
             if (user == null)
             {
                 return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
@@ -92,16 +98,7 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account.Manage
                 return Page();
             }
 
-            //var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
-            //if (Input.PhoneNumber != phoneNumber)
-            //{
-            //    var setPhoneResult = await _userManager.SetPhoneNumberAsync(user, Input.PhoneNumber);
-            //    if (!setPhoneResult.Succeeded)
-            //    {
-            //        StatusMessage = "Unexpected error when trying to set phone number.";
-            //        return RedirectToPage();
-            //    }
-            //}
+            var people = await _peopleRepository.GetPeople(user.UserName);
 
             if (Input.FirstName != user.FirstName)
             {
@@ -114,6 +111,11 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account.Manage
             }
 
             await _userManager.UpdateAsync(user);
+
+            people.FirstName = user.FirstName;
+            people.LastName = user.LastName;
+
+            await _peopleRepository.UpdatePeople(people);
 
             await _signInManager.RefreshSignInAsync(user);
             StatusMessage = "Your profile has been updated";

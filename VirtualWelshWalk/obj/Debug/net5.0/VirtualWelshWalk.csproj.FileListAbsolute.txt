@@ -1,3 +1,5 @@
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailTemplate.Views.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailTemplate.Views.pdb
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\Assets\Banner.PNG
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\Assets\Culture\Barafundle Bay.jpg
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\Assets\Culture\Beaumaris Castle.jpg
@@ -25,9 +27,15 @@ D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\Assets\Educ8-Logo.png
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\Assets\Map-Icon.png
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\Assets\Walking-Man.png
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\Assets\WebPage\logo_with_text.png
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\favicon.ico
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\appsettings.Development.json
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\appsettings.json
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\libman.json
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\VirtualWelshWalk.StaticWebAssets.xml
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailAttachments\Welsh coastal walk .pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\favicon.ico
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\VirtualWelshWalk.exe
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\VirtualWelshWalk.deps.json
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\VirtualWelshWalk.runtimeconfig.json
@@ -39,8 +47,13 @@ D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\VirtualWelshWalk.Views.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\VirtualWelshWalk.Views.pdb
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\Blazored.SessionStorage.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EntityFramework.SqlServer.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EntityFramework.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\HtmlAgilityPack.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\Humanizer.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\MailKit.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\Microsoft.AspNetCore.Http.Features.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.UI.Views.V3.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
@@ -82,13 +95,16 @@ D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\Pomelo.EntityFrameworkCore.MySql.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\Pomelo.JsonObject.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\BouncyCastle.Crypto.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\System.CodeDom.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\System.Composition.AttributedModel.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\System.Composition.Convention.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\System.Composition.Hosting.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\System.Composition.Runtime.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\System.Composition.TypedParts.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\System.Data.SqlClient.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\System.IO.Pipelines.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\System.Runtime.Caching.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.resources.dll
@@ -145,14 +161,20 @@ D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\runtimes\win-arm\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\runtimes\win-arm64\native\sni.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\runtimes\win-x64\native\sni.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\runtimes\win-x86\native\sni.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailService.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailTemplate.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailService.pdb
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailTemplate.pdb
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\VirtualWelshWalk.csprojAssemblyReference.cache
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\VirtualWelshWalk.Resources.App.resources
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\VirtualWelshWalk.Resources.app.cy.resources
@@ -167,6 +189,7 @@ D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\RazorDeclaration\App.razor.g.cs
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\RazorDeclaration\Pages\Index.razor.g.cs
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\RazorDeclaration\Pages\InputSteps.razor.g.cs
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\RazorDeclaration\Pages\Test.razor.g.cs
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\RazorDeclaration\Pages\VirtualMap.razor.g.cs
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\RazorDeclaration\Shared\ChooseLanguage.razor.g.cs
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\RazorDeclaration\Shared\Footer.razor.g.cs
@@ -183,6 +206,7 @@ D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\Razor\App.razor.g.cs
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\Razor\Pages\Index.razor.g.cs
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\Razor\Pages\InputSteps.razor.g.cs
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\Razor\Pages\Test.razor.g.cs
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\Razor\Pages\VirtualMap.razor.g.cs
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\Razor\Shared\ChooseLanguage.razor.g.cs
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\Razor\Shared\Footer.razor.g.cs
@@ -208,6 +232,7 @@ D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Manage\_ManageNav.cshtml.g.cs
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Manage\_StatusMessage.cshtml.g.cs
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Manage\_ViewImports.cshtml.g.cs
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Manage\_ViewStart.cshtml.g.cs
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Register.cshtml.g.cs
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\RegisterConfirmation.cshtml.g.cs
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\ResetPassword.cshtml.g.cs
@@ -239,28 +264,3 @@ D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\ref\VirtualWelshWalk.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\VirtualWelshWalk.pdb
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\VirtualWelshWalk.genruntimeconfig.cache
-D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\favicon.ico
-D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\favicon.ico
-D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\Humanizer.dll
-D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\runtimes\win-arm\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
-D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
-D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\libman.json
-D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\Microsoft.AspNetCore.Http.Features.dll
-D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\System.IO.Pipelines.dll
-D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\Manage\_ViewStart.cshtml.g.cs
-D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailTemplate.Views.dll
-D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailTemplate.Views.pdb
-D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailTemplate.dll
-D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailTemplate.pdb
-D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\RazorDeclaration\Pages\Test.razor.g.cs
-D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\Razor\Pages\Test.razor.g.cs
-D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EntityFramework.SqlServer.dll
-D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EntityFramework.dll
-D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\System.CodeDom.dll
-D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\System.Data.SqlClient.dll
-D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
-D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
-D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\Assets\WebPage\logo_with_text.png
-D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\HtmlAgilityPack.dll
-D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf
-D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailAttachments\Welsh coastal walk .pdf

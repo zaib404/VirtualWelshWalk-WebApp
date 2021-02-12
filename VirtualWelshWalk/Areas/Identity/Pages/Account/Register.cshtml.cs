@@ -175,7 +175,7 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
 
                     await _emailSender.SendEmailAsync(message);
 
-                    if (_userManager.Options.SignIn.RequireConfirmedAccount)
+                    if (_userManager.Options.SignIn.RequireConfirmedAccount || !_userManager.Options.SignIn.RequireConfirmedAccount)
                     {
                         return RedirectToPage("RegisterConfirmation", new { email = Input.Email, returnUrl = returnUrl });
                     }

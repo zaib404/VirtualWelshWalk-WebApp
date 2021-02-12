@@ -126,6 +126,9 @@
   <data name="Access denied" xml:space="preserve">
     <value>Access denied</value>
   </data>
+  <data name="Account confirmation" xml:space="preserve">
+    <value>Account confirmation</value>
+  </data>
   <data name="Account register confirmation" xml:space="preserve">
     <value>Account register confirmation</value>
   </data>
@@ -365,6 +368,9 @@
   </data>
   <data name="Password" xml:space="preserve">
     <value>Password</value>
+  </data>
+  <data name="Password reset" xml:space="preserve">
+    <value>Password reset</value>
   </data>
   <data name="Password reset confirmation" xml:space="preserve">
     <value>Password reset confirmation</value>

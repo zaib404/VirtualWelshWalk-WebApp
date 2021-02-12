@@ -331,8 +331,6 @@ namespace VirtualWelshWalk.DataAccess.Data
 
             return SendEmailCheck(landMarksPassed-1);
 
-            //return EmailSent;
-
         }
 
         public int CheckMilestoneCounter(double stepInMiles)
@@ -622,11 +620,12 @@ namespace VirtualWelshWalk.DataAccess.Data
         {
             #region Sending email checks if they have passed multiple landmarks
 
+            List<Message> messages = new List<Message>();
+
             if (passedLandmarks >= 0 && !dbMilestone.Milestone1)
             {
                 Counter = 1;
-                var message = new Message(new string[] { email }, "Postcard from Tintern Abbey:", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Welsh coastal walk .pdf" });
-                emailSender.SendEmailAsync(message);
+                messages.Add(new Message(new string[] { email }, "Postcard from Tintern Abbey:", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Welsh coastal walk .pdf" }));
 
                 EmailSent = true;
                 dbMilestone.Milestone1 = true;
@@ -634,120 +633,120 @@ namespace VirtualWelshWalk.DataAccess.Data
             if (passedLandmarks >= 1 && !dbMilestone.Milestone2)
             {
                 Counter = 2;
-                var message = new Message(new string[] { email }, "Postcard from Transporter Bridge:", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" });
-                emailSender.SendEmailAsync(message);
+                messages.Add(new Message(new string[] { email }, "Postcard from Transporter Bridge:", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" }));
+
                 EmailSent = true;
                 dbMilestone.Milestone2 = true;
             }
             if (passedLandmarks >= 2 && !dbMilestone.Milestone3)
             {
                 Counter = 3;
-                var message = new Message(new string[] { email }, "Postcard from Cardiff Castle:", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" });
-                emailSender.SendEmailAsync(message);
+                messages.Add(new Message(new string[] { email }, "Postcard from Cardiff Castle:", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" }));
+                
                 EmailSent = true;
                 dbMilestone.Milestone3 = true;
             }
             if (passedLandmarks >= 3 && !dbMilestone.Milestone4)
             {
                 Counter = 4;
-                var message = new Message(new string[] { email }, "Postcard from Rest Bay Beach :", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" });
-                emailSender.SendEmailAsync(message);
+                messages.Add(new Message(new string[] { email }, "Postcard from Rest Bay Beach :", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" }));
+                
                 EmailSent = true;
                 dbMilestone.Milestone4 = true;
             }
             if (passedLandmarks >= 4 && !dbMilestone.Milestone5)
             {
                 Counter = 5;
-                var message = new Message(new string[] { email }, "Postcard from Mumbles Pier  :", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" });
-                emailSender.SendEmailAsync(message);
+                messages.Add(new Message(new string[] { email }, "Postcard from Mumbles Pier  :", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" }));
+                
                 EmailSent = true;
                 dbMilestone.Milestone5 = true;
             }
             if (passedLandmarks >= 5 && !dbMilestone.Milestone6)
             {
                 Counter = 6;
-                var message = new Message(new string[] { email }, "Postcard from Fall Bay :", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" });
-                emailSender.SendEmailAsync(message);
+                messages.Add(new Message(new string[] { email }, "Postcard from Fall Bay :", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" }));
+                
                 EmailSent = true;
                 dbMilestone.Milestone6 = true;
             }
             if (passedLandmarks >= 6 && !dbMilestone.Milestone7)
             {
                 Counter = 7;
-                var message = new Message(new string[] { email }, "Postcard from Parc y Scarlets :", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" });
-                emailSender.SendEmailAsync(message);
+                messages.Add(new Message(new string[] { email }, "Postcard from Parc y Scarlets :", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" }));
+                
                 EmailSent = true;
                 dbMilestone.Milestone7 = true;
             }
             if (passedLandmarks >= 7 && !dbMilestone.Milestone8)
             {
                 Counter = 8;
-                var message = new Message(new string[] { email }, "Postcard from Kidwelly Castel :", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" });
-                emailSender.SendEmailAsync(message);
+                messages.Add(new Message(new string[] { email }, "Postcard from Kidwelly Castel :", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" }));
+                
                 EmailSent = true;
                 dbMilestone.Milestone8 = true;
             }
             if (passedLandmarks >= 8 && !dbMilestone.Milestone9)
             {
                 Counter = 9;
-                var message = new Message(new string[] { email }, "Postcard from St Catherines Island :", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" });
-                emailSender.SendEmailAsync(message);
+                messages.Add(new Message(new string[] { email }, "Postcard from St Catherines Island :", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" }));
+                
                 EmailSent = true;
                 dbMilestone.Milestone9 = true;
             }
             if (passedLandmarks >= 9 && !dbMilestone.Milestone10)
             {
                 Counter = 10;
-                var message = new Message(new string[] { email }, "Postcard from Barafundle Bay  :", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" });
-                emailSender.SendEmailAsync(message);
+                messages.Add(new Message(new string[] { email }, "Postcard from Barafundle Bay  :", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" }));
+                
                 EmailSent = true;
                 dbMilestone.Milestone10 = true;
             }
             if (passedLandmarks >= 10 && !dbMilestone.Milestone11)
             {
                 Counter = 11;
-                var message = new Message(new string[] { email }, "Postcard from Stack Rock Fort  :", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" });
-                emailSender.SendEmailAsync(message);
+                messages.Add(new Message(new string[] { email }, "Postcard from Stack Rock Fort  :", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" }));
+                
                 EmailSent = true;
                 dbMilestone.Milestone11 = true;
             }
             if (passedLandmarks >= 11 && !dbMilestone.Milestone12)
             {
                 Counter = 12;
-                var message = new Message(new string[] { email }, "Postcard from St Davids Cathedral :", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" });
-                emailSender.SendEmailAsync(message);
+                messages.Add(new Message(new string[] { email }, "Postcard from St Davids Cathedral :", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" }));
+                
                 EmailSent = true;
                 dbMilestone.Milestone12 = true;
             }
             if (passedLandmarks >= 12 && !dbMilestone.Milestone13)
             {
                 Counter = 13;
-                var message = new Message(new string[] { email }, "Postcard from Strumble Head Lighthouse  :", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" });
-                emailSender.SendEmailAsync(message);
+                messages.Add(new Message(new string[] { email }, "Postcard from Strumble Head Lighthouse  :", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" }));
+                
                 EmailSent = true;
                 dbMilestone.Milestone13 = true;
             }
             if (passedLandmarks >= 13 && !dbMilestone.Milestone14)
             {
                 Counter = 14;
-                var message = new Message(new string[] { email }, "Postcard from Cardigan Castle :", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" });
-                emailSender.SendEmailAsync(message);
+                messages.Add(new Message(new string[] { email }, "Postcard from Cardigan Castle :", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" }));
+                
                 EmailSent = true;
                 dbMilestone.Milestone14 = true;
             }
             if (passedLandmarks >= 14 && !dbMilestone.Milestone15)
             {
                 Counter = 15;
-                var message = new Message(new string[] { email }, "Postcard from Plas Tan y Bwlch  :", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" });
-                emailSender.SendEmailAsync(message);
+                messages.Add(new Message(new string[] { email }, "Postcard from Plas Tan y Bwlch  :", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" }));
+                
                 EmailSent = true;
                 dbMilestone.Milestone15 = true;
             }
             if (passedLandmarks >= 15 && !dbMilestone.Milestone16)
             {
                 Counter = 16;
-                var message = new Message(new string[] { email }, "Postcard from Round House  :", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" });
-                emailSender.SendEmailAsync(message);
+                messages.Add(new Message(new string[] { email }, "Postcard from Round House  :", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" }));
+                
                 EmailSent = true;
 
                 dbMilestone.Milestone16 = true;
@@ -755,8 +754,8 @@ namespace VirtualWelshWalk.DataAccess.Data
             if (passedLandmarks >= 16 && !dbMilestone.Milestone17)
             {
                 Counter = 17;
-                var message = new Message(new string[] { email }, "Postcard from Harlech Castle  :", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" });
-                emailSender.SendEmailAsync(message);
+                messages.Add(new Message(new string[] { email }, "Postcard from Harlech Castle  :", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" }));
+                
                 EmailSent = true;
 
                 dbMilestone.Milestone17 = true;
@@ -764,48 +763,48 @@ namespace VirtualWelshWalk.DataAccess.Data
             if (passedLandmarks >= 17 && !dbMilestone.Milestone18)
             {
                 Counter = 18;
-                var message = new Message(new string[] { email }, "Postcard from Nant Gwrtheyrn :", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" });
-                emailSender.SendEmailAsync(message);
+                messages.Add(new Message(new string[] { email }, "Postcard from Nant Gwrtheyrn :", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" }));
+                
                 EmailSent = true;
                 dbMilestone.Milestone18 = true;
             }
             if (passedLandmarks >= 18 && !dbMilestone.Milestone19)
             {
                 Counter = 19;
-                var message = new Message(new string[] { email }, "Postcard from Bedd Gelert  :", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" });
-                emailSender.SendEmailAsync(message);
+                messages.Add(new Message(new string[] { email }, "Postcard from Bedd Gelert  :", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" }));
+                
                 EmailSent = true;
                 dbMilestone.Milestone19 = true;
             }
             if (passedLandmarks >= 19 && !dbMilestone.Milestone20)
             {
                 Counter = 20;
-                var message = new Message(new string[] { email }, "Postcard from Caernarfon Castle  :", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" });
-                emailSender.SendEmailAsync(message);
+                messages.Add(new Message(new string[] { email }, "Postcard from Caernarfon Castle  :", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" }));
+                
                 EmailSent = true;
                 dbMilestone.Milestone20 = true;
             }
             if (passedLandmarks >= 20 && !dbMilestone.Milestone21)
             {
                 Counter = 21;
-                var message = new Message(new string[] { email }, "Postcard from Beaumaris Castle  :", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" });
-                emailSender.SendEmailAsync(message);
+                messages.Add(new Message(new string[] { email }, "Postcard from Beaumaris Castle  :", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" }));
+                
                 EmailSent = true;
                 dbMilestone.Milestone21 = true;
             }
             if (passedLandmarks >= 21 && !dbMilestone.Milestone22)
             {
                 Counter = 22;
-                var message = new Message(new string[] { email }, "Postcard from Conwy Castle  :", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" });
-                emailSender.SendEmailAsync(message);
+                messages.Add(new Message(new string[] { email }, "Postcard from Conwy Castle  :", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" }));
+                
                 EmailSent = true;
                 dbMilestone.Milestone22 = true;
             }
             if (passedLandmarks >= 22 && !dbMilestone.Milestone23)
             {
                 Counter = 23;
-                var message = new Message(new string[] { email }, "Postcard from City Walls:", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" });
-                emailSender.SendEmailAsync(message);
+                messages.Add(new Message(new string[] { email }, "Postcard from City Walls:", "There isnt anything for me to say lmao", new List<string>() { @"EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf" }));
+                
                 EmailSent = true;
                 dbMilestone.Milestone23 = true;
             }
@@ -814,7 +813,20 @@ namespace VirtualWelshWalk.DataAccess.Data
 
             Counter = passedLandmarks;
 
+            if (EmailSent == true)
+            {
+                SendEmails(messages);
+            }
+
             return EmailSent;
+        }
+
+        async Task SendEmails(List<Message> messages)
+        {
+            foreach (var message in messages)
+            {
+                await emailSender.SendEmailAsync(message);
+            }            
         }
     }
 }

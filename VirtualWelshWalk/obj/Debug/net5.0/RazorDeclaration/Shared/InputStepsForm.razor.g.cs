@@ -134,6 +134,9 @@ using System.Security.Claims;
 #nullable restore
 #line 104 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Shared\InputStepsForm.razor"
  
+    #region Data Members
+
+    #region Class passed around
     [Parameter]
     public VirtualTotalSteps virtualSteps { get; set; }
 
@@ -146,6 +149,10 @@ using System.Security.Claims;
     [Parameter]
     public VirtualMilestone dbMilestone { get; set; }
 
+    #endregion
+
+    #region Events
+
     [Parameter]
     public EventCallback<int> OnTotalStepsChanged { get; set; }
 
@@ -155,19 +162,31 @@ using System.Security.Claims;
     [Parameter]
     public EventCallback<int> OnVirtualMapGetInfo { get; set; }
 
+    #endregion
+
     [Parameter]
     public int MilestoneCounter { get; set; }
 
     CheckMilestone checkMilestone;
 
+    #region Bool
+
     bool ShowConfirmationModal = false;
     bool ShowNewMilestoneUnlocked = false;
 
+    #endregion
+
     double virtualStepsInMiles = 0;
+
+    #region Strings 
 
     string UserName;
     string EmailAddress;
     string Space = "";
+
+    #endregion
+
+    #endregion
 
     #region When first loading
 
@@ -231,6 +250,11 @@ using System.Security.Claims;
         if (ShowNewMilestoneUnlocked)
         {
             await MilestoneService.UpdateVirtualMilestones(checkMilestone.dbMilestone);
+        }
+
+        if (OnTotalStepsChanged.HasDelegate)
+        {
+            await UpdateTotalStepsChanged();
         }
     }
 
