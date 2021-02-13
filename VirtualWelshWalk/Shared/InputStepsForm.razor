@@ -18,9 +18,7 @@
 @* edit form on valid submit change bool ShowConfirmationModal to true Which then will display a modal asking to confirm changes *@
 <EditForm class="form-group" OnValidSubmit="() => ShowConfirmationModal = true" Model="@virtualSteps" method="post">
     <DataAnnotationsValidator />
-
-    <h3>@Localizer["Enter your steps"]</h3>
-    <div class="col">
+    <div class="col pt-4">
         <InputNumber class="form-control" @bind-Value="virtualSteps.NewSteps" id="steps" />
     </div>
     <div class="col text-center">
@@ -28,7 +26,7 @@
     </div>
 
     <div class="col content text-center">
-        <button type="submit" class="btn btn-primary btn-lg btn-block">@Localizer["Submit"]</button>
+        <button type="submit" class="btn btn-primary btn-lg btn-block" style="background-color:#af3182; border-color:#af3182; width:100%;">@Localizer["Submit"]</button>
     </div>
 
 </EditForm>
@@ -46,15 +44,15 @@
 
                     @if (virtualSteps.NewSteps == 1)
                     {
-                        <h1 class="modal-title text-center">@Localizer["Add " + @virtualSteps.NewSteps + " Step"]</h1>
+                        <h1 class="modal-title text-center widow-orpah-me">@Localizer["Add 1 step"]</h1>
                     }
                     else if (virtualSteps.NewSteps <= 99)
                     {
-                        <h1 class="modal-title text-center">@Localizer["Add Num Steps1"] @Space @virtualSteps.NewSteps @Space @Localizer["Add Num Steps2"]</h1>
+                        <h1 class="modal-title text-center widow-orpah-me">@Localizer["Add Num Steps1"] @virtualSteps.NewSteps @Localizer["Add Num Steps2"]</h1>
                     }
                     else
                     {
-                        <h1 class="modal-title text-center">@Localizer["Add Num Steps1"] @Space @virtualSteps.NewSteps @Space @Localizer["Add Num Steps3"]</h1>
+                        <h1 class="modal-title text-center widow-orpah-me">@Localizer["Add Num Steps1"] @virtualSteps.NewSteps @Localizer["Add Num Steps3"]</h1>
                     }
 
                     <button type="button" @onclick="() => { ShowConfirmationModal = false; }" class="close" data-dismiss="modal" aria-label="Close">
@@ -68,7 +66,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" @onclick="() => { ShowConfirmationModal = false; }" class="btn btn-secondary" data-dismiss="modal">@Localizer["No"]</button>
-                    <button type="button" @onclick="HandleValidSubmit" class="btn btn-primary">@Localizer["Yes"]</button>
+                    <button type="button" @onclick="HandleValidSubmit" class="btn btn-primary" style="background-color:#af3182; border-color:#af3182;">@Localizer["Yes"]</button>
                 </div>
             </div>
         </div>
@@ -84,13 +82,13 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">@Localizer["A new area of interest unlocked"]</h5>
+                    <h5 class="modal-title widow-orpah-me">@Localizer["A new area of interest unlocked"]</h5>
                     <button type="button" @onclick="HandleValidSubmitPart2" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>@Localizer["You have reached a new milestone. Check your emails and the"] <a href="/Virtual Coastal Map"> map </a> @Localizer["to see more"]</p>
+                    <p class="widow-orpah-me">@Localizer["You have reached a new milestone. Check your emails and the"] <a href="/Virtual Coastal Map"> map </a> @Localizer["to see more"]</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" @onclick="HandleValidSubmitPart2" class="btn btn-secondary" data-dismiss="modal">@Localizer["Close"]</button>
@@ -135,6 +133,12 @@
     [Parameter]
     public int MilestoneCounter { get; set; }
 
+    [Parameter]
+    public string EmailAddress { get; set; }
+
+    [Parameter]
+    public string UserName { get; set; }
+
     CheckMilestone checkMilestone;
 
     #region Bool
@@ -146,11 +150,9 @@
 
     double virtualStepsInMiles = 0;
 
-    #region Strings 
+    #region Strings
 
-    string UserName;
-    string EmailAddress;
-    string Space = "";
+    //string Space = "";
 
     #endregion
 
@@ -166,27 +168,23 @@
         }
     }
 
-    protected override async Task OnAfterRenderAsync(bool firstRender)
+    protected async override Task OnAfterRenderAsync(bool firstRender)
     {
         checkMilestone = new CheckMilestone(dbMilestone, emailSender/*, UserManager, httpContent*/);
 
         try
         {
-            var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
-            var user = authState.User;
+            //var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+            //var user = authState.User;
 
-            UserName = authState.User.Identity.Name;
+            //UserName = authState.User.Identity.Name;
 
 
-            IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
+            //IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
 
-            _claims = user.Claims;
+            //_claims = user.Claims;
 
-            EmailAddress = user.FindFirst(c => c.Type == ClaimTypes.Email)?.Value;
-
-            //var user = await UserManager.GetUserAsync(httpContent.HttpContext.User);
-
-            //checkMilestone.SetData(user.Email, user.UserName);
+            //EmailAddress = user.FindFirst(c => c.Type == ClaimTypes.Email)?.Value;
 
             checkMilestone.SetData(EmailAddress, UserName);
         }
@@ -194,6 +192,8 @@
         {
             Console.WriteLine(e.Message);
         }
+
+        await jsRunTime.InvokeVoidAsync("window.onload");
     }
 
     #endregion

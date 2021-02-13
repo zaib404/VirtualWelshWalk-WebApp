@@ -98,7 +98,7 @@ using VirtualWelshWalk.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 106 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\Index.razor"
+#line 105 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\Index.razor"
  
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {

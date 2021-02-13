@@ -815,7 +815,7 @@ namespace VirtualWelshWalk.DataAccess.Data
 
             if (EmailSent == true)
             {
-                SendEmails(messages);
+                _ = SendEmails(messages);
             }
 
             return EmailSent;

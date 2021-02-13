@@ -110,7 +110,7 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
                 }
                 else
                 {
-                    ModelState.AddModelError(string.Empty, Localizer["Invalid login attempt."]);
+                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
                     
                     return Page();
                 }

@@ -204,6 +204,9 @@
   <data name="Carmarthen" xml:space="preserve">
     <value>Carmarthen</value>
   </data>
+  <data name="Change password" xml:space="preserve">
+    <value>Change password</value>
+  </data>
   <data name="Chepstow" xml:space="preserve">
     <value>Chepstow</value>
   </data>
@@ -266,6 +269,9 @@
   </data>
   <data name="Enter your steps" xml:space="preserve">
     <value>Enter your steps</value>
+  </data>
+  <data name="Error changing email" xml:space="preserve">
+    <value>Error changing email</value>
   </data>
   <data name="Error confirming email" xml:space="preserve">
     <value>Error confirming email</value>
@@ -378,6 +384,9 @@
   <data name="Pembrokeshire" xml:space="preserve">
     <value>Pembrokeshire</value>
   </data>
+  <data name="Personal data" xml:space="preserve">
+    <value>Personal data</value>
+  </data>
   <data name="Plas Tan y Bwlch" xml:space="preserve">
     <value>Plas Tan y Bwlch</value>
   </data>
@@ -401,6 +410,9 @@
   </data>
   <data name="Privacy Policy - Cookie Policy" xml:space="preserve">
     <value>Privacy Policy - Cookie Policy</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Profile</value>
   </data>
   <data name="Pwllheli" xml:space="preserve">
     <value>Pwllheli</value>
@@ -484,8 +496,14 @@ The cathedral choir at St Davids was the first cathedral choir in the United Kin
   <data name="Tenby" xml:space="preserve">
     <value>Tenby</value>
   </data>
+  <data name="Thank you" xml:space="preserve">
+    <value>Thank you</value>
+  </data>
   <data name="Thank you for confirming your email" xml:space="preserve">
     <value>Thank you for confirming your email</value>
+  </data>
+  <data name="Thank you for confirming your email change" xml:space="preserve">
+    <value>Thank you for confirming your email change</value>
   </data>
   <data name="The city walls are the oldest, longest and most complete in Britain, parts of which are almost 2000 years old. Chester is the only city in Britain that retains the full circuit of its ancient defensive walls. Walking the complete circuit gives wondrous views down into the city and gives a fantastic insight into Chester's long history." xml:space="preserve">
     <value>The city walls are the oldest, longest and most complete in Britain, parts of which are almost 2000 years old. Chester is the only city in Britain that retains the full circuit of its ancient defensive walls. Walking the complete circuit gives wondrous views down into the city and gives a fantastic insight into Chester's long history.</value>

@@ -48,7 +48,7 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
 
             if (!result.Succeeded)
             {
-                StatusMessage = "Error changing email.";
+                StatusMessage = "Error changing email";
                 return Page();
             }
 
@@ -57,12 +57,12 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
             var setUserNameResult = await _userManager.SetEmailAsync(user, email);
             if (!setUserNameResult.Succeeded)
             {
-                StatusMessage = "Error changing email.";
+                StatusMessage = "Error changing email";
                 return Page();
             }
 
             await _signInManager.RefreshSignInAsync(user);
-            StatusMessage = "Thank you for confirming your email change.";
+            StatusMessage = "Thank you for confirming your email change";
             Success = true;
             return Page();
         }

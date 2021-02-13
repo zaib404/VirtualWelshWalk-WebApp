@@ -72,7 +72,7 @@ export function initialize() {
         if (draw)
         {
             addLogo();
-            colourPath();
+            //colourPath();
             map.resize();
         }
     });
@@ -503,7 +503,7 @@ export function updatePersonIcon(pKM) {
     draw = true;
 }
 
-function colourPath() {
+export function colourPath() {
 
     var walkedPathGeoJson = colourWalkedPath();
 
@@ -635,7 +635,7 @@ function GreyPath(index) {
     return geojson;
 }
 
-export function LandMarksPassed(pElementId)
+export function NextLandMark(pElementId)
 {
     // turn person icon to a point
     var targetPoint = turf.helpers.point([personMarker._lngLat.lng, personMarker._lngLat.lat]);
@@ -703,8 +703,10 @@ export function LandMarksPassed(pElementId)
     }
 
     // Change the dom text
-    var header = document.getElementById(pElementId);
-    header.innerHTML = name;
+    //var header = document.getElementById(pElementId);
+    //header.innerHTML = name;
+
+    return name;
 }
 
 export function ApproximateStepsToNextMilestone()

@@ -3,10 +3,12 @@
 @using DataAccess.Data
 @using VirtualWelshWalk.DataAccess.Services;
 @using VirtualWelshWalk.DataAccess.Models;
+@using System.Security.Claims;
 
 @inject IVirtualWalkService WalkService
 @inject IPeopleService PeopleService
 @inject IVirtualMilestonesService VirtualMilestoneService
+@inject AuthenticationStateProvider AuthenticationStateProvider
 
 @if (virtualSteps == null)
 {
@@ -16,19 +18,21 @@ else
 {
     // Top Heading
     <div class="container text-center p-5">
-        <h1 class="widow-orpah-me">@Localizer[HeadingWalkName]: </h1> 
+        <h1>@Localizer[HeadingWalkName]: </h1>
         <h1>@virtualSteps.TotalSteps @Localizer["Steps"]</h1>
         <hr />
-        <p class="widow-orpah-me">@Localizer["You have walked approximately"] - </p>
+        <p style="margin-bottom:0%;">@Localizer["You have walked approximately"] - </p>
         <p> @virtualStepsInMiles @Localizer["Miles"].ToString().ToLower()</p>
     </div>
 
     <div class="container text-center pb-5">
 
-        <InputStepsForm virtualSteps="virtualSteps" dbPeople="dbPeople" dbVirtualWalk="dbVirtualWalk" dbMilestone="dbMilestone" OnTotalStepsChanged="@TotalStepsChanged" />  @*() => { TotalStepsChanged(virtualSteps.TotalSteps); }*@<!--" />-->
+        <InputStepsForm virtualSteps="virtualSteps" EmailAddress="@Emailadd" UserName="@Username"
+                        dbPeople="dbPeople" dbVirtualWalk="dbVirtualWalk" dbMilestone="dbMilestone"
+                        OnTotalStepsChanged="@TotalStepsChanged" />  @*() => { TotalStepsChanged(virtualSteps.TotalSteps); }*@<!--" />-->
 
-    </div>
-}
+                    </div>
+                }
 
 @code
 {
@@ -52,7 +56,8 @@ else
 
     double virtualStepsInMiles = 0;
 
-    //bool showNewMilestoneUnlocked = false;
+    string Emailadd;
+    string Username;
 
     protected override async Task OnInitializedAsync()
     {
@@ -76,6 +81,7 @@ else
     {
         if (firstRender)
         {
+            await GetEmailAndUsername();
             await jsRunTime.InvokeVoidAsync("window.onload");
         }
     }
@@ -95,6 +101,27 @@ else
         if (dbMilestone == null)
         {
             dbMilestone = new VirtualMilestone();
+        }
+    }
+
+    async Task GetEmailAndUsername()
+    {
+        try
+        {
+            var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+            var user = authState.User;
+
+            Username = authState.User.Identity.Name;
+
+            IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
+
+            _claims = user.Claims;
+
+            Emailadd = user.FindFirst(c => c.Type == ClaimTypes.Email)?.Value;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
         }
     }
 

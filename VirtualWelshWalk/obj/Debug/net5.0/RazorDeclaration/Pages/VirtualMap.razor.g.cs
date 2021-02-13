@@ -126,7 +126,7 @@ using System.Security.Claims;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 103 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
+#line 104 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
  
     public People people { get; set; } = new People();
     public VirtualWalk virtualWalk { get; set; } = new VirtualWalk();
@@ -151,6 +151,9 @@ using System.Security.Claims;
     string MilestonePic;
 
     InputStepsForm stepsForm;
+
+    string Emailadd;
+    string Username;
 
     protected override async Task OnInitializedAsync()
     {
@@ -211,17 +214,16 @@ using System.Security.Claims;
             var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
             var user = authState.User;
 
-            var UserName = authState.User.Identity.Name;
+            Username = authState.User.Identity.Name;
 
-            string email;
             IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
 
             _claims = user.Claims;
 
-            email = user.FindFirst(c => c.Type == ClaimTypes.Email)?.Value;
+            Emailadd = user.FindFirst(c => c.Type == ClaimTypes.Email)?.Value;
 
             stepsForm = new InputStepsForm();
-            stepsForm.SetUpFromVirtualMap(VirtualMilestoneService, milestone, emailSender, email, UserName);
+            stepsForm.SetUpFromVirtualMap(VirtualMilestoneService, milestone, emailSender, Emailadd, Username);
         }
         catch (Exception e)
         {
@@ -234,8 +236,10 @@ using System.Security.Claims;
         if (virtualWalk.TotalSteps >= 0)
         {
             await mapModule.InvokeVoidAsync("updatePersonIcon", calculatePerson.NewPosition(virtualWalk.TotalSteps)).AsTask();
-            await mapModule.InvokeVoidAsync("LandMarksPassed", landID);
+            landID = await mapModule.InvokeAsync<string>("NextLandMark", landID);
             stepToNextMilestone = Math.Round(await mapModule.InvokeAsync<double>("ApproximateStepsToNextMilestone"), 2);
+
+            await mapModule.InvokeVoidAsync("colourPath");
         }
     }
 
@@ -283,7 +287,7 @@ using System.Security.Claims;
 
                 MilestoneInfo = "Cardiff Castle is located in the Castle Quarter, in the heart of Cardiff, " +
                         "the capital of Wales. There has been a fort on the site for almost 2,000 years. " +
-                        "The current building was built in the late 11th century, replacing a Roman fort. ";
+                        "The current building was built in the late 11th century, replacing a Roman fort.";
 
                 MilestonePic = "/Assets/Culture/Cardiff Castle.jpg";
 
@@ -318,7 +322,7 @@ using System.Security.Claims;
                         "however the walk is well worth it and the beach is never crowded due " +
                         "to its remoteness. There is no beach visible at high tide. The beach is " +
                         "very popular with surfers. At very low tide, it is possible to walk over " +
-                        "from the beach to Mewslade Bay. ";
+                        "from the beach to Mewslade Bay.";
 
                 MilestonePic = "/Assets/Culture/Fall Bay.jpg";
 
@@ -353,7 +357,7 @@ using System.Security.Claims;
                 MilestoneInfo = "St. Catherines Island is a small tidal island linked to Tenby in Pembrokeshire, Wales. " +
                         "2016 The Final Problem, the third and last episode of the fourth series of the BBC TV series " +
                         "Sherlock was filmed on the island, with it standing in as a maximum security prison.  Formed from an " +
-                        "outcrop of limestone, on average 25m high, the island is riddled with tidal caves. ";
+                        "outcrop of limestone, on average 25m high, the island is riddled with tidal caves.";
 
                 MilestonePic = "/Assets/Culture/St Catherine’s Island.jpg";
 
@@ -503,7 +507,7 @@ using System.Security.Claims;
                 MilestoneInfo = "Conwy Castle (Welsh: Castell Conwy) is a fortification in Conwy, " +
                         "located in North Wales. It was built by Edward I, during his conquest of Wales, " +
                         "between 1283 and 1289. The castle hugs a rocky coastal ridge of grey sandstone and limestone, " +
-                        "and much of the stone from the castle is largely taken from the ridge itself, probably when the site was first cleared. ";
+                        "and much of the stone from the castle is largely taken from the ridge itself, probably when the site was first cleared.";
 
                 MilestonePic = "/Assets/Culture/Conwy Castle.jpg";
 
@@ -513,7 +517,7 @@ using System.Security.Claims;
 
                 MilestoneInfo = "The city walls are the oldest, longest and most complete in Britain, parts of which are almost 2000 years old. " +
                     "Chester is the only city in Britain that retains the full circuit of its ancient defensive walls. " +
-                    "Walking the complete circuit gives wondrous views down into the city and gives a fantastic insight into Chester's long history. ";
+                    "Walking the complete circuit gives wondrous views down into the city and gives a fantastic insight into Chester's long history.";
 
                 MilestonePic = "/Assets/Culture/City Walls.jpg";
 

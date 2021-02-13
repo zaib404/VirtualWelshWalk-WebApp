@@ -92,12 +92,13 @@ namespace VirtualWelshWalk
 
             //services.AddHttpContextAccessor();
 
-            services.ConfigureApplicationCookie(options => {
+            services.ConfigureApplicationCookie(options =>
+            {
                 options.ExpireTimeSpan = TimeSpan.FromDays(5);
                 options.SlidingExpiration = true;
             });
 
-            services.Configure<DataProtectionTokenProviderOptions>(options => 
+            services.Configure<DataProtectionTokenProviderOptions>(options =>
             options.TokenLifespan = TimeSpan.FromHours(1)
             );
         }

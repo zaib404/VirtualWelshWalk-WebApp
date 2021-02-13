@@ -14,12 +14,7 @@
                         <h2>@Localizer[@ViewData["Title"].ToString()]</h2>
                     </div>
                     <div class="card-body">
-                        @*<partial name="_StatusMessage" model="Model.StatusMessage" />*@
-                        <p>@Model.StatusMessage</p>
-                        @*@if (Model.Success)
-                        {
-                            <a a href="/Identity/Account/Login" class="btn rounded-0 text-white" style="background-color:#af3182; width:100%;">@Localizer["Log In"]</a>
-                        }*@
+                        <p>@Localizer[@Model.StatusMessage]</p>
                     </div>
                 </div>
             </div>

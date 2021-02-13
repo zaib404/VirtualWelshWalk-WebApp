@@ -97,6 +97,13 @@ using VirtualWelshWalk.DataAccess.Models;
 #line hidden
 #nullable disable
 #nullable restore
+#line 6 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\InputSteps.razor"
+using System.Security.Claims;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 13 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
 [Authorize]
 
@@ -112,7 +119,7 @@ using VirtualWelshWalk.DataAccess.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 34 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\InputSteps.razor"
+#line 38 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\InputSteps.razor"
  
     #region This gets passed over to InputStepsForm
 
@@ -134,7 +141,8 @@ using VirtualWelshWalk.DataAccess.Models;
 
     double virtualStepsInMiles = 0;
 
-    //bool showNewMilestoneUnlocked = false;
+    string Emailadd;
+    string Username;
 
     protected override async Task OnInitializedAsync()
     {
@@ -158,6 +166,7 @@ using VirtualWelshWalk.DataAccess.Models;
     {
         if (firstRender)
         {
+            await GetEmailAndUsername();
             await jsRunTime.InvokeVoidAsync("window.onload");
         }
     }
@@ -180,6 +189,27 @@ using VirtualWelshWalk.DataAccess.Models;
         }
     }
 
+    async Task GetEmailAndUsername()
+    {
+        try
+        {
+            var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+            var user = authState.User;
+
+            Username = authState.User.Identity.Name;
+
+            IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
+
+            _claims = user.Claims;
+
+            Emailadd = user.FindFirst(c => c.Type == ClaimTypes.Email)?.Value;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+    }
+
     protected void TotalStepsChanged(int pNewSteps)
     {
         virtualSteps.TotalSteps = pNewSteps;
@@ -199,6 +229,7 @@ using VirtualWelshWalk.DataAccess.Models;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private AuthenticationStateProvider AuthenticationStateProvider { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IVirtualMilestonesService VirtualMilestoneService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IPeopleService PeopleService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IVirtualWalkService WalkService { get; set; }

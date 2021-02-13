@@ -204,6 +204,9 @@
   <data name="Carmarthen" xml:space="preserve">
     <value>Caerfyrddin</value>
   </data>
+  <data name="Change password" xml:space="preserve">
+    <value>Change password</value>
+  </data>
   <data name="Chepstow" xml:space="preserve">
     <value>Cas-gwent</value>
   </data>
@@ -266,6 +269,9 @@
   </data>
   <data name="Enter your steps" xml:space="preserve">
     <value>Rhowch eich camau</value>
+  </data>
+  <data name="Error changing email" xml:space="preserve">
+    <value>Gwall wrth newid e-bost</value>
   </data>
   <data name="Error confirming email" xml:space="preserve">
     <value>Gwall yn cadarnhau e-bost</value>
@@ -378,6 +384,9 @@
   <data name="Pembrokeshire" xml:space="preserve">
     <value>Sir Benfro</value>
   </data>
+  <data name="Personal data" xml:space="preserve">
+    <value>Data personol</value>
+  </data>
   <data name="Plas Tan y Bwlch" xml:space="preserve">
     <value>Plas Tan y Bwlch</value>
   </data>
@@ -401,6 +410,9 @@
   </data>
   <data name="Privacy Policy - Cookie Policy" xml:space="preserve">
     <value>Polisi Preifatrwydd - Polisi Cwcis</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Proffil</value>
   </data>
   <data name="Pwllheli" xml:space="preserve">
     <value>Pwllheli</value>
@@ -483,8 +495,14 @@
   <data name="Tenby" xml:space="preserve">
     <value>Dinbych-y-Pysgod</value>
   </data>
+  <data name="Thank you" xml:space="preserve">
+    <value>Diolch</value>
+  </data>
   <data name="Thank you for confirming your email" xml:space="preserve">
     <value>Diolch am gadarnhau eich e-bost</value>
+  </data>
+  <data name="Thank you for confirming your email change" xml:space="preserve">
+    <value>Diolch i chi am gadarnhau eich newid e-bost</value>
   </data>
   <data name="The city walls are the oldest, longest and most complete in Britain, parts of which are almost 2000 years old. Chester is the only city in Britain that retains the full circuit of its ancient defensive walls. Walking the complete circuit gives wondrous views down into the city and gives a fantastic insight into Chester's long history." xml:space="preserve">
     <value>Muriau’r ddinas yw’r hynaf, hiraf a mwyaf poblogaidd ym Mhrydain, rhannau ohonynyt bron yn 2000 oed. Caer yw’r unig ddinas ym Mhrydain sydd wedi cadw cylched lawn ei waliau amddiffynnol. Mae cerdded y gylched gyfan yn rhoi golygfeydd rhyfeddol i lawr i’r ddinas ac yn rhoi mewnwelediad gwych i hanes hir Caer.</value>

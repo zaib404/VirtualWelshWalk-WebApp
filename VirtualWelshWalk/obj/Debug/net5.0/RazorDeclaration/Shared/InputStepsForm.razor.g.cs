@@ -132,7 +132,7 @@ using System.Security.Claims;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 104 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Shared\InputStepsForm.razor"
+#line 102 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Shared\InputStepsForm.razor"
  
     #region Data Members
 
@@ -167,6 +167,12 @@ using System.Security.Claims;
     [Parameter]
     public int MilestoneCounter { get; set; }
 
+    [Parameter]
+    public string EmailAddress { get; set; }
+
+    [Parameter]
+    public string UserName { get; set; }
+
     CheckMilestone checkMilestone;
 
     #region Bool
@@ -178,11 +184,9 @@ using System.Security.Claims;
 
     double virtualStepsInMiles = 0;
 
-    #region Strings 
+    #region Strings
 
-    string UserName;
-    string EmailAddress;
-    string Space = "";
+    //string Space = "";
 
     #endregion
 
@@ -198,27 +202,23 @@ using System.Security.Claims;
         }
     }
 
-    protected override async Task OnAfterRenderAsync(bool firstRender)
+    protected async override Task OnAfterRenderAsync(bool firstRender)
     {
         checkMilestone = new CheckMilestone(dbMilestone, emailSender/*, UserManager, httpContent*/);
 
         try
         {
-            var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
-            var user = authState.User;
+            //var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+            //var user = authState.User;
 
-            UserName = authState.User.Identity.Name;
+            //UserName = authState.User.Identity.Name;
 
 
-            IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
+            //IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
 
-            _claims = user.Claims;
+            //_claims = user.Claims;
 
-            EmailAddress = user.FindFirst(c => c.Type == ClaimTypes.Email)?.Value;
-
-            //var user = await UserManager.GetUserAsync(httpContent.HttpContext.User);
-
-            //checkMilestone.SetData(user.Email, user.UserName);
+            //EmailAddress = user.FindFirst(c => c.Type == ClaimTypes.Email)?.Value;
 
             checkMilestone.SetData(EmailAddress, UserName);
         }
@@ -226,6 +226,8 @@ using System.Security.Claims;
         {
             Console.WriteLine(e.Message);
         }
+
+        await jsRunTime.InvokeVoidAsync("window.onload");
     }
 
     #endregion
