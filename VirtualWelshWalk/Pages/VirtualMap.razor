@@ -17,6 +17,7 @@
 @implements IAsyncDisposable
 @inject NavigationManager NavigationManager
 @inject SignInManager<User> _signInManager
+@inject EmailTemplate.Services.IRazorViewToStringRenderer _razorViewToStringRenderer
 
 <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
 
@@ -88,7 +89,7 @@ else
                     <div class="modal-body">
                         <InputStepsForm @ref="stepsForm" dbPeople="people" dbVirtualWalk="virtualWalk" dbMilestone="milestone"
                                         OnVirtualMapSubmit="Update" OnVirtualMapGetInfo="@ShowMileStoneUnlocked"
-                                        EmailAddress="@Emailadd" UserName="@Username"/>
+                                        EmailAddress="@Emailadd" UserName="@Username" />
                     </div>
 
                     <div class="modal-footer">
@@ -197,7 +198,7 @@ else
             Emailadd = user.FindFirst(c => c.Type == ClaimTypes.Email)?.Value;
 
             stepsForm = new InputStepsForm();
-            stepsForm.SetUpFromVirtualMap(VirtualMilestoneService, milestone, emailSender, Emailadd, Username);
+            stepsForm.SetUpFromVirtualMap(VirtualMilestoneService, milestone, emailSender, Emailadd, Username, _razorViewToStringRenderer);
         }
         catch (Exception e)
         {

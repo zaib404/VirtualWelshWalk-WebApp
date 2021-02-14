@@ -1,0 +1,24 @@
+﻿@using EmailTemplate.Views.Emails.Milestone
+@using EmailTemplate.Views.Shared
+@model NewMilestoneModel
+
+@{
+    ViewData["EmailTitle"] = Model.MilestoneName;
+}
+
+<hr />
+
+<p class=font-weight-bold>
+    Hello @Model.Name,
+</p>
+
+<p>
+    Congratulations on reaching a new milestone, check the attached file to view more information about the area you are at.
+</p>
+
+<br />
+
+<br />
+
+<br />
+

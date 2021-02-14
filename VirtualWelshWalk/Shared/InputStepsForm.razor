@@ -12,9 +12,9 @@
 @*@inject UserManager<User> UserManager*@
 @*@inject Microsoft.AspNetCore.Http.IHttpContextAccessor httpContent*@
 @inject AuthenticationStateProvider AuthenticationStateProvider
+@inject EmailTemplate.Services.IRazorViewToStringRenderer _razorViewToStringRenderer
 
 @implements IDisposable
-
 @* edit form on valid submit change bool ShowConfirmationModal to true Which then will display a modal asking to confirm changes *@
 <EditForm class="form-group" OnValidSubmit="() => ShowConfirmationModal = true" Model="@virtualSteps" method="post">
     <DataAnnotationsValidator />
@@ -170,7 +170,7 @@
 
     protected async override Task OnAfterRenderAsync(bool firstRender)
     {
-        checkMilestone = new CheckMilestone(dbMilestone, emailSender/*, UserManager, httpContent*/);
+        checkMilestone = new CheckMilestone(dbMilestone, emailSender, _razorViewToStringRenderer);
 
         try
         {
@@ -325,9 +325,9 @@
 
     public void SetUpFromVirtualMap(IVirtualMilestonesService milestonesService,
         VirtualMilestone pDbMilestone, EmailService.IEmailSender pEmailSender,
-        string pEmailAddress, string pUserName)
+        string pEmailAddress, string pUserName, EmailTemplate.Services.IRazorViewToStringRenderer razorViewToStringRenderer)
     {
-        checkMilestone = new CheckMilestone(pDbMilestone, pEmailSender);
+        checkMilestone = new CheckMilestone(pDbMilestone, pEmailSender, razorViewToStringRenderer);
         checkMilestone.SetData(pEmailAddress, pUserName);
 
         dbMilestone = pDbMilestone;

@@ -204,7 +204,7 @@ using System.Security.Claims;
 
     protected async override Task OnAfterRenderAsync(bool firstRender)
     {
-        checkMilestone = new CheckMilestone(dbMilestone, emailSender/*, UserManager, httpContent*/);
+        checkMilestone = new CheckMilestone(dbMilestone, emailSender, _razorViewToStringRenderer);
 
         try
         {
@@ -359,9 +359,9 @@ using System.Security.Claims;
 
     public void SetUpFromVirtualMap(IVirtualMilestonesService milestonesService,
         VirtualMilestone pDbMilestone, EmailService.IEmailSender pEmailSender,
-        string pEmailAddress, string pUserName)
+        string pEmailAddress, string pUserName, EmailTemplate.Services.IRazorViewToStringRenderer razorViewToStringRenderer)
     {
-        checkMilestone = new CheckMilestone(pDbMilestone, pEmailSender);
+        checkMilestone = new CheckMilestone(pDbMilestone, pEmailSender, razorViewToStringRenderer);
         checkMilestone.SetData(pEmailAddress, pUserName);
 
         dbMilestone = pDbMilestone;
@@ -371,6 +371,7 @@ using System.Security.Claims;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private EmailTemplate.Services.IRazorViewToStringRenderer _razorViewToStringRenderer { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private AuthenticationStateProvider AuthenticationStateProvider { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private EmailService.IEmailSender emailSender { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IVirtualMilestonesService MilestoneService { get; set; }

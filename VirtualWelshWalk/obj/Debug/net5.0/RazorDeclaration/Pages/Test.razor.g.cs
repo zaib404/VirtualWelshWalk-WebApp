@@ -105,7 +105,7 @@ using EmailService;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 18 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\Test.razor"
+#line 26 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\Test.razor"
        
 
     async Task SendEmail()
@@ -131,6 +131,29 @@ using EmailService;
 
         await _emailSender.SendEmailAsync(message);
     }
+
+    async Task SendEmail3()
+    {
+        var confirmAccountModel = new EmailTemplate.Views.Emails.Milestone.NewMilestoneModel("Tintern Abbey", "Test Test");
+
+        string body = await _razorViewToStringRenderer.RenderViewToStringAsync(@"\Views\Emails\Milestone\NewMilestone.cshtml", confirmAccountModel);
+
+        var message = new Message(new string[] { "zaib_inamdar@hotmail.com" }, "Postcard from Tintern Abby", body, new List<string>() { @"EmailAttachments\Welsh coastal walk .pdf" });
+
+        await _emailSender.SendEmailAsync(message);
+    }
+
+    void SendEmail4()
+    {
+        var confirmAccountModel = new EmailTemplate.Views.Emails.Milestone.NewMilestoneModel("Tintern Abbey", "Test Test");
+
+        string body = _razorViewToStringRenderer.RenderViewToStringAsync(@"\Views\Emails\Milestone\NewMilestone.cshtml", confirmAccountModel).Result;
+
+        var message = new Message(new string[] { "zaib_inamdar@hotmail.com" }, "Postcard from Tintern Abby", body, new List<string>() { @"EmailAttachments\Welsh coastal walk .pdf" });
+
+        _emailSender.SendEmailAsync(message);
+    }
+
 
 #line default
 #line hidden

@@ -126,7 +126,7 @@ using System.Security.Claims;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 104 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
+#line 105 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
  
     public People people { get; set; } = new People();
     public VirtualWalk virtualWalk { get; set; } = new VirtualWalk();
@@ -223,7 +223,7 @@ using System.Security.Claims;
             Emailadd = user.FindFirst(c => c.Type == ClaimTypes.Email)?.Value;
 
             stepsForm = new InputStepsForm();
-            stepsForm.SetUpFromVirtualMap(VirtualMilestoneService, milestone, emailSender, Emailadd, Username);
+            stepsForm.SetUpFromVirtualMap(VirtualMilestoneService, milestone, emailSender, Emailadd, Username, _razorViewToStringRenderer);
         }
         catch (Exception e)
         {
@@ -552,6 +552,7 @@ using System.Security.Claims;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private EmailTemplate.Services.IRazorViewToStringRenderer _razorViewToStringRenderer { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private SignInManager<User> _signInManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private AuthenticationStateProvider AuthenticationStateProvider { get; set; }

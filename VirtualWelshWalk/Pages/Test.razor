@@ -15,6 +15,14 @@
     <button class="btn btn-primary" style="width:100%;" @onclick="@SendEmail2">Reset Password</button>
 </div>
 
+<div class="container p-5">
+    <button class="btn btn-primary" style="width:100%;" @onclick="@SendEmail3">Milestone</button>
+</div>
+
+<div class="container p-5">
+    <button class="btn btn-primary" style="width:100%;" @onclick="@SendEmail4">Not Async Milestone</button>
+</div>
+
 @code {
 
     async Task SendEmail()
@@ -40,4 +48,27 @@
 
         await _emailSender.SendEmailAsync(message);
     }
+
+    async Task SendEmail3()
+    {
+        var confirmAccountModel = new EmailTemplate.Views.Emails.Milestone.NewMilestoneModel("Tintern Abbey", "Test Test");
+
+        string body = await _razorViewToStringRenderer.RenderViewToStringAsync(@"\Views\Emails\Milestone\NewMilestone.cshtml", confirmAccountModel);
+
+        var message = new Message(new string[] { "zaib_inamdar@hotmail.com" }, "Postcard from Tintern Abby", body, new List<string>() { @"EmailAttachments\Welsh coastal walk .pdf" });
+
+        await _emailSender.SendEmailAsync(message);
+    }
+
+    void SendEmail4()
+    {
+        var confirmAccountModel = new EmailTemplate.Views.Emails.Milestone.NewMilestoneModel("Tintern Abbey", "Test Test");
+
+        string body = _razorViewToStringRenderer.RenderViewToStringAsync(@"\Views\Emails\Milestone\NewMilestone.cshtml", confirmAccountModel).Result;
+
+        var message = new Message(new string[] { "zaib_inamdar@hotmail.com" }, "Postcard from Tintern Abby", body, new List<string>() { @"EmailAttachments\Welsh coastal walk .pdf" });
+
+        _emailSender.SendEmailAsync(message);
+    }
+
 }
