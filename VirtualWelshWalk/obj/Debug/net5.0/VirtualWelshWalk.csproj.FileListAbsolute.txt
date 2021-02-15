@@ -33,8 +33,6 @@ D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\appsettings.json
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\libman.json
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\VirtualWelshWalk.StaticWebAssets.xml
-D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailAttachments\Virtual Welsh Walk Wireframe V1.pdf
-D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailAttachments\Welsh coastal walk .pdf
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\favicon.ico
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\VirtualWelshWalk.exe
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\VirtualWelshWalk.deps.json
@@ -264,3 +262,26 @@ D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\ref\VirtualWelshWalk.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\VirtualWelshWalk.pdb
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\VirtualWelshWalk.genruntimeconfig.cache
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailAttachments\Barafundle Bay.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailAttachments\Beaumaris Castle.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailAttachments\Bedd Gelert.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailAttachments\Caernarfon Castle.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailAttachments\Cardiff Castle.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailAttachments\Cardigan Castle.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailAttachments\City Walls.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailAttachments\Conwy Castle.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailAttachments\Fall Bay.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailAttachments\Harlech Castle.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailAttachments\Kidwelly Castle.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailAttachments\Mumbles Pier.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailAttachments\Nant Gwrtheyrn.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailAttachments\Parc y Scarlets.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailAttachments\Plas Tan y Bwlch.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailAttachments\Rest Bay Beach.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailAttachments\Round House.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailAttachments\St. Catherines Island.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailAttachments\St. Davids Cathedral.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailAttachments\Stack Rock Fort.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailAttachments\Strumble Head Lighthouse.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailAttachments\Tintern Abbey.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailAttachments\Transporter Bridge.pdf
