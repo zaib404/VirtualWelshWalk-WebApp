@@ -126,7 +126,7 @@ using System.Security.Claims;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 105 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
+#line 103 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
  
     public People people { get; set; } = new People();
     public VirtualWalk virtualWalk { get; set; } = new VirtualWalk();
@@ -192,9 +192,14 @@ using System.Security.Claims;
 
             ShowMileStoneUnlocked(await stepsForm.CallVirtualMapGetInfoChanged(virtualWalk.TotalSteps));
 
+            string json = System.IO.File.ReadAllText("./wwwroot/scripts/WalkRoute.json");
+
             mapModule = await jsRunTime.InvokeAsync<IJSObjectReference>("import", "./scripts/MapBox.js").AsTask();
+
+            await mapModule.InvokeVoidAsync("ParseJson", json);
+
             mapInstance = await mapModule.InvokeAsync<IJSObjectReference>(
-                "initialize", mapElement).AsTask();
+            "initialize", mapElement).AsTask();
 
             if (virtualWalk != null && mapModule != null)
             {

@@ -19,8 +19,6 @@
 @inject SignInManager<User> _signInManager
 @inject EmailTemplate.Services.IRazorViewToStringRenderer _razorViewToStringRenderer
 
-<link href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
-
 <style>
     .marker {
         background-size: cover;
@@ -167,9 +165,14 @@ else
 
             ShowMileStoneUnlocked(await stepsForm.CallVirtualMapGetInfoChanged(virtualWalk.TotalSteps));
 
+            string json = System.IO.File.ReadAllText("./wwwroot/scripts/WalkRoute.json");
+
             mapModule = await jsRunTime.InvokeAsync<IJSObjectReference>("import", "./scripts/MapBox.js").AsTask();
+
+            await mapModule.InvokeVoidAsync("ParseJson", json);
+
             mapInstance = await mapModule.InvokeAsync<IJSObjectReference>(
-                "initialize", mapElement).AsTask();
+            "initialize", mapElement).AsTask();
 
             if (virtualWalk != null && mapModule != null)
             {

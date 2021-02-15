@@ -118,7 +118,7 @@ using System.Security.Claims;
 #line hidden
 #nullable disable
 #nullable restore
-#line 12 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
+#line 13 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\_Imports.razor"
 [Authorize]
 
 #line default
@@ -132,8 +132,11 @@ using System.Security.Claims;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 105 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Shared\InputStepsForm.razor"
+#line 102 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Shared\InputStepsForm.razor"
  
+    #region Data Members
+
+    #region Class passed around
     [Parameter]
     public VirtualTotalSteps virtualSteps { get; set; }
 
@@ -146,6 +149,10 @@ using System.Security.Claims;
     [Parameter]
     public VirtualMilestone dbMilestone { get; set; }
 
+    #endregion
+
+    #region Events
+
     [Parameter]
     public EventCallback<int> OnTotalStepsChanged { get; set; }
 
@@ -155,19 +162,35 @@ using System.Security.Claims;
     [Parameter]
     public EventCallback<int> OnVirtualMapGetInfo { get; set; }
 
+    #endregion
+
     [Parameter]
     public int MilestoneCounter { get; set; }
 
+    [Parameter]
+    public string EmailAddress { get; set; }
+
+    [Parameter]
+    public string UserName { get; set; }
+
     CheckMilestone checkMilestone;
+
+    #region Bool
 
     bool ShowConfirmationModal = false;
     bool ShowNewMilestoneUnlocked = false;
 
+    #endregion
+
     double virtualStepsInMiles = 0;
 
-    string UserName;
-    string EmailAddress;
-    string Space = "";
+    #region Strings
+
+    //string Space = "";
+
+    #endregion
+
+    #endregion
 
     #region When first loading
 
@@ -179,27 +202,23 @@ using System.Security.Claims;
         }
     }
 
-    protected override async Task OnAfterRenderAsync(bool firstRender)
+    protected async override Task OnAfterRenderAsync(bool firstRender)
     {
-        checkMilestone = new CheckMilestone(dbMilestone, emailSender/*, UserManager, httpContent*/);
+        checkMilestone = new CheckMilestone(dbMilestone, emailSender, _razorViewToStringRenderer);
 
         try
         {
-            var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
-            var user = authState.User;
+            //var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+            //var user = authState.User;
 
-            UserName = authState.User.Identity.Name;
+            //UserName = authState.User.Identity.Name;
 
 
-            IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
+            //IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
 
-            _claims = user.Claims;
+            //_claims = user.Claims;
 
-            EmailAddress = user.FindFirst(c => c.Type == ClaimTypes.Email)?.Value;
-
-            //var user = await UserManager.GetUserAsync(httpContent.HttpContext.User);
-
-            //checkMilestone.SetData(user.Email, user.UserName);
+            //EmailAddress = user.FindFirst(c => c.Type == ClaimTypes.Email)?.Value;
 
             checkMilestone.SetData(EmailAddress, UserName);
         }
@@ -207,6 +226,8 @@ using System.Security.Claims;
         {
             Console.WriteLine(e.Message);
         }
+
+        await jsRunTime.InvokeVoidAsync("window.onload");
     }
 
     #endregion
@@ -231,6 +252,11 @@ using System.Security.Claims;
         if (ShowNewMilestoneUnlocked)
         {
             await MilestoneService.UpdateVirtualMilestones(checkMilestone.dbMilestone);
+        }
+
+        if (OnTotalStepsChanged.HasDelegate)
+        {
+            await UpdateTotalStepsChanged();
         }
     }
 
@@ -333,9 +359,9 @@ using System.Security.Claims;
 
     public void SetUpFromVirtualMap(IVirtualMilestonesService milestonesService,
         VirtualMilestone pDbMilestone, EmailService.IEmailSender pEmailSender,
-        string pEmailAddress, string pUserName)
+        string pEmailAddress, string pUserName, EmailTemplate.Services.IRazorViewToStringRenderer razorViewToStringRenderer)
     {
-        checkMilestone = new CheckMilestone(pDbMilestone, pEmailSender);
+        checkMilestone = new CheckMilestone(pDbMilestone, pEmailSender, razorViewToStringRenderer);
         checkMilestone.SetData(pEmailAddress, pUserName);
 
         dbMilestone = pDbMilestone;
@@ -345,11 +371,13 @@ using System.Security.Claims;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private EmailTemplate.Services.IRazorViewToStringRenderer _razorViewToStringRenderer { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private AuthenticationStateProvider AuthenticationStateProvider { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private EmailService.IEmailSender emailSender { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IVirtualMilestonesService MilestoneService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IPeopleService PeopleService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IVirtualWalkService WalkService { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime jsRunTime { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private Microsoft.Extensions.Localization.IStringLocalizer<App> Localizer { get; set; }
     }
 }

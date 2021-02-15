@@ -15,15 +15,28 @@ function readJSON(file) {
     return JSON.parse(request.responseText);
 };
 
+export function ParseJson (jsonFile)
+{
+    mapRouteJson = JSON.parse(jsonFile);
+}
+
 export function initialize() {
 
-    mapRouteJson = readJSON('./scripts/WalkRoute1.json');
+    //mapRouteJson = readJSON('./scripts/WalkRoute.json');
 
     map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',
         center: [-2.676758, 51.696951],
         zoom: 7
+    });
+
+    map.on('load', function () {
+        if (draw) {
+            addLogo();
+            //colourPath();
+            //map.resize();
+        }
     });
 
     var bounds = [
@@ -67,15 +80,6 @@ export function initialize() {
         .setPopup(new mapboxgl.Popup({ offset: [0, -15] })
             .setHTML('<h4>' + "You are here" + '</h4>'))
         .addTo(map);
-
-    map.on('load', function () {
-        if (draw)
-        {
-            addLogo();
-            //colourPath();
-            map.resize();
-        }
-    });
 
     personMarker.getElement().addEventListener('click', () => {
         map.flyTo({

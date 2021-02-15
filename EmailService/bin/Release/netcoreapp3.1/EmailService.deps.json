@@ -8,11 +8,20 @@
     ".NETCoreApp,Version=v3.1": {
       "EmailService/1.0.0": {
         "dependencies": {
+          "HtmlAgilityPack": "1.11.30",
           "Microsoft.AspNetCore.Http.Features": "5.0.2",
           "NETCore.MailKit": "2.0.3"
         },
         "runtime": {
           "EmailService.dll": {}
+        }
+      },
+      "HtmlAgilityPack/1.11.30": {
+        "runtime": {
+          "lib/netstandard2.0/HtmlAgilityPack.dll": {
+            "assemblyVersion": "1.11.30.0",
+            "fileVersion": "1.11.30.0"
+          }
         }
       },
       "MailKit/2.6.0": {
@@ -619,6 +628,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "HtmlAgilityPack/1.11.30": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IuOSVuuHCJKrnAjNe5rZnZCyR/NpXL6ExEL7UiM8h4fnhbt8tLqIKol9q5Lv0uoxWO8fl9Uq+1kpGfMDUdr5zA==",
+      "path": "htmlagilitypack/1.11.30",
+      "hashPath": "htmlagilitypack.1.11.30.nupkg.sha512"
     },
     "MailKit/2.6.0": {
       "type": "package",
