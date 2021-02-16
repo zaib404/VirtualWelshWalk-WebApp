@@ -199,7 +199,7 @@ using System.Security.Claims;
             await mapModule.InvokeVoidAsync("ParseJson", json);
 
             mapInstance = await mapModule.InvokeAsync<IJSObjectReference>(
-            "initialize", mapElement);
+            "initialize", mapElement).AsTask();
 
             if (virtualWalk != null && mapModule != null)
             {

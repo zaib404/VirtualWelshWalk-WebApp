@@ -133,11 +133,11 @@
     [Parameter]
     public int MilestoneCounter { get; set; }
 
-    [Parameter]
-    public string EmailAddress { get; set; }
+    //[Parameter]
+    //public string EmailAddress { get; set; }
 
-    [Parameter]
-    public string UserName { get; set; }
+    //[Parameter]
+    //public string UserName { get; set; }
 
     CheckMilestone checkMilestone;
 
@@ -170,28 +170,28 @@
 
     protected async override Task OnAfterRenderAsync(bool firstRender)
     {
-        checkMilestone = new CheckMilestone(dbMilestone, emailSender, _razorViewToStringRenderer);
+        checkMilestone = new CheckMilestone(dbMilestone, emailSender, _razorViewToStringRenderer, AuthenticationStateProvider);
 
-        try
-        {
-            //var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
-            //var user = authState.User;
+        //try
+        //{
+        //    //var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        //    //var user = authState.User;
 
-            //UserName = authState.User.Identity.Name;
+        //    //UserName = authState.User.Identity.Name;
 
 
-            //IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
+        //    //IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
 
-            //_claims = user.Claims;
+        //    //_claims = user.Claims;
 
-            //EmailAddress = user.FindFirst(c => c.Type == ClaimTypes.Email)?.Value;
+        //    //EmailAddress = user.FindFirst(c => c.Type == ClaimTypes.Email)?.Value;
 
-            checkMilestone.SetData(EmailAddress, UserName);
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e.Message);
-        }
+        //    //checkMilestone.SetData(EmailAddress, UserName);
+        //}
+        //catch (Exception e)
+        //{
+        //    Console.WriteLine(e.Message);
+        //}
 
         await jsRunTime.InvokeVoidAsync("window.onload");
     }
@@ -325,10 +325,11 @@
 
     public void SetUpFromVirtualMap(IVirtualMilestonesService milestonesService,
         VirtualMilestone pDbMilestone, EmailService.IEmailSender pEmailSender,
-        string pEmailAddress, string pUserName, EmailTemplate.Services.IRazorViewToStringRenderer razorViewToStringRenderer)
+        /*string pEmailAddress, string pUserName,*/ 
+        EmailTemplate.Services.IRazorViewToStringRenderer razorViewToStringRenderer, AuthenticationStateProvider AuthenticationStateProvider)
     {
-        checkMilestone = new CheckMilestone(pDbMilestone, pEmailSender, razorViewToStringRenderer);
-        checkMilestone.SetData(pEmailAddress, pUserName);
+        checkMilestone = new CheckMilestone(pDbMilestone, pEmailSender, razorViewToStringRenderer, AuthenticationStateProvider);
+        //checkMilestone.SetData(pEmailAddress, pUserName);
 
         dbMilestone = pDbMilestone;
         MilestoneService = milestonesService;

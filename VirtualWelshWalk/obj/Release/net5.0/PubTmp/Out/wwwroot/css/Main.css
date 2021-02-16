@@ -1,0 +1,113 @@
+﻿/* xs < 768 */
+@media screen and (max-width: 767px) 
+{
+    .navLogo{
+        max-height: 2.7em;
+    }
+
+    .hero-text
+    {
+        font-size:2em;
+    }
+}
+
+/* sm */
+@media screen and (min-width: 768px) {
+    .navLogo {
+        max-height: 4em;
+    }
+
+    .hero-text {
+        font-size: 2.5em;
+    }
+}
+
+/* md */
+@media screen and (min-width: 992px) {
+    .navLogo {
+        max-height: 5em;
+    }
+
+    .hero-text {
+        font-size: 3em;
+    }
+}
+
+/* lg */
+@media screen and (min-width: 1200px) {
+    
+    .navLogo {
+        max-height: 5em;
+    }
+
+    .hero-text {
+        font-size: 3.5em;
+    }
+}
+
+.navButtons {
+    max-height: 2em;
+}
+
+.navText{
+    vertical-align: bottom;
+}
+
+.navTextWIcon {
+    vertical-align: text-top;
+}
+
+.navText, .navTextWIcon {
+    font-weight: 900;
+    font-size: x-large;
+    color: white;
+}
+
+.iconSize {
+    color: white;
+    font-family: 'Century Gothic';
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.iconText
+{
+    font-family:'Century Gothic';
+    font-size: 25px;
+    font-weight:normal;
+}
+
+.navBG {
+    background-image: url('/Assets/WebPage/header_bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.Log, .Reg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+
+.Log {
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url('/Assets/Culture/Strumble Head Lighthouse.jpg');
+}
+
+.Reg {
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url('/Assets/Culture/Tintern Abbey.jpg');
+}
+
+.iconColor {
+    color: #af3182;
+}
+
+.nav-pills > .active > a, .nav-pills > .active > a:hover {
+    background-color: red;
+}
+
+.frmIconWidth
+{
+    width:3em;
+}

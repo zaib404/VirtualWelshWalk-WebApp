@@ -225,6 +225,9 @@
   <data name="Close" xml:space="preserve">
     <value>Close</value>
   </data>
+  <data name="Coastal walk" xml:space="preserve">
+    <value>Coastal walk</value>
+  </data>
   <data name="Confirm email change" xml:space="preserve">
     <value>Confirm email change</value>
   </data>
@@ -318,8 +321,8 @@
   <data name="JOIN NOW" xml:space="preserve">
     <value>JOIN NOW</value>
   </data>
-  <data name="Kidwelly Castel" xml:space="preserve">
-    <value>Kidwelly Castel</value>
+  <data name="Kidwelly Castle" xml:space="preserve">
+    <value>Kidwelly Castle</value>
   </data>
   <data name="Kidwelly Castle is a Norman castle overlooking the River Gwendraeth and the town of Kidwelly, Carmarthenshire, Wales. Origin of this surname trace back to when it was spelled Cygweli which means &quot;swan.&quot; Later in its history, it was unsuccessfully besieged by forces of Owain Glyndŵr in 1403 with assistance from soldiers from France and Brittany who captured Kidwelly town. The castle was relieved by a Norman army after just three weeks." xml:space="preserve">
     <value>Kidwelly Castle is a Norman castle overlooking the River Gwendraeth and the town of Kidwelly, Carmarthenshire, Wales. Origin of this surname trace back to when it was spelled Cygweli which means "swan." Later in its history, it was unsuccessfully besieged by forces of Owain Glyndŵr in 1403 with assistance from soldiers from France and Brittany who captured Kidwelly town. The castle was relieved by a Norman army after just three weeks.</value>
@@ -450,10 +453,10 @@
   <data name="Save changes" xml:space="preserve">
     <value>Save changes</value>
   </data>
-  <data name="St. Catherines Island" xml:space="preserve">
-    <value>St. Catherines Island</value>
+  <data name="St. Catherine’s Island" xml:space="preserve">
+    <value>St. Catherine’s Island</value>
   </data>
-  <data name="St. Catherines Island is a small tidal island linked to Tenby in Pembrokeshire, Wales. 2016 The Final Problem, the third and last episode of the fourth series of the BBC TV series Sherlock was filmed on the island, with it standing in as a maximum security prison.  Formed from an outcrop of limestone, on average 25m high, the island is riddled with tidal caves." xml:space="preserve">
+  <data name="St. Catherine’s Island is a small tidal island linked to Tenby in Pembrokeshire, Wales. 2016 The Final Problem, the third and last episode of the fourth series of the BBC TV series Sherlock was filmed on the island, with it standing in as a maximum security prison.  Formed from an outcrop of limestone, on average 25m high, the island is riddled with tidal caves." xml:space="preserve">
     <value>St. Catherines Island is a small tidal island linked to Tenby in Pembrokeshire, Wales. 2016 The Final Problem, the third and last episode of the fourth series of the BBC TV series Sherlock was filmed on the island, with it standing in as a maximum security prison.  Formed from an outcrop of limestone, on average 25m high, the island is riddled with tidal caves.</value>
   </data>
   <data name="St. Davids" xml:space="preserve">
@@ -462,9 +465,8 @@
   <data name="St. Davids Cathedral" xml:space="preserve">
     <value>St. Davids Cathedral</value>
   </data>
-  <data name="St. Davids Cathedral is situated in St Davids in the county of Pembrokeshire, on the most westerly point of Wales. There are at least three services said or sung per day, each week, with sung services on five out of seven days.&#xD;&#xA;The cathedral choir at St Davids was the first cathedral choir in the United Kingdom to use girls and men as the main choir, rather than boys and men." xml:space="preserve">
-    <value>St. Davids Cathedral is situated in St Davids in the county of Pembrokeshire, on the most westerly point of Wales. There are at least three services said or sung per day, each week, with sung services on five out of seven days.
-The cathedral choir at St Davids was the first cathedral choir in the United Kingdom to use girls and men as the main choir, rather than boys and men.</value>
+  <data name="St. Davids Cathedral is situated in St. Davids in the county of Pembrokeshire, on the most westerly point of Wales. There are at least three services said or sung per day, each week, with sung services on five out of seven days. The cathedral choir at St. Davids was the first cathedral choir in the United Kingdom to use girls and men as the main choir, rather than boys and men." xml:space="preserve">
+    <value>St. Davids Cathedral is situated in St. Davids in the county of Pembrokeshire, on the most westerly point of Wales. There are at least three services said or sung per day, each week, with sung services on five out of seven days. The cathedral choir at St. Davids was the first cathedral choir in the United Kingdom to use girls and men as the main choir, rather than boys and men.</value>
   </data>
   <data name="Stack Rock Fort" xml:space="preserve">
     <value>Stack Rock Fort</value>

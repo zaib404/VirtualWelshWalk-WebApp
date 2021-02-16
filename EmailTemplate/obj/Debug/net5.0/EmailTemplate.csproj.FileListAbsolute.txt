@@ -31,3 +31,4 @@ D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\obj\Debug\net5.0\E
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\obj\Debug\net5.0\ref\EmailTemplate.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\obj\Debug\net5.0\EmailTemplate.pdb
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\obj\Debug\net5.0\EmailTemplate.csproj.CopyComplete
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\obj\Debug\net5.0\EmailTemplate.csprojAssemblyReference.cache

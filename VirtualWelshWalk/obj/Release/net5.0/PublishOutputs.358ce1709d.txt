@@ -1,0 +1,324 @@
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\VirtualWelshWalk.exe
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\EmailTemplate.Views.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\EmailTemplate.Views.pdb
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\libman.json
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Assets\css\bootstrap\bootstrap.min.css
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Assets\css\bootstrap\bootstrap.min.css.map
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Assets\css\Main.css
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Assets\css\open-iconic\FONT-LICENSE
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Assets\css\open-iconic\font\css\open-iconic-bootstrap.min.css
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Assets\css\open-iconic\font\fonts\open-iconic.eot
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Assets\css\open-iconic\font\fonts\open-iconic.otf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Assets\css\open-iconic\font\fonts\open-iconic.svg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Assets\css\open-iconic\font\fonts\open-iconic.ttf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Assets\css\open-iconic\font\fonts\open-iconic.woff
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Assets\css\open-iconic\ICON-LICENSE
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Assets\css\open-iconic\README.md
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Assets\css\site.css
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Assets\Font\911Fonts.com_CenturyGothicBold__-_911fonts.com_fonts_pMgo.ttf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\Banner.PNG
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\Culture\Barafundle Bay.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\Culture\Beaumaris Castle.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\Culture\Bedd Gelert.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\Culture\Caernarfon Castle.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\Culture\Cardiff Castle.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\Culture\Cardigan Castle.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\Culture\City Walls.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\Culture\Conwy Castle.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\Culture\Fall Bay.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\Culture\Harlech Castle.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\Culture\Kidwelly Castle.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\Culture\Mumbles Pier.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\Culture\Nant Gwrtheyrn.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\Culture\Parc y Scarlets.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\Culture\Rest bay Beach.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\Culture\Round House.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\Culture\St Catherine’s Island.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\Culture\St Davids Cathedral.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\Culture\St Padarns Church.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\Culture\Stack Rock Fort.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\Culture\Strumble Head Lighthouse.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\Culture\Tintern Abbey.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\Culture\Transporter Bridge.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\Educ8-Logo.png
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\Map-Icon.png
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\Walking-Man.png
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\WebPage\BeddGelertRound.png
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\WebPage\blue_bg_watermark.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\WebPage\CardiffCastleRound.png
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\WebPage\header_bg.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\WebPage\home.png
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\WebPage\home1.png
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\WebPage\homeicon.png
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\WebPage\logo_with_text.png
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\WebPage\log_in.png
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\WebPage\log_inicon.png
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\WebPage\log_out.png
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\WebPage\log_outicon.png
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\WebPage\picture_bg.jpg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\WebPage\Register.png
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\WebPage\Registericon.png
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Assets\WebPage\StDavidsCathedralRound.png
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\css\bootstrap\bootstrap.min.css
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\css\bootstrap\bootstrap.min.css.map
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\css\Main.css
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\css\open-iconic\FONT-LICENSE
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\css\open-iconic\font\css\open-iconic-bootstrap.min.css
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\css\open-iconic\font\fonts\open-iconic.eot
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\css\open-iconic\font\fonts\open-iconic.otf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\css\open-iconic\font\fonts\open-iconic.svg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\css\open-iconic\font\fonts\open-iconic.ttf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\css\open-iconic\font\fonts\open-iconic.woff
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\css\open-iconic\ICON-LICENSE
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\css\open-iconic\README.md
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\css\site.css
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\debug.log
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\favicon.ico
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\css\all.css
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\css\all.min.css
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\css\brands.css
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\css\brands.min.css
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\css\fontawesome.css
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\css\fontawesome.min.css
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\css\regular.css
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\css\regular.min.css
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\css\solid.css
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\css\solid.min.css
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\css\svg-with-js.css
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\css\svg-with-js.min.css
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\css\v4-shims.css
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\css\v4-shims.min.css
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\js\all.js
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\js\all.min.js
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\js\brands.js
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\js\brands.min.js
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\js\conflict-detection.js
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\js\conflict-detection.min.js
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\js\fontawesome.js
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\js\fontawesome.min.js
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\js\regular.js
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\js\regular.min.js
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\js\solid.js
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\js\solid.min.js
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\js\v4-shims.js
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\js\v4-shims.min.js
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\sprites\brands.svg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\sprites\regular.svg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\sprites\solid.svg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\webfonts\fa-brands-400.eot
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\webfonts\fa-brands-400.svg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\webfonts\fa-brands-400.ttf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\webfonts\fa-brands-400.woff
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\webfonts\fa-brands-400.woff2
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\webfonts\fa-regular-400.eot
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\webfonts\fa-regular-400.svg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\webfonts\fa-regular-400.ttf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\webfonts\fa-regular-400.woff
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\webfonts\fa-regular-400.woff2
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\webfonts\fa-solid-900.eot
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\webfonts\fa-solid-900.svg
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\webfonts\fa-solid-900.ttf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\webfonts\fa-solid-900.woff
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\font-awesome\webfonts\fa-solid-900.woff2
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Font\911Fonts.com_CenturyGothicBold__-_911fonts.com_fonts_pMgo.ttf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\scripts\ExternalScripts.js
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\scripts\MapBox.js
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\scripts\turf.min.js
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\scripts\WalkRoute.json
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\appsettings.Development.json
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\appsettings.json
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\EmailAttachments\Barafundle Bay.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\EmailAttachments\Beaumaris Castle.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\EmailAttachments\Bedd Gelert.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\EmailAttachments\Caernarfon Castle.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\EmailAttachments\Cardiff Castle.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\EmailAttachments\Cardigan Castle.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\EmailAttachments\City Walls.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\EmailAttachments\Conwy Castle.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\EmailAttachments\Fall Bay.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\EmailAttachments\Harlech Castle.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\EmailAttachments\Kidwelly Castle.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\EmailAttachments\Mumbles Pier.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\EmailAttachments\Nant Gwrtheyrn.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\EmailAttachments\Parc y Scarlets.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\EmailAttachments\Plas Tan y Bwlch.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\EmailAttachments\Rest Bay Beach.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\EmailAttachments\Round House.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\EmailAttachments\St. Catherines Island.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\EmailAttachments\St. Davids Cathedral.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\EmailAttachments\Stack Rock Fort.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\EmailAttachments\Strumble Head Lighthouse.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\EmailAttachments\Tintern Abbey.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\EmailAttachments\Transporter Bridge.pdf
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\favicon.ico
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\VirtualWelshWalk.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\VirtualWelshWalk.runtimeconfig.json
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\VirtualWelshWalk.pdb
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\cy\VirtualWelshWalk.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Blazored.SessionStorage.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\EntityFramework.SqlServer.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\EntityFramework.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\HtmlAgilityPack.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Humanizer.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\MailKit.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Microsoft.AspNetCore.Http.Features.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Microsoft.AspNetCore.Identity.UI.Views.V3.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Microsoft.AspNetCore.Identity.UI.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Microsoft.AspNetCore.Razor.Language.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Microsoft.Bcl.HashCode.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Microsoft.CodeAnalysis.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Microsoft.CodeAnalysis.CSharp.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Microsoft.CodeAnalysis.Razor.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Microsoft.CodeAnalysis.Workspaces.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Microsoft.Data.SqlClient.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Microsoft.EntityFrameworkCore.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Microsoft.Extensions.Localization.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Microsoft.Extensions.Localization.Abstractions.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Microsoft.Identity.Client.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Microsoft.IdentityModel.Logging.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Microsoft.IdentityModel.Protocols.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Microsoft.IdentityModel.Tokens.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Microsoft.VisualStudio.Web.CodeGeneration.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\dotnet-aspnet-codegenerator-design.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\MimeKit.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\MySqlConnector.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\NETCore.MailKit.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Newtonsoft.Json.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Pomelo.EntityFrameworkCore.MySql.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\Pomelo.JsonObject.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\BouncyCastle.Crypto.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\System.CodeDom.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\System.Composition.AttributedModel.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\System.Composition.Convention.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\System.Composition.Hosting.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\System.Composition.Runtime.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\System.Composition.TypedParts.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\System.Configuration.ConfigurationManager.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\System.Data.SqlClient.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\System.IdentityModel.Tokens.Jwt.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\System.IO.Pipelines.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\System.Runtime.Caching.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\System.Security.Cryptography.ProtectedData.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\cs\Microsoft.CodeAnalysis.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\de\Microsoft.CodeAnalysis.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\es\Microsoft.CodeAnalysis.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\fr\Microsoft.CodeAnalysis.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\it\Microsoft.CodeAnalysis.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\ja\Microsoft.CodeAnalysis.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\ko\Microsoft.CodeAnalysis.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\pl\Microsoft.CodeAnalysis.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\ru\Microsoft.CodeAnalysis.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\tr\Microsoft.CodeAnalysis.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\runtimes\win-arm\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\runtimes\win-arm64\native\sni.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\runtimes\win-x64\native\sni.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\runtimes\win-x86\native\sni.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\EmailService.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\EmailTemplate.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\EmailService.pdb
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\EmailTemplate.pdb
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\css\site.css
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\favicon.ico
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\js\site.js
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\lib\bootstrap\dist\css\bootstrap-grid.css
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\lib\bootstrap\dist\css\bootstrap-grid.css.map
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\lib\bootstrap\dist\css\bootstrap-grid.min.css
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\lib\bootstrap\dist\css\bootstrap-grid.min.css.map
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\lib\bootstrap\dist\css\bootstrap-reboot.css
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\lib\bootstrap\dist\css\bootstrap-reboot.css.map
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\lib\bootstrap\dist\css\bootstrap-reboot.min.css
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\lib\bootstrap\dist\css\bootstrap.css
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\lib\bootstrap\dist\css\bootstrap.css.map
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\lib\bootstrap\dist\css\bootstrap.min.css
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\lib\bootstrap\dist\css\bootstrap.min.css.map
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\lib\bootstrap\dist\js\bootstrap.bundle.js
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\lib\bootstrap\dist\js\bootstrap.bundle.js.map
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\lib\bootstrap\dist\js\bootstrap.bundle.min.js
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\lib\bootstrap\dist\js\bootstrap.js
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\lib\bootstrap\dist\js\bootstrap.js.map
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\lib\bootstrap\dist\js\bootstrap.min.js
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\lib\bootstrap\dist\js\bootstrap.min.js.map
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\lib\bootstrap\LICENSE\LICENSE
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\lib\jquery-validation-unobtrusive\LICENSE.txt
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\lib\jquery-validation\dist\additional-methods.js
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\lib\jquery-validation\dist\additional-methods.min.js
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\lib\jquery-validation\dist\jquery.validate.js
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\lib\jquery-validation\dist\jquery.validate.min.js
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\lib\jquery-validation\LICENSE.md
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\lib\jquery\dist\jquery.js
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\lib\jquery\dist\jquery.min.js
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\lib\jquery\dist\jquery.min.map
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\wwwroot\Identity\lib\jquery\LICENSE.txt
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\VirtualWelshWalk.Views.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\VirtualWelshWalk.Views.pdb
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\PubTmp\Out\VirtualWelshWalk.deps.json

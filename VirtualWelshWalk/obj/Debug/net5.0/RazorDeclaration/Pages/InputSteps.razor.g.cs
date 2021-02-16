@@ -141,8 +141,8 @@ using System.Security.Claims;
 
     double virtualStepsInMiles = 0;
 
-    string Emailadd;
-    string Username;
+    //string Emailadd;
+    //string Username;
 
     protected override async Task OnInitializedAsync()
     {
@@ -166,7 +166,7 @@ using System.Security.Claims;
     {
         if (firstRender)
         {
-            await GetEmailAndUsername();
+            //await GetEmailAndUsername();
             await jsRunTime.InvokeVoidAsync("window.onload");
         }
     }
@@ -189,26 +189,26 @@ using System.Security.Claims;
         }
     }
 
-    async Task GetEmailAndUsername()
-    {
-        try
-        {
-            var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
-            var user = authState.User;
+    //async Task GetEmailAndUsername()
+    //{
+    //    try
+    //    {
+    //        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+    //        var user = authState.User;
 
-            Username = authState.User.Identity.Name;
+    //        Username = authState.User.Identity.Name;
 
-            IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
+    //        IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
 
-            _claims = user.Claims;
+    //        _claims = user.Claims;
 
-            Emailadd = user.FindFirst(c => c.Type == ClaimTypes.Email)?.Value;
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e.Message);
-        }
-    }
+    //        Emailadd = user.FindFirst(c => c.Type == ClaimTypes.Email)?.Value;
+    //    }
+    //    catch (Exception e)
+    //    {
+    //        Console.WriteLine(e.Message);
+    //    }
+    //}
 
     protected void TotalStepsChanged(int pNewSteps)
     {

@@ -15,8 +15,7 @@ function readJSON(file) {
     return JSON.parse(request.responseText);
 };
 
-export function ParseJson (jsonFile)
-{
+export function ParseJson(jsonFile) {
     mapRouteJson = JSON.parse(jsonFile);
 }
 
@@ -32,11 +31,7 @@ export function initialize() {
     });
 
     map.on('load', function () {
-        if (draw) {
-            addLogo();
-            //colourPath();
-            //map.resize();
-        }
+        addLogo();
     });
 
     var bounds = [
@@ -89,6 +84,12 @@ export function initialize() {
     });
 
     return map;
+
+}
+
+export function CheckIfStyleLoaded()
+{
+    return map.isStyleLoaded();
 }
 
 function welshMarkers() {
@@ -202,7 +203,7 @@ function welshMarkers() {
             {
                 "type": "Feature",
                 "properties": {
-                    "title": "Kidwelly Castel",
+                    "title": "Kidwelly Castle",
                     "description": "Castle Road, Kidwelly SA17 5BQ"
                 },
                 "geometry": {
@@ -217,7 +218,7 @@ function welshMarkers() {
             {
                 "type": "Feature",
                 "properties": {
-                    "title": "St Catherine’s Island",
+                    "title": "St. Catherine’s Island",
                     "description": "Castle Beach, Tenby SA70 7BL"
                 },
                 "geometry": {
@@ -262,7 +263,7 @@ function welshMarkers() {
             {
                 "type": "Feature",
                 "properties": {
-                    "title": "St Davids Cathedral",
+                    "title": "St. Davids Cathedral",
                     "description": "5A The Pebbles, St Davids SA62 6RD"
                 },
                 "geometry": {
@@ -307,7 +308,7 @@ function welshMarkers() {
             {
                 "type": "Feature",
                 "properties": {
-                    "title": "St Padarns Church",
+                    "title": "Plas Tan y Bwlch",
                     "description": "Terrace Road, Aberystwyth SY23 2AG"
                 },
                 "geometry": {
@@ -446,8 +447,7 @@ function welshMarkers() {
     return geojson;
 }
 
-function addLogo()
-{
+function addLogo() {
     map.loadImage(
         '/Assets/Educ8-Logo.png',
         function (error, image) {
@@ -588,13 +588,11 @@ function colourWalkedPath() {
     // Grab all coords till it matches the nearest coordinate
     var route = [];
 
-    for (i = 0; i < alongLine.geometry.coordinates.length; i++)
-    {
+    for (i = 0; i < alongLine.geometry.coordinates.length; i++) {
         route.push([alongLine.geometry.coordinates[i][0], alongLine.geometry.coordinates[i][1]]);
 
         if (alongLine.geometry.coordinates[i][0] == nearest.geometry.coordinates[0] &&
-            alongLine.geometry.coordinates[i][1] == nearest.geometry.coordinates[1])
-        {
+            alongLine.geometry.coordinates[i][1] == nearest.geometry.coordinates[1]) {
             //route.pop();
             route.push([personMarker._lngLat.lng, personMarker._lngLat.lat]);
             break;
@@ -639,8 +637,7 @@ function GreyPath(index) {
     return geojson;
 }
 
-export function NextLandMark(pElementId)
-{
+export function NextLandMark(pElementId) {
     // turn person icon to a point
     var targetPoint = turf.helpers.point([personMarker._lngLat.lng, personMarker._lngLat.lat]);
 
@@ -677,25 +674,21 @@ export function NextLandMark(pElementId)
     var name;
 
     // loop through every route backwards
-    for (var i = route.length - 1; i >= 0; i--)
-    {
-        for (var ii = welshMarkerPoints.features.length - 1; ii >= 0; ii--)
-        {
+    for (var i = route.length - 1; i >= 0; i--) {
+        for (var ii = welshMarkerPoints.features.length - 1; ii >= 0; ii--) {
             // if route matched one of the markers then set name as the latest marker postion and break
             if (route[i][0] == welshMarkerPoints.features[ii].geometry.coordinates[0] &&
-                route[i][1] == welshMarkerPoints.features[ii].geometry.coordinates[1])
-            {
+                route[i][1] == welshMarkerPoints.features[ii].geometry.coordinates[1]) {
                 breakLoop = true;
 
                 if (ii == 22) {
                     name = welshMarkerPoints.features[ii].properties.title;
                 }
                 else {
-                    name = welshMarkerPoints.features[ii+1].properties.title;
+                    name = welshMarkerPoints.features[ii + 1].properties.title;
                 }
 
-                if (breakLoop)
-                {
+                if (breakLoop) {
                     break;
                 }
             }
@@ -713,8 +706,7 @@ export function NextLandMark(pElementId)
     return name;
 }
 
-export function ApproximateStepsToNextMilestone()
-{
+export function ApproximateStepsToNextMilestone() {
     // turn person icon to a point
     var targetPoint = turf.helpers.point([personMarker._lngLat.lng, personMarker._lngLat.lat]);
 
@@ -735,8 +727,7 @@ export function ApproximateStepsToNextMilestone()
     var route = [];
 
     // loop through inputting each location into route till it matches a coordinate
-    for (var i = 0; i < alongLine.geometry.coordinates.length; i++)
-    {
+    for (var i = 0; i < alongLine.geometry.coordinates.length; i++) {
         route.push([alongLine.geometry.coordinates[i][0], alongLine.geometry.coordinates[i][1]]);
 
         if (alongLine.geometry.coordinates[i][0] == nearest.geometry.coordinates[0] &&
@@ -752,14 +743,11 @@ export function ApproximateStepsToNextMilestone()
     var markerIndex = 0;
 
     // loop through all the welsh markers backwards
-    for (var i = route.length - 1; i >= 0; i--)
-    {
-        for (var ii = welshMarkerPoints.features.length - 1; ii >= 0; ii--)
-        {
+    for (var i = route.length - 1; i >= 0; i--) {
+        for (var ii = welshMarkerPoints.features.length - 1; ii >= 0; ii--) {
             // if route matched one of the markers then break out
             if (route[i][0] == welshMarkerPoints.features[ii].geometry.coordinates[0] &&
-                route[i][1] == welshMarkerPoints.features[ii].geometry.coordinates[1])
-            {
+                route[i][1] == welshMarkerPoints.features[ii].geometry.coordinates[1]) {
                 breakLoop = true;
 
                 markerIndex = ii;
@@ -792,10 +780,8 @@ export function ApproximateStepsToNextMilestone()
 
 }
 
-export function UpdateColourPath()
-{
-    if (map.getLayer('greenRoute'))
-    {
+export function UpdateColourPath() {
+    if (map.getLayer('greenRoute')) {
         map.removeLayer('greenRoute');
     }
 
@@ -806,7 +792,7 @@ export function UpdateColourPath()
 
     if (map.getLayer('greyRoute')) {
         map.removeLayer('greyRoute');
-    }    
+    }
     if (map.getSource('greyRoute')) {
         map.removeSource('greyRoute');
     }

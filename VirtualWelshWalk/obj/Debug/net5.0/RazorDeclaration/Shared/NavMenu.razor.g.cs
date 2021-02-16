@@ -90,7 +90,7 @@ using VirtualWelshWalk.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 104 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Shared\NavMenu.razor"
+#line 87 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Shared\NavMenu.razor"
        
     private string space = " ";
     private bool collapseNavMenu = true;

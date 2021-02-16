@@ -27,9 +27,9 @@ else
 
     <div class="container text-center pb-5">
 
-        <InputStepsForm virtualSteps="virtualSteps" EmailAddress="@Emailadd" UserName="@Username"
+        <InputStepsForm virtualSteps="virtualSteps"
                         dbPeople="dbPeople" dbVirtualWalk="dbVirtualWalk" dbMilestone="dbMilestone"
-                        OnTotalStepsChanged="@TotalStepsChanged" />  @*() => { TotalStepsChanged(virtualSteps.TotalSteps); }*@<!--" />-->
+                        OnTotalStepsChanged="@TotalStepsChanged" />  @*() => { TotalStepsChanged(virtualSteps.TotalSteps); }*@<!--" />--> @*EmailAddress="@Emailadd" UserName="@Username"*@
 
                     </div>
                 }
@@ -56,8 +56,8 @@ else
 
     double virtualStepsInMiles = 0;
 
-    string Emailadd;
-    string Username;
+    //string Emailadd;
+    //string Username;
 
     protected override async Task OnInitializedAsync()
     {
@@ -81,7 +81,7 @@ else
     {
         if (firstRender)
         {
-            await GetEmailAndUsername();
+            //await GetEmailAndUsername();
             await jsRunTime.InvokeVoidAsync("window.onload");
         }
     }
@@ -104,26 +104,26 @@ else
         }
     }
 
-    async Task GetEmailAndUsername()
-    {
-        try
-        {
-            var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
-            var user = authState.User;
+    //async Task GetEmailAndUsername()
+    //{
+    //    try
+    //    {
+    //        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+    //        var user = authState.User;
 
-            Username = authState.User.Identity.Name;
+    //        Username = authState.User.Identity.Name;
 
-            IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
+    //        IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
 
-            _claims = user.Claims;
+    //        _claims = user.Claims;
 
-            Emailadd = user.FindFirst(c => c.Type == ClaimTypes.Email)?.Value;
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e.Message);
-        }
-    }
+    //        Emailadd = user.FindFirst(c => c.Type == ClaimTypes.Email)?.Value;
+    //    }
+    //    catch (Exception e)
+    //    {
+    //        Console.WriteLine(e.Message);
+    //    }
+    //}
 
     protected void TotalStepsChanged(int pNewSteps)
     {
