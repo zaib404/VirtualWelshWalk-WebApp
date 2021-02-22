@@ -62,6 +62,7 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
             if (result.Succeeded)
             {
                 TokenValid = true;
+                TempData.Remove("Email");
             }
             else
             {

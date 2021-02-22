@@ -152,9 +152,6 @@ using System.Security.Claims;
 
     InputStepsForm stepsForm;
 
-    //string Emailadd;
-    //string Username;
-
     protected override async Task OnInitializedAsync()
     {
         people = await PeopleService.GetPeople();
@@ -169,6 +166,7 @@ using System.Security.Claims;
 
             milestone = await VirtualMilestoneService.GetVirtualMilestones(WalkName, people.PeopleId);
         }
+
     }
 
     async Task GetSession()

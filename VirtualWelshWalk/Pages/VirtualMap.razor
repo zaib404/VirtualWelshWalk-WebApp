@@ -125,9 +125,6 @@ else
 
     InputStepsForm stepsForm;
 
-    //string Emailadd;
-    //string Username;
-
     protected override async Task OnInitializedAsync()
     {
         people = await PeopleService.GetPeople();
@@ -142,6 +139,7 @@ else
 
             milestone = await VirtualMilestoneService.GetVirtualMilestones(WalkName, people.PeopleId);
         }
+
     }
 
     async Task GetSession()
