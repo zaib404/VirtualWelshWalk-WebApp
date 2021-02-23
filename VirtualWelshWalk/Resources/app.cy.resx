@@ -123,6 +123,9 @@
   <data name="Aberystwyth" xml:space="preserve">
     <value>Aberystwyth</value>
   </data>
+  <data name="Accept" xml:space="preserve">
+    <value>Derbyn</value>
+  </data>
   <data name="Access denied" xml:space="preserve">
     <value>Mynediad wedi ei wrthod</value>
   </data>
@@ -330,6 +333,9 @@
   <data name="Last Name" xml:space="preserve">
     <value>Enw olaf</value>
   </data>
+  <data name="Learn More" xml:space="preserve">
+    <value>Dysgu mwy</value>
+  </data>
   <data name="Llanelli" xml:space="preserve">
     <value>Llanelli</value>
   </data>
@@ -521,6 +527,9 @@
   </data>
   <data name="This Round House was erected in 1834. It was built as a lock-up where drunkards were detained until they became sober. It was also a place of detention pending the transfer of an accused to the nearest place where justice could be administered. The key was kept by the Parish Constable. The building is divided by a partition wall forming two cells of equal dimensions. One cell was reserved for men and the other for women." xml:space="preserve">
     <value>Adeiladwyd y Tŷ Crwn yma yn 1834. Adeiladwyd fel lle clo i feddwon cael eu cadw nes eu byd yn sobr. Roedd hefyd yn fan cadw hyd nes trosglwyddo cyhuddedig i’r ardal agosaf lle gellid weinyddu cyfiawnder. Cadwyd yr allwedd gan gwnstabl y plwyf. Mae’r adeilad wedi’i rannu a wal raniad sy’n ffurfio dwy gell o ddimensiynau cyfartal. Neilltuwyd un gell i ddynion a’r llall i ferched.</value>
+  </data>
+  <data name="This website uses cookies and requires your consent" xml:space="preserve">
+    <value>Mae'r wefan hon yn defnyddio cwcis ac mae angen eich caniatâd</value>
   </data>
   <data name="Tintern Abbey was founded on 9 May 1131 by Walter de Clare, Lord of Chepstow. It is situated adjacent to the village of Tintern in Monmouthshire, on the Welsh bank of the River Wye, which at this location forms the border between Monmouthshire in Wales and Gloucestershire in England." xml:space="preserve">
     <value>Sefydlwyd Tintern Abbey ar Mai y 9fed 1131 gan Walter de Clare, arglwydd Cas-gwent. Mae wedi ei leoli ger pentref Tintern yn Sir Fynwy, ar lan yr Afon Wye, sydd yn y lleoliad hwn yn ffurfio’r ffin rhwng Sir Fynwy yng Nghymrua a Swydd Gaerloyw yn Lloegr.</value>

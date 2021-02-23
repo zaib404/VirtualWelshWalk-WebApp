@@ -123,6 +123,9 @@
   <data name="Aberystwyth" xml:space="preserve">
     <value>Aberystwyth</value>
   </data>
+  <data name="Accept" xml:space="preserve">
+    <value>Accept</value>
+  </data>
   <data name="Access denied" xml:space="preserve">
     <value>Access denied</value>
   </data>
@@ -330,6 +333,9 @@
   <data name="Last Name" xml:space="preserve">
     <value>Last Name</value>
   </data>
+  <data name="Learn More" xml:space="preserve">
+    <value>Learn More</value>
+  </data>
   <data name="Llanelli" xml:space="preserve">
     <value>Llanelli</value>
   </data>
@@ -521,6 +527,9 @@
   </data>
   <data name="This Round House was erected in 1834. It was built as a lock-up where drunkards were detained until they became sober. It was also a place of detention pending the transfer of an accused to the nearest place where justice could be administered. The key was kept by the Parish Constable. The building is divided by a partition wall forming two cells of equal dimensions. One cell was reserved for men and the other for women." xml:space="preserve">
     <value>This Round House was erected in 1834. It was built as a lock-up where drunkards were detained until they became sober. It was also a place of detention pending the transfer of an accused to the nearest place where justice could be administered. The key was kept by the Parish Constable. The building is divided by a partition wall forming two cells of equal dimensions. One cell was reserved for men and the other for women.</value>
+  </data>
+  <data name="This website uses cookies and requires your consent" xml:space="preserve">
+    <value>This website uses cookies and requires your consent</value>
   </data>
   <data name="Tintern Abbey was founded on 9 May 1131 by Walter de Clare, Lord of Chepstow. It is situated adjacent to the village of Tintern in Monmouthshire, on the Welsh bank of the River Wye, which at this location forms the border between Monmouthshire in Wales and Gloucestershire in England." xml:space="preserve">
     <value>Tintern Abbey was founded on 9 May 1131 by Walter de Clare, Lord of Chepstow. It is situated adjacent to the village of Tintern in Monmouthshire, on the Welsh bank of the River Wye, which at this location forms the border between Monmouthshire in Wales and Gloucestershire in England.</value>

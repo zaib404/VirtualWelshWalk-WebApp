@@ -1,7 +1,4 @@
 ﻿@inherits LayoutComponentBase
-@*<div class="sidebar">
-    
-</div>*@
 
 <div class="main d-flex flex-column min-vh-100" style="height:100%;">
 
@@ -10,9 +7,8 @@
         <div style="height: 5px; background-color: #af3182"></div>
     </div>
 
-    
-
     <div class="content p-0" style="height:100%;">
+        <_CookieConsentPartial />
         @Body
     </div>
 

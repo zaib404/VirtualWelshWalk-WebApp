@@ -283,3 +283,8 @@ D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\ref\VirtualWelshWalk.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\VirtualWelshWalk.pdb
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\VirtualWelshWalk.genruntimeconfig.cache
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\RazorDeclaration\Shared\_CookieConsentPartial.razor.g.cs
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\Razor\Shared\_CookieConsentPartial.razor.g.cs
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\RazorDeclaration\Pages\Privacy-Policy.razor.g.cs
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\Razor\Pages\Privacy-Policy.razor.g.cs
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Debug\net5.0\Razor\Pages\Shared\_CookieConsentPartial.cshtml.g.cs
