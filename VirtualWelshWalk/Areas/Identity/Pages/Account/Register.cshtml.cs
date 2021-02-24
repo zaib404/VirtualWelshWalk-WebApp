@@ -20,6 +20,8 @@ using IEmailSender = EmailService.IEmailSender;
 using EmailTemplate.Services;
 using EmailTemplate.Views.Emails.ConfirmAccount;
 using EmailTemplate.Views.Emails;
+using System.Globalization;
+
 namespace VirtualWelshWalk.Areas.Identity.Pages.Account
 {
     [AllowAnonymous]
@@ -116,12 +118,15 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new User 
-                { 
+                IFormatProvider culture = new CultureInfo("en-US", true);
+
+                var user = new User
+                {
                     FirstName = Input.FirstName,
                     LastName = Input.LastName,
-                    UserName = Input.UserName, 
-                    Email = Input.Email
+                    UserName = Input.UserName,
+                    Email = Input.Email,
+                    LastLoginDate = DateTime.ParseExact(DateTime.Today.ToString(), "yyyy-MM-dd", culture)
                 };
 
                 var People = new People
@@ -130,7 +135,7 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
                     LastName = Input.LastName,
                     UserName = Input.UserName
                 };
-                
+
                 var result = await _userManager.CreateAsync(user, Input.Password);
 
                 if (result.Succeeded)
@@ -184,7 +189,7 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
                         await _signInManager.SignInAsync(user, isPersistent: false);
                         return LocalRedirect(returnUrl);
                     }
-                }                
+                }
                 //foreach (var error in result.Errors)
                 //{
                 //    ModelState.AddModelError(string.Empty, error.Description);

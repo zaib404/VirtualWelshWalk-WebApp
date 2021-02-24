@@ -1,6 +1,5 @@
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailTemplate.Views.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\EmailTemplate.Views.pdb
-D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\Assets\Banner.PNG
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\Assets\Culture\Barafundle Bay.jpg
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\Assets\Culture\Beaumaris Castle.jpg
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Debug\net5.0\wwwroot\Assets\Culture\Bedd Gelert.jpg

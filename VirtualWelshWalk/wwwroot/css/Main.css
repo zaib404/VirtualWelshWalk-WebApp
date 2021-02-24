@@ -1,5 +1,21 @@
 ﻿/* xs < 768 */
-@media screen and (max-width: 767px) 
+@media screen and (max-width: 360px) {
+    .navLogo {
+        max-height: 2.7em;
+    }
+
+    .hero-text {
+        font-size: 1.3em;
+    }
+
+    .hero {
+        background-position-x: center;
+        background-position-y: 75%;
+    }
+}
+
+/* xs < 768 */
+@media screen and (min-width: 361px) 
 {
     .navLogo{
         max-height: 2.7em;
@@ -8,6 +24,11 @@
     .hero-text
     {
         font-size:2em;
+    }
+
+    .hero {
+        background-position-x: center;
+        background-position-y: 75%;
     }
 }
 
@@ -20,6 +41,11 @@
     .hero-text {
         font-size: 2.5em;
     }
+
+    .hero {
+        background-position-x: center;
+        background-position-y: 75%;
+    }
 }
 
 /* md */
@@ -31,10 +57,15 @@
     .hero-text {
         font-size: 3em;
     }
+
+    .hero {
+        background-position-x: center;
+        background-position-y: 72%;
+    }
 }
 
 /* lg */
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1920px /*1200*//*px*/) {
     
     .navLogo {
         max-height: 5em;
@@ -43,6 +74,40 @@
     .hero-text {
         font-size: 3.5em;
     }
+
+    .hero
+    {
+        background-position-x: center;
+        background-position-y: 75%;
+    }
+}
+
+/* xl - lg */
+@media screen and (min-width: 1921px) {
+
+    .navLogo {
+        max-height: 5em;
+    }
+
+    .hero-text {
+        font-size: 3.5em;
+    }
+
+    .hero {
+        background-position-x: center;
+        background-position-y: 68%;
+    }
+}
+
+.hero {
+    margin-bottom: 0;
+    background-image: url('/Assets/WebPage/tim-mossholder-MNuPX3WXLEk-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.heroOverlay {
+    background-color: rgba(128 128 128 / 35%);
 }
 
 .navButtons {

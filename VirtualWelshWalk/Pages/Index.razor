@@ -1,43 +1,6 @@
 ﻿@page "/"
 @attribute [AllowAnonymous]
 
-<style>
-    .hero {
-        margin-bottom: 0;
-        background-image: url('/Assets/WebPage/picture_bg.jpg'); /*url('/Assets/WebPage/blue_bg_watermark.jpg');*/
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        /*height: 25em;*/
-    }
-
-/*    .imgs {
-        width: 50%;
-        height: 100%;
-        object-fit: fill;
-    }
-
-    .imgHeading {
-        margin-top: .5rem;
-    }
-
-    .borderWidth {
-        border-width: 5px !important;
-    }
-
-    .imageHero {
-        position: relative;
-        width: 100%;
-    }
-
-    .heroText {
-        position: absolute;
-        top: 200px;
-        left: 0;
-        width: 100%;
-    }*/
-</style>
-
 <AuthorizeView>
 
     <Authorized>
@@ -50,8 +13,8 @@
 
         @*Do HERO IMAGE LATER*@
         <div class="container-fluid text-white hero">
-            <div class="row align-items-center pt-5">
-                <div class="col-7 pl-5 pb-3 pt-5">
+            <div class="row align-items-center pt-5 heroOverlay">
+                <div class="col-sm-12 col-md-7 pl-5 pb-3 pt-5">
                     <h1 class="h1 hero-text widow-orpah-me" style="font-weight:900">@Localizer["Take part in Educ8's interactive learning experience"]</h1>
                 </div>
 
@@ -75,7 +38,7 @@
         </div>
 
         <div class="container-fluid text-center text-white p-5" style="background-color:#474e58;">
-            <h1 class="h1 pb-5">
+            <h1 class="h1 hero-text pb-5">
                 @Localizer["Visit exciting places in and around Wales"]
             </h1>
 
@@ -96,7 +59,7 @@
                 </div>
             </div>
         </div>
-    
+
     </NotAuthorized>
 
 </AuthorizeView>
