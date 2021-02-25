@@ -42,7 +42,9 @@ namespace VirtualWelshWalk.DataAccess.Models
         [MaxLength(100)]
         public override string Email { get; set; }
 
+        [PersonalData]
         [Required]
+        [DataType(DataType.Date)]
         public DateTime LastLoginDate { get; set; }
     }
 }

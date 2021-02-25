@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 
 namespace VirtualWelshWalk.DataAccess.Models
 {
@@ -11,6 +12,8 @@ namespace VirtualWelshWalk.DataAccess.Models
         [MaxLength(100)]
         public string VirtualWalkName { get; set; }
 
+
+        [PersonalData]
         public int TotalSteps { get; set; }
 
         public int PeopleId { get; set; }

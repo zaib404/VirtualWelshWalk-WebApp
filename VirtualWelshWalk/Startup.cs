@@ -38,11 +38,7 @@ namespace VirtualWelshWalk
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddDbContext<ApplicationDbContext>(options =>
-            //    options.UseMySql(
-            //        Configuration.GetConnectionString("DefaultConnection")));
-
-            services.AddDbContextFactory<ApplicationDbContext>(options =>
+            services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseMySql(
                     Configuration.GetConnectionString("DefaultConnection")));
 
@@ -57,7 +53,6 @@ namespace VirtualWelshWalk
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<IdentityUser>>();
-            //services.AddSingleton<WeatherForecastService>();
 
             var emailConfig = Configuration
                 .GetSection("EmailConfiguration")
@@ -88,10 +83,6 @@ namespace VirtualWelshWalk
 
             services.AddScoped<IRazorViewToStringRenderer, RazorViewToStringRenderer>();
 
-            //services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-
-            //services.AddHttpContextAccessor();
-
             services.ConfigureApplicationCookie(options =>
             {
                 options.ExpireTimeSpan = TimeSpan.FromDays(5);
@@ -101,7 +92,7 @@ namespace VirtualWelshWalk
             services.Configure<DataProtectionTokenProviderOptions>(options =>
             options.TokenLifespan = TimeSpan.FromHours(1)
             );
-
+            
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential 

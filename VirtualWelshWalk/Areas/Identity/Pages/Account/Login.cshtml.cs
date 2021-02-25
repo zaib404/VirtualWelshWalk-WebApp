@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using VirtualWelshWalk.DataAccess.Models;
 using Microsoft.Extensions.Localization;
+using System.Globalization;
 
 namespace VirtualWelshWalk.Areas.Identity.Pages.Account
 {
@@ -96,8 +97,31 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
                 var result = await _signInManager.PasswordSignInAsync(Input.UserName, Input.Password, Input.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
+                    // get users details once succeeded and update the last login date
+                    var user = await _userManager.FindByNameAsync(Input.UserName);
+
+                    if (user.LastLoginDate != DateTime.Today)
+                    {
+                        user.LastLoginDate = DateTime.Today;
+
+                        var result2 = await _userManager.UpdateAsync(user);
+
+                        if (result2.Succeeded)
+                        {
+                            _logger.LogInformation("User logged in.");
+                            return LocalRedirect(returnUrl);
+                        }
+                        else
+                        {
+                            ModelState.AddModelError(string.Empty, "There was an error please try again.");
+
+                            return Page();
+                        }
+                    }
+
                     _logger.LogInformation("User logged in.");
                     return LocalRedirect(returnUrl);
+
                 }
                 if (result.RequiresTwoFactor)
                 {

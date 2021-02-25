@@ -14,10 +14,16 @@ namespace VirtualWelshWalk.Controllers
         {
             if (culture != null)
             {
+                var cookieOptions = new Microsoft.AspNetCore.Http.CookieOptions()
+                {
+                    Secure = true,
+                    IsEssential = true,
+                };
+
                 HttpContext.Response.Cookies.Append(
                     CookieRequestCultureProvider.DefaultCookieName,
                     CookieRequestCultureProvider.MakeCookieValue(
-                        new RequestCulture(culture)));
+                        new RequestCulture(culture)), cookieOptions);
             }
 
             return LocalRedirect(redirectUri);

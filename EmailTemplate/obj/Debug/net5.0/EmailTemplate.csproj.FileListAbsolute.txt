@@ -5,6 +5,7 @@ D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\bin\Debug\net5.0\r
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\bin\Debug\net5.0\EmailTemplate.pdb
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\bin\Debug\net5.0\EmailTemplate.Views.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\bin\Debug\net5.0\EmailTemplate.Views.pdb
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\obj\Debug\net5.0\EmailTemplate.csprojAssemblyReference.cache
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\obj\Debug\net5.0\EmailTemplate.GeneratedMSBuildEditorConfig.editorconfig
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\obj\Debug\net5.0\EmailTemplate.AssemblyInfoInputs.cache
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\obj\Debug\net5.0\EmailTemplate.AssemblyInfo.cs
@@ -31,4 +32,3 @@ D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\obj\Debug\net5.0\E
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\obj\Debug\net5.0\ref\EmailTemplate.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\obj\Debug\net5.0\EmailTemplate.pdb
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\obj\Debug\net5.0\EmailTemplate.csproj.CopyComplete
-D:\Zaib\Documents\Areca Design\VirtualWelshWalk\EmailTemplate\obj\Debug\net5.0\EmailTemplate.csprojAssemblyReference.cache

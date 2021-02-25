@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using EmailService;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using VirtualWelshWalk.DataAccess.CRUD;
 using VirtualWelshWalk.DataAccess.Models;
 
 namespace VirtualWelshWalk.Areas.Identity.Pages.Account.Manage
@@ -17,12 +19,29 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account.Manage
         private readonly UserManager<User> _userManager;
         private readonly ILogger<DownloadPersonalDataModel> _logger;
 
+        private readonly IEmailSender _emailSender;
+
+        // New
+        readonly IPeopleRepository _peopleRepository;
+        readonly IVirtualWalkRepository _virtualWalkRepository;
+        readonly IMilestoneRepository _milestoneRepository;
+
         public DownloadPersonalDataModel(
             UserManager<User> userManager,
-            ILogger<DownloadPersonalDataModel> logger)
+            ILogger<DownloadPersonalDataModel> logger,
+            IEmailSender emailSender,
+            IPeopleRepository peopleRepository,
+            IVirtualWalkRepository virtualWalkRepository,
+            IMilestoneRepository milestoneRepository)
         {
             _userManager = userManager;
             _logger = logger;
+
+            _emailSender = emailSender;
+
+            _peopleRepository = peopleRepository;
+            _virtualWalkRepository = virtualWalkRepository;
+            _milestoneRepository = milestoneRepository;
         }
 
         public async Task<IActionResult> OnPostAsync()
@@ -33,16 +52,39 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account.Manage
                 return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
             }
 
+            var people = await _peopleRepository.GetPeople(user.UserName);
+            var virtualWalk = await _virtualWalkRepository.GetVirtualWalk(people.PeopleId, "Welsh Coastal Walk");
+            var milestones = await _milestoneRepository.GetVirtualMilestones(people.PeopleId, "Welsh Coastal Walk");
+
             _logger.LogInformation("User with ID '{UserId}' asked for their personal data.", _userManager.GetUserId(User));
 
             // Only include personal data for download
             var personalData = new Dictionary<string, string>();
+
             var personalDataProps = typeof(User).GetProperties().Where(
                             prop => Attribute.IsDefined(prop, typeof(PersonalDataAttribute)));
+
+            var personalDataWalk = typeof(VirtualWalk).GetProperties().Where(
+                            prop => Attribute.IsDefined(prop, typeof(PersonalDataAttribute)));
+
+            var personalDataMilestone = typeof(VirtualMilestone).GetProperties().Where(
+                            prop => Attribute.IsDefined(prop, typeof(PersonalDataAttribute)));
+
             foreach (var p in personalDataProps)
             {
                 personalData.Add(p.Name, p.GetValue(user)?.ToString() ?? "null");
             }
+
+            foreach (var p in personalDataWalk)
+            {
+                personalData.Add(p.Name, p.GetValue(virtualWalk)?.ToString() ?? "null");
+            }
+
+            foreach (var p in personalDataMilestone)
+            {
+                personalData.Add(p.Name, p.GetValue(milestones)?.ToString() ?? "null");
+            }
+
 
             var logins = await _userManager.GetLoginsAsync(user);
             foreach (var l in logins)

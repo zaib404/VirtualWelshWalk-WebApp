@@ -126,7 +126,7 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
                     LastName = Input.LastName,
                     UserName = Input.UserName,
                     Email = Input.Email,
-                    LastLoginDate = DateTime.ParseExact(DateTime.Today.ToString(), "yyyy-MM-dd", culture)
+                    LastLoginDate = Convert.ToDateTime(DateTime.Today.ToString("yyyy-MM-dd"))
                 };
 
                 var People = new People

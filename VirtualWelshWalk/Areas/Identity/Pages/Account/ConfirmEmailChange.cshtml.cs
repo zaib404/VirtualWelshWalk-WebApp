@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,14 +53,14 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
                 return Page();
             }
 
-            // In our UI email and user name are one and the same, so when we update the email
-            // we need to update the user name.
-            var setUserNameResult = await _userManager.SetEmailAsync(user, email);
-            if (!setUserNameResult.Succeeded)
-            {
-                StatusMessage = "Error changing email";
-                return Page();
-            }
+            //// In our UI email and user name are one and the same, so when we update the email
+            //// we need to update the user name.
+            //var setUserNameResult = await _userManager.SetEmailAsync(user, email);
+            //if (!setUserNameResult.Succeeded)
+            //{
+            //    StatusMessage = "Error changing email";
+            //    return Page();
+            //}
 
             await _signInManager.RefreshSignInAsync(user);
             StatusMessage = "Thank you for confirming your email change";
