@@ -118,7 +118,7 @@ using Microsoft.AspNetCore.Authorization;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 21 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Shared\_CookieConsentPartial.razor"
+#line 33 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Shared\_CookieConsentPartial.razor"
        
     ITrackingConsentFeature consentFeature;
     bool showBanner;

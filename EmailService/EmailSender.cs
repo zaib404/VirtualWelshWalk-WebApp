@@ -79,7 +79,7 @@ namespace EmailService
 
             if (nodes != null)
             {
-                var imagePath = $"{Directory.GetCurrentDirectory()}{@"\wwwroot\Assets\WebPage\logo_with_text.png"}";
+                var imagePath = $"{Directory.GetCurrentDirectory()}{@"\wwwroot\Assets\WebPage\dual-logo.png"}";
 
                 var imgPath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), imagePath);
 

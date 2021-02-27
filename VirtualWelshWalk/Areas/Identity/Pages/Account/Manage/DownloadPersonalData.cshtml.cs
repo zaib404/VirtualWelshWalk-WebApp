@@ -19,8 +19,6 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account.Manage
         private readonly UserManager<User> _userManager;
         private readonly ILogger<DownloadPersonalDataModel> _logger;
 
-        private readonly IEmailSender _emailSender;
-
         // New
         readonly IPeopleRepository _peopleRepository;
         readonly IVirtualWalkRepository _virtualWalkRepository;
@@ -29,15 +27,12 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account.Manage
         public DownloadPersonalDataModel(
             UserManager<User> userManager,
             ILogger<DownloadPersonalDataModel> logger,
-            IEmailSender emailSender,
             IPeopleRepository peopleRepository,
             IVirtualWalkRepository virtualWalkRepository,
             IMilestoneRepository milestoneRepository)
         {
             _userManager = userManager;
             _logger = logger;
-
-            _emailSender = emailSender;
 
             _peopleRepository = peopleRepository;
             _virtualWalkRepository = virtualWalkRepository;
@@ -85,14 +80,13 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account.Manage
                 personalData.Add(p.Name, p.GetValue(milestones)?.ToString() ?? "null");
             }
 
-
             var logins = await _userManager.GetLoginsAsync(user);
             foreach (var l in logins)
             {
                 personalData.Add($"{l.LoginProvider} external login provider key", l.ProviderKey);
             }
 
-            Response.Headers.Add("Content-Disposition", "attachment; filename=PersonalData.json");
+            Response.Headers.Add("Content-Disposition", string.Format("attachment; filename={0}PersonalData.json", user.UserName));
             return new FileContentResult(JsonSerializer.SerializeToUtf8Bytes(personalData), "application/json");
         }
     }
