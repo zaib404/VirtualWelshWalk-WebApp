@@ -82,13 +82,13 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title widow-orpah-me">@Localizer["A new area of interest unlocked"]</h5>
+                    <h5 class="modal-title">@Localizer["Congratulations"]!</h5>
                     <button type="button" @onclick="HandleValidSubmitPart2" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p class="widow-orpah-me">@Localizer["You have reached a new milestone. Check your emails and the"] <a href="/Virtual Coastal Map"> map </a> @Localizer["to see more"]</p>
+                    <p class="widow-orpah-me">@Localizer["You have reached"] @Space @Localizer[townName], @Localizer[historicalPlace]</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" @onclick="HandleValidSubmitPart2" class="btn btn-secondary" data-dismiss="modal">@Localizer["Close"]</button>
@@ -133,12 +133,6 @@
     [Parameter]
     public int MilestoneCounter { get; set; }
 
-    //[Parameter]
-    //public string EmailAddress { get; set; }
-
-    //[Parameter]
-    //public string UserName { get; set; }
-
     CheckMilestone checkMilestone;
 
     #region Bool
@@ -152,7 +146,10 @@
 
     #region Strings
 
-    //string Space = "";
+    string Space = " ";
+
+    string townName = "";
+    string historicalPlace = "";
 
     #endregion
 
@@ -171,27 +168,6 @@
     protected async override Task OnAfterRenderAsync(bool firstRender)
     {
         checkMilestone = new CheckMilestone(dbMilestone, emailSender, _razorViewToStringRenderer, AuthenticationStateProvider);
-
-        //try
-        //{
-        //    //var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
-        //    //var user = authState.User;
-
-        //    //UserName = authState.User.Identity.Name;
-
-
-        //    //IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
-
-        //    //_claims = user.Claims;
-
-        //    //EmailAddress = user.FindFirst(c => c.Type == ClaimTypes.Email)?.Value;
-
-        //    //checkMilestone.SetData(EmailAddress, UserName);
-        //}
-        //catch (Exception e)
-        //{
-        //    Console.WriteLine(e.Message);
-        //}
 
         await jsRunTime.InvokeVoidAsync("window.onload");
     }
@@ -212,11 +188,14 @@
 
         virtualSteps.TotalSteps = dbVirtualWalk.TotalSteps;
 
-        ShowNewMilestoneUnlocked = checkMilestone.MilestoneCheckWithEmail(StepsInKM());
+        ShowNewMilestoneUnlocked = checkMilestone.MilestoneCheckWithEmail(StepsInMiles());
         //ShowNewMilestoneUnlocked = true;
 
         if (ShowNewMilestoneUnlocked)
         {
+            var newMileStoneInfo = checkMilestone.GetTownAndHistoricalPlace();
+            townName = newMileStoneInfo[0];
+            historicalPlace = newMileStoneInfo[1];
             await MilestoneService.UpdateVirtualMilestones(checkMilestone.dbMilestone);
         }
 
@@ -248,7 +227,7 @@
 
     async Task UpdateMilestoneInformation()
     {
-        await OnVirtualMapGetInfo.InvokeAsync(checkMilestone.CheckMilestoneCounter(StepsInKM()));
+        await OnVirtualMapGetInfo.InvokeAsync(checkMilestone.CheckMilestoneCounter(StepsInMiles()));
     }
 
     async Task UpdateTotalStepsChanged()
@@ -266,7 +245,7 @@
         if (checkMilestone.Counter == 0)
         {
             virtualSteps.TotalSteps = dbVirtualWalk.TotalSteps;
-            await OnVirtualMapGetInfo.InvokeAsync(checkMilestone.CheckMilestoneCounter(StepsInKM()));
+            await OnVirtualMapGetInfo.InvokeAsync(checkMilestone.CheckMilestoneCounter(StepsInMiles()));
         }
         else
         {
@@ -289,7 +268,7 @@
             checkMilestone = new CheckMilestone();
         }
 
-        var milestoneNum = checkMilestone.CheckMilestoneCounter(StepsInKM());
+        var milestoneNum = checkMilestone.CheckMilestoneCounter(StepsInMiles());
 
         if (virtualSteps.TotalSteps == 0)
         {
@@ -306,7 +285,7 @@
 
     #region Misc
 
-    double StepsInKM()
+    double StepsInMiles()
     {
         // Convert to kilometers
         double km = Math.Round(virtualSteps.TotalSteps / 1312.33595801, 2);
@@ -325,11 +304,10 @@
 
     public void SetUpFromVirtualMap(IVirtualMilestonesService milestonesService,
         VirtualMilestone pDbMilestone, EmailService.IEmailSender pEmailSender,
-        /*string pEmailAddress, string pUserName,*/ 
-        EmailTemplate.Services.IRazorViewToStringRenderer razorViewToStringRenderer, AuthenticationStateProvider AuthenticationStateProvider)
+        EmailTemplate.Services.IRazorViewToStringRenderer razorViewToStringRenderer,
+        AuthenticationStateProvider AuthenticationStateProvider)
     {
         checkMilestone = new CheckMilestone(pDbMilestone, pEmailSender, razorViewToStringRenderer, AuthenticationStateProvider);
-        //checkMilestone.SetData(pEmailAddress, pUserName);
 
         dbMilestone = pDbMilestone;
         MilestoneService = milestonesService;

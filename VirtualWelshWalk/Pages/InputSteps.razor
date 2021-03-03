@@ -17,22 +17,22 @@
 else
 {
     // Top Heading
-    <div class="container text-center p-5">
-        <h1>@Localizer[HeadingWalkName]: </h1>
-        <h1>@virtualSteps.TotalSteps @Localizer["Steps"]</h1>
-        <hr />
-        <p style="margin-bottom:0%;">@Localizer["You have walked approximately"] - </p>
-        <p> @virtualStepsInMiles @Localizer["Miles"].ToString().ToLower()</p>
-    </div>
+<div class="container text-center p-4">
+    <h1>@Localizer[HeadingWalkName]: </h1>
+    <h1>@virtualSteps.TotalSteps @Localizer["Steps"]</h1>
+    <hr />
+    <p style="margin-bottom:0%;">@Localizer["You have walked approximately"] - </p>
+    <p> @virtualStepsInMiles @Localizer["Miles"].ToString().ToLower()</p>
+</div>
 
     <div class="container text-center pb-5">
 
         <InputStepsForm virtualSteps="virtualSteps"
                         dbPeople="dbPeople" dbVirtualWalk="dbVirtualWalk" dbMilestone="dbMilestone"
-                        OnTotalStepsChanged="@TotalStepsChanged" />  @*() => { TotalStepsChanged(virtualSteps.TotalSteps); }*@<!--" />--> @*EmailAddress="@Emailadd" UserName="@Username"*@
+                        OnTotalStepsChanged="@TotalStepsChanged" />
 
-                    </div>
-                }
+    </div>
+}
 
 @code
 {
@@ -55,9 +55,6 @@ else
     string HeadingWalkName = "Coastal walk";
 
     double virtualStepsInMiles = 0;
-
-    //string Emailadd;
-    //string Username;
 
     protected override async Task OnInitializedAsync()
     {
@@ -82,7 +79,9 @@ else
         if (firstRender)
         {
             //await GetEmailAndUsername();
+
             await jsRunTime.InvokeVoidAsync("window.onload");
+
         }
     }
 
@@ -103,27 +102,6 @@ else
             dbMilestone = new VirtualMilestone();
         }
     }
-
-    //async Task GetEmailAndUsername()
-    //{
-    //    try
-    //    {
-    //        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
-    //        var user = authState.User;
-
-    //        Username = authState.User.Identity.Name;
-
-    //        IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
-
-    //        _claims = user.Claims;
-
-    //        Emailadd = user.FindFirst(c => c.Type == ClaimTypes.Email)?.Value;
-    //    }
-    //    catch (Exception e)
-    //    {
-    //        Console.WriteLine(e.Message);
-    //    }
-    //}
 
     protected void TotalStepsChanged(int pNewSteps)
     {

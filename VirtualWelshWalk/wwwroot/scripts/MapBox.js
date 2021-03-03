@@ -706,7 +706,7 @@ export function NextLandMark(pElementId) {
     return name;
 }
 
-export function ApproximateStepsToNextMilestone() {
+export function ApproximateMilesToNextMilestone() {
     // turn person icon to a point
     var targetPoint = turf.helpers.point([personMarker._lngLat.lng, personMarker._lngLat.lat]);
 
@@ -770,6 +770,7 @@ export function ApproximateStepsToNextMilestone() {
         }
     }
 
+    // get distance in miles
     var nextPointMarker = turf.helpers.point([welshMarkerPoints.features[markerIndex].geometry.coordinates[0], welshMarkerPoints.features[markerIndex].geometry.coordinates[1]]);
 
     var slice = turf.lineSlice([personMarker._lngLat.lng, personMarker._lngLat.lat], nextPointMarker, alongLine.geometry)

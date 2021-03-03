@@ -45,12 +45,6 @@ namespace VirtualWelshWalk.DataAccess.Data
         {
         }
 
-        //public void SetData(string pEmail, string pUsername)
-        //{
-        //    email = pEmail;
-        //    userName = pUsername;
-        //}
-
         async Task SetData()
         {
             var authState = await authenticationStateProvider.GetAuthenticationStateAsync();
@@ -94,284 +88,286 @@ namespace VirtualWelshWalk.DataAccess.Data
             List<Message> messages = new List<Message>();
             string RenderViewString = @"\Views\Emails\Milestone\NewMilestone.cshtml";
 
-            if (passedLandmarks >= 0 && !dbMilestone.Milestone1)
+            if (dbMilestone.VirtualWalkName != null)
             {
-                Counter = 1;
+                if (passedLandmarks >= 0 && !dbMilestone.Milestone1)
+                {
+                    Counter = 1;
 
-                var MilestoneModel = new NewMilestoneModel("Tintern Abbey", userName);
-                string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
+                    var MilestoneModel = new NewMilestoneModel("Tintern Abbey", userName);
+                    string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
 
-                messages.Add(new Message(new string[] { email }, "Postcard from Tintern Abbey", body, new List<string>() { @"EmailAttachments\Tintern Abbey.pdf" }));
+                    messages.Add(new Message(new string[] { email }, "Postcard from Tintern Abbey", body, new List<string>() { @"EmailAttachments\Tintern Abbey.pdf" }));
 
-                EmailSent = true;
-                dbMilestone.Milestone1 = true;
+                    EmailSent = true;
+                    dbMilestone.Milestone1 = true;
+                }
+                if (passedLandmarks >= 1 && !dbMilestone.Milestone2)
+                {
+                    Counter = 2;
+
+                    var MilestoneModel = new NewMilestoneModel("Transporter Bridge", userName);
+                    string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
+
+                    messages.Add(new Message(new string[] { email }, "Postcard from Transporter Bridge", body, new List<string>() { @"EmailAttachments\Transporter Bridge.pdf" }));
+
+                    EmailSent = true;
+                    dbMilestone.Milestone2 = true;
+                }
+                if (passedLandmarks >= 2 && !dbMilestone.Milestone3)
+                {
+                    Counter = 3;
+
+                    var MilestoneModel = new NewMilestoneModel("Cardiff Castle", userName);
+                    string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
+
+                    messages.Add(new Message(new string[] { email }, "Postcard from Cardiff Castle", body, new List<string>() { @"EmailAttachments\Cardiff Castle.pdf" }));
+
+                    EmailSent = true;
+                    dbMilestone.Milestone3 = true;
+                }
+                if (passedLandmarks >= 3 && !dbMilestone.Milestone4)
+                {
+                    Counter = 4;
+
+                    var MilestoneModel = new NewMilestoneModel("Rest Bay Beach", userName);
+                    string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
+
+                    messages.Add(new Message(new string[] { email }, "Postcard from Rest Bay Beach", body, new List<string>() { @"EmailAttachments\Rest Bay Beach.pdf" }));
+                    EmailSent = true;
+                    dbMilestone.Milestone4 = true;
+                }
+                if (passedLandmarks >= 4 && !dbMilestone.Milestone5)
+                {
+                    Counter = 5;
+
+                    var MilestoneModel = new NewMilestoneModel("Mumbles Pier", userName);
+                    string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
+
+                    messages.Add(new Message(new string[] { email }, "Postcard from Mumbles Pier", body, new List<string>() { @"EmailAttachments\Mumbles Pier.pdf" }));
+
+                    EmailSent = true;
+                    dbMilestone.Milestone5 = true;
+                }
+                if (passedLandmarks >= 5 && !dbMilestone.Milestone6)
+                {
+                    Counter = 6;
+
+                    var MilestoneModel = new NewMilestoneModel("Fall Bay", userName);
+                    string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
+
+                    messages.Add(new Message(new string[] { email }, "Postcard from Fall Bay", body, new List<string>() { @"EmailAttachments\Fall Bay.pdf" }));
+
+                    EmailSent = true;
+                    dbMilestone.Milestone6 = true;
+                }
+                if (passedLandmarks >= 6 && !dbMilestone.Milestone7)
+                {
+                    Counter = 7;
+
+                    var MilestoneModel = new NewMilestoneModel("Parc y Scarlets", userName);
+                    string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
+
+                    messages.Add(new Message(new string[] { email }, "Postcard from Parc y Scarlets", body, new List<string>() { @"EmailAttachments\Parc y Scarlets.pdf" }));
+
+                    EmailSent = true;
+                    dbMilestone.Milestone7 = true;
+                }
+                if (passedLandmarks >= 7 && !dbMilestone.Milestone8)
+                {
+                    Counter = 8;
+
+                    var MilestoneModel = new NewMilestoneModel("Kidwelly Castel", userName);
+                    string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
+
+                    messages.Add(new Message(new string[] { email }, "Postcard from Kidwelly Castel", body, new List<string>() { @"EmailAttachments\Kidwelly Castle.pdf" }));
+
+                    EmailSent = true;
+                    dbMilestone.Milestone8 = true;
+                }
+                if (passedLandmarks >= 8 && !dbMilestone.Milestone9)
+                {
+                    Counter = 9;
+
+                    var MilestoneModel = new NewMilestoneModel("St. Catherines Island", userName);
+                    string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
+
+                    messages.Add(new Message(new string[] { email }, "Postcard from St. Catherines Island", body, new List<string>() { @"EmailAttachments\St. Catherines Island.pdf" }));
+
+                    EmailSent = true;
+                    dbMilestone.Milestone9 = true;
+                }
+                if (passedLandmarks >= 9 && !dbMilestone.Milestone10)
+                {
+                    Counter = 10;
+
+                    var MilestoneModel = new NewMilestoneModel("Barafundle Bay", userName);
+                    string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
+
+                    messages.Add(new Message(new string[] { email }, "Postcard from Barafundle Bay", body, new List<string>() { @"EmailAttachments\Barafundle Bay.pdf" }));
+
+                    EmailSent = true;
+                    dbMilestone.Milestone10 = true;
+                }
+                if (passedLandmarks >= 10 && !dbMilestone.Milestone11)
+                {
+                    Counter = 11;
+
+                    var MilestoneModel = new NewMilestoneModel("Stack Rock Fort", userName);
+                    string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
+
+                    messages.Add(new Message(new string[] { email }, "Postcard from Stack Rock Fort", body, new List<string>() { @"EmailAttachments\Stack Rock Fort.pdf" }));
+
+                    EmailSent = true;
+                    dbMilestone.Milestone11 = true;
+                }
+                if (passedLandmarks >= 11 && !dbMilestone.Milestone12)
+                {
+                    Counter = 12;
+
+                    var MilestoneModel = new NewMilestoneModel("St. Davids Cathedral", userName);
+                    string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
+
+                    messages.Add(new Message(new string[] { email }, "Postcard from St. Davids Cathedral", body, new List<string>() { @"EmailAttachments\St. Davids Cathedral.pdf" }));
+
+                    EmailSent = true;
+                    dbMilestone.Milestone12 = true;
+                }
+                if (passedLandmarks >= 12 && !dbMilestone.Milestone13)
+                {
+                    Counter = 13;
+
+                    var MilestoneModel = new NewMilestoneModel("Strumble Head Lighthouse", userName);
+                    string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
+
+                    messages.Add(new Message(new string[] { email }, "Postcard from Strumble Head Lighthouse", body, new List<string>() { @"EmailAttachments\Strumble Head Lighthouse.pdf" }));
+
+                    EmailSent = true;
+                    dbMilestone.Milestone13 = true;
+                }
+                if (passedLandmarks >= 13 && !dbMilestone.Milestone14)
+                {
+                    Counter = 14;
+
+                    var MilestoneModel = new NewMilestoneModel("Cardigan Castle", userName);
+                    string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
+
+                    messages.Add(new Message(new string[] { email }, "Postcard from Cardigan Castle", body, new List<string>() { @"EmailAttachments\Cardigan Castle.pdf" }));
+
+                    EmailSent = true;
+                    dbMilestone.Milestone14 = true;
+                }
+                if (passedLandmarks >= 14 && !dbMilestone.Milestone15)
+                {
+                    Counter = 15;
+
+                    var MilestoneModel = new NewMilestoneModel("Plas Tan y Bwlch", userName);
+                    string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
+
+                    messages.Add(new Message(new string[] { email }, "Postcard from Plas Tan y Bwlch", body, new List<string>() { @"EmailAttachments\Plas Tan y Bwlch.pdf" }));
+
+                    EmailSent = true;
+                    dbMilestone.Milestone15 = true;
+                }
+                if (passedLandmarks >= 15 && !dbMilestone.Milestone16)
+                {
+                    Counter = 16;
+
+                    var MilestoneModel = new NewMilestoneModel("Round House", userName);
+                    string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
+
+                    messages.Add(new Message(new string[] { email }, "Postcard from Round House", body, new List<string>() { @"EmailAttachments\Round House.pdf" }));
+
+                    EmailSent = true;
+
+                    dbMilestone.Milestone16 = true;
+                }
+                if (passedLandmarks >= 16 && !dbMilestone.Milestone17)
+                {
+                    Counter = 17;
+
+                    var MilestoneModel = new NewMilestoneModel("Harlech Castle", userName);
+                    string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
+
+                    messages.Add(new Message(new string[] { email }, "Postcard from Harlech Castle", body, new List<string>() { @"EmailAttachments\Harlech Castle.pdf" }));
+
+                    EmailSent = true;
+
+                    dbMilestone.Milestone17 = true;
+                }
+                if (passedLandmarks >= 17 && !dbMilestone.Milestone18)
+                {
+                    Counter = 18;
+
+                    var MilestoneModel = new NewMilestoneModel("Nant Gwrtheyrn", userName);
+                    string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
+
+                    messages.Add(new Message(new string[] { email }, "Postcard from Nant Gwrtheyrn", body, new List<string>() { @"EmailAttachments\Nant Gwrtheyrn.pdf" }));
+
+                    EmailSent = true;
+                    dbMilestone.Milestone18 = true;
+                }
+                if (passedLandmarks >= 18 && !dbMilestone.Milestone19)
+                {
+                    Counter = 19;
+
+                    var MilestoneModel = new NewMilestoneModel("Bedd Gelert", userName);
+                    string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
+
+                    messages.Add(new Message(new string[] { email }, "Postcard from Bedd Gelert", body, new List<string>() { @"EmailAttachments\Bedd Gelert.pdf" }));
+
+                    EmailSent = true;
+                    dbMilestone.Milestone19 = true;
+                }
+                if (passedLandmarks >= 19 && !dbMilestone.Milestone20)
+                {
+                    Counter = 20;
+
+                    var MilestoneModel = new NewMilestoneModel("Caernarfon Castle", userName);
+                    string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
+
+                    messages.Add(new Message(new string[] { email }, "Postcard from Caernarfon Castle", body, new List<string>() { @"EmailAttachments\Caernarfon Castle.pdf" }));
+
+                    EmailSent = true;
+                    dbMilestone.Milestone20 = true;
+                }
+                if (passedLandmarks >= 20 && !dbMilestone.Milestone21)
+                {
+                    Counter = 21;
+
+                    var MilestoneModel = new NewMilestoneModel("Beaumaris Castle", userName);
+                    string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
+
+                    messages.Add(new Message(new string[] { email }, "Postcard from Beaumaris Castle", body, new List<string>() { @"EmailAttachments\Beaumaris Castle.pdf" }));
+
+                    EmailSent = true;
+                    dbMilestone.Milestone21 = true;
+                }
+                if (passedLandmarks >= 21 && !dbMilestone.Milestone22)
+                {
+                    Counter = 22;
+
+                    var MilestoneModel = new NewMilestoneModel("Conwy Castle", userName);
+                    string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
+
+                    messages.Add(new Message(new string[] { email }, "Postcard from Conwy Castle", body, new List<string>() { @"EmailAttachments\Conwy Castle.pdf" }));
+
+                    EmailSent = true;
+                    dbMilestone.Milestone22 = true;
+                }
+                if (passedLandmarks >= 22 && !dbMilestone.Milestone23)
+                {
+                    Counter = 23;
+
+                    var MilestoneModel = new NewMilestoneModel("City Walls", userName);
+                    string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
+
+                    messages.Add(new Message(new string[] { email }, "Postcard from City Walls", body, new List<string>() { @"EmailAttachments\City Walls.pdf" }));
+
+                    EmailSent = true;
+                    dbMilestone.Milestone23 = true;
+                }
             }
-            if (passedLandmarks >= 1 && !dbMilestone.Milestone2)
-            {
-                Counter = 2;
-
-                var MilestoneModel = new NewMilestoneModel("Transporter Bridge", userName);
-                string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
-
-                messages.Add(new Message(new string[] { email }, "Postcard from Transporter Bridge", body, new List<string>() { @"EmailAttachments\Transporter Bridge.pdf" }));
-
-                EmailSent = true;
-                dbMilestone.Milestone2 = true;
-            }
-            if (passedLandmarks >= 2 && !dbMilestone.Milestone3)
-            {
-                Counter = 3;
-
-                var MilestoneModel = new NewMilestoneModel("Cardiff Castle", userName);
-                string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
-
-                messages.Add(new Message(new string[] { email }, "Postcard from Cardiff Castle", body, new List<string>() { @"EmailAttachments\Cardiff Castle.pdf" }));
-                
-                EmailSent = true;
-                dbMilestone.Milestone3 = true;
-            }
-            if (passedLandmarks >= 3 && !dbMilestone.Milestone4)
-            {
-                Counter = 4;
-
-                var MilestoneModel = new NewMilestoneModel("Rest Bay Beach", userName);
-                string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
-
-                messages.Add(new Message(new string[] { email }, "Postcard from Rest Bay Beach", body, new List<string>() { @"EmailAttachments\Rest Bay Beach.pdf" }));
-                EmailSent = true;
-                dbMilestone.Milestone4 = true;
-            }
-            if (passedLandmarks >= 4 && !dbMilestone.Milestone5)
-            {
-                Counter = 5;
-                
-                var MilestoneModel = new NewMilestoneModel("Mumbles Pier", userName);
-                string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
-
-                messages.Add(new Message(new string[] { email }, "Postcard from Mumbles Pier", body, new List<string>() { @"EmailAttachments\Mumbles Pier.pdf" }));
-
-                EmailSent = true;
-                dbMilestone.Milestone5 = true;
-            }
-            if (passedLandmarks >= 5 && !dbMilestone.Milestone6)
-            {
-                Counter = 6;
-                
-                var MilestoneModel = new NewMilestoneModel("Fall Bay", userName);
-                string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
-
-                messages.Add(new Message(new string[] { email }, "Postcard from Fall Bay", body, new List<string>() { @"EmailAttachments\Fall Bay.pdf" }));
-
-                EmailSent = true;
-                dbMilestone.Milestone6 = true;
-            }
-            if (passedLandmarks >= 6 && !dbMilestone.Milestone7)
-            {
-                Counter = 7;
-
-                var MilestoneModel = new NewMilestoneModel("Parc y Scarlets", userName);
-                string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
-
-                messages.Add(new Message(new string[] { email }, "Postcard from Parc y Scarlets", body, new List<string>() { @"EmailAttachments\Parc y Scarlets.pdf" }));
-
-                EmailSent = true;
-                dbMilestone.Milestone7 = true;
-            }
-            if (passedLandmarks >= 7 && !dbMilestone.Milestone8)
-            {
-                Counter = 8;
-
-                var MilestoneModel = new NewMilestoneModel("Kidwelly Castel", userName);
-                string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
-
-                messages.Add(new Message(new string[] { email }, "Postcard from Kidwelly Castel", body, new List<string>() { @"EmailAttachments\Kidwelly Castle.pdf" }));
-
-                EmailSent = true;
-                dbMilestone.Milestone8 = true;
-            }
-            if (passedLandmarks >= 8 && !dbMilestone.Milestone9)
-            {
-                Counter = 9;
-
-                var MilestoneModel = new NewMilestoneModel("St. Catherines Island", userName);
-                string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
-
-                messages.Add(new Message(new string[] { email }, "Postcard from St. Catherines Island", body, new List<string>() { @"EmailAttachments\St. Catherines Island.pdf" }));
-
-                EmailSent = true;
-                dbMilestone.Milestone9 = true;
-            }
-            if (passedLandmarks >= 9 && !dbMilestone.Milestone10)
-            {
-                Counter = 10;
-
-                var MilestoneModel = new NewMilestoneModel("Barafundle Bay", userName);
-                string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
-
-                messages.Add(new Message(new string[] { email }, "Postcard from Barafundle Bay", body, new List<string>() { @"EmailAttachments\Barafundle Bay.pdf" }));
-
-                EmailSent = true;
-                dbMilestone.Milestone10 = true;
-            }
-            if (passedLandmarks >= 10 && !dbMilestone.Milestone11)
-            {
-                Counter = 11;
-
-                var MilestoneModel = new NewMilestoneModel("Stack Rock Fort", userName);
-                string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
-
-                messages.Add(new Message(new string[] { email }, "Postcard from Stack Rock Fort", body, new List<string>() { @"EmailAttachments\Stack Rock Fort.pdf" }));
-
-                EmailSent = true;
-                dbMilestone.Milestone11 = true;
-            }
-            if (passedLandmarks >= 11 && !dbMilestone.Milestone12)
-            {
-                Counter = 12;
-
-                var MilestoneModel = new NewMilestoneModel("St. Davids Cathedral", userName);
-                string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
-
-                messages.Add(new Message(new string[] { email }, "Postcard from St. Davids Cathedral", body, new List<string>() { @"EmailAttachments\St. Davids Cathedral.pdf" }));
-
-                EmailSent = true;
-                dbMilestone.Milestone12 = true;
-            }
-            if (passedLandmarks >= 12 && !dbMilestone.Milestone13)
-            {
-                Counter = 13;
-
-                var MilestoneModel = new NewMilestoneModel("Strumble Head Lighthouse", userName);
-                string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
-
-                messages.Add(new Message(new string[] { email }, "Postcard from Strumble Head Lighthouse", body, new List<string>() { @"EmailAttachments\Strumble Head Lighthouse.pdf" }));
-
-                EmailSent = true;
-                dbMilestone.Milestone13 = true;
-            }
-            if (passedLandmarks >= 13 && !dbMilestone.Milestone14)
-            {
-                Counter = 14;
-
-                var MilestoneModel = new NewMilestoneModel("Cardigan Castle", userName);
-                string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
-
-                messages.Add(new Message(new string[] { email }, "Postcard from Cardigan Castle", body, new List<string>() { @"EmailAttachments\Cardigan Castle.pdf" }));
-
-                EmailSent = true;
-                dbMilestone.Milestone14 = true;
-            }
-            if (passedLandmarks >= 14 && !dbMilestone.Milestone15)
-            {
-                Counter = 15;
-
-                var MilestoneModel = new NewMilestoneModel("Plas Tan y Bwlch", userName);
-                string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
-
-                messages.Add(new Message(new string[] { email }, "Postcard from Plas Tan y Bwlch", body, new List<string>() { @"EmailAttachments\Plas Tan y Bwlch.pdf" }));
-
-                EmailSent = true;
-                dbMilestone.Milestone15 = true;
-            }
-            if (passedLandmarks >= 15 && !dbMilestone.Milestone16)
-            {
-                Counter = 16;
-
-                var MilestoneModel = new NewMilestoneModel("Round House", userName);
-                string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
-
-                messages.Add(new Message(new string[] { email }, "Postcard from Round House", body, new List<string>() { @"EmailAttachments\Round House.pdf" }));
-
-                EmailSent = true;
-
-                dbMilestone.Milestone16 = true;
-            }
-            if (passedLandmarks >= 16 && !dbMilestone.Milestone17)
-            {
-                Counter = 17;
-
-                var MilestoneModel = new NewMilestoneModel("Harlech Castle", userName);
-                string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
-
-                messages.Add(new Message(new string[] { email }, "Postcard from Harlech Castle", body, new List<string>() { @"EmailAttachments\Harlech Castle.pdf" }));
-
-                EmailSent = true;
-
-                dbMilestone.Milestone17 = true;
-            }
-            if (passedLandmarks >= 17 && !dbMilestone.Milestone18)
-            {
-                Counter = 18;
-
-                var MilestoneModel = new NewMilestoneModel("Nant Gwrtheyrn", userName);
-                string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
-
-                messages.Add(new Message(new string[] { email }, "Postcard from Nant Gwrtheyrn", body, new List<string>() { @"EmailAttachments\Nant Gwrtheyrn.pdf" }));
-
-                EmailSent = true;
-                dbMilestone.Milestone18 = true;
-            }
-            if (passedLandmarks >= 18 && !dbMilestone.Milestone19)
-            {
-                Counter = 19;
-
-                var MilestoneModel = new NewMilestoneModel("Bedd Gelert", userName);
-                string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
-
-                messages.Add(new Message(new string[] { email }, "Postcard from Bedd Gelert", body, new List<string>() { @"EmailAttachments\Bedd Gelert.pdf" }));
-
-                EmailSent = true;
-                dbMilestone.Milestone19 = true;
-            }
-            if (passedLandmarks >= 19 && !dbMilestone.Milestone20)
-            {
-                Counter = 20;
-
-                var MilestoneModel = new NewMilestoneModel("Caernarfon Castle", userName);
-                string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
-
-                messages.Add(new Message(new string[] { email }, "Postcard from Caernarfon Castle", body, new List<string>() { @"EmailAttachments\Caernarfon Castle.pdf" }));
-
-                EmailSent = true;
-                dbMilestone.Milestone20 = true;
-            }
-            if (passedLandmarks >= 20 && !dbMilestone.Milestone21)
-            {
-                Counter = 21;
-
-                var MilestoneModel = new NewMilestoneModel("Beaumaris Castle", userName);
-                string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
-
-                messages.Add(new Message(new string[] { email }, "Postcard from Beaumaris Castle", body, new List<string>() { @"EmailAttachments\Beaumaris Castle.pdf" }));
-
-                EmailSent = true;
-                dbMilestone.Milestone21 = true;
-            }
-            if (passedLandmarks >= 21 && !dbMilestone.Milestone22)
-            {
-                Counter = 22;
-
-                var MilestoneModel = new NewMilestoneModel("Conwy Castle", userName);
-                string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
-
-                messages.Add(new Message(new string[] { email }, "Postcard from Conwy Castle", body, new List<string>() { @"EmailAttachments\Conwy Castle.pdf" }));
-
-                EmailSent = true;
-                dbMilestone.Milestone22 = true;
-            }
-            if (passedLandmarks >= 22 && !dbMilestone.Milestone23)
-            {
-                Counter = 23;
-
-                var MilestoneModel = new NewMilestoneModel("City Walls", userName);
-                string body = _razorViewToStringRenderer.RenderViewToStringAsync(RenderViewString, MilestoneModel).Result;
-
-                messages.Add(new Message(new string[] { email }, "Postcard from City Walls", body, new List<string>() { @"EmailAttachments\City Walls.pdf" }));
-
-                EmailSent = true;
-                dbMilestone.Milestone23 = true;
-            }
-
             #endregion
 
             Counter = passedLandmarks;
@@ -670,6 +666,135 @@ namespace VirtualWelshWalk.DataAccess.Data
             #endregion
 
             return landMarksPassed;
+        }
+
+        public List<string> GetTownAndHistoricalPlace()
+        {
+            List<string> Places = new List<string>();
+
+            switch (Counter)
+            {
+                case 0:
+                    Places.Add("Chepstow");
+                    Places.Add("Tintern Abbey");
+                    break;
+
+                case 1:
+                    Places.Add("Newport");
+                    Places.Add("Transporter Bridge");
+                    break;
+
+                case 2:
+                    Places.Add("Cardiff");
+                    Places.Add("Cardiff Castle");
+                    break;
+
+                case 3:
+                    Places.Add("Porthcawl");
+                    Places.Add("Rest Bay Beach");
+                    break;
+
+                case 4:
+                    Places.Add("Swansea");
+                    Places.Add("Mumbles Pier");
+                    break;
+
+                case 5:
+                    Places.Add("Rhossili");
+                    Places.Add("Fall Bay");
+                    break;
+
+                case 6:
+                    Places.Add("Llanelli");
+                    Places.Add("Parc y Scarlets");
+                    break;
+
+                case 7:
+                    Places.Add("Carmarthen");
+                    Places.Add("Kidwelly Castle");
+                    break;
+
+                case 8:
+                    Places.Add("Tenby");
+                    Places.Add("St. Catherine’s Island");
+                    break;
+
+                case 9:
+                    Places.Add("Pembrokeshire");
+                    Places.Add("Barafundle Bay");
+                    break;
+
+                case 10:
+                    Places.Add("Milford Haven");
+                    Places.Add("Stack Rock Fort");
+                    break;
+
+                case 11:
+                    Places.Add("St. Davids");
+                    Places.Add("St. Davids Cathedral");
+                    break;
+
+                case 12:
+                    Places.Add("Fishguard");
+                    Places.Add("Strumble Head Lighthouse");
+                    break;
+
+                case 13:
+                    Places.Add("Cardigan");
+                    Places.Add("Cardigan Castle");
+                    break;
+
+                case 14:
+                    Places.Add("Aberystwyth");
+                    Places.Add("Plas Tan y Bwlch");
+                    break;
+
+                case 15:
+                    Places.Add("Barmouth");
+                    Places.Add("Round House");
+                    break;
+
+                case 16:
+                    Places.Add("Harlech");
+                    Places.Add("Harlech Castle");
+                    break;
+
+                case 17:
+                    Places.Add("Pwllheli");
+                    Places.Add("Nant Gwrtheyrn");
+                    break;
+
+                case 18:
+                    Places.Add("Gwynedd");
+                    Places.Add("Bedd Gelert");
+                    break;
+
+                case 19:
+                    Places.Add("Caernarfon");
+                    Places.Add("Caernarfon Castle");
+                    break;
+
+                case 20:
+                    Places.Add("Anglesey");
+                    Places.Add("Beaumaris Castle");
+                    break;
+
+                case 21:
+                    Places.Add("Conwy");
+                    Places.Add("Conwy Castle");
+                    break;
+
+                case 22:
+                    Places.Add("Chester");
+                    Places.Add("City Walls");
+                    break;
+
+                default:
+                    Places.Add("Chepstow");
+                    Places.Add("Tintern Abbey");
+                    break;
+            }
+            return Places;
         }
     }
 }

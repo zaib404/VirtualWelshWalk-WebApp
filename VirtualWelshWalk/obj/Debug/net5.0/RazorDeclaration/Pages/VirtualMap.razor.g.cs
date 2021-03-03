@@ -126,7 +126,7 @@ using System.Security.Claims;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 105 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
+#line 114 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
  
     public People people { get; set; } = new People();
     public VirtualWalk virtualWalk { get; set; } = new VirtualWalk();
@@ -143,12 +143,16 @@ using System.Security.Claims;
 
     string WalkName = "Welsh Coastal Walk";
 
-    double stepToNextMilestone = 0;
+    double milesToNextMilestone = 0;
+    double totalMilesWalked = 0;
+    double milesRemaining = 0;
+    double totalMiles = 476.3;
 
     bool showEnterStepsModal = false;
 
     string MilestoneInfo = "Loading...";
     string MilestonePic;
+    string space = " ";
 
     InputStepsForm stepsForm;
 
@@ -186,7 +190,7 @@ using System.Security.Claims;
         {
             await GetSession();
 
-            SetUpInputStepsForm();
+            var success = SetUpInputStepsForm();
 
             try
             {
@@ -195,50 +199,59 @@ using System.Security.Claims;
             catch (Exception e)
             {
                 System.Diagnostics.Debug.WriteLine(e.Message);
+                success = false;
+            }
+
+            if (success)
+            {
+                mapModule = await jsRunTime.InvokeAsync<IJSObjectReference>("import", "./scripts/MapBox.js");
+
+                string json = System.IO.File.ReadAllText("./wwwroot/scripts/WalkRoute.json");
+                await mapModule.InvokeVoidAsync("ParseJson", json);
+
+                mapInstance = await mapModule.InvokeAsync<IJSObjectReference>(
+                    "initialize", mapElement).AsTask();
+
+                if (virtualWalk != null && mapModule != null)
+                {
+                    try
+                    {
+                        await UpdatePersonLocation();
+                    }
+                    catch (Exception e)
+                    {
+
+                    }
+                }
+
+                await jsRunTime.InvokeVoidAsync("window.onload").AsTask();
+            }
+            else
+            {
+                // Force Reload
                 NavigationManager.NavigateTo("Virtual Coastal Map", true);
             }
-
-            mapModule = await jsRunTime.InvokeAsync<IJSObjectReference>("import", "./scripts/MapBox.js");
-
-            string json = System.IO.File.ReadAllText("./wwwroot/scripts/WalkRoute.json");
-            await mapModule.InvokeVoidAsync("ParseJson", json);
-
-            mapInstance = await mapModule.InvokeAsync<IJSObjectReference>(
-                "initialize", mapElement).AsTask();
-
-            if (virtualWalk != null && mapModule != null)
-            {
-                await UpdatePersonLocation();
-            }
-
-            await jsRunTime.InvokeVoidAsync("window.onload").AsTask();
 
             StateHasChanged();
         }
     }
 
-    void SetUpInputStepsForm()
+    bool SetUpInputStepsForm()
     {
+        bool rtnVal = true;
+
         try
         {
-            //var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
-            //var user = authState.User;
-
-            //Username = authState.User.Identity.Name;
-
-            //IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
-
-            //_claims = user.Claims;
-
-            //Emailadd = user.FindFirst(c => c.Type == ClaimTypes.Email)?.Value;
-
             stepsForm = new InputStepsForm();
-            stepsForm.SetUpFromVirtualMap(VirtualMilestoneService, milestone, emailSender, /*Emailadd, Username,*/ _razorViewToStringRenderer, AuthenticationStateProvider);
+            stepsForm.SetUpFromVirtualMap(VirtualMilestoneService, milestone, emailSender, _razorViewToStringRenderer, AuthenticationStateProvider);
+            rtnVal = true;
         }
-        catch (Exception e)
+        catch
         {
-            Console.WriteLine(e.Message);
+            rtnVal = false;
         }
+
+        return rtnVal;
     }
 
     async Task UpdatePersonLocation()
@@ -256,9 +269,23 @@ using System.Security.Claims;
             {
                 await mapModule.InvokeVoidAsync("updatePersonIcon", calculatePerson.NewPosition(virtualWalk.TotalSteps)).AsTask();
                 landID = await mapModule.InvokeAsync<string>("NextLandMark", landID);
-                stepToNextMilestone = Math.Round(await mapModule.InvokeAsync<double>("ApproximateStepsToNextMilestone"), 2);
+                milesToNextMilestone = Math.Round(await mapModule.InvokeAsync<double>("ApproximateMilesToNextMilestone"), 2);
+
+                totalMilesWalked = StepsInMiles();
+                milesRemaining = Math.Round(totalMiles - totalMilesWalked, 2);
+
+                if (milesRemaining <= 0)
+                {
+                    milesRemaining = 0;
+                }
+
+                if (landID.ToLower() == "City Walls".ToLower())
+                {
+                    milesRemaining = milesToNextMilestone;
+                }
 
                 await mapModule.InvokeVoidAsync("colourPath");
+
             }
         }
     }
@@ -564,6 +591,16 @@ using System.Security.Claims;
         {
             await mapModule.DisposeAsync();
         }
+    }
+
+    double StepsInMiles()
+    {
+        // Convert to kilometers
+        double km = Math.Round(virtualWalk.TotalSteps / 1312.33595801, 2);
+
+
+        // Convert to miles
+        return Math.Round(km * 0.62137, 1);
     }
 
 #line default

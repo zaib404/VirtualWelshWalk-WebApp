@@ -19,7 +19,7 @@
 @inject SignInManager<User> _signInManager
 @inject EmailTemplate.Services.IRazorViewToStringRenderer _razorViewToStringRenderer
 
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
+<link href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
 
 <style>
     .marker {
@@ -48,17 +48,27 @@ else
         <h2 class="heading2" id="@landID">@Localizer[landID]</h2>
         <hr />
         <h5 class="text-center">
-            <a class="font-weight-bold">@stepToNextMilestone @Localizer["miles"]</a> @Localizer["away"]
+            <a class="font-weight-bold">@milesToNextMilestone @Localizer["Miles"].ToString().ToLower()</a> @Localizer["away"]
         </h5>
     </div>
 
     <div class="container-fluid" style="padding: 5%; padding-bottom:3%; padding-top:3%;">
+        <h5 class="text-center">
+            @Localizer["Total miles"]: <a class="font-weight-bold">@totalMiles</a>
+            <br />
+            @Localizer["Miles remaining"]: <a class="font-weight-bold">@milesRemaining</a>
+        </h5>
+        <br />
+
         <div id="map" @ref="mapElement"></div>
 
         <br />
         <h4 class="text-center">
+            @Localizer["You have walked"]: @totalMilesWalked @space @Localizer["Miles"].ToString().ToLower()
+            <br />
             @Localizer["Step counter"]: @virtualWalk.TotalSteps
         </h4>
+        <br />
     </div>
 
     <div class="container pb-5 text-center">
@@ -88,8 +98,7 @@ else
 
                     <div class="modal-body">
                         <InputStepsForm @ref="stepsForm" dbPeople="people" dbVirtualWalk="virtualWalk" dbMilestone="milestone"
-                                        OnVirtualMapSubmit="Update" OnVirtualMapGetInfo="@ShowMileStoneUnlocked"
-                                         /> @*EmailAddress="@Emailadd" UserName="@Username"*@
+                                        OnVirtualMapSubmit="Update" OnVirtualMapGetInfo="@ShowMileStoneUnlocked" />
                     </div>
 
                     <div class="modal-footer">
@@ -118,12 +127,16 @@ else
 
     string WalkName = "Welsh Coastal Walk";
 
-    double stepToNextMilestone = 0;
+    double milesToNextMilestone = 0;
+    double totalMilesWalked = 0;
+    double milesRemaining = 0;
+    double totalMiles = 476.3;
 
     bool showEnterStepsModal = false;
 
     string MilestoneInfo = "Loading...";
     string MilestonePic;
+    string space = " ";
 
     InputStepsForm stepsForm;
 
@@ -161,7 +174,7 @@ else
         {
             await GetSession();
 
-            SetUpInputStepsForm();
+            var success = SetUpInputStepsForm();
 
             try
             {
@@ -170,50 +183,59 @@ else
             catch (Exception e)
             {
                 System.Diagnostics.Debug.WriteLine(e.Message);
+                success = false;
+            }
+
+            if (success)
+            {
+                mapModule = await jsRunTime.InvokeAsync<IJSObjectReference>("import", "./scripts/MapBox.js");
+
+                string json = System.IO.File.ReadAllText("./wwwroot/scripts/WalkRoute.json");
+                await mapModule.InvokeVoidAsync("ParseJson", json);
+
+                mapInstance = await mapModule.InvokeAsync<IJSObjectReference>(
+                    "initialize", mapElement).AsTask();
+
+                if (virtualWalk != null && mapModule != null)
+                {
+                    try
+                    {
+                        await UpdatePersonLocation();
+                    }
+                    catch (Exception e)
+                    {
+
+                    }
+                }
+
+                await jsRunTime.InvokeVoidAsync("window.onload").AsTask();
+            }
+            else
+            {
+                // Force Reload
                 NavigationManager.NavigateTo("Virtual Coastal Map", true);
             }
-
-            mapModule = await jsRunTime.InvokeAsync<IJSObjectReference>("import", "./scripts/MapBox.js");
-
-            string json = System.IO.File.ReadAllText("./wwwroot/scripts/WalkRoute.json");
-            await mapModule.InvokeVoidAsync("ParseJson", json);
-
-            mapInstance = await mapModule.InvokeAsync<IJSObjectReference>(
-                "initialize", mapElement).AsTask();
-
-            if (virtualWalk != null && mapModule != null)
-            {
-                await UpdatePersonLocation();
-            }
-
-            await jsRunTime.InvokeVoidAsync("window.onload").AsTask();
 
             StateHasChanged();
         }
     }
 
-    void SetUpInputStepsForm()
+    bool SetUpInputStepsForm()
     {
+        bool rtnVal = true;
+
         try
         {
-            //var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
-            //var user = authState.User;
-
-            //Username = authState.User.Identity.Name;
-
-            //IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
-
-            //_claims = user.Claims;
-
-            //Emailadd = user.FindFirst(c => c.Type == ClaimTypes.Email)?.Value;
-
             stepsForm = new InputStepsForm();
-            stepsForm.SetUpFromVirtualMap(VirtualMilestoneService, milestone, emailSender, /*Emailadd, Username,*/ _razorViewToStringRenderer, AuthenticationStateProvider);
+            stepsForm.SetUpFromVirtualMap(VirtualMilestoneService, milestone, emailSender, _razorViewToStringRenderer, AuthenticationStateProvider);
+            rtnVal = true;
         }
-        catch (Exception e)
+        catch
         {
-            Console.WriteLine(e.Message);
+            rtnVal = false;
         }
+
+        return rtnVal;
     }
 
     async Task UpdatePersonLocation()
@@ -231,9 +253,23 @@ else
             {
                 await mapModule.InvokeVoidAsync("updatePersonIcon", calculatePerson.NewPosition(virtualWalk.TotalSteps)).AsTask();
                 landID = await mapModule.InvokeAsync<string>("NextLandMark", landID);
-                stepToNextMilestone = Math.Round(await mapModule.InvokeAsync<double>("ApproximateStepsToNextMilestone"), 2);
+                milesToNextMilestone = Math.Round(await mapModule.InvokeAsync<double>("ApproximateMilesToNextMilestone"), 2);
+
+                totalMilesWalked = StepsInMiles();
+                milesRemaining = Math.Round(totalMiles - totalMilesWalked, 2);
+
+                if (milesRemaining <= 0)
+                {
+                    milesRemaining = 0;
+                }
+
+                if (landID.ToLower() == "City Walls".ToLower())
+                {
+                    milesRemaining = milesToNextMilestone;
+                }
 
                 await mapModule.InvokeVoidAsync("colourPath");
+
             }
         }
     }
@@ -539,5 +575,15 @@ else
         {
             await mapModule.DisposeAsync();
         }
+    }
+
+    double StepsInMiles()
+    {
+        // Convert to kilometers
+        double km = Math.Round(virtualWalk.TotalSteps / 1312.33595801, 2);
+
+
+        // Convert to miles
+        return Math.Round(km * 0.62137, 1);
     }
 }

@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="A new area of interest unlocked" xml:space="preserve">
-    <value>A new area of interest unlocked</value>
-  </data>
   <data name="Aberystwyth" xml:space="preserve">
     <value>Aberystwyth</value>
   </data>
@@ -155,6 +152,12 @@
   </data>
   <data name="Are you sure you?" xml:space="preserve">
     <value>Are you sure you?</value>
+  </data>
+  <data name="At Educ8 we are passionate about the Welsh language and our culture; our app will take you virtually around the magnificent Welsh Coast, recording how far you’ve travelled and pointing out places of interest on the way through our interactive map" xml:space="preserve">
+    <value>At Educ8 we are passionate about the Welsh language and our culture; our app will take you virtually around the magnificent Welsh Coast, recording how far you’ve travelled and pointing out places of interest on the way through our interactive map</value>
+  </data>
+  <data name="away" xml:space="preserve">
+    <value>away</value>
   </data>
   <data name="Barafundle Bay" xml:space="preserve">
     <value>Barafundle Bay</value>
@@ -237,6 +240,9 @@
   <data name="Confirm Password" xml:space="preserve">
     <value>Confirm Password</value>
   </data>
+  <data name="Congratulations" xml:space="preserve">
+    <value>Congratulations</value>
+  </data>
   <data name="Conwy" xml:space="preserve">
     <value>Conwy</value>
   </data>
@@ -254,9 +260,6 @@
   </data>
   <data name="Didn't receive an email within 15 minutes? Click the button below" xml:space="preserve">
     <value>Didn't receive an email within 15 minutes? Click the button below</value>
-  </data>
-  <data name="Discover places of history along the way from Chepstow to Chester" xml:space="preserve">
-    <value>Discover places of history along the way from Chepstow to Chester</value>
   </data>
   <data name="Do you wish to add new steps?" xml:space="preserve">
     <value>Do you wish to add new steps?</value>
@@ -347,6 +350,9 @@
   </data>
   <data name="Miles" xml:space="preserve">
     <value>Miles</value>
+  </data>
+  <data name="Miles remaining" xml:space="preserve">
+    <value>Miles remaining</value>
   </data>
   <data name="milesaway1" xml:space="preserve">
     <value>miles</value>
@@ -498,8 +504,8 @@
   <data name="Swansea" xml:space="preserve">
     <value>Swansea</value>
   </data>
-  <data name="Take part in Educ8's interactive learning experience" xml:space="preserve">
-    <value>Take part in Educ8's interactive learning experience</value>
+  <data name="Take part in Educ8’s interactive learning experience by using our easy smartphone app whilst you walk the great Welsh Coastal Path" xml:space="preserve">
+    <value>Take part in Educ8’s interactive learning experience by using our easy smartphone app whilst you walk the great Welsh Coastal Path</value>
   </data>
   <data name="Tenby" xml:space="preserve">
     <value>Tenby</value>
@@ -537,6 +543,9 @@
   <data name="to see more" xml:space="preserve">
     <value>to see more</value>
   </data>
+  <data name="Total miles" xml:space="preserve">
+    <value>Total miles</value>
+  </data>
   <data name="Transporter Bridge" xml:space="preserve">
     <value>Transporter Bridge</value>
   </data>
@@ -555,8 +564,11 @@
   <data name="You do not have access to this resource" xml:space="preserve">
     <value>You do not have access to this resource</value>
   </data>
-  <data name="You have reached a new milestone. Check your emails and the" xml:space="preserve">
-    <value>You have reached a new milestone. Check your emails and the</value>
+  <data name="You have reached" xml:space="preserve">
+    <value>You have reached</value>
+  </data>
+  <data name="You have walked" xml:space="preserve">
+    <value>You have walked</value>
   </data>
   <data name="You have walked approximately" xml:space="preserve">
     <value>You have walked approximately</value>
