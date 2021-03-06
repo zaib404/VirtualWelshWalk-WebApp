@@ -176,7 +176,7 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account
 
                     string body = await _razorViewToStringRenderer.RenderViewToStringAsync(@"\Views\Emails\ConfirmAccount\ConfirmAccount.cshtml", confirmAccountModel);
 
-                    var message = new Message(new string[] { Input.Email }, "Confirm your email", body, null);
+                    var message = new Message(new string[] { Input.Email }, "Confirm your email", body);
 
                     await _emailSender.SendEmailAsync(message);
 

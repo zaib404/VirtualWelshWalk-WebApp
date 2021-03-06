@@ -116,7 +116,7 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account.Manage
 
                 string body = await _razorViewToStringRenderer.RenderViewToStringAsync(@"\Views\Emails\ChangeEmail\ChangeEmail.cshtml", confirmAccountModel);
 
-                var message = new Message(new string[] { Input.NewEmail }, "Confirm your email", body, null);
+                var message = new Message(new string[] { Input.NewEmail }, "Confirm your email", body);
 
                 await _emailSender.SendEmailAsync(message);
 
@@ -156,7 +156,7 @@ namespace VirtualWelshWalk.Areas.Identity.Pages.Account.Manage
 
             string body = await _razorViewToStringRenderer.RenderViewToStringAsync(@"\Views\Emails\ChangeEmail\ChangeEmail.cshtml", confirmAccountModel);
 
-            var message = new Message(new string[] { Input.NewEmail }, "Confirm your email", body, null);
+            var message = new Message(new string[] { Input.NewEmail }, "Confirm your email", body);
 
             await _emailSender.SendEmailAsync(message);
 

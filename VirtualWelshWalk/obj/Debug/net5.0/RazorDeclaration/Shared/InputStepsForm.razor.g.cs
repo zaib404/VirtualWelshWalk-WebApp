@@ -222,7 +222,7 @@ using System.Security.Claims;
 
         virtualSteps.TotalSteps = dbVirtualWalk.TotalSteps;
 
-        ShowNewMilestoneUnlocked = checkMilestone.MilestoneCheckWithEmail(StepsInMiles());
+        ShowNewMilestoneUnlocked = checkMilestone.MilestoneCheckWithEmail(StepsInMiles(), virtualSteps.TotalSteps);
         //ShowNewMilestoneUnlocked = true;
 
         if (ShowNewMilestoneUnlocked)
@@ -261,7 +261,7 @@ using System.Security.Claims;
 
     async Task UpdateMilestoneInformation()
     {
-        await OnVirtualMapGetInfo.InvokeAsync(checkMilestone.CheckMilestoneCounter(StepsInMiles()));
+        await OnVirtualMapGetInfo.InvokeAsync(checkMilestone.CheckMilestoneCounter(StepsInMiles(), virtualSteps.TotalSteps));
     }
 
     async Task UpdateTotalStepsChanged()
@@ -279,7 +279,7 @@ using System.Security.Claims;
         if (checkMilestone.Counter == 0)
         {
             virtualSteps.TotalSteps = dbVirtualWalk.TotalSteps;
-            await OnVirtualMapGetInfo.InvokeAsync(checkMilestone.CheckMilestoneCounter(StepsInMiles()));
+            await OnVirtualMapGetInfo.InvokeAsync(checkMilestone.CheckMilestoneCounter(StepsInMiles(), virtualSteps.TotalSteps));
         }
         else
         {
@@ -302,7 +302,7 @@ using System.Security.Claims;
             checkMilestone = new CheckMilestone();
         }
 
-        var milestoneNum = checkMilestone.CheckMilestoneCounter(StepsInMiles());
+        var milestoneNum = checkMilestone.CheckMilestoneCounter(StepsInMiles(), virtualSteps.TotalSteps);
 
         if (virtualSteps.TotalSteps == 0)
         {

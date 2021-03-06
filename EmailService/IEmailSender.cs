@@ -10,5 +10,7 @@ namespace EmailService
         void SendEmail(Message message);
 
         Task SendEmailAsync(Message message);
+
+        Task SendPostcardEmailAsync(Message message);
     }
 }

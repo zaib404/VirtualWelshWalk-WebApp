@@ -220,7 +220,7 @@ using System.Security.Claims;
                     }
                     catch (Exception e)
                     {
-
+                        System.Diagnostics.Debug.WriteLine(e.Message);
                     }
                 }
 

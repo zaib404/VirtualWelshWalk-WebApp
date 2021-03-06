@@ -3,22 +3,126 @@
 @model NewMilestoneModel
 
 @{
-    ViewData["EmailTitle"] = Model.MilestoneName;
+    ViewData["EmailTitle"] = "Llongyfarchaiadau! Congratulations!";
 }
 
-<hr />
+@*<hr />*@
 
-<p class=font-weight-bold>
-    Hello @Model.Name,
+@*Welsh up top then English*@
+@*Welsh Information*@
+
+<p style="font-weight:bold">
+    Helo @Model.UserName,
 </p>
 
 <p>
-    Congratulations on reaching a new milestone, check the attached file to view more information about the area you are at.
+    Llongyfarchaiadau! Rydych wedi cyflawni @Model.Miles milltir, @Model.Steps cam, o gyfanswm o @Model.HistoricalPlaceNameWelsh milltir/cam o daith gerdded arfordir Cymru.
+</p>
+
+<p>
+    Croeso i @Model.TownNameWelsh, @Model.HistoricalPlaceNameWelsh
+</p>
+
+<p style="font-weight:bold">
+    Hanes:
+</p>
+
+<p>
+    @Model.TownInfoWelsh
 </p>
 
 <br />
 
+<p>
+    Mwynhewch gam nesaf eich taith gerdded ac arhoswch yn saff.
+</p>
+
+@*English Information*@
+
 <br />
+<br />
+
+<p style="font-weight:bold">
+    Hello @Model.UserName,
+</p>
+
+<p>
+    You have achieved @Model.Miles miles, @Model.Steps steps, of the Gr8 Welsh walk goal of @Model.HistoricalPlaceNameEnglish miles/steps.
+</p>
+
+<p>
+    Welcome to @Model.TownNameEnglish, @Model.HistoricalPlaceNameEnglish
+</p>
+
+<p style="font-weight:bold">
+    History:
+</p>
+
+<p>
+    @Model.TownInfoEnglish
+</p>
 
 <br />
 
+<p>
+    Enjoy the next stage of your walk and stay safe
+</p>
+
+<br />
+<br />
+
+<img src="" cid:{0}"" alt="Milestone" id="Milestone" class="img-fluid" style="display:block;">
+
+<br />
+<br />
+
+<p style="font-weight:bold">
+    Manylion / Details
+</p>
+
+<p>Cyfeiriad / Address:</p>
+
+@foreach (var addressDetails in Model.Address)
+{
+    <p class="Address" style="margin:0px;">@addressDetails</p>
+}
+
+@if (Model.OpeningTimes != null)
+{
+    <p class="Opening">Amseroedd agor / Opening Times:</p>
+
+    for (int i = 0; i < Model.OpeningTimes.Count; i++)
+    {
+        <p class="Opening">@Model.OpeningTimes[i]</p>
+    }
+}
+
+@if (Model.Tel != null)
+{
+    <p>Ffôn / Tel: @Model.Tel</p>
+}
+
+@if (Model.Email != null)
+{
+    <p>E-bost / Email: @Model.Email</p>
+}
+
+@if (Model.WebsiteLink != null)
+{
+    <p>Gwe / Web: @Model.WebsiteLink</p>
+}
+
+<br />
+
+<br />
+
+<p style="font-family: 'Century Gothic' ">
+    <a href="https://www.educ8training.co.uk/">Tîm Educ8</a>
+</p>
+
+<p style="font-family: 'Century Gothic' ">
+    <a href="https://www.educ8training.co.uk/">Educ8 team</a>
+</p>
+
+<br />
+<br />
