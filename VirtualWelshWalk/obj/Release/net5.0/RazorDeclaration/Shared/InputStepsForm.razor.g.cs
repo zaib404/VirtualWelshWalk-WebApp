@@ -167,12 +167,6 @@ using System.Security.Claims;
     [Parameter]
     public int MilestoneCounter { get; set; }
 
-    [Parameter]
-    public string EmailAddress { get; set; }
-
-    [Parameter]
-    public string UserName { get; set; }
-
     CheckMilestone checkMilestone;
 
     #region Bool
@@ -186,7 +180,10 @@ using System.Security.Claims;
 
     #region Strings
 
-    //string Space = "";
+    string Space = " ";
+
+    string townName = "";
+    string historicalPlace = "";
 
     #endregion
 
@@ -204,28 +201,7 @@ using System.Security.Claims;
 
     protected async override Task OnAfterRenderAsync(bool firstRender)
     {
-        checkMilestone = new CheckMilestone(dbMilestone, emailSender, _razorViewToStringRenderer);
-
-        try
-        {
-            //var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
-            //var user = authState.User;
-
-            //UserName = authState.User.Identity.Name;
-
-
-            //IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
-
-            //_claims = user.Claims;
-
-            //EmailAddress = user.FindFirst(c => c.Type == ClaimTypes.Email)?.Value;
-
-            checkMilestone.SetData(EmailAddress, UserName);
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e.Message);
-        }
+        checkMilestone = new CheckMilestone(dbMilestone, emailSender, _razorViewToStringRenderer, AuthenticationStateProvider);
 
         await jsRunTime.InvokeVoidAsync("window.onload");
     }
@@ -246,11 +222,14 @@ using System.Security.Claims;
 
         virtualSteps.TotalSteps = dbVirtualWalk.TotalSteps;
 
-        ShowNewMilestoneUnlocked = checkMilestone.MilestoneCheckWithEmail(StepsInKM());
+        ShowNewMilestoneUnlocked = checkMilestone.MilestoneCheckWithEmail(StepsInMiles(), virtualSteps.TotalSteps);
         //ShowNewMilestoneUnlocked = true;
 
         if (ShowNewMilestoneUnlocked)
         {
+            var newMileStoneInfo = checkMilestone.GetTownAndHistoricalPlace();
+            townName = newMileStoneInfo[0];
+            historicalPlace = newMileStoneInfo[1];
             await MilestoneService.UpdateVirtualMilestones(checkMilestone.dbMilestone);
         }
 
@@ -282,7 +261,7 @@ using System.Security.Claims;
 
     async Task UpdateMilestoneInformation()
     {
-        await OnVirtualMapGetInfo.InvokeAsync(checkMilestone.CheckMilestoneCounter(StepsInKM()));
+        await OnVirtualMapGetInfo.InvokeAsync(checkMilestone.CheckMilestoneCounter(StepsInMiles(), virtualSteps.TotalSteps));
     }
 
     async Task UpdateTotalStepsChanged()
@@ -300,7 +279,7 @@ using System.Security.Claims;
         if (checkMilestone.Counter == 0)
         {
             virtualSteps.TotalSteps = dbVirtualWalk.TotalSteps;
-            await OnVirtualMapGetInfo.InvokeAsync(checkMilestone.CheckMilestoneCounter(StepsInKM()));
+            await OnVirtualMapGetInfo.InvokeAsync(checkMilestone.CheckMilestoneCounter(StepsInMiles(), virtualSteps.TotalSteps));
         }
         else
         {
@@ -323,7 +302,7 @@ using System.Security.Claims;
             checkMilestone = new CheckMilestone();
         }
 
-        var milestoneNum = checkMilestone.CheckMilestoneCounter(StepsInKM());
+        var milestoneNum = checkMilestone.CheckMilestoneCounter(StepsInMiles(), virtualSteps.TotalSteps);
 
         if (virtualSteps.TotalSteps == 0)
         {
@@ -340,7 +319,7 @@ using System.Security.Claims;
 
     #region Misc
 
-    double StepsInKM()
+    double StepsInMiles()
     {
         // Convert to kilometers
         double km = Math.Round(virtualSteps.TotalSteps / 1312.33595801, 2);
@@ -359,10 +338,10 @@ using System.Security.Claims;
 
     public void SetUpFromVirtualMap(IVirtualMilestonesService milestonesService,
         VirtualMilestone pDbMilestone, EmailService.IEmailSender pEmailSender,
-        string pEmailAddress, string pUserName, EmailTemplate.Services.IRazorViewToStringRenderer razorViewToStringRenderer)
+        EmailTemplate.Services.IRazorViewToStringRenderer razorViewToStringRenderer,
+        AuthenticationStateProvider AuthenticationStateProvider)
     {
-        checkMilestone = new CheckMilestone(pDbMilestone, pEmailSender, razorViewToStringRenderer);
-        checkMilestone.SetData(pEmailAddress, pUserName);
+        checkMilestone = new CheckMilestone(pDbMilestone, pEmailSender, razorViewToStringRenderer, AuthenticationStateProvider);
 
         dbMilestone = pDbMilestone;
         MilestoneService = milestonesService;

@@ -86,14 +86,38 @@ namespace EmailService
 
             if (nodes != null)
             {
-                var imagePath = $"{Directory.GetCurrentDirectory()}{@"\wwwroot\Assets\WebPage\dual-logo.png"}";
+                var imagePath = $"{Directory.GetCurrentDirectory()}{@"\wwwroot\Assets\WebPage\dbl_logo_with_text.png"}";
 
-                var imgPath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), imagePath);
+                var imgLogo = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), imagePath);
+
+                var SignatureWPath = $"{Directory.GetCurrentDirectory()}{@"\wwwroot\Assets\tim_educ8_signature.png"}";
+
+                var imgSignatureW = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), SignatureWPath);
+
+                var SignatureEPath = $"{Directory.GetCurrentDirectory()}{@"\wwwroot\Assets\educ8_team_signature.png"}";
+
+                var imgSignatureE = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), SignatureEPath);
 
                 foreach (var node in nodes)
                 {
-                    // File path to the image. We get the src attribute off the current node for the file name.
-                    var file = Path.Combine(imgPath, node.GetAttributeValue("src", ""));
+                    string file = "";
+
+                    if (node.Id.ToLower() == "logo".ToLower())
+                    {
+                        // File path to the image. We get the src attribute off the current node for the file name.
+                        file = Path.Combine(imgLogo, node.GetAttributeValue("src", ""));
+                    }
+                    else if (node.Id.ToLower() == "SignatureW".ToLower())
+                    {
+                        // File path to the image. We get the src attribute off the current node for the file name.
+                        file = Path.Combine(imgSignatureW, node.GetAttributeValue("src", ""));
+                    }
+                    else if (node.Id.ToLower() == "SignatureE".ToLower())
+                    {
+                        // File path to the image. We get the src attribute off the current node for the file name.
+                        file = Path.Combine(imgSignatureE, node.GetAttributeValue("src", ""));
+                    }
+
                     if (!File.Exists(file))
                     {
                         continue;
@@ -153,13 +177,21 @@ namespace EmailService
 
             if (nodes != null)
             {
-                var logoPath = $"{Directory.GetCurrentDirectory()}{@"\wwwroot\Assets\WebPage\dual-logo.png"}";
+                var logoPath = $"{Directory.GetCurrentDirectory()}{@"\wwwroot\Assets\WebPage\dbl_logo_with_text.png"}";
 
-                var logoimgPath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), logoPath);
+                var imgLogo = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), logoPath);
 
                 var imagePath = $"{Directory.GetCurrentDirectory()}{string.Format(@"\wwwroot{0}", message.PostCardImages)}";
 
-                var imgPath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), imagePath);
+                var imgCulture = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), imagePath);
+
+                var SignatureWPath = $"{Directory.GetCurrentDirectory()}{@"\wwwroot\Assets\tim_educ8_signature.png"}";
+
+                var imgSignatureW = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), SignatureWPath);
+
+                var SignatureEPath = $"{Directory.GetCurrentDirectory()}{@"\wwwroot\Assets\educ8_team_signature.png"}";
+
+                var imgSignatureE = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), SignatureEPath);
 
                 foreach (var node in nodes)
                 {
@@ -168,12 +200,22 @@ namespace EmailService
                     if (node.Id.ToLower() == "logo".ToLower())
                     {
                         // File path to the image. We get the src attribute off the current node for the file name.
-                        file = Path.Combine(logoimgPath, node.GetAttributeValue("src", ""));
+                        file = Path.Combine(imgLogo, node.GetAttributeValue("src", ""));
+                    }
+                    else if (node.Id.ToLower() == "SignatureW".ToLower())
+                    {
+                        // File path to the image. We get the src attribute off the current node for the file name.
+                        file = Path.Combine(imgSignatureW, node.GetAttributeValue("src", ""));
+                    }
+                    else if (node.Id.ToLower() == "SignatureE".ToLower())
+                    {
+                        // File path to the image. We get the src attribute off the current node for the file name.
+                        file = Path.Combine(imgSignatureE, node.GetAttributeValue("src", ""));
                     }
                     else
                     {
                         // File path to the image. We get the src attribute off the current node for the file name.
-                        file = Path.Combine(imgPath, node.GetAttributeValue("src", ""));
+                        file = Path.Combine(imgCulture, node.GetAttributeValue("src", ""));
                     }
                     
                     if (!File.Exists(file))

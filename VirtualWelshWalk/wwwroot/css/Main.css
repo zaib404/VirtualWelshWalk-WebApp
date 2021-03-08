@@ -1,7 +1,7 @@
 ﻿/* xs < 768 */
 @media screen and (max-width: 360px) {
     .navLogo {
-        max-height: 2.7em;
+        max-height: 1.41em;
     }
 
     .hero-text {
@@ -18,7 +18,7 @@
 @media screen and (min-width: 361px) 
 {
     .navLogo{
-        max-height: 2.7em;
+        max-height: 1.41em;
     }
 
     .hero-text
@@ -35,7 +35,7 @@
 /* sm */
 @media screen and (min-width: 768px) {
     .navLogo {
-        max-height: 4em;
+        max-height: 2.4em;
     }
 
     .hero-text {
@@ -51,7 +51,7 @@
 /* md */
 @media screen and (min-width: 992px) {
     .navLogo {
-        max-height: 5em;
+        max-height: 3.7em;
     }
 
     .hero-text {
@@ -65,7 +65,7 @@
 }
 
 /* lg */
-@media screen and (min-width: 1920px /*1200*//*px*/) {
+@media screen and (min-width: 1920px) {
     
     .navLogo {
         max-height: 5em;

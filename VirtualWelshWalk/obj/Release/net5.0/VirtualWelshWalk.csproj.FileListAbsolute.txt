@@ -1,6 +1,5 @@
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Release\net5.0\EmailTemplate.Views.dll
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Release\net5.0\EmailTemplate.Views.pdb
-D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Release\net5.0\wwwroot\Assets\Banner.PNG
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Release\net5.0\wwwroot\Assets\Culture\Barafundle Bay.jpg
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Release\net5.0\wwwroot\Assets\Culture\Beaumaris Castle.jpg
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Release\net5.0\wwwroot\Assets\Culture\Bedd Gelert.jpg
@@ -185,7 +184,6 @@ D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\RazorDeclaration\App.razor.g.cs
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\RazorDeclaration\Pages\Index.razor.g.cs
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\RazorDeclaration\Pages\InputSteps.razor.g.cs
-D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\RazorDeclaration\Pages\Test.razor.g.cs
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\RazorDeclaration\Pages\VirtualMap.razor.g.cs
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\RazorDeclaration\Shared\ChooseLanguage.razor.g.cs
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\RazorDeclaration\Shared\Footer.razor.g.cs
@@ -202,7 +200,6 @@ D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\Razor\App.razor.g.cs
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\Razor\Pages\Index.razor.g.cs
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\Razor\Pages\InputSteps.razor.g.cs
-D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\Razor\Pages\Test.razor.g.cs
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\Razor\Pages\VirtualMap.razor.g.cs
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\Razor\Shared\ChooseLanguage.razor.g.cs
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\Razor\Shared\Footer.razor.g.cs
@@ -285,3 +282,10 @@ D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Release\net
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Release\net5.0\EmailAttachments\Tintern Abbey.pdf
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Release\net5.0\EmailAttachments\Transporter Bridge.pdf
 D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Release\net5.0\HtmlAgilityPack.dll
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\RazorDeclaration\Pages\Privacy-Policy.razor.g.cs
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\RazorDeclaration\Shared\_CookieConsentPartial.razor.g.cs
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\Razor\Pages\Privacy-Policy.razor.g.cs
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\Razor\Shared\_CookieConsentPartial.razor.g.cs
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\obj\Release\net5.0\Razor\Pages\Shared\_CookieConsentPartial.cshtml.g.cs
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Release\net5.0\wwwroot\Assets\educ8_team_signature.png
+D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\bin\Release\net5.0\wwwroot\Assets\tim_educ8_signature.png

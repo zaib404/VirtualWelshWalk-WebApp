@@ -126,7 +126,7 @@ using System.Security.Claims;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 103 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
+#line 114 "D:\Zaib\Documents\Areca Design\VirtualWelshWalk\VirtualWelshWalk\Pages\VirtualMap.razor"
  
     public People people { get; set; } = new People();
     public VirtualWalk virtualWalk { get; set; } = new VirtualWalk();
@@ -143,17 +143,18 @@ using System.Security.Claims;
 
     string WalkName = "Welsh Coastal Walk";
 
-    double stepToNextMilestone = 0;
+    double milesToNextMilestone = 0;
+    double totalMilesWalked = 0;
+    double milesRemaining = 0;
+    double totalMiles = 476.3;
 
     bool showEnterStepsModal = false;
 
     string MilestoneInfo = "Loading...";
     string MilestonePic;
+    string space = " ";
 
     InputStepsForm stepsForm;
-
-    string Emailadd;
-    string Username;
 
     protected override async Task OnInitializedAsync()
     {
@@ -169,6 +170,7 @@ using System.Security.Claims;
 
             milestone = await VirtualMilestoneService.GetVirtualMilestones(WalkName, people.PeopleId);
         }
+
     }
 
     async Task GetSession()
@@ -188,63 +190,103 @@ using System.Security.Claims;
         {
             await GetSession();
 
-            await SetUpInputStepsForm();
+            var success = SetUpInputStepsForm();
 
-            ShowMileStoneUnlocked(await stepsForm.CallVirtualMapGetInfoChanged(virtualWalk.TotalSteps));
-
-            string json = System.IO.File.ReadAllText("./wwwroot/scripts/WalkRoute.json");
-
-            mapModule = await jsRunTime.InvokeAsync<IJSObjectReference>("import", "./scripts/MapBox.js").AsTask();
-
-            await mapModule.InvokeVoidAsync("ParseJson", json);
-
-            mapInstance = await mapModule.InvokeAsync<IJSObjectReference>(
-            "initialize", mapElement).AsTask();
-
-            if (virtualWalk != null && mapModule != null)
+            try
             {
-                await UpdatePersonLocation();
+                ShowMileStoneUnlocked(await stepsForm.CallVirtualMapGetInfoChanged(virtualWalk.TotalSteps));
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine(e.Message);
+                success = false;
             }
 
-            await jsRunTime.InvokeVoidAsync("window.onload").AsTask();
+            if (success)
+            {
+                mapModule = await jsRunTime.InvokeAsync<IJSObjectReference>("import", "./scripts/MapBox.js");
+
+                string json = System.IO.File.ReadAllText("./wwwroot/scripts/WalkRoute.json");
+                await mapModule.InvokeVoidAsync("ParseJson", json);
+
+                mapInstance = await mapModule.InvokeAsync<IJSObjectReference>(
+                    "initialize", mapElement).AsTask();
+
+                if (virtualWalk != null && mapModule != null)
+                {
+                    try
+                    {
+                        await UpdatePersonLocation();
+                    }
+                    catch (Exception e)
+                    {
+                        System.Diagnostics.Debug.WriteLine(e.Message);
+                    }
+                }
+
+                await jsRunTime.InvokeVoidAsync("window.onload").AsTask();
+            }
+            else
+            {
+                // Force Reload
+                NavigationManager.NavigateTo("Virtual Coastal Map", true);
+            }
 
             StateHasChanged();
         }
     }
 
-    async Task SetUpInputStepsForm()
+    bool SetUpInputStepsForm()
     {
+        bool rtnVal = true;
+
         try
         {
-            var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
-            var user = authState.User;
-
-            Username = authState.User.Identity.Name;
-
-            IEnumerable<Claim> _claims = Enumerable.Empty<Claim>();
-
-            _claims = user.Claims;
-
-            Emailadd = user.FindFirst(c => c.Type == ClaimTypes.Email)?.Value;
-
             stepsForm = new InputStepsForm();
-            stepsForm.SetUpFromVirtualMap(VirtualMilestoneService, milestone, emailSender, Emailadd, Username, _razorViewToStringRenderer);
+            stepsForm.SetUpFromVirtualMap(VirtualMilestoneService, milestone, emailSender, _razorViewToStringRenderer, AuthenticationStateProvider);
+            rtnVal = true;
         }
-        catch (Exception e)
+        catch
         {
-            Console.WriteLine(e.Message);
+            rtnVal = false;
         }
+
+        return rtnVal;
     }
 
     async Task UpdatePersonLocation()
     {
         if (virtualWalk.TotalSteps >= 0)
         {
-            await mapModule.InvokeVoidAsync("updatePersonIcon", calculatePerson.NewPosition(virtualWalk.TotalSteps)).AsTask();
-            landID = await mapModule.InvokeAsync<string>("NextLandMark", landID);
-            stepToNextMilestone = Math.Round(await mapModule.InvokeAsync<double>("ApproximateStepsToNextMilestone"), 2);
+            var check = await mapModule.InvokeAsync<bool>("CheckIfStyleLoaded");
 
-            await mapModule.InvokeVoidAsync("colourPath");
+            while (!check)
+            {
+                check = await mapModule.InvokeAsync<bool>("CheckIfStyleLoaded");
+            }
+
+            if (check)
+            {
+                await mapModule.InvokeVoidAsync("updatePersonIcon", calculatePerson.NewPosition(virtualWalk.TotalSteps)).AsTask();
+                landID = await mapModule.InvokeAsync<string>("NextLandMark", landID);
+                milesToNextMilestone = Math.Round(await mapModule.InvokeAsync<double>("ApproximateMilesToNextMilestone"), 2);
+
+                totalMilesWalked = StepsInMiles();
+                milesRemaining = Math.Round(totalMiles - totalMilesWalked, 2);
+
+                if (milesRemaining <= 0)
+                {
+                    milesRemaining = 0;
+                }
+
+                if (landID.ToLower() == "City Walls".ToLower())
+                {
+                    milesRemaining = milesToNextMilestone;
+                }
+
+                await mapModule.InvokeVoidAsync("colourPath");
+
+            }
         }
     }
 
@@ -268,10 +310,9 @@ using System.Security.Claims;
         {
             case 0:
 
-                MilestoneInfo = "Tintern Abbey was founded on 9 May 1131 by Walter de Clare, " +
-                "Lord of Chepstow. It is situated adjacent to the village of Tintern in " +
-                "Monmouthshire, on the Welsh bank of the River Wye, which at this location " +
-                "forms the border between Monmouthshire in Wales and Gloucestershire in England.";
+                MilestoneInfo = "Tintern Abbey was founded on 9 May 1131 by Walter de Clare, Lord of Chepstow. " +
+                        "It is situated adjacent to the village of Tintern in Monmouthshire, on the Welsh bank of the River Wye, " +
+                        "which at this location forms the border between Monmouthshire in Wales and Gloucestershire in England.";
 
                 MilestonePic = "/Assets/Culture/Tintern Abbey.jpg";
 
@@ -279,10 +320,9 @@ using System.Security.Claims;
 
             case 1:
 
-                MilestoneInfo = "The Newport Transporter Bridge is a transporter bridge that crosses " +
-                        "the River Usk in Newport, South East Wales. It is one of fewer than 10 transporter " +
-                        "bridges that remain in use worldwide; only a few dozen were ever built. It is one of only " +
-                        "two operational transporter bridges in Britain, the other being the Tees Transporter Bridge.";
+                MilestoneInfo = "The Newport Transporter Bridge is a transporter bridge that crosses the River Usk in Newport, South East Wales. " +
+                        "It is one of fewer than 10 transporter bridges that remain in use worldwide; only a few dozen were ever built. " +
+                        "It is one of only two operational transporter bridges in Britain, the other being the Tees Transporter Bridge.";
 
                 MilestonePic = "/Assets/Culture/Transporter Bridge.jpg";
 
@@ -290,8 +330,8 @@ using System.Security.Claims;
 
             case 2:
 
-                MilestoneInfo = "Cardiff Castle is located in the Castle Quarter, in the heart of Cardiff, " +
-                        "the capital of Wales. There has been a fort on the site for almost 2,000 years. " +
+                MilestoneInfo = "Cardiff Castle is located in the Castle Quarter, in the heart of Cardiff, the capital of Wales. " +
+                        "There has been a fort on the site for almost 2,000 years. " +
                         "The current building was built in the late 11th century, replacing a Roman fort.";
 
                 MilestonePic = "/Assets/Culture/Cardiff Castle.jpg";
@@ -359,7 +399,7 @@ using System.Security.Claims;
 
             case 8:
 
-                MilestoneInfo = "St. Catherines Island is a small tidal island linked to Tenby in Pembrokeshire, Wales. " +
+                MilestoneInfo = "St. Catherine’s Island is a small tidal island linked to Tenby in Pembrokeshire, Wales. " +
                         "2016 The Final Problem, the third and last episode of the fourth series of the BBC TV series " +
                         "Sherlock was filmed on the island, with it standing in as a maximum security prison.  Formed from an " +
                         "outcrop of limestone, on average 25m high, the island is riddled with tidal caves.";
@@ -392,10 +432,9 @@ using System.Security.Claims;
 
             case 11:
 
-                MilestoneInfo = "St. Davids Cathedral is situated in St Davids in the county of Pembrokeshire, on the most westerly point of Wales. " +
+                MilestoneInfo = "St. Davids Cathedral is situated in St. Davids in the county of Pembrokeshire, on the most westerly point of Wales. " +
                         "There are at least three services said or sung per day, each week, with sung services on five out of seven days. " +
-                        "The cathedral choir at St Davids was the first cathedral choir in the United Kingdom to use girls and men as the main choir, " +
-                        "rather than boys and men.";
+                        "The cathedral choir at St. Davids was the first cathedral choir in the United Kingdom to use girls and men as the main choir, rather than boys and men.";
 
                 MilestonePic = "/Assets/Culture/St Davids Cathedral.jpg";
 
@@ -405,7 +444,7 @@ using System.Security.Claims;
 
                 MilestoneInfo = "Strumble Head Lighthouse stands imposingly on Ynysmeicl (St. Michael's Island), " +
                         "an islet to the west of Fishguard, separated from the mainland by a very narrow gap through " +
-                        "which the sea boils and froths in stormy weather. ";
+                        "which the sea boils and froths in stormy weather.";
 
                 MilestonePic = "/Assets/Culture/Strumble Head Lighthouse.jpg";
 
@@ -552,6 +591,16 @@ using System.Security.Claims;
         {
             await mapModule.DisposeAsync();
         }
+    }
+
+    double StepsInMiles()
+    {
+        // Convert to kilometers
+        double km = Math.Round(virtualWalk.TotalSteps / 1312.33595801, 2);
+
+
+        // Convert to miles
+        return Math.Round(km * 0.62137, 1);
     }
 
 #line default
